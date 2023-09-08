@@ -1,0 +1,46 @@
+@layer components {
+  @keyframes barberpole {
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+  .progress {
+    --progress-bg: theme(colors.scheme.500 / var(--tw-bg-opacity));
+    --progress-bar-animation: none;
+    @apply bg-gray-200 rounded h-3 relative scheme-primary max-h-10;
+
+    &--striped {
+      --progress-bg: repeating-linear-gradient(
+        45deg,
+        theme(colors.scheme.500 / 100),
+        theme(colors.scheme.500 / 100) theme(width.2),
+        theme(colors.scheme.600 / 100) theme(width.2),
+        theme(colors.scheme.600 / 100) theme(width.4)
+      );
+    }
+
+    &--animated {
+      --progress-bar-animation: barberpole 20s linear infinite;
+    }
+
+    &:before {
+      @apply content-[''] absolute -top-5 -bottom-5 left-0 right-0;
+    }
+
+    &__bar {
+      animation: var(--progress-bar-animation);
+      background: var(--progress-bg);
+      background-size: 200% 200%;
+      @apply rounded h-full left-0 w-0 absolute z-10 text-white text-xs flex items-center justify-end after:content-[''] after:block after:w-2;
+    }
+
+    &__label {
+      @apply opacity-0 transition absolute left-full top-1/2 -translate-y-1/2 -translate-x-1/2 bg-scheme-500 text-white font-bold text-sm rounded-full px-2;
+    }
+
+    &:hover &__label {
+      @apply opacity-100;
+    }
+  }
+}

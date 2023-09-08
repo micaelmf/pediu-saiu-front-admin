@@ -1,0 +1,31 @@
+@layer components {
+  .toggle {
+    --default-toggle-size: theme(width.6);
+    @apply inline-flex relative items-center cursor-pointer h-[var(--toggle-size,var(--default-toggle-size))] w-[calc(2*var(--toggle-size,var(--default-toggle-size)))] my-[var(--toggle-space-y,0)];
+
+    & [type="checkbox"] {
+      @apply sr-only;
+    }
+
+    &__ui {
+      @apply grid grid-cols-2 items-center w-full h-full bg-gray-200 rounded-full shadow;
+
+      &:after {
+        @apply content-[''] block bg-white border-gray-300 border rounded-full transition-all transform h-full scale-75;
+      }
+
+      [type="checkbox"]:disabled ~ & {
+        @apply opacity-75 cursor-not-allowed;
+      }
+    }
+
+    & [type="checkbox"]:active ~ &__ui {
+     @apply ring-2 ring-scheme-300;
+    }
+
+    & [type="checkbox"]:checked ~ &__ui,
+    &[aria-expanded="true"] &__ui {
+      @apply after:translate-x-full after:border-white bg-scheme-500;
+    }
+  }
+}

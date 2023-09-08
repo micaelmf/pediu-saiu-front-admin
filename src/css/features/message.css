@@ -1,0 +1,44 @@
+@layer components {
+  .messages {
+    @apply w-96;
+
+    &__header {
+      @apply uppercase py-3 px-6 border-b shadow-sm flex justify-between items-center;
+
+      & h4 {
+        @apply text-sm font-bold inline-flex items-center;
+      }
+
+      & a:hover,
+      & a[aria-expanded=true] {
+        @apply text-scheme-500;
+      }
+
+      & .dropdown {
+        @apply normal-case;
+      }
+    }
+  }
+
+  .message {
+    & > a {
+      @apply text-sm py-3 px-4 flex items-center justify-between space-x-3 hover:bg-gray-100 transition;
+    }
+
+    &--unread {
+      @apply bg-info-100;
+    }
+
+    &__title {
+      @apply font-bold;
+    }
+
+    &__body {
+      @apply line-clamp-1;
+    }
+
+    &__date {
+      @apply text-xs text-gray-400;
+    }
+  }
+}

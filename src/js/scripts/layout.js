@@ -1,0 +1,1 @@
+import '@skewind/components/tabs'

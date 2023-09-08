@@ -1,0 +1,42 @@
+@layer components {
+  .alert {
+    --alert-bg-color: theme(colors.scheme.200 / var(--tw-bg-opacity));
+    --alert-text-color: theme(colors.scheme.600 / var(--tw-text-opacity));
+    --alert-border-color: theme(colors.transparent);
+    --alert-ring-color: theme(colors.scheme.200 / var(--tw-ring-opacity));
+    @apply rounded bg-opacity-100 text-opacity-100 border-opacity-100 ring-opacity-100;
+
+    &, &--default {
+      @apply bg-[color:var(--alert-bg-color)] text-[color:var(--alert-text-color)] border-[color:var(--alert-border-color)] ring-[color:var(--alert-ring-color)] px-6 py-4;
+    }
+
+    &--soft {
+      --alert-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
+      --alert-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+    }
+
+    &--outline {
+      --alert-bg-color: theme(colors.transparent);
+      --alert-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+      @apply border border-dashed;
+    }
+
+    &--outline&--soft {
+      --alert-border-color: theme(colors.scheme.300 / var(--tw-border-opacity));
+      --alert-ring-color: theme(colors.scheme.100 / var(--tw-ring-opacity));
+    }
+
+    &--accent {
+      --alert-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
+      --alert-text-color: theme(colors.scheme.600 / var(--tw-text-opacity));
+      --alert-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+      @apply border-l-4;
+    }
+
+    &--accent&--soft {
+      --alert-bg-color: theme(colors.scheme.50 / var(--tw-bg-opacity));
+      --alert-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      --alert-border-color: theme(colors.scheme.200 / var(--tw-border-opacity));
+    }
+  }
+}

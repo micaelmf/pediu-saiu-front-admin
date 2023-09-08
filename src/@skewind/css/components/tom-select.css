@@ -1,0 +1,71 @@
+/* Adjust tom-select styles */
+[data-select] {
+  @apply invisible;
+}
+
+.ts-wrapper {
+  & .ts-control,
+  &.multi.has-items .ts-control {
+    @apply py-2 px-4 bg-white border-gray-200 hover:border-gray-300 gap-2;
+
+    .focus& {
+      @apply shadow-none border-scheme-400;
+    }
+  }
+
+  &.disabled {
+    & .ts-control,
+    &.multi.has-items .ts-control {
+      @apply bg-gray-200 opacity-100;
+    }
+  }
+
+  &.multi .ts-control > .item {
+    @apply py-0 px-2 m-0 bg-scheme-100;
+
+    &.active {
+      @apply bg-scheme-500 text-white;
+    }
+  }
+
+  .ts-dropdown-content {
+    @apply py-2;
+  }
+
+  .ts-dropdown {
+    @apply mt-2;
+
+    & .option,
+    & .optgroup-header,
+    & .no-results,
+    & .create {
+      @apply py-2 px-4;
+    }
+
+    &-content {
+      @apply max-h-96;
+    }
+  }
+
+  .ts-dropdown,
+  .ts-dropdown.form-control,
+  .ts-dropdown.form-select {
+    @apply border-0 shadow-md;
+  }
+
+  .ts-dropdown .create:hover,
+  .ts-dropdown .option:hover,
+  .ts-dropdown .active {
+    @apply bg-gray-100;
+  }
+
+  .ts-dropdown,
+  .ts-control,
+  .ts-control input {
+    @apply text-gray-600;
+  }
+
+  .ts-dropdown [data-selectable] .highlight {
+    @apply bg-primary-200 rounded;
+  }
+}

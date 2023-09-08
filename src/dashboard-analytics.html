@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- BEGIN: Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png">
+    <!-- END: Favicon -->
+
+    <!-- BEGIN: Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <!-- END: Fonts CSS -->
+
+    <!-- BEGIN: Bookmark & Search Meta Data -->
+    <meta name="title" content="Dashboard Analytics" />
+    <meta name="icon" content="feather__barChart2" />
+    <!-- END: Bookmark Meta -->
+
+    <!-- BEGIN: Vite -->
+    <link rel="stylesheet" href="./css/app.css" />
+    <script type="module" src="./js/app.js"></script> <!-- END: Vite -->
+
+    <title>Dashboard Analytics - Skewind</title>
+</head>
+
+<body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+        <!-- BEGIN: Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <a class="inline-flex items-center">
+                    <i data-icon="feather__wind" class="text-primary-600 transform rotate-180 mr-2 w-6 h-6"></i>
+                    <span class="text-2xl italic transform -skew-x-3 font-semibold text-gray-500">Skewind</span>
+                </a>
+            </div>
+            <!-- BEGIN: Sidebar Scroll -->
+            <div class="sidebar__scroll-wrapper">
+                <div id="sidebarNavScroll" class="sidebar__scroll scrollbar" data-scrollbar>
+                    <nav class="navigation">
+                        <!-- BEGIN: Dashboard -->
+                        <div class="navigation__title">DASHBOARDS<small>Useful dashboard designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__shoppingBag"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item navigation__item--active">
+                                <a href="/dashboard-analytics.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__barChart2"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Analytics</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Dashboard -->
+                        <!-- BEGIN: Applications -->
+                        <div class="navigation__title">APPLICATIONS<small>Prebuilt application designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/contacts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__users"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Contacts</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/chat.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__messageSquare"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Chat</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/email.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__mail"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Email</span>
+                                    <span class="badge badge--soft scheme-danger opacity-75 font-bold mx-2">34</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/file-manager.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__file"></i>
+                                    </span>
+                                    <span class="navigation__item__title">File Manager</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Applications -->
+                        <!-- BEGIN: Pages -->
+                        <div class="navigation__title">PAGES<small>Common page designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__lock"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Authentication</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/login.html" target="_blank">Login</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/register.html" target="_blank">Register</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__alertCircle"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Error</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/404.html" target="_blank">404</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/500.html" target="_blank">500</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/coming-soon.html" target="_blank" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__alertTriangle"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Coming Soon</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Pages -->
+                        <!-- BEGIN: User Interface -->
+                        <div class="navigation__title">USER INTERFACE<small>Building blocks of the UI & UX</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/typography.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__type"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Typography</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/icons.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__feather"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Icons</span>
+                                    <span class="badge badge--soft scheme-info opacity-75 font-bold mx-2">6</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__layout"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Page Layouts</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/layouts-empty.html">Empty</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Simple
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLayout">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-single-1.html">Single Column #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-single-2.html">Single Column #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-1.html">Left Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-2.html">Left Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-3.html">Left Sidebar #3</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-1.html">Right Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-2.html">Right Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-3.html">Right Sidebar #3</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Carded
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLayout">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-single.html">Single Column</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-leftsidebar-1.html">Left Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-leftsidebar-2.html">Left Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-rightsidebar-1.html">Right Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-rightsidebar-2.html">Right Sidebar #2</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__box"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Components</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/components-accordion.html">Accordion</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-alert.html">Alert</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-avatar.html">Avatar</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-badges.html">Badges</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-breadcrumbs.html">Breadcrumbs</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-buttons.html">Buttons</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-collapse.html">Collapse</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-dropdown.html">Dropdown</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-icon.html">Icon</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-modal.html">Modals</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-popover.html">Popover</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-progress.html">Progress</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-spinner.html">Spinner</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-tabs.html">Tabs</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-toast.html">Toast</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-tooltips.html">Tooltips</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__airplay"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Forms</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Form Layouts
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavFormElements">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned1.html">Sectioned 1</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned2.html">Sectioned 2</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned3.html">Sectioned 3</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Form Elements
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavFormElements">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-input.html">Input</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-textarea.html">Textarea</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-checkbox.html">Checkbox</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-radio.html">Radio</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-switch.html">Switch</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-select.html">Select</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-file.html">File Upload</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-input-group.html">Input Groups</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-tomselect.html">
+                                                <span>
+                                                    Tom Select<br />
+                                                    <span class="text-sm text-gray-400">Rich select input</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-dropzone.html">
+                                                <span>
+                                                    Dropzone<br />
+                                                    <span class="text-sm text-gray-400">Enhanced file picker</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-flatpickr.html">
+                                                <span>
+                                                    Flatpickr<br />
+                                                    <span class="text-sm text-gray-400">Date & time picker</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__activity"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Level 0</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Level 1
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel1">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="javascript:;" data-collapse-toggle>
+                                                            Level 2
+                                                            <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                                        </a>
+                                                        <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel2">
+                                                            <ul class="navigation-level">
+                                                                <li class="navigation-level__item">
+                                                                    <a href="javascript:;" data-collapse-toggle>
+                                                                        Level 3
+                                                                        <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                                                    </a>
+                                                                    <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel3">
+                                                                        <ul class="navigation-level">
+                                                                            <li class="navigation-level__item">
+                                                                                <a href="javascript:;">
+                                                                                    Level
+                                                                                    4
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </nav>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/table.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__table"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Table</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/charts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__pieChart"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Charts</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: User Interface -->
+                    </nav>
+                </div>
+            </div>
+            <!-- END: Sidebar Scroll Wrapper -->
+        </nav>
+        <!-- End: Sidebar -->
+        <!-- BEGIN: Wrapper Main -->
+        <div class="wrapper">
+            <header class="navbar">
+                <div class="navbar__left lg:hidden">
+                    <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                        <i data-icon="heroiconsOutline__menuAlt1"></i>
+                    </a>
+                </div>
+                <div class="navbar__left bottombar bookmark" id="bookmark"></div>
+                <div class="navbar__center">
+                    <form id="formSearch" class="search">
+                        <i data-icon="feather__search"></i>
+                        <select id="tomSearch"></select>
+                    </form>
+                </div>
+                <div class="navbar__right">
+                    <!-- BEGIN: Language Dropdown Wrapper -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <i data-icon="flag__us"></i>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__us"></i>English</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__fr"></i>French</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__de"></i>German</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__id"></i>Indonesia</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Language Dropdown Wrapper -->
+                    <!-- BEGIN: Messages Dropdown Wrapper -->
+                    <div>
+                        <a id="messagesDropdownToggle" href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__messageSquare"></i>
+                                <span class="badged-icon__badge badge bg-info-500">2</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="messages">
+                                <div class="messages__header">
+                                    <h4>Messages</h4>
+                                    <a href="javascript:;" data-dropdown-toggle data-tippy-placement="bottom-end">
+                                        <i data-icon="heroiconsOutline__dotsHorizontal"></i>
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li class="dropdown__heading">
+                                            <h4 class="text-sm uppercase font-bold text-gray-500">Chat Settings</h4>
+                                            <p class="font-normal text-xs text-gray-400">
+                                                Customize your chat experience.
+                                            </p>
+                                        </li>
+                                        <li class="dropdown__divider"></li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__check"></i>
+                                                Mark all as read
+                                            </a>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__settings"></i>
+                                                Notification settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="messages__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-249eda8dc8c1894744b239ddb17172d1.jpg" alt="Hadiyat Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Hadiyat Virgiawan
+                                                </span>
+                                                <span class="message__body">
+                                                    You sent an attachment.
+                                                </span>
+                                                <span class="message__date">
+                                                    16 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-21f2a6af8bfb8f96cb4114145ce4133f.jpg" alt="John Low Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    John Low
+                                                </span>
+                                                <span class="message__body">
+                                                    Wait a sec..
+                                                </span>
+                                                <span class="message__date">
+                                                    22 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-43ed38260331d63ee0ada46318b49c03.jpg" alt="Yong Tian Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Yong Tian
+                                                </span>
+                                                <span class="message__body">
+                                                    How are you?
+                                                </span>
+                                                <span class="message__date">
+                                                    12 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-159928ddb84d3fa9cbf2e7f68b91b173.jpg" alt="Andree Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Andree W
+                                                </span>
+                                                <span class="message__body">
+                                                    Kindly check my work
+                                                </span>
+                                                <span class="message__date">
+                                                    08 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-4bb28d0b0aa04bc0df1e21c2e1bfe008.jpg" alt="Lisa Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Lisa Tan
+                                                </span>
+                                                <span class="message__body">
+                                                    Please help me check this.
+                                                </span>
+                                                <span class="message__date">
+                                                    02 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Messages Dropdown Wrapper -->
+                    <!-- BEGIN: Notifications Dropdown Wrapper -->
+                    <div>
+                        <a id="notificationsDropdownToggle" href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__bell"></i>
+                                <span class="badged-icon__badge badge bg-red-500">1</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="notifications">
+                                <div class="notifications__header">
+                                    <h4>Notifications</h4>
+                                    <a href="javascript:;" class="notifications__header__action">Mark all as read</a>
+                                </div>
+                                <div class="notifications__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Today</div>
+                                        <a href="#" class="notification notification--unread">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-blue-400">MC</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Margo Corn</strong> has invited you to the project <strong>Untitled</strong></span>
+                                            </span>
+                                            <span class="notification__date">2 min</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-green-400">EH</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Elsa Hoffman</strong> removed you</span>
+                                            </span>
+                                            <span class="notification__date">1 hr</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Yesterday</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-yellow-400">MP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> mentioned you in a comment in the project <strong>Untitled 2</strong></span>
+                                                <span class="block mt-2 text-gray-400">"Mike, we need to fix this asap"</span>
+                                            </span>
+                                            <span class="notification__date">14:12</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-indigo-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Konstantin Konstantinovich</strong> removed you from <strong>Mobile Dolfin</strong></span>
+                                            </span>
+                                            <span class="notification__date">12:03</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">25 Mar</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-yellow-400">NP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> accepted your invitation the project <strong>Untitled 2</strong></span>
+                                            </span>
+                                            <span class="notification__date">09:45</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-green-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Siti</strong> accepted the invitation to the project <strong>Tablature</strong></span>
+                                            </span>
+                                            <span class="notification__date">08:15</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Notifications Dropdown Wrapper -->
+                    <!-- BEGIN: Account Menu -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link lg:rounded-none" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 7]">
+                            <span class="account">
+                                <span class="avatar w-10 account__avatar">
+                                    <img src="/assets/demo/avatar-840733bfb5fe9e63362764fd24338c3f.jpg" alt="John Avatar" class="avatar__object" />
+                                    <span class="avatar__badge badge bg-green-400"></span>
+                                </span>
+                                <span class="account__user">
+                                    <span class="account__user__name">John Doe</span>
+                                    <small class="account__user__role">Administrator</small>
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__user"></i>Profile</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__inbox"></i>Inbox</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__checkSquare"></i>Task</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__messageSquare"></i>Chat</a>
+                            </li>
+                            <li class="dropdown__divider"></li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__settings"></i>Settings</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__helpCircle"></i>Help</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__power"></i>Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+            </header>
+            <main class="main">
+                <div data-script="dashboardAnalytics" class="page">
+                    <!-- BEGIN: Page Header -->
+                    <div class="page__header flex flex-wrap gap-5 justify-between">
+                        <div class="page__title">
+                            <h1 class="page__title__text">Analytics</h1>
+                            <p class="page__title__subtext">Analytic by graphics</p>
+                        </div>
+                        <div class="form-control min-w-[100px]">
+                            <select>
+                                <option>Visitor</option>
+                                <option>Content</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- END: Page Header -->
+                    <!-- BEGIN: Page  Body -->
+                    <div class="page__body">
+                        <!-- BEGIN: Summary -->
+                        <div class="card">
+                            <div class="grid grid-cols-2 md:grid-cols-4">
+                                <a href="#" class="relative px-4 pt-5 pb-24 xl:pb-5 border-b md:border-b-0 border-r flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-info-100 to-info-200 rounded-b border-b-2 border-info-100 text-info-600 shadow-sm">
+                                            <i data-icon="feather__users"></i>
+                                        </span>
+                                        <span class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">Total Visitor</span>
+                                        <span class="text-2xl font-bold">1,683</span>
+                                    </span>
+                                    <span id="totalVisitorChart" class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                                <a href="#" class="relative px-4 pt-5 pb-24 xl:pb-5 border-b md:border-b-0 border-r flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-indigo-100 to-indigo-200 rounded-b border-b-2 border-indigo-100 text-indigo-600 shadow-sm">
+                                            <i data-icon="feather__userCheck"></i>
+                                        </span>
+                                        <span class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">New User</span>
+                                        <span class="text-2xl font-bold">782</span>
+                                    </span>
+                                    <span id="newUserChart" class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                                <a href="#" class="relative px-4 pt-5 pb-24 xl:pb-5 border-r flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-blue-100 to-blue-200 rounded-b border-b-2 border-blue-100 text-blue-600 shadow-sm">
+                                            <i data-icon="feather__userPlus"></i>
+                                        </span>
+                                        <span class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">New Visitor</span>
+                                        <span class="text-2xl font-bold">229</span>
+                                    </span>
+                                    <span id="newVisitorChart" class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                                <a href="#" class="relative px-4 pt-5 pb-24 xl:pb-5 flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-green-100 to-green-200 rounded-b border-b-2 border-green-100 text-green-600 shadow-sm">
+                                            <i data-icon="feather__creditCard"></i>
+                                        </span>
+                                        <span class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">Subscription</span>
+                                        <span class="text-2xl font-bold">3,172</span>
+                                    </span>
+                                    <span id="subscriptionChart" class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END: Summary -->
+                        <!-- BEGIN: Other Sections -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8 items-start xl:items-stretch mt-8">
+                            <!-- BEGIN: Direct Traffic -->
+                            <div class="card lg:col-span-3 xl:col-span-2">
+                                <div class="card__header">
+                                    <h3 class="text-2xl">Direct Traffic</h3>
+                                </div>
+                                <div class="card__body sm:flex">
+                                    <div id="directTrafficChart" class="flex-1"></div>
+                                    <div class="mt-8 sm:mt-0 pt-8 sm:pt-0 sm:ml-5 sm:pl-8 pb-5 flex flex-col justify-between border-t sm:border-t-0 sm:border-l sm:max-w-[200px] space-y-4">
+                                        <div class="flex justify-between items-center space-x-3">
+                                            <div>
+                                                <div class="font-bold text-xl">30.08%</div>
+                                                <span class="text-gray-400 text-sm">Bounce Rate</span>
+                                            </div>
+                                            <i data-icon="feather__trendingUp" class="text-green-500"></i>
+                                        </div>
+                                        <div class="flex justify-between items-center space-x-3">
+                                            <div>
+                                                <div class="font-bold text-xl">43.02%</div>
+                                                <span class="text-gray-400 text-sm">Page Views</span>
+                                            </div>
+                                            <i data-icon="feather__trendingUp" class="text-green-500"></i>
+                                        </div>
+                                        <div class="flex justify-between items-center space-x-3">
+                                            <div>
+                                                <div class="font-bold text-xl">20%</div>
+                                                <span class="text-gray-400 text-sm">Repeat Visits</span>
+                                            </div>
+                                            <i data-icon="feather__trendingDown" class="text-red-500"></i>
+                                        </div>
+                                        <div class="flex justify-between items-center space-x-3">
+                                            <div>
+                                                <div class="font-bold text-xl">62.42%</div>
+                                                <span class="text-gray-400 text-sm">A New Sessions</span>
+                                            </div>
+                                            <i data-icon="feather__trendingUp" class="text-green-500"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Direct Traffic -->
+                            <!-- BEGIN: Active User -->
+                            <div class="card order-last xl:order-none">
+                                <div class="card__header">
+                                    <h3 class="text-lg font-bold">Active User</h3>
+                                </div>
+                                <div class="card__body">
+                                    <div id="activeUserChart" class="w-5/6 mx-auto"></div>
+                                    <div class="grid grid-cols-3 mt-5">
+                                        <div class="text-center border-r">
+                                            <div class="text-2xl font-bold text-indigo-500">750</div>
+                                            <span class="text-sm text-gray-400">Desktop</span>
+                                        </div>
+                                        <div class="text-center border-r">
+                                            <div class="text-2xl font-bold text-green-500">375</div>
+                                            <span class="text-sm text-gray-400">Tablet</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-orange-300">371</div>
+                                            <span class="text-sm text-gray-400">Mobile</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Active User -->
+                            <!-- BEGIN: Traffic Source -->
+                            <div class="card order-4 2xl:order-none">
+                                <div class="card__header">
+                                    <h3 class="text-lg font-bold">Traffic Source</h3>
+                                </div>
+                                <div class="card__body">
+                                    <div class="grid grid-cols-2 gap-y-5">
+                                        <div class="text-sm text-gray-400">Sources</div>
+                                        <div class="text-sm text-gray-400 text-right">Sessions %</div>
+                                        <div class="font-bold">Google</div>
+                                        <div class="text-right">43.3%</div>
+                                        <div class="font-bold">Bing</div>
+                                        <div class="text-right">22.1%</div>
+                                        <div class="font-bold">Yahoo</div>
+                                        <div class="text-right">17.9%</div>
+                                        <div class="font-bold">Youtube</div>
+                                        <div class="text-right">6.4%</div>
+                                        <div class="font-bold">Facebook</div>
+                                        <div class="text-right">2.8%</div>
+                                        <div class="font-bold">Twitter</div>
+                                        <div class="text-right">2.2%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Traffic Source -->
+                            <!-- BEGIN: Query Analytics -->
+                            <div class="lg:col-span-3 card">
+                                <div class="card__header">
+                                    <h3 class="text-2xl">Query Analytic</h3>
+                                </div>
+                                <div class="card__body px-0 scrollbar" data-scrollbar>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Query</th>
+                                                <th>Clicks</th>
+                                                <th>Impress</th>
+                                                <th>Ctr</th>
+                                                <th class="text-center">Seo Campaign</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>tools for seo specialits</td>
+                                                <td>235</td>
+                                                <td>1470</td>
+                                                <td>16.5%</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="button button--flat button--xs">
+                                                        <i data-icon="feather__plus"></i>Add
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>best seo tools</td>
+                                                <td>217</td>
+                                                <td>1200</td>
+                                                <td>18.2%</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="button button--flat button--xs">
+                                                        <i data-icon="feather__plus"></i>Add
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>seo competitors</td>
+                                                <td>197</td>
+                                                <td>950</td>
+                                                <td>14.1%</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="button button--flat button--xs">
+                                                        <i data-icon="feather__plus"></i>Add
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>search engine optimization</td>
+                                                <td>164</td>
+                                                <td>603</td>
+                                                <td>19.8%</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="button button--flat button--xs">
+                                                        <i data-icon="feather__plus"></i>Add
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>comprehensive seo tools</td>
+                                                <td>130</td>
+                                                <td>548</td>
+                                                <td>15.7%</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="button button--flat button--xs">
+                                                        <i data-icon="feather__plus"></i>Add
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END: Query Analytics -->
+                            <!-- BEGIN: Browsers -->
+                            <div class="card xl:col-span-1">
+                                <div class="card__header">
+                                    <h3 class="text-lg font-bold">Browsers</h3>
+                                </div>
+                                <div class="card__body">
+                                    <div class="grid grid-cols-2 gap-y-5 2xl:gap-y-6 items-center">
+                                        <div class="flex items-center"><img src="/assets/demo/other-a2340d9de8a3ef5cfee0f6b3406fb185.svg" alt="Chrome Logo" class="w-8 h-8 mr-3">Google Chrome</div>
+                                        <div class="text-right">43.3%</div>
+                                        <div class="flex items-center"><img src="/assets/demo/other-b051a6bbe884dc251f19d07369c75fd5.svg" alt="Firefox Logo" class="w-8 h-8 mr-3">Mozilla Firefox</div>
+                                        <div class="text-right">6.1%</div>
+                                        <div class="flex items-center"><img src="/assets/demo/other-de59cb029fb2e04942f287baf9744b45.svg" alt="Safari Logo" class="w-8 h-8 mr-3">Apple Safari</div>
+                                        <div class="text-right">14.6%</div>
+                                        <div class="flex items-center"><img src="/assets/demo/other-2f47ca2d62bff01da9989b63a90b5b90.svg" alt="Edge Logo" class="w-8 h-8 mr-3">Microsoft Edge</div>
+                                        <div class="text-right">4.2%</div>
+                                        <div class="flex items-center"><img src="/assets/demo/other-d2e814da826f1ee1673bf614ca1c18c8.svg" alt="Opera Logo" class="w-8 h-8 mr-3">Opera</div>
+                                        <div class="text-right">8.4%</div>
+                                        <div class="flex items-center"><img src="/assets/demo/other-e08bbbca84a8f91218002e18b94cb3dd.svg" alt="Konqueror Logo" class="w-8 h-8 mr-3">Konqueror</div>
+                                        <div class="text-right">1.4%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Browsers -->
+                        </div>
+                        <!-- END: Other Sections -->
+                    </div>
+                    <!-- End: Page Body -->
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+        <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+@layer components {
+  .modal {
+    @apply hidden bg-gray-50 rounded shadow-xl w-full max-w-2xl opacity-0 transform translate-y-12 transition;
+
+    &-backdrop {
+      @apply z-[6030] flex items-center justify-center overflow-y-auto overflow-x-hidden;
+    }
+
+    &-backdrop & {
+      @apply block;
+    }
+
+    &[aria-modal] {
+      @apply opacity-100 translate-y-0;
+    }
+
+    &__header {
+      @apply px-6 py-4 rounded-t bg-gray-200;
+    }
+
+    &__title {
+      @apply text-xl font-semibold;
+    }
+
+    &__body {
+      @apply px-6 py-5;
+    }
+
+    &__footer {
+      @apply rounded-b px-6 py-4 border-t;
+    }
+  }
+}

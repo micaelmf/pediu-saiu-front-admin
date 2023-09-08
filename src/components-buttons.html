@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- BEGIN: Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png">
+    <!-- END: Favicon -->
+
+    <!-- BEGIN: Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <!-- END: Fonts CSS -->
+
+    <!-- BEGIN: Bookmark & Search Meta Data -->
+    <meta name="title" content="Buttons Component" />
+    <meta name="icon" content="feather__box" />
+    <!-- END: Bookmark Meta -->
+
+    <!-- BEGIN: Vite -->
+    <link rel="stylesheet" href="./css/app.css" />
+    <script type="module" src="./js/app.js"></script> <!-- END: Vite -->
+
+    <title>Buttons Component - Skewind</title>
+</head>
+
+<body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+        <!-- BEGIN: Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <a class="inline-flex items-center">
+                    <i data-icon="feather__wind" class="text-primary-600 transform rotate-180 mr-2 w-6 h-6"></i>
+                    <span class="text-2xl italic transform -skew-x-3 font-semibold text-gray-500">Skewind</span>
+                </a>
+            </div>
+            <!-- BEGIN: Sidebar Scroll -->
+            <div class="sidebar__scroll-wrapper">
+                <div id="sidebarNavScroll" class="sidebar__scroll scrollbar" data-scrollbar>
+                    <nav class="navigation">
+                        <!-- BEGIN: Dashboard -->
+                        <div class="navigation__title">DASHBOARDS<small>Useful dashboard designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__shoppingBag"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/dashboard-analytics.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__barChart2"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Analytics</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Dashboard -->
+                        <!-- BEGIN: Applications -->
+                        <div class="navigation__title">APPLICATIONS<small>Prebuilt application designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/contacts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__users"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Contacts</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/chat.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__messageSquare"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Chat</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/email.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__mail"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Email</span>
+                                    <span class="badge badge--soft scheme-danger opacity-75 font-bold mx-2">34</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/file-manager.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__file"></i>
+                                    </span>
+                                    <span class="navigation__item__title">File Manager</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Applications -->
+                        <!-- BEGIN: Pages -->
+                        <div class="navigation__title">PAGES<small>Common page designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__lock"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Authentication</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/login.html" target="_blank">Login</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/register.html" target="_blank">Register</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__alertCircle"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Error</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/404.html" target="_blank">404</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/500.html" target="_blank">500</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/coming-soon.html" target="_blank" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__alertTriangle"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Coming Soon</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Pages -->
+                        <!-- BEGIN: User Interface -->
+                        <div class="navigation__title">USER INTERFACE<small>Building blocks of the UI & UX</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/typography.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__type"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Typography</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/icons.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__feather"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Icons</span>
+                                    <span class="badge badge--soft scheme-info opacity-75 font-bold mx-2">6</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__layout"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Page Layouts</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/layouts-empty.html">Empty</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Simple
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLayout">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-single-1.html">Single Column #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-single-2.html">Single Column #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-1.html">Left Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-2.html">Left Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-3.html">Left Sidebar #3</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-1.html">Right Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-2.html">Right Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-3.html">Right Sidebar #3</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Carded
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLayout">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-single.html">Single Column</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-leftsidebar-1.html">Left Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-leftsidebar-2.html">Left Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-rightsidebar-1.html">Right Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-rightsidebar-2.html">Right Sidebar #2</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item navigation__item--active">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle aria-expanded="true">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__box"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Components</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/components-accordion.html">Accordion</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-alert.html">Alert</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-avatar.html">Avatar</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-badges.html">Badges</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-breadcrumbs.html">Breadcrumbs</a>
+                                        </li>
+                                        <li class="navigation-level__item navigation-level__item--active">
+                                            <a href="/components-buttons.html">Buttons</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-collapse.html">Collapse</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-dropdown.html">Dropdown</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-icon.html">Icon</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-modal.html">Modals</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-popover.html">Popover</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-progress.html">Progress</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-spinner.html">Spinner</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-tabs.html">Tabs</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-toast.html">Toast</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-tooltips.html">Tooltips</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__airplay"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Forms</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Form Layouts
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavFormElements">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned1.html">Sectioned 1</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned2.html">Sectioned 2</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned3.html">Sectioned 3</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Form Elements
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavFormElements">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-input.html">Input</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-textarea.html">Textarea</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-checkbox.html">Checkbox</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-radio.html">Radio</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-switch.html">Switch</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-select.html">Select</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-file.html">File Upload</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-input-group.html">Input Groups</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-tomselect.html">
+                                                <span>
+                                                    Tom Select<br />
+                                                    <span class="text-sm text-gray-400">Rich select input</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-dropzone.html">
+                                                <span>
+                                                    Dropzone<br />
+                                                    <span class="text-sm text-gray-400">Enhanced file picker</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-flatpickr.html">
+                                                <span>
+                                                    Flatpickr<br />
+                                                    <span class="text-sm text-gray-400">Date & time picker</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__activity"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Level 0</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Level 1
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel1">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="javascript:;" data-collapse-toggle>
+                                                            Level 2
+                                                            <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                                        </a>
+                                                        <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel2">
+                                                            <ul class="navigation-level">
+                                                                <li class="navigation-level__item">
+                                                                    <a href="javascript:;" data-collapse-toggle>
+                                                                        Level 3
+                                                                        <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                                                    </a>
+                                                                    <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel3">
+                                                                        <ul class="navigation-level">
+                                                                            <li class="navigation-level__item">
+                                                                                <a href="javascript:;">
+                                                                                    Level
+                                                                                    4
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </nav>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/table.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__table"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Table</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/charts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__pieChart"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Charts</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: User Interface -->
+                    </nav>
+                </div>
+            </div>
+            <!-- END: Sidebar Scroll Wrapper -->
+        </nav>
+        <!-- End: Sidebar -->
+        <!-- BEGIN: Wrapper Main -->
+        <div class="wrapper">
+            <header class="navbar">
+                <div class="navbar__left lg:hidden">
+                    <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                        <i data-icon="heroiconsOutline__menuAlt1"></i>
+                    </a>
+                </div>
+                <div class="navbar__left bottombar bookmark" id="bookmark"></div>
+                <div class="navbar__center">
+                    <form id="formSearch" class="search">
+                        <i data-icon="feather__search"></i>
+                        <select id="tomSearch"></select>
+                    </form>
+                </div>
+                <div class="navbar__right">
+                    <!-- BEGIN: Language Dropdown Wrapper -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <i data-icon="flag__us"></i>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__us"></i>English</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__fr"></i>French</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__de"></i>German</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__id"></i>Indonesia</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Language Dropdown Wrapper -->
+                    <!-- BEGIN: Messages Dropdown Wrapper -->
+                    <div>
+                        <a id="messagesDropdownToggle" href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__messageSquare"></i>
+                                <span class="badged-icon__badge badge bg-info-500">2</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="messages">
+                                <div class="messages__header">
+                                    <h4>Messages</h4>
+                                    <a href="javascript:;" data-dropdown-toggle data-tippy-placement="bottom-end">
+                                        <i data-icon="heroiconsOutline__dotsHorizontal"></i>
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li class="dropdown__heading">
+                                            <h4 class="text-sm uppercase font-bold text-gray-500">Chat Settings</h4>
+                                            <p class="font-normal text-xs text-gray-400">
+                                                Customize your chat experience.
+                                            </p>
+                                        </li>
+                                        <li class="dropdown__divider"></li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__check"></i>
+                                                Mark all as read
+                                            </a>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__settings"></i>
+                                                Notification settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="messages__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-249eda8dc8c1894744b239ddb17172d1.jpg" alt="Hadiyat Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Hadiyat Virgiawan
+                                                </span>
+                                                <span class="message__body">
+                                                    You sent an attachment.
+                                                </span>
+                                                <span class="message__date">
+                                                    16 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-21f2a6af8bfb8f96cb4114145ce4133f.jpg" alt="John Low Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    John Low
+                                                </span>
+                                                <span class="message__body">
+                                                    Wait a sec..
+                                                </span>
+                                                <span class="message__date">
+                                                    22 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-43ed38260331d63ee0ada46318b49c03.jpg" alt="Yong Tian Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Yong Tian
+                                                </span>
+                                                <span class="message__body">
+                                                    How are you?
+                                                </span>
+                                                <span class="message__date">
+                                                    12 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-159928ddb84d3fa9cbf2e7f68b91b173.jpg" alt="Andree Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Andree W
+                                                </span>
+                                                <span class="message__body">
+                                                    Kindly check my work
+                                                </span>
+                                                <span class="message__date">
+                                                    08 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-4bb28d0b0aa04bc0df1e21c2e1bfe008.jpg" alt="Lisa Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Lisa Tan
+                                                </span>
+                                                <span class="message__body">
+                                                    Please help me check this.
+                                                </span>
+                                                <span class="message__date">
+                                                    02 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Messages Dropdown Wrapper -->
+                    <!-- BEGIN: Notifications Dropdown Wrapper -->
+                    <div>
+                        <a id="notificationsDropdownToggle" href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__bell"></i>
+                                <span class="badged-icon__badge badge bg-red-500">1</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="notifications">
+                                <div class="notifications__header">
+                                    <h4>Notifications</h4>
+                                    <a href="javascript:;" class="notifications__header__action">Mark all as read</a>
+                                </div>
+                                <div class="notifications__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Today</div>
+                                        <a href="#" class="notification notification--unread">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-blue-400">MC</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Margo Corn</strong> has invited you to the project <strong>Untitled</strong></span>
+                                            </span>
+                                            <span class="notification__date">2 min</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-green-400">EH</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Elsa Hoffman</strong> removed you</span>
+                                            </span>
+                                            <span class="notification__date">1 hr</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Yesterday</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-yellow-400">MP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> mentioned you in a comment in the project <strong>Untitled 2</strong></span>
+                                                <span class="block mt-2 text-gray-400">"Mike, we need to fix this asap"</span>
+                                            </span>
+                                            <span class="notification__date">14:12</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-indigo-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Konstantin Konstantinovich</strong> removed you from <strong>Mobile Dolfin</strong></span>
+                                            </span>
+                                            <span class="notification__date">12:03</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">25 Mar</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-yellow-400">NP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> accepted your invitation the project <strong>Untitled 2</strong></span>
+                                            </span>
+                                            <span class="notification__date">09:45</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-green-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Siti</strong> accepted the invitation to the project <strong>Tablature</strong></span>
+                                            </span>
+                                            <span class="notification__date">08:15</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Notifications Dropdown Wrapper -->
+                    <!-- BEGIN: Account Menu -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link lg:rounded-none" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 7]">
+                            <span class="account">
+                                <span class="avatar w-10 account__avatar">
+                                    <img src="/assets/demo/avatar-840733bfb5fe9e63362764fd24338c3f.jpg" alt="John Avatar" class="avatar__object" />
+                                    <span class="avatar__badge badge bg-green-400"></span>
+                                </span>
+                                <span class="account__user">
+                                    <span class="account__user__name">John Doe</span>
+                                    <small class="account__user__role">Administrator</small>
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__user"></i>Profile</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__inbox"></i>Inbox</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__checkSquare"></i>Task</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__messageSquare"></i>Chat</a>
+                            </li>
+                            <li class="dropdown__divider"></li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__settings"></i>Settings</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__helpCircle"></i>Help</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__power"></i>Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+            </header>
+            <main class="main">
+                <div data-script="components/buttons" data-spy="scroll" data-spy-target="#onThisPage" class="flex">
+                    <div class="page flex-1 min-w-0">
+                        <!-- BEGIN: Page Header -->
+                        <header class="page__header">
+                            <div class="breadcrumb">
+                                <a href="/" class="breadcrumb__item">Home</a>
+                                <span class="breadcrumb__separator">/</span>
+                                <a href="" class="breadcrumb__item">User Interface</a>
+                                <span class="breadcrumb__separator">/</span>
+                                <a href="" class="breadcrumb__item">Components</a>
+                            </div>
+                            <div class="page__title">
+                                <h1 class="page__title__text text-3xl">Buttons</h1>
+                                <p class="page__title__subtext text-base">Use the button component inside forms, as a link, social login, payment options with support for multiple styles, colors, and sizes.</p>
+                            </div>
+                        </header>
+                        <!-- END: Page Header -->
+                        <!-- BEGIN: Page Body -->
+                        <div class="page__body">
+                            <div class="prose mb-5">
+                                <p>In any user interface or website, the button element is most frequently used because it can be used to initiate an action as well as link to other pages.</p>
+                                <p>Skewind provides a large variety of styles and sizes for the button component, including outlined buttons, multiple colors, sizes, buttons with icons, and more.</p>
+                            </div>
+                            <!-- BEGIN: Overviews -->
+                            <div id="overviews" class="mb-5">
+                                <h2 class="text-4xl py-5 group">
+                                    Overviews
+                                    <a href="#overviews" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h2>
+                                <div class="prose">
+                                    <p>These are some overviews of the buttons. Use the options to switch between various styles, sizes, and variants.</p>
+                                </div>
+                                <!-- Buttons Overviews -->
+                                <div class="card mt-5">
+                                    <div class="card__header">
+                                        <h3 class="text-xl font-semibold">Buttons</h3>
+                                    </div>
+                                    <div class="card__body">
+                                        <form id="buttonsForm" class="flex flex-wrap gap-y-5 gap-x-12">
+                                            <div>
+                                                <div class="text-sm font-semibold mb-3">Variants</div>
+                                                <div class="flex flex-col">
+                                                    <label class="check-control">
+                                                        <input type="radio" name="variant" value="button--solid" checked />
+                                                        <span>
+                                                            Solid
+                                                            <span class="text-sm text-gray-400">(Default)</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="variant" value="button--outline" />
+                                                        <span>Outline</span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="variant" value="button--flat" />
+                                                        <span>Flat</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-semibold mb-3">Size</div>
+                                                <div class="flex flex-col">
+                                                    <label class="check-control">
+                                                        <input type="radio" name="size" value="button--lg" />
+                                                        <span>lg</span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="size" value="button--md" checked />
+                                                        <span>
+                                                            md
+                                                            <span class="text-sm text-gray-400">(Default)</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="size" value="button--sm" />
+                                                        <span>sm</span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="size" value="button--xs" />
+                                                        <span>xs</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-semibold mb-3">Icons</div>
+                                                <div class="flex flex-col">
+                                                    <label class="check-control">
+                                                        <input type="radio" name="icon" value="none" checked />
+                                                        <span>None</span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="icon" value="withIcon" />
+                                                        <span>With Icon</span>
+                                                    </label>
+                                                    <label class="check-control">
+                                                        <input type="radio" name="icon" value="iconOnly" />
+                                                        <span>Icon Only</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <label class="check-control">
+                                                    <span class="toggle">
+                                                        <input type="checkbox" name="soft" value="button--soft" />
+                                                        <span class="toggle__ui"></span>
+                                                    </span>
+                                                    <span>Soft</span>
+                                                </label>
+                                                <label class="check-control">
+                                                    <span class="toggle">
+                                                        <input type="checkbox" name="pill" value="rounded-full" />
+                                                        <span class="toggle__ui"></span>
+                                                    </span>
+                                                    <span>Pill</span>
+                                                </label>
+                                                <label class="check-control">
+                                                    <button data-collapse-toggle="#buttonsCodeCollapse" aria-expanded="true" class="toggle">
+                                                        <span class="toggle__ui"></span>
+                                                    </button>
+                                                    <span>Code</span>
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="buttonsPreview" class="card__body flex flex-wrap items-end gap-5"></div>
+                                    <div id="buttonsCodeCollapse" class="collapse relative group mt-5">
+                                        <a href="javascript:;" data-copy-target="#buttonsCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                            <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                            Copy
+                                        </a>
+                                        <textarea id="buttonsCodeContent" class="hidden"></textarea>
+                                        <pre><code
+                                id="buttonsCode"
+                                data-highlight
+                                data-highlight-target="#buttonsCodeContent"
+                                data-highlight-observe
+                                class="scrollbar rounded-b leading-loose !px-8">
+                            </code></pre>
+                                    </div>
+                                </div>
+                                <!-- END: Buttons Overview -->
+                            </div>
+                            <!-- END: Overview -->
+                            <!-- BEGIN: Basic Usage -->
+                            <div id="basicUsage">
+                                <h2 class="text-4xl py-5 group">
+                                    Basic Usage
+                                    <a href="#basicUsage" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h2>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-y-5 gap-x-10">
+                                    <div>
+                                        <div class="prose mb-5">
+                                            <p>The <code>button</code> class can be used on <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;input type&quot;submit&quot;&gt;</code>, etc. Example:</p>
+                                        </div>
+                                        <div id="usageExample" class="flex flex-wrap items-start gap-5">
+                                            <a class="button">Anchor</a>
+                                            <button type="button" class="button">Button</button>
+                                            <input type="submit" class="button" value="Input" />
+                                        </div>
+                                    </div>
+                                    <div class="relative group">
+                                        <a href="javascript:;" data-copy-target="#buttonCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                            <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                            Copy
+                                        </a>
+                                        <pre><code
+                                id="buttonCode"
+                                data-highlight
+                                data-highlight-target="#usageExample"
+                                class="scrollbar rounded leading-loose !px-8">
+                            </code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Basic Usage -->
+                            <!-- BEGIN: Color Schemes -->
+                            <div id="colorSchemes" class="mb-5">
+                                <h2 class="text-4xl py-5 group">
+                                    Color Schemes
+                                    <a href="#colorSchemes" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h2>
+                                <div class="prose mb-5">
+                                    <p>To change the color schemes, use Skewind's <code>scheme-{color}</code> utility classes. You can also switch to a softer scheme by appending the <code>button--soft</code> class to the button element. Take a look at these examples:</p>
+                                </div>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-5">
+                                    <div class="card">
+                                        <div id="buttonColorsExample" class="card__body flex flex-wrap gap-5 mb-2">
+                                            <button type="button" class="button scheme-primary">Primary</button>
+                                            <button type="button" class="button scheme-gray">Gray</button>
+                                            <button type="button" class="button scheme-success">Success</button>
+                                            <button type="button" class="button scheme-warning">Warning</button>
+                                            <button type="button" class="button scheme-danger">Danger</button>
+                                            <button type="button" class="button scheme-info">Info</button>
+                                            <button type="button" class="button scheme-indigo">Color Indigo</button>
+                                        </div>
+                                        <div class="relative group">
+                                            <a href="javascript:;" data-copy-target="#buttonColorsCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                                <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                                Copy
+                                            </a>
+                                            <pre><code
+                                    id="buttonColorsCode"
+                                    data-highlight
+                                    data-highlight-target="#buttonColorsExample"
+                                    class="scrollbar rounded leading-loose !px-8">
+                                </code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div id="buttonSofterColorsExample" class="card__body flex flex-wrap gap-5 mb-2">
+                                            <button type="button" class="button button--soft scheme-primary">Primary</button>
+                                            <button type="button" class="button button--soft scheme-gray">Gray</button>
+                                            <button type="button" class="button button--soft scheme-success">Success</button>
+                                            <button type="button" class="button button--soft scheme-warning">Warning</button>
+                                            <button type="button" class="button button--soft scheme-danger">Danger</button>
+                                            <button type="button" class="button button--soft scheme-info">Info</button>
+                                            <button type="button" class="button button--soft scheme-indigo">Color Indigo</button>
+                                        </div>
+                                        <div class="relative group">
+                                            <a href="javascript:;" data-copy-target="#buttonSofterColorsCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                                <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                                Copy
+                                            </a>
+                                            <pre><code
+                                    id="buttonSofterColorsCode"
+                                    data-highlight
+                                    data-highlight-target="#buttonSofterColorsExample"
+                                    class="scrollbar rounded leading-loose !px-8">
+                                </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Button Colors -->
+                            <!-- BEGIN: Button Variants -->
+                            <div id="buttonVariants" class="mb-5">
+                                <h2 class="text-4xl py-5 group">
+                                    Button Variants
+                                    <a href="#buttonVariants" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h2>
+                                <div class="prose mb-5">
+                                    <p>The variant of the button is <code>button--solid</code> by default, just like the examples above. We provide a few more styles that are listed below. Append the <code>button--{style}</code> class to set button styles.</p>
+                                </div>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-5">
+                                    <div id="buttonOutline" class="card">
+                                        <div class="card__header flex-col items-start">
+                                            <h3 class="text-xl font-semibold">Outline</h3>
+                                            <code class="text-scheme-500 text-lg">button--outline</code>
+                                        </div>
+                                        <div id="buttonOutlineExample" class="card__body flex flex-wrap gap-5 mb-2">
+                                            <button type="button" class="button button--outline scheme-primary">Primary</button>
+                                            <button type="button" class="button button--outline scheme-gray">Gray</button>
+                                            <button type="button" class="button button--outline scheme-success">Success</button>
+                                            <button type="button" class="button button--outline scheme-warning">Warning</button>
+                                            <button type="button" class="button button--outline scheme-danger">Danger</button>
+                                            <button type="button" class="button button--outline scheme-info">Info</button>
+                                            <button type="button" class="button button--outline scheme-indigo">Color Indigo</button>
+                                        </div>
+                                        <div class="relative group">
+                                            <a href="javascript:;" data-copy-target="#buttonOutlineCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                                <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                                Copy
+                                            </a>
+                                            <pre><code
+                                    id="buttonOutlineCode"
+                                    data-highlight
+                                    data-highlight-target="#buttonOutlineExample"
+                                    class="scrollbar rounded-b leading-loose !px-8">
+                                </code></pre>
+                                        </div>
+                                    </div>
+                                    <div id="buttonSofterOutline" class="card">
+                                        <div class="card__header flex-col items-start">
+                                            <h3 class="text-xl font-semibold">Softer Outline</h3>
+                                            <code class="text-scheme-500 text-lg">button--outline button--soft</code>
+                                        </div>
+                                        <div id="buttonSofterOutlineExample" class="card__body flex flex-wrap gap-5 mb-2">
+                                            <button type="button" class="button button--outline button--soft scheme-primary">Primary</button>
+                                            <button type="button" class="button button--outline button--soft scheme-gray">Gray</button>
+                                            <button type="button" class="button button--outline button--soft scheme-success">Success</button>
+                                            <button type="button" class="button button--outline button--soft scheme-warning">Warning</button>
+                                            <button type="button" class="button button--outline button--soft scheme-danger">Danger</button>
+                                            <button type="button" class="button button--outline button--soft scheme-info">Info</button>
+                                            <button type="button" class="button button--outline button--soft scheme-indigo">Color Indigo</button>
+                                        </div>
+                                        <div class="relative group">
+                                            <a href="javascript:;" data-copy-target="#buttonSofterOutlineCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                                <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                                Copy
+                                            </a>
+                                            <pre><code
+                                    id="buttonSofterOutlineCode"
+                                    data-highlight
+                                    data-highlight-target="#buttonSofterOutlineExample"
+                                    class="scrollbar rounded-b leading-loose !px-8">
+                                </code></pre>
+                                        </div>
+                                    </div>
+                                    <div id="buttonFlat" class="card">
+                                        <div class="card__header flex-col items-start">
+                                            <h3 class="text-xl font-semibold">Flat</h3>
+                                            <code class="text-scheme-500 text-lg">button--flat</code>
+                                        </div>
+                                        <div id="buttonFlatExample" class="card__body flex flex-wrap gap-5 mb-2">
+                                            <button type="button" class="button button--flat scheme-primary">Primary</button>
+                                            <button type="button" class="button button--flat scheme-gray">Gray</button>
+                                            <button type="button" class="button button--flat scheme-success">Success</button>
+                                            <button type="button" class="button button--flat scheme-warning">Warning</button>
+                                            <button type="button" class="button button--flat scheme-danger">Danger</button>
+                                            <button type="button" class="button button--flat scheme-info">Info</button>
+                                            <button type="button" class="button button--flat scheme-indigo">Color Indigo</button>
+                                        </div>
+                                        <div class="relative group">
+                                            <a href="javascript:;" data-copy-target="#buttonFlatCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                                <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                                Copy
+                                            </a>
+                                            <pre><code
+                                    id="buttonFlatCode"
+                                    data-highlight
+                                    data-highlight-target="#buttonFlatExample"
+                                    class="scrollbar rounded-b leading-loose !px-8">
+                                </code></pre>
+                                        </div>
+                                    </div>
+                                    <div id="buttonSofterFlat" class="card">
+                                        <div class="card__header flex-col items-start">
+                                            <h3 class="text-xl font-semibold">Softer Flat</h3>
+                                            <code class="text-scheme-500 text-lg">button--flat button--soft</code>
+                                        </div>
+                                        <div id="buttonSofterFlatExample" class="card__body flex flex-wrap gap-5 mb-2">
+                                            <button type="button" class="button button--flat button--soft scheme-primary">Primary</button>
+                                            <button type="button" class="button button--flat button--soft scheme-gray">Gray</button>
+                                            <button type="button" class="button button--flat button--soft scheme-success">Success</button>
+                                            <button type="button" class="button button--flat button--soft scheme-warning">Warning</button>
+                                            <button type="button" class="button button--flat button--soft scheme-danger">Danger</button>
+                                            <button type="button" class="button button--flat button--soft scheme-info">Info</button>
+                                            <button type="button" class="button button--flat button--soft scheme-indigo">Color Indigo</button>
+                                        </div>
+                                        <div class="relative group">
+                                            <a href="javascript:;" data-copy-target="#buttonSofterFlatCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                                <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                                Copy
+                                            </a>
+                                            <pre><code
+                                    id="buttonSofterFlatCode"
+                                    data-highlight
+                                    data-highlight-target="#buttonSofterFlatExample"
+                                    class="scrollbar rounded-b leading-loose !px-8">
+                                </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Button Variants -->
+                            <h2 id="moreExamples" class="text-4xl py-5 group">
+                                More Examples
+                                <a href="#moreExamples" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                            </h2>
+                            <!-- BEGIN: With Icons -->
+                            <div id="withIcons" class="mb-5">
+                                <h3 class="text-2xl py-5 group">
+                                    With Icons
+                                    <a href="#withIcons" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h3>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-5">
+                                    <div>
+                                        <div class="prose mb-5">
+                                            <p>Let's add some icons to make it look more interesting. Wrap button text with an element. And finally, add the icon element as the first or/and last child of the button. For example:</p>
+                                        </div>
+                                        <div class="flex flex-wrap gap-5">
+                                            <button type="button" class="button button--solid">
+                                                <i data-icon="feather__chevronLeft"></i>
+                                                <span>Prev</span>
+                                            </button>
+                                            <button type="button" class="button button--outline">
+                                                <span>Next</span>
+                                                <i data-icon="feather__chevronRight"></i>
+                                            </button>
+                                            <button type="button" class="button button--flat">
+                                                <i data-icon="feather__chevronLeft"></i>
+                                                <span>HTML</span>
+                                                <i data-icon="feather__chevronRight"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative group">
+                                        <a href="javascript:;" data-copy-target="#withIconCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                            <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                            Copy
+                                        </a>
+                                        <pre><code
+                                id="withIconCode"
+                                data-highlight
+                                data-highlight-target="#withIconExample"
+                                class="scrollbar rounded leading-loose !px-8">
+                            </code></pre>
+                                        <textarea id="withIconExample" class="hidden">
+                                <button type="button" class="button button--solid">
+                                    <i data-icon="feather__chevronLeft"></i>
+                                    <span>Prev</span>
+                                </button>
+                                <button type="button" class="button button--outline">
+                                    <span>Next</span>
+                                    <i data-icon="feather__chevronRight"></i>
+                                </button>
+                                <button type="button" class="button button--flat">
+                                    <i data-icon="feather__chevronLeft"></i>
+                                    <span>HTML</span>
+                                    <i data-icon="feather__chevronRight"></i>
+                                </button>
+                            </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: With Icons -->
+                            <!-- BEGIN: Icon Only -->
+                            <div id="iconOnly" class="mb-5">
+                                <h3 class="text-2xl py-5 group">
+                                    Icon Only
+                                    <a href="#iconOnly" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h3>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-5">
+                                    <div>
+                                        <div class="prose mb-5">
+                                            <p>Sometimes you need a button to indicate an action using only an icon.</p>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-5 max-w-lg">
+                                            <button type="button" class="button button--icon">
+                                                <i data-icon="feather__activity"></i>
+                                            </button>
+                                            <button type="button" class="button button--icon button--outline">
+                                                <i data-icon="feather__activity"></i>
+                                            </button>
+                                            <button type="button" class="button button--icon button--flat">
+                                                <i data-icon="feather__activity"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative group">
+                                        <a href="javascript:;" data-copy-target="#iconOnlyCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                            <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                            Copy
+                                        </a>
+                                        <pre><code
+                                id="iconOnlyCode"
+                                data-highlight
+                                data-highlight-target="#iconOnlyExample"
+                                class="scrollbar rounded leading-loose !px-8">
+                            </code></pre>
+                                        <textarea id="iconOnlyExample" class="hidden">
+                                <button type="button" class="button button--icon">
+                                    <i data-icon="feather__activity"></i>
+                                </button>
+                                <button type="button" class="button button--icon button--outline">
+                                    <i data-icon="feather__activity"></i>
+                                </button>
+                                <button type="button" class="button button--icon button--flat">
+                                    <i data-icon="feather__activity"></i>
+                                </button>
+                            </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Icon Only -->
+                            <!-- BEGIN: Button Pills -->
+                            <div id="buttonPills" class="mb-5">
+                                <h3 class="text-2xl py-5 group">
+                                    Button Pills
+                                    <a href="#buttonPills" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h3>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-5">
+                                    <div>
+                                        <div class="prose mb-5">
+                                            <p>You can also use TailwindCSS <code>rounded-full</code> utility to make pill-shaped buttons.</p>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-5 max-w-xs">
+                                            <button type="button" class="button button--solid rounded-full">Solid Pill</button>
+                                            <button type="button" class="button button--outline rounded-full">Outline Pill</button>
+                                            <button type="button" class="button button--flat rounded-full">Flat</button>
+                                            <button type="button" class="button button--icon button--flat rounded-full">
+                                                <i data-icon="feather__activity"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="relative group">
+                                        <a href="javascript:;" data-copy-target="#buttonPillsCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                            <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                            Copy
+                                        </a>
+                                        <pre><code
+                                id="buttonPillsCode"
+                                data-highlight
+                                data-highlight-target="#buttonPillsExample"
+                                class="scrollbar rounded leading-loose !px-8">
+                            </code></pre>
+                                        <textarea id="buttonPillsExample" class="hidden">
+                                <button type="button" class="button button--solid rounded-full">Solid Pill</button>
+                                <button type="button" class="button button--outline rounded-full">Outline Pill</button>
+                                <button type="button" class="button button--flat rounded-full">Flat</button>
+                                <button type="button" class="button button--icon button--flat rounded-full">
+                                    <i data-icon="feather__activity"></i>
+                                </button>
+                            </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END: Button Pills -->
+                            <!-- BEGIN: Button Sizes -->
+                            <div id="buttonSizes" class="mb-5">
+                                <h3 class="text-2xl py-5 group">
+                                    Button Sizes
+                                    <a href="#buttonSizes" class="hidden ml-5 text-scheme-500 group-hover:inline-block">#</a>
+                                </h3>
+                                <div class="mb-10 grid md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-5">
+                                    <div>
+                                        <div class="prose mb-5">
+                                            <p>Set the button size to your needs with the <code>button--{size}</code> class. <code>button--md</code> is the default.</p>
+                                        </div>
+                                        <div id="buttonSizesExample" class="flex flex-wrap items-start gap-5">
+                                            <button type="button" class="button button--xs">Size</button>
+                                            <button type="button" class="button button--sm">Size</button>
+                                            <button type="button" class="button button--md">Size</button>
+                                            <button type="button" class="button button--lg">Size</button>
+                                        </div>
+                                    </div>
+                                    <div class="relative group">
+                                        <a href="javascript:;" data-copy-target="#buttonSizesCode" class="absolute top-2.5 right-2.5 button button--sm button--solid hidden opacity-75 group-hover:inline-flex hover:opacity-100 z-10">
+                                            <i data-icon="feather__copy" class="w-4 h-4 mr-2"></i>
+                                            Copy
+                                        </a>
+                                        <pre><code
+                                id="buttonSizesCode"
+                                data-highlight
+                                data-highlight-target="#buttonSizesExample"
+                                class="scrollbar rounded leading-loose !px-8">
+                            </code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Button Sizes -->
+                        </div>
+                        <!-- END: Page Body -->
+                    </div>
+                    <!-- BEGIN: On this page -->
+                    <aside class="hidden lg:block w-72 px-md lg:px-lg">
+                        <div class="sticky top-16 py-8">
+                            <strong class="block mb-5">On this page</strong>
+                            <nav id="onThisPage">
+                                <ul class="navigation-level">
+                                    <li class="navigation-level__item">
+                                        <a href="#overviews">Overviews</a>
+                                    </li>
+                                    <li class="navigation-level__item">
+                                        <a href="#colorSchemes">Color Schemes</a>
+                                    </li>
+                                    <li class="navigation-level__item">
+                                        <a href="#buttonVariants">Button Variants</a>
+                                    </li>
+                                    <li class="navigation-level__heading">More Examples</li>
+                                    <li class="navigation-level__item">
+                                        <a href="#withIcons">With Icons</a>
+                                    </li>
+                                    <li class="navigation-level__item">
+                                        <a href="#iconOnly">Icon Only</a>
+                                    </li>
+                                    <li class="navigation-level__item">
+                                        <a href="#buttonPills">Button Pills</a>
+                                    </li>
+                                    <li class="navigation-level__item">
+                                        <a href="#buttonSizes">Button Sizes</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+                    <!-- END: On this page -->
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+        <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+</body>
+
+</html>

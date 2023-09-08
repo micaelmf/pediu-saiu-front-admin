@@ -1,0 +1,44 @@
+@layer components {
+  .field {
+    --field-label-mt: theme(spacing.0);
+    --field-label-mb: theme(spacing.2);
+    --field-label-w: theme(width.full);
+    @apply mb-5 last:mb-0;
+
+    &--has-feedback {
+      --field-feedback-color: rgb(var(--scheme-500));
+    }
+
+    &--inline {
+      --field-label-mt: theme(spacing.1);
+      --field-label-mb: theme(spacing.0);
+      --field-label-w: theme(width.32);
+      @apply flex gap-5 text-right;
+    }
+
+    &__label {
+      @apply block mt-[var(--field-label-mt)] mb-[var(--field-label-mb)] px-1 w-[var(--field-label-w)] font-semibold text-gray-500;
+    }
+
+    &__asterisk {
+      @apply text-red-500 font-bold mx-1;
+    }
+
+    &__helper,
+    &__feedback {
+      @apply mt-1 px-1 text-sm;
+    }
+
+    &__helper {
+      @apply text-gray-400;
+    }
+
+    &__feedback {
+      @apply hidden text-scheme-500;
+    }
+
+    &--has-feedback &__feedback {
+      @apply block;
+    }
+  }
+}

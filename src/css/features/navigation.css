@@ -1,0 +1,117 @@
+@layer components {
+  .navigation {
+    @apply py-5;
+
+    &__title {
+      @apply px-5 text-sm text-scheme-600 font-bold mb-4 mt-5;
+
+      & small {
+        @apply block text-gray-400 text-sm font-[500];
+      }
+    }
+
+    &__item {
+      &__toggler {
+        @apply flex items-center pl-3 pr-5 relative transition-transform;
+
+        /* skew on expanded, hover, and active */
+        .navigation__item--active & {
+          @apply transform !-skew-x-12;
+        }
+
+        /* icon background: before is bigger than after */
+        &:before,
+        &:after {
+          content: '';
+          z-index: -1;
+          @apply absolute transform -translate-x-full -mx-2 transition-all;
+        }
+
+        /* icon background: bigger one */
+        &:before {
+          @apply rounded-r-md inset-0 bg-gradient-to-r from-scheme-200 to-scheme-100 shadow-sm duration-300 border-r-2 border-b border-scheme-200;
+
+          .navigation__item--active & {
+            @apply translate-x-0;
+          }
+
+          .navigation__item--active & {
+            @apply bg-gradient-to-r from-scheme-600 to-scheme-400 border-scheme-200;
+          }
+        }
+
+        /* icon background: smaller one */
+        &:after {
+          @apply rounded-r-md -left-4 top-1.5 bottom-1.5 w-20 border-r-2 bg-scheme-100 border-scheme-300;
+
+          [aria-expanded="true"]&,
+          .navigation__item--active & {
+            @apply translate-x-0;
+          }
+
+          .navigation__item:hover & {
+            @apply translate-x-0;
+          }
+
+          .navigation__item--active [aria-expanded="true"]&,
+          .navigation__item--active & {
+            @apply bg-scheme-400 bg-opacity-75 border-scheme-300;
+          }
+        }
+      }
+
+      &__icon {
+        @apply px-2 py-[5px] my-[5px] mr-1 text-gray-500 transition-all;
+
+        .navigation__item:hover &,
+        [aria-expanded="true"] &,
+        .navigation__item--active & {
+          @apply mr-4 transform text-scheme-500;
+        }
+
+        .navigation__item--active &,
+        .navigation__item:hover.navigation__item--active & {
+          @apply text-white;
+        }
+      }
+
+      &__title {
+        @apply flex-1 text-gray-500 font-semibold transition leading-none;
+
+        .navigation__item:hover &,
+        [aria-expanded="true"] & {
+          @apply text-scheme-500;
+        }
+
+        .navigation__item--active &,
+        .navigation__item--active:hover & {
+          @apply text-white;
+
+          & small {
+            @apply text-gray-200;
+          }
+        }
+
+        & small {
+          @apply text-sm text-gray-400 font-normal;
+        }
+      }
+
+      &__chevron {
+        @apply ml-auto w-4 h-4 stroke-2 transform transition-transform duration-300 text-gray-500;
+
+        [aria-expanded="true"] & {
+          @apply -rotate-270;
+        }
+
+        .navigation__item--active .navigation__item__toggler & {
+          @apply text-white;
+        }
+      }
+
+      &__content > .navigation-level {
+        @apply my-2 ml-8;
+      }
+    }
+  }
+}

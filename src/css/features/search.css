@@ -1,0 +1,48 @@
+@layer components {
+  .search {
+    @apply px-5 relative transition-all w-full;
+
+    & select,
+    & [data-icon] {
+      @apply invisible;
+    }
+
+    & > .icon {
+      @apply absolute top-1/2 transform -translate-y-1/2 left-5 z-10 ml-3 text-gray-500;
+    }
+
+    & .ts-wrapper:not(.form-select).single .ts-control {
+      @apply pl-12 bg-none;
+    }
+
+    & .ts-control {
+      @apply bg-none opacity-75;
+
+      &:hover {
+        @apply opacity-100;
+      }
+    }
+
+    & .focus .ts-control {
+      @apply opacity-100;
+    }
+
+    & .ts-control > input {
+      @apply min-w-[3rem];
+    }
+
+    .ts-wrapper .ts-dropdown {
+      @apply mt-4;
+    }
+  }
+
+  @screen lg {
+    .search {
+      width: calc(0% + 400px);
+
+      .search-mode & {
+        width: 100%;
+      }
+    }
+  }
+}

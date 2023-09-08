@@ -1,0 +1,9 @@
+.hljs {
+  @apply font-light;
+
+  & .simplebar-content {
+    &:before, &:after {
+      @apply hidden;
+    }
+  }
+}

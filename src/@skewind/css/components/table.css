@@ -1,0 +1,80 @@
+@layer components {
+  .table {
+    --table-bg-color: var(--scheme-200);
+    --table-border-color: var(--scheme-300);
+    --table-px-size: theme(spacing.6);
+    --table-py-size: theme(spacing.3);
+    @apply scheme-gray w-full text-left bg-opacity-100 border-opacity-100 bg-scheme-50 text-gray-600;
+
+    & th, & td {
+      @apply px-[var(--table-px-size)] py-[var(--table-py-size)];
+    }
+
+    & thead tr {
+      @apply bg-[color:rgb(var(--table-bg-color)/var(--tw-bg-opacity))];
+    }
+
+    & th {
+      @apply text-sm uppercase font-bold relative;
+
+      &:after {
+        content: '';
+        @apply absolute top-3 bottom-3 border-r border-[color:rgb(var(--table-border-color)/var(--tw-border-opacity))] right-0;
+      }
+
+      &:last-child:after {
+        @apply hidden;
+      }
+    }
+
+    & tbody tr:not(:last-child) {
+      @apply border-b border-[color:rgb(var(--table-border-color)/var(--tw-border-opacity))];
+    }
+
+    .card__body & {
+      & th, & td {
+        @apply first:pl-8 last:pr-8;
+      }
+    }
+
+    &--bordered {
+      @apply border border-[color:rgb(var(--table-border-color)/var(--tw-border-opacity))];
+
+      & td {
+        @apply border border-[color:rgb(var(--table-border-color)/var(--tw-border-opacity))];
+      }
+    }
+
+    &--striped {
+      & tbody tr {
+        @apply border-b-0;
+      }
+
+      & > tbody > tr:nth-child(even) {
+        @apply bg-[color:rgb(var(--table-bg-color)/var(--tw-bg-opacity))] bg-opacity-70;
+      }
+    }
+
+    &-dark {
+      @apply bg-scheme-400 text-scheme-100;
+      --table-bg-color: var(--scheme-500);
+      --table-border-color: var(--scheme-300);
+
+      & tbody tr {
+        @apply border-[color:rgb(var(--table-border-color)/var(--tw-border-opacity))];
+      }
+    }
+
+    &--sm {
+      @apply text-sm;
+      --table-px-size: theme(spacing.4);
+      --table-py-size: theme(spacing.2);
+    }
+
+    &--lg {
+      @apply text-lg;
+      --table-px-size: theme(spacing.7);
+      --table-py-size: theme(spacing[3.5]);
+    }
+  }
+}

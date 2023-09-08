@@ -1,0 +1,60 @@
+.toastify {
+  max-width: calc(50% - 20px);
+  z-index: 2147483647;
+  @apply py-3 px-5 bg-white rounded shadow-lg fixed opacity-0 transition-all cursor-pointer border-l-2 border-scheme-500 mt-16 flex gap-5;
+}
+
+.toastify.on {
+  @apply opacity-100;
+}
+
+.toast-close {
+  @apply content-[''] w-7 h-7 p-1 -mr-2 overflow-hidden;
+
+  &:before {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon icon--feather"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
+    @apply content-[''] inline-block w-5 h-5 bg-contain opacity-50;
+  }
+}
+
+.toastify-right {
+  @apply right-4;
+}
+
+.toastify-left {
+  @apply left-4;
+}
+
+.toastify-top {
+  @apply top-40;
+}
+
+.toastify-bottom {
+  @apply bottom-40;
+}
+
+.toastify-avatar {
+  width: 1.5em;
+  height: 1.5em;
+  margin: -7px 5px;
+  border-radius: 2px;
+}
+
+.toastify-center {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  max-width: fit-content;
+  max-width: -moz-fit-content;
+}
+
+@media only screen and (max-width: 360px) {
+  .toastify-right, .toastify-left {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    max-width: fit-content;
+  }
+}

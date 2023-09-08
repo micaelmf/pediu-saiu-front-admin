@@ -1,0 +1,51 @@
+@layer components {
+  .card {
+    @apply bg-gray-50 rounded shadow;
+
+    &__header {
+      @apply pt-3 sm:pt-5 pb-2 px-5 sm:px-8 flex items-center justify-between;
+    }
+
+    &__body {
+      @apply pt-3.5 pb-4 sm:pt-5 sm:pb-6 px-5 sm:px-8;
+    }
+
+    &__footer {
+      @apply py-3 sm:py-5 px-5 sm:px-8 flex items-center justify-between;
+    }
+
+    &__table {
+      &:first-child {
+        @apply rounded-t;
+
+        & thead:first-child tr:first-child {
+          & th:first-child {
+            @apply rounded-tl;
+          }
+
+          & th:last-child {
+            @apply rounded-tr;
+          }
+        }
+      }
+
+      &:last-child {
+        @apply rounded-b;
+
+        & tbody:last-child tr:last-child {
+          & td:first-child {
+            @apply rounded-bl;
+          }
+
+          & td:last-child {
+            @apply rounded-br;
+          }
+        }
+      }
+    }
+
+    &__divider {
+      @apply border-b;
+    }
+  }
+}

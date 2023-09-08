@@ -1,0 +1,26 @@
+@layer components {
+  .scrollbar {
+    scrollbar-width: none;
+    @apply overflow-auto;
+
+    & .simplebar-scrollbar:before {
+      @apply bg-gray-300 left-1.5 right-0.5;
+    }
+
+    & .simplebar-scrollbar.simplebar-hover:before {
+      @apply bg-gray-400;
+    }
+
+    & .simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+      @apply h-1 top-1;
+    }
+
+    & .simplebar-scrollbar.simplebar-visible:before {
+      @apply opacity-100;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

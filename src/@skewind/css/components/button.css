@@ -1,0 +1,222 @@
+@layer components {
+  .button-group {
+    @apply flex rounded;
+
+    & .button:not(:first-of-type):not(:last-of-type) {
+      @apply rounded-none;
+    }
+
+    & .button:first-of-type {
+      @apply rounded-r-none;
+    }
+
+    & .button:last-of-type {
+      @apply rounded-l-none;
+    }
+
+    & .button--flat {
+      @apply shadow;
+    }
+
+    & .button--flat,
+    & .button--outline {
+      @apply border-r-0;
+
+      &:last-of-type {
+        @apply border-r;
+      }
+    }
+
+    & .button .icon:first-of-type:last-of-type {
+      @apply translate-x-0;
+    }
+  }
+
+  .button {
+    --button-bg-color: theme(colors.scheme.500 / var(--tw-bg-opacity));
+    --button-text-color: theme(colors.scheme.200 / var(--tw-text-opacity));
+    --button-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+    --button-ring-color: theme(colors.scheme.500 / var(--tw-ring-opacity));
+    @apply scheme-gray inline-flex justify-center items-center leading-[1.5rem] rounded focus:outline-none font-bold disabled:opacity-75 disabled:cursor-not-allowed transition transform bg-opacity-100 text-opacity-100 border-opacity-100 ring-opacity-100 px-[var(--button-space-x)] py-[var(--button-space-y)] text-[length:var(--button-font-size)] uppercase;
+
+    &, &--solid {
+      @apply bg-[color:var(--button-bg-color)] text-[color:var(--button-text-color)] border border-[color:var(--button-border-color)] shadow;
+
+      &:hover:not(:disabled),
+      &:active,
+      &[aria-expanded=true] {
+        --button-text-color: theme(colors.scheme.50 / var(--tw-text-opacity));
+        @apply shadow-lg;
+      }
+
+      &:active,
+      &.expanded,
+      &[aria-expanded=true] {
+        @apply shadow-inner;
+      }
+
+      &:active {
+        @apply ring-2 ring-[color:var(--button-ring-color)] ring-opacity-50;
+      }
+
+      & .icon {
+        @apply transform;
+      }
+    }
+
+    &--soft {
+      --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
+      --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      --button-border-color: theme(colors.scheme.100 / var(--tw-border-opacity));
+      --button-ring-color: theme(colors.scheme.50 / var(--tw-ring-opacity));
+      @apply shadow-none;
+
+      &:hover:not(:disabled),
+      &:active,
+      &[aria-expanded=true] {
+        --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+        --button-border-color: theme(colors.transparent);
+      }
+    }
+
+    &--flat {
+      --button-bg-color: theme(colors.transparent);
+      --button-border-color: theme(colors.transparent);
+      --button-text-color: theme(colors.scheme.600 / var(--tw-text-opacity));
+      @apply shadow-none;
+
+      &:hover:not(:disabled),
+      &:active,
+      &[aria-expanded=true] {
+        --button-bg-color: theme(colors.scheme.200 / var(--tw-bg-opacity));
+        --button-border-color: theme(colors.transparent);
+        --button-text-color: theme(colors.scheme.700 / var(--tw-text-opacity));
+        @apply shadow-none;
+      }
+    }
+
+    &--flat&--soft {
+      --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+
+      &:hover:not(:disabled),
+      &:active,
+      &[aria-expanded=true] {
+        --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
+        --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      }
+    }
+
+    &--outline {
+      --button-bg-color: theme(colors.transparent);
+      --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      --button-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+      @apply shadow-none;
+
+      &:hover:not(:disabled),
+      &:active,
+      &[aria-expanded=true] {
+        --button-bg-color: theme(colors.scheme.500 / var(--tw-bg-opacity));
+        --button-text-color: theme(colors.scheme.50 / var(--tw-text-opacity));
+        @apply shadow-none;
+      }
+    }
+
+    &--outline&--soft {
+      --button-border-color: theme(colors.scheme.200 / var(--tw-border-opacity));
+
+      &:hover:not(:disabled),
+      &:active,
+      &[aria-expanded=true] {
+        --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
+        --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      }
+    }
+
+    &, &--md {
+      --icon-size: theme(width.6);
+      --button-font-size: var(--button-group-font-size, theme(fontSize.sm));
+      --button-space-x: var(--button-group-space-x, theme(spacing.5));
+      --button-space-y: var(--button-group-space-y, theme(spacing.2));
+
+      & .icon {
+        &:first-child {
+          @apply -translate-x-1.5;
+        }
+
+        &:last-child {
+          @apply translate-x-1.5;
+        }
+      }
+    }
+
+    &--xs {
+      --icon-size: theme(width.4);
+      --button-font-size: theme(fontSize.xs);
+      --button-space-x: theme(width[2.5]);
+      --button-space-y: theme(width[0.5]);
+      @apply gap-x-0.5;
+
+      & .icon {
+        &:first-child {
+          @apply -translate-x-1;
+        }
+
+        &:last-child {
+          @apply translate-x-0.5;
+        }
+      }
+    }
+
+    &--sm {
+      --icon-size: theme(width.4);
+      --button-font-size: theme(fontSize.sm);
+      --button-space-x: theme(spacing.3);
+      --button-space-y: theme(spacing.1);
+      @apply gap-x-1;
+
+      & .icon {
+        &:first-child {
+          @apply -translate-x-0.5;
+        }
+
+        &:last-child {
+          @apply translate-x-0.5;
+        }
+      }
+    }
+
+    &--lg {
+      --icon-size: theme(width.6);
+      --button-font-size: theme(fontSize.base);
+      --button-space-x: theme(spacing.6);
+      --button-space-y: theme(spacing.3);
+
+      & .icon {
+        &:first-child {
+          @apply -translate-x-2;
+        }
+
+        &:last-child {
+          @apply translate-x-2;
+        }
+      }
+    }
+
+    &--icon {
+      @apply px-[var(--button-space-y)] inline-flex items-center justify-center;
+
+      & .icon:first-of-type:last-of-type {
+        @apply translate-x-0;
+      }
+    }
+
+    &--icon&--xs,
+    &--icon&--sm {
+      --icon-margin: theme(spacing.1);
+    }
+
+    &__badge {
+      @apply transform translate-x-2 opacity-75;
+    }
+  }
+}

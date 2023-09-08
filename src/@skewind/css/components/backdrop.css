@@ -1,0 +1,15 @@
+@layer components {
+  .backdrop {
+    @apply bg-primary-900 bg-opacity-10 transition-[opacity] duration-[var(--backdrop-duration)] opacity-0;
+  }
+
+  @-moz-document url-prefix() {
+    .backdrop {
+      @apply bg-gray-500 bg-opacity-40;
+    }
+  }
+
+  .backdrop--show {
+    @apply opacity-100 backdrop-blur-sm;
+  }
+}

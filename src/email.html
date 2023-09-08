@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- BEGIN: Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png">
+    <!-- END: Favicon -->
+
+    <!-- BEGIN: Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <!-- END: Fonts CSS -->
+
+    <!-- BEGIN: Bookmark & Search Meta Data -->
+    <meta name="title" content="Email" />
+    <meta name="icon" content="feather__mail" />
+    <!-- END: Bookmark Meta -->
+
+    <!-- BEGIN: Vite -->
+    <link rel="stylesheet" href="./css/app.css" />
+    <script type="module" src="./js/app.js"></script> <!-- END: Vite -->
+
+    <title>Email - Skewind</title>
+</head>
+
+<body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+        <!-- BEGIN: Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <a class="inline-flex items-center">
+                    <i data-icon="feather__wind" class="text-primary-600 transform rotate-180 mr-2 w-6 h-6"></i>
+                    <span class="text-2xl italic transform -skew-x-3 font-semibold text-gray-500">Skewind</span>
+                </a>
+            </div>
+            <!-- BEGIN: Sidebar Scroll -->
+            <div class="sidebar__scroll-wrapper">
+                <div id="sidebarNavScroll" class="sidebar__scroll scrollbar" data-scrollbar>
+                    <nav class="navigation">
+                        <!-- BEGIN: Dashboard -->
+                        <div class="navigation__title">DASHBOARDS<small>Useful dashboard designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__shoppingBag"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/dashboard-analytics.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__barChart2"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Analytics</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Dashboard -->
+                        <!-- BEGIN: Applications -->
+                        <div class="navigation__title">APPLICATIONS<small>Prebuilt application designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/contacts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__users"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Contacts</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/chat.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__messageSquare"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Chat</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item navigation__item--active">
+                                <a href="/email.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__mail"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Email</span>
+                                    <span class="badge badge--soft scheme-danger opacity-75 font-bold mx-2">34</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/file-manager.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__file"></i>
+                                    </span>
+                                    <span class="navigation__item__title">File Manager</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Applications -->
+                        <!-- BEGIN: Pages -->
+                        <div class="navigation__title">PAGES<small>Common page designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__lock"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Authentication</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/login.html" target="_blank">Login</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/register.html" target="_blank">Register</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__alertCircle"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Error</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/404.html" target="_blank">404</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/500.html" target="_blank">500</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/coming-soon.html" target="_blank" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__alertTriangle"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Coming Soon</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Pages -->
+                        <!-- BEGIN: User Interface -->
+                        <div class="navigation__title">USER INTERFACE<small>Building blocks of the UI & UX</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/typography.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__type"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Typography</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/icons.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__feather"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Icons</span>
+                                    <span class="badge badge--soft scheme-info opacity-75 font-bold mx-2">6</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__layout"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Page Layouts</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/layouts-empty.html">Empty</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Simple
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLayout">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-single-1.html">Single Column #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-single-2.html">Single Column #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-1.html">Left Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-2.html">Left Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-leftsidebar-3.html">Left Sidebar #3</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-1.html">Right Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-2.html">Right Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-simple-rightsidebar-3.html">Right Sidebar #3</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Carded
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLayout">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-single.html">Single Column</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-leftsidebar-1.html">Left Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-leftsidebar-2.html">Left Sidebar #2</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-rightsidebar-1.html">Right Sidebar #1</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/layouts-carded-rightsidebar-2.html">Right Sidebar #2</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__box"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Components</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="/components-accordion.html">Accordion</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-alert.html">Alert</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-avatar.html">Avatar</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-badges.html">Badges</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-breadcrumbs.html">Breadcrumbs</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-buttons.html">Buttons</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-collapse.html">Collapse</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-dropdown.html">Dropdown</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-icon.html">Icon</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-modal.html">Modals</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-popover.html">Popover</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-progress.html">Progress</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-spinner.html">Spinner</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-tabs.html">Tabs</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-toast.html">Toast</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/components-tooltips.html">Tooltips</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__airplay"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Forms</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Form Layouts
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavFormElements">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned1.html">Sectioned 1</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned2.html">Sectioned 2</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-layout-sectioned3.html">Sectioned 3</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Form Elements
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavFormElements">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-input.html">Input</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-textarea.html">Textarea</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-checkbox.html">Checkbox</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-radio.html">Radio</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-switch.html">Switch</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-select.html">Select</a>
+                                                    </li>
+                                                    <li class="navigation-level__item">
+                                                        <a href="/form-file.html">File Upload</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-input-group.html">Input Groups</a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-tomselect.html">
+                                                <span>
+                                                    Tom Select<br />
+                                                    <span class="text-sm text-gray-400">Rich select input</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-dropzone.html">
+                                                <span>
+                                                    Dropzone<br />
+                                                    <span class="text-sm text-gray-400">Enhanced file picker</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="navigation-level__item">
+                                            <a href="/form-flatpickr.html">
+                                                <span>
+                                                    Flatpickr<br />
+                                                    <span class="text-sm text-gray-400">Date & time picker</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="javascript:;" class="navigation__item__toggler" data-collapse-toggle>
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__activity"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Level 0</span>
+                                    <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                </a>
+                                <nav class="navigation__item__content collapse" data-collapse-group="sidenav">
+                                    <ul class="navigation-level">
+                                        <li class="navigation-level__item">
+                                            <a href="javascript:;" data-collapse-toggle>
+                                                Level 1
+                                                <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                            </a>
+                                            <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel1">
+                                                <ul class="navigation-level">
+                                                    <li class="navigation-level__item">
+                                                        <a href="javascript:;" data-collapse-toggle>
+                                                            Level 2
+                                                            <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                                        </a>
+                                                        <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel2">
+                                                            <ul class="navigation-level">
+                                                                <li class="navigation-level__item">
+                                                                    <a href="javascript:;" data-collapse-toggle>
+                                                                        Level 3
+                                                                        <i data-icon="feather__chevronRight" class="navigation__item__chevron"></i>
+                                                                    </a>
+                                                                    <nav class="navigation-level__item__content collapse" data-collapse-group="sidenavLevel3">
+                                                                        <ul class="navigation-level">
+                                                                            <li class="navigation-level__item">
+                                                                                <a href="javascript:;">
+                                                                                    Level
+                                                                                    4
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </nav>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/table.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__table"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Table</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/charts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__pieChart"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Charts</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: User Interface -->
+                    </nav>
+                </div>
+            </div>
+            <!-- END: Sidebar Scroll Wrapper -->
+        </nav>
+        <!-- End: Sidebar -->
+        <!-- BEGIN: Wrapper Main -->
+        <div class="wrapper">
+            <header class="navbar">
+                <div class="navbar__left lg:hidden">
+                    <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                        <i data-icon="heroiconsOutline__menuAlt1"></i>
+                    </a>
+                </div>
+                <div class="navbar__left bottombar bookmark" id="bookmark"></div>
+                <div class="navbar__center">
+                    <form id="formSearch" class="search">
+                        <i data-icon="feather__search"></i>
+                        <select id="tomSearch"></select>
+                    </form>
+                </div>
+                <div class="navbar__right">
+                    <!-- BEGIN: Language Dropdown Wrapper -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <i data-icon="flag__us"></i>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__us"></i>English</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__fr"></i>French</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__de"></i>German</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="flag__id"></i>Indonesia</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Language Dropdown Wrapper -->
+                    <!-- BEGIN: Messages Dropdown Wrapper -->
+                    <div>
+                        <a id="messagesDropdownToggle" href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__messageSquare"></i>
+                                <span class="badged-icon__badge badge bg-info-500">2</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="messages">
+                                <div class="messages__header">
+                                    <h4>Messages</h4>
+                                    <a href="javascript:;" data-dropdown-toggle data-tippy-placement="bottom-end">
+                                        <i data-icon="heroiconsOutline__dotsHorizontal"></i>
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li class="dropdown__heading">
+                                            <h4 class="text-sm uppercase font-bold text-gray-500">Chat Settings</h4>
+                                            <p class="font-normal text-xs text-gray-400">
+                                                Customize your chat experience.
+                                            </p>
+                                        </li>
+                                        <li class="dropdown__divider"></li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__check"></i>
+                                                Mark all as read
+                                            </a>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__settings"></i>
+                                                Notification settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="messages__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-249eda8dc8c1894744b239ddb17172d1.jpg" alt="Hadiyat Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Hadiyat Virgiawan
+                                                </span>
+                                                <span class="message__body">
+                                                    You sent an attachment.
+                                                </span>
+                                                <span class="message__date">
+                                                    16 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-21f2a6af8bfb8f96cb4114145ce4133f.jpg" alt="John Low Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    John Low
+                                                </span>
+                                                <span class="message__body">
+                                                    Wait a sec..
+                                                </span>
+                                                <span class="message__date">
+                                                    22 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-43ed38260331d63ee0ada46318b49c03.jpg" alt="Yong Tian Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Yong Tian
+                                                </span>
+                                                <span class="message__body">
+                                                    How are you?
+                                                </span>
+                                                <span class="message__date">
+                                                    12 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-159928ddb84d3fa9cbf2e7f68b91b173.jpg" alt="Andree Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Andree W
+                                                </span>
+                                                <span class="message__body">
+                                                    Kindly check my work
+                                                </span>
+                                                <span class="message__date">
+                                                    08 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-4bb28d0b0aa04bc0df1e21c2e1bfe008.jpg" alt="Lisa Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Lisa Tan
+                                                </span>
+                                                <span class="message__body">
+                                                    Please help me check this.
+                                                </span>
+                                                <span class="message__date">
+                                                    02 April
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Messages Dropdown Wrapper -->
+                    <!-- BEGIN: Notifications Dropdown Wrapper -->
+                    <div>
+                        <a id="notificationsDropdownToggle" href="javascript:;" class="navbar__icon-link" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__bell"></i>
+                                <span class="badged-icon__badge badge bg-red-500">1</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="notifications">
+                                <div class="notifications__header">
+                                    <h4>Notifications</h4>
+                                    <a href="javascript:;" class="notifications__header__action">Mark all as read</a>
+                                </div>
+                                <div class="notifications__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Today</div>
+                                        <a href="#" class="notification notification--unread">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-blue-400">MC</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Margo Corn</strong> has invited you to the project <strong>Untitled</strong></span>
+                                            </span>
+                                            <span class="notification__date">2 min</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-green-400">EH</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Elsa Hoffman</strong> removed you</span>
+                                            </span>
+                                            <span class="notification__date">1 hr</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Yesterday</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-yellow-400">MP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> mentioned you in a comment in the project <strong>Untitled 2</strong></span>
+                                                <span class="block mt-2 text-gray-400">"Mike, we need to fix this asap"</span>
+                                            </span>
+                                            <span class="notification__date">14:12</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-indigo-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Konstantin Konstantinovich</strong> removed you from <strong>Mobile Dolfin</strong></span>
+                                            </span>
+                                            <span class="notification__date">12:03</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">25 Mar</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-yellow-400">NP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> accepted your invitation the project <strong>Untitled 2</strong></span>
+                                            </span>
+                                            <span class="notification__date">09:45</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span class="avatar__object bg-green-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Siti</strong> accepted the invitation to the project <strong>Tablature</strong></span>
+                                            </span>
+                                            <span class="notification__date">08:15</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Notifications Dropdown Wrapper -->
+                    <!-- BEGIN: Account Menu -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link lg:rounded-none" data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 7]">
+                            <span class="account">
+                                <span class="avatar w-10 account__avatar">
+                                    <img src="/assets/demo/avatar-840733bfb5fe9e63362764fd24338c3f.jpg" alt="John Avatar" class="avatar__object" />
+                                    <span class="avatar__badge badge bg-green-400"></span>
+                                </span>
+                                <span class="account__user">
+                                    <span class="account__user__name">John Doe</span>
+                                    <small class="account__user__role">Administrator</small>
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__user"></i>Profile</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__inbox"></i>Inbox</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__checkSquare"></i>Task</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__messageSquare"></i>Chat</a>
+                            </li>
+                            <li class="dropdown__divider"></li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__settings"></i>Settings</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__helpCircle"></i>Help</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__power"></i>Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+            </header>
+            <main class="main">
+                <div class="p-md lg:p-lg main__full">
+                    <div data-script="email" class="cols card h-full">
+                        <!-- BEGIN: Email Sidebar -->
+                        <aside id="emailSidebar" class="col lg:col--static col-w-80">
+                            <div class="col__inner bg-gray-50 border-r scrollbar" data-scrollbar>
+                                <div class="card__header text-2xl">
+                                    Email
+                                </div>
+                                <div class="card__body">
+                                    <a href="#" class="button scheme-primary w-full" data-modal-toggle="composeDialog">
+                                        <i data-icon="feather__plus"></i>
+                                        <span>Compose</span>
+                                    </a>
+                                    <div class="text-gray-400 text-sm font-[500] mt-5 mb-3">Mailboxes</div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <a href="#" class="button button--flat button--soft justify-between scheme-primary bg-scheme-100">
+                                            <i data-icon="feather__inbox"></i>
+                                            <span class="mr-auto px-2">Inbox</span>
+                                            <span class="badge scheme-primary font-bold">34</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__send"></i>
+                                            <span class="mr-auto px-2">Sent</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__file"></i>
+                                            <span class="mr-auto px-2">Drafts</span>
+                                            <span class="badge badge--soft font-bold">7</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__alertTriangle"></i>
+                                            <span class="mr-auto px-2">Spam</span>
+                                            <span class="badge badge--soft font-bold">13</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__trash"></i>
+                                            <span class="mr-auto px-2">Trash</span>
+                                        </a>
+                                    </div>
+                                    <div class="text-gray-400 text-sm font-[500] mt-5 mb-3">Filters</div>
+                                    <div class="flex flex-col gap-y-1">
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__star"></i>
+                                            <span class="mr-auto px-2">Starred</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__alertCircle"></i>
+                                            <span class="mr-auto px-2">Important</span>
+                                        </a>
+                                    </div>
+                                    <div class="text-gray-400 text-sm font-[500] mt-5 mb-3">Labels</div>
+                                    <div class="flex flex-col gapy-1">
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__tag" class="text-primary-500"></i>
+                                            <span class="mr-auto px-2">Personal</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__tag" class="text-indigo-500"></i>
+                                            <span class="mr-auto px-2">Work</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__tag" class="text-red-500"></i>
+                                            <span class="mr-auto px-2">Payment</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__tag" class="text-green-500"></i>
+                                            <span class="mr-auto px-2">Invoices</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__tag" class="text-sky-500"></i>
+                                            <span class="mr-auto px-2">Accounts</span>
+                                        </a>
+                                        <a href="#" class="button button--flat button--soft justify-between">
+                                            <i data-icon="feather__tag" class="text-yellow-500"></i>
+                                            <span class="mr-auto px-2">Newsletter</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        <!-- END: Email Sidebar -->
+                        <!-- BEGIN: Main Content -->
+                        <div class="cols__main">
+                            <div class="flex flex-col h-full">
+                                <!-- BEGIN: Mail Filter & Control -->
+                                <div class="card__header relative z-10 flex-col gap-y-5 items-stretch gap-x-5 border-b py-3">
+                                    <div class="flex items-center gap-x-5 pt-1.5">
+                                        <button data-col-show="emailSidebar" class="lg:hidden button button--flat button--icon">
+                                            <i data-icon="feather__menu"></i>
+                                        </button>
+                                        <div class="flex-1 form-control">
+                                            <span><i data-icon="feather__search"></i></span>
+                                            <input type="text" name="q" placeholder="Search Inbox" />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap items-center justify-between gap-y-3">
+                                        <div class="flex items-center w-full order-last sm:w-auto sm:order-none">
+                                            <label class="check-control pl-2.5 pr-4 scheme-gray">
+                                                <input type="checkbox" />
+                                                <a href="javascript:;" data-dropdown-toggle data-dropdown-append-to="body" data-dropdown-placement="bottom-start" class="p-1 rounded hover:bg-gray-200">
+                                                    <i data-icon="feather__chevronDown" class="w-4 h-4"></i>
+                                                </a>
+                                                <span class="dropdown font-normal">
+                                                    <span class="dropdown__item">
+                                                        <a href="#">All</a>
+                                                    </span>
+                                                    <span class="dropdown__item">
+                                                        <a href="#">Read</a>
+                                                    </span>
+                                                    <span class="dropdown__item">
+                                                        <a href="#">Unread</a>
+                                                    </span>
+                                                    <span class="dropdown__item">
+                                                        <a href="#">Starred</a>
+                                                    </span>
+                                                    <span class="dropdown__item">
+                                                        <a href="#">Unstarred</a>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                            <button class="editor__toolbar__item button button--icon button--flat"><i data-icon="feather__archive"></i></button>
+                                            <button class="editor__toolbar__item button button--icon button--flat"><i data-icon="feather__alertOctagon"></i></button>
+                                            <button class="editor__toolbar__item button button--icon button--flat" disabled><i data-icon="feather__trash"></i></button>
+                                        </div>
+                                        <div class="flex items-center w-full sm:w-auto">
+                                            <span class="mr-3">1 - 20 of 45</span>
+                                            <button class="order-first sm:order-none editor__toolbar__item button button--icon button--flat mr-5"><i data-icon="feather__refreshCw"></i></button>
+                                            <button class="ml-auto sm:ml-0 editor__toolbar__item button button--icon button--flat" disabled><i data-icon="feather__chevronLeft"></i></button>
+                                            <button class="editor__toolbar__item button button--icon button--flat"><i data-icon="feather__chevronRight"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: Mail Filter & Control -->
+                                <!-- BEGIN: Inbox List -->
+                                <div id="messageList" class="flex-1 flex flex-col h-0 scrollbar" data-scrollbar>
+                                    <div class="flex items-center card__body py-0 bg-info-100 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" checked />
+                                        </label>
+                                        <button type="button" class="button button--icon button--flat scheme-yellow">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1 font-bold">Cordie O'Conner</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1 font-bold">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right font-bold group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="button button--icon button--flat scheme-yellow">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1 font-bold">Macey Heathcote</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1 font-bold">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right font-bold group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="button button--icon button--flat scheme-yellow">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1 font-bold">Rylan Oberbrunner</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1 font-bold">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right font-bold group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Garett Goldner</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Aniyah Klein</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 bg-info-100 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" checked />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="button button--icon button--flat scheme-yellow">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1 font-bold">Adrianna Brakus</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1 font-bold">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right font-bold group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 bg-info-100 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" checked />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1 font-bold">Ashley Osinski</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1 font-bold">Someone recently posted <span class="text-gray-400 font-normal"> &ndash; Here are your network highlights</span>
+                                            </span>
+                                            <span class="w-20 text-right font-bold group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1 font-bold">Nash Hoppe</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1 font-bold">Re: [github/github] add awesome features (PR #2992) <span class="text-gray-400 font-normal"> &ndash; @username approved this pull request</span>
+                                            </span>
+                                            <span class="w-20 text-right font-bold group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Jett Schneider</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Someone recently posted <span class="text-gray-400 font-normal"> &ndash; Here are your network highlights</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Carolanne McGlynn</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Re: [github/github] add awesome features (PR #2992) <span class="text-gray-400 font-normal"> &ndash; @username approved this pull request</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Fred Kiehn</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Re: [github/github] add awesome features (PR #2992) <span class="text-gray-400 font-normal"> &ndash; @username approved this pull request</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Hipolito Berge</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Brant Baumbach</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Re: [github/github] add awesome features (PR #2992) <span class="text-gray-400 font-normal"> &ndash; @username approved this pull request</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Domingo Kertzmann</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Re: [github/github] add awesome features (PR #2992) <span class="text-gray-400 font-normal"> &ndash; @username approved this pull request</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Mallory Cartwright</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">How to build microservices <span class="text-gray-400 font-normal"> &ndash; Event driven development</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Anastasia Koepp</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Re: [github/github] add awesome features (PR #2992) <span class="text-gray-400 font-normal"> &ndash; @username approved this pull request</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Myra Heaney</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Someone recently posted <span class="text-gray-400 font-normal"> &ndash; Here are your network highlights</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Emely O'Conner</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Someone recently posted <span class="text-gray-400 font-normal"> &ndash; Here are your network highlights</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Clay Collier</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Someone recently posted <span class="text-gray-400 font-normal"> &ndash; Here are your network highlights</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center card__body py-0 hover:bg-white hover:shadow group">
+                                        <label class="check-control px-2.5 scheme-gray">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__star"></i>
+                                        </button>
+                                        <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__bookmark"></i>
+                                        </button>
+                                        <a href="#" class="flex-1 flex items-center py-md">
+                                            <span class="w-44 xl:w-72 flex-1 sm:flex-initial px-5 line-clamp-1">Audie Powlowski</span>
+                                            <span class="flex-1 px-5 hidden sm:line-clamp-1">Someone recently posted <span class="text-gray-400 font-normal"> &ndash; Here are your network highlights</span>
+                                            </span>
+                                            <span class="w-20 text-right group-hover:hidden">13 May</span>
+                                        </a>
+                                        <span class="w-36 hidden group-hover:flex justify-end items-center">
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__archive"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__trash"></i>
+                                            </button>
+                                            <button type="button" class="editor__toolbar__item button button--icon button--flat">
+                                                <i data-icon="feather__bookOpen"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- END: Inbox List -->
+                            </div>
+                        </div>
+                        <!-- END: Main Content -->
+                        <!-- BEGIN: Message Detail -->
+                        <div id="emailDetail" class="col col--backdropless col-w-full lg:col-w-[calc(100%-20rem)]">
+                            <div class="col__inner flex flex-col h-full border-r bg-gray-50">
+                                <div class="card__header py-3 border-b">
+                                    <div class="w-full flex flex-wrap items-center gap-x-5">
+                                        <a data-col-hide="emailDetail" href="#" class="editor__toolbar__item button button--icon button--flat">
+                                            <i data-icon="feather__chevronLeft"></i>
+                                        </a>
+                                        <div class="flex-1 text-lg font-semibold">
+                                            How to build microservices
+                                        </div>
+                                        <div class="flex w-full sm:w-auto gap-y-5 justify-between">
+                                            <div>
+                                                <a href="#" class="editor__toolbar__item button button--icon button--flat">
+                                                    <i data-icon="feather__printer"></i>
+                                                </a>
+                                                <a href="#" class="editor__toolbar__item button button--icon button--flat">
+                                                    <i data-icon="feather__trash"></i>
+                                                </a>
+                                            </div>
+                                            <div class="hidden sm:block border-r my-2 mx-5"></div>
+                                            <div>
+                                                <a href="#" class="editor__toolbar__item button button--icon button--flat">
+                                                    <i data-icon="feather__chevronLeft"></i>
+                                                </a>
+                                                <a href="#" class="editor__toolbar__item button button--icon button--flat">
+                                                    <i data-icon="feather__chevronRight"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1 h-0 scrollbar" data-scrollbar>
+                                    <div class="card__body">
+                                        <div class="flex flex-wrap xs:flex-nowrap items-center gap-5">
+                                            <a href="#" class="avatar flex-shrink-0">
+                                                <img src="/assets/demo/avatar-b9b15bf11898b1fa2b960460b9370ee2.jpg" alt="Cordie Avatar" class="avatar__object" />
+                                            </a>
+                                            <div class="flex-1 flex flex-col">
+                                                <a href="#">
+                                                    <span class="font-semibold mr-3">Cordie O'Conner</span>
+                                                    <span class="text-gray-400 text-sm">[cordie.conner@example.com]</span>
+                                                </a>
+                                                <div class="text-sm text-gray-400 inline-flex items-center">
+                                                    to
+                                                    &nbsp;
+                                                    <a href="#" class="text-gray-600">me</a>
+                                                    <i data-icon="feather__chevronDown" class="w-4 h-4 ml-2 cursor-pointer" data-dropdown-toggle data-tippy-max-width="none">
+                                                    </i>
+                                                    <div class="popover text-gray-600">
+                                                        <div class="popover__content">
+                                                            <table class="border-collapse">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-sm text-gray-400 pr-3 text-right align-top">From:</td>
+                                                                        <td>
+                                                                            <span class="mr-3">Cordie O'Conner</span>
+                                                                            <span class="text-gray-400 text-sm">[cordie.conner@example.com]</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-sm text-gray-400 pr-3 text-right">To:</td>
+                                                                        <td>john.doe@example.com</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-sm text-gray-400 pr-3 text-right">Date:</td>
+                                                                        <td>15 Oct 2021, 13:43</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-sm text-gray-400 pr-3 text-right">Subject:</td>
+                                                                        <td>How to build microservices</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-first xs:order-none w-full xs:w-auto flex flex-col sm:flex-row items-end sm:items-center">
+                                                <span class="text-sm text-gray-400">15 Oct 2021, 13:43</span>
+                                                <div class="hidden sm:block border-r h-5 mx-5"></div>
+                                                <div>
+                                                    <a href="#" class="editor__toolbar__item button button--icon button--flat">
+                                                        <i data-icon="feather__star"></i>
+                                                    </a>
+                                                    <a href="#" class="editor__toolbar__item button button--icon button--flat">
+                                                        <i data-icon="feather__cornerUpLeft"></i>
+                                                    </a>
+                                                    <a href="#" class="editor__toolbar__item button button--icon button--flat" data-dropdown-toggle>
+                                                        <i data-icon="heroiconsOutline__dotsHorizontal"></i>
+                                                    </a>
+                                                    <ul class="dropdown">
+                                                        <li class="dropdown__item">
+                                                            <a href="#">Report Spam</a>
+                                                        </li>
+                                                        <li class="dropdown__item">
+                                                            <a href="#">Block</a>
+                                                        </li>
+                                                        <li class="dropdown__item">
+                                                            <a href="#">Delete</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded shadow ml-16 mt-3">
+                                            <div class="p-md lg:px-lg prose lg:prose-lg">
+                                                <p>Hey John,</p>
+                                                <p>Say your application is built on one code and is quite large and monolithic. It worked well until it didn’t. You wish it could evolve and become more resilient, scalable, and independently deployable. To do so, you need to rethink the structure of the application on a granular, microservices level. </p>
+                                                <p>Microservices have grown in popularity as applications become more distributed and complex. The guiding principle of microservices is to build an application by splitting its business components into small services that can be deployed and operated independently from each other. The separation of concerns between services is defined as “service boundaries”.</p>
+                                                <p>Service boundaries are closely tied to business demands and organizational hierarchy boundaries. Individual services may be tied to separate teams, budgets, and roadmaps. Some example service boundaries might be “payment processing” and “user authentication” services. Microservices differ from legacy software development practices in which all components were bundled together.</p>
+                                                <p>This document will reference an imaginary pizza startup called “Pizzup” to illustrate the application of microservices to a modern software business.</p>
+                                            </div>
+                                            <div class="py-md px-lg border-t">
+                                                <div class="font-semibold mb-5">3 attachments</div>
+                                                <div class="grid md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-5">
+                                                    <a href="#" class="flex items-center gap-x-3">
+                                                        <span class="avatar">
+                                                            <span class="avatar__object bg-sky-200 rounded">PDF</span>
+                                                        </span>
+                                                        <span class="w-0 flex-1 gap-y-1">
+                                                            <span class="block line-clamp-2 break-words font-semibold">beginners.pdf</span>
+                                                            <span class="text-gray-400 text-sm">154.54 KB</span>
+                                                        </span>
+                                                    </a>
+                                                    <a href="#" class="flex items-center gap-x-3">
+                                                        <span class="avatar">
+                                                            <span class="avatar__object bg-yellow-200 rounded">PDF</span>
+                                                        </span>
+                                                        <span class="w-0 flex-1 gap-y-1">
+                                                            <span class="block line-clamp-2 break-words font-semibold">intermediate.pdf</span>
+                                                            <span class="text-gray-400 text-sm">154.54 KB</span>
+                                                        </span>
+                                                    </a>
+                                                    <a href="#" class="flex items-center gap-x-3">
+                                                        <span class="avatar">
+                                                            <span class="avatar__object bg-red-200 rounded">PDF</span>
+                                                        </span>
+                                                        <span class="w-0 flex-1 gap-y-1">
+                                                            <span class="block line-clamp-2 break-words font-semibold">advanced.pdf</span>
+                                                            <span class="text-gray-400 text-sm">154.54 KB</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card__footer ml-16">
+                                        <div class="flex gap-x-5 mb-5">
+                                            <button class="button">
+                                                <i data-icon="feather__cornerUpLeft"></i>
+                                                <span>Reply</span>
+                                            </button>
+                                            <button class="button button--outline button--outline--soft">
+                                                <i data-icon="feather__cornerUpRight"></i>
+                                                <span>Forward</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END: Message Detail -->
+                    </div>
+                </div>
+                <!-- BEGIN: Compose Dialog -->
+                <div id="composeDialog" class="modal">
+                    <div class="modal__inner">
+                        <form class="modal__content">
+                            <!-- BEGIN: Dialog Header -->
+                            <div class="modal__header flex justify-between items-center">
+                                <h3 class="modal__title">
+                                    Compose Mail
+                                </h3>
+                                <button class="button button--icon button--flat" data-modal-toggle="composeDialog">
+                                    <i data-icon="feather__x"></i>
+                                </button>
+                            </div>
+                            <!-- END: Dialog Header -->
+                            <!-- BEGIN: Dialog Body -->
+                            <div class="modal__body">
+                                <div class="field">
+                                    <label class="field__label">To<span class="field__asterisk">*</span></label>
+                                    <div class="form-control">
+                                        <input type="text" name="to" />
+                                        <a href="javascript:;" data-collapse-toggle="#ccField">Cc</a>
+                                        <a href="javascript:;" data-collapse-toggle="#bccField">Bcc</a>
+                                    </div>
+                                </div>
+                                <div id="ccField" class="collapse">
+                                    <div class="field !mb-5">
+                                        <label class="field__label">Cc</label>
+                                        <div class="form-control">
+                                            <input type="text" name="cc" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="bccField" class="collapse">
+                                    <div class="field !mb-5">
+                                        <label class="field__label">Bcc</label>
+                                        <div class="form-control">
+                                            <input type="text" name="to" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label">Subject<span class="field__asterisk">*</span></label>
+                                    <div class="form-control">
+                                        <input type="text" name="subject" />
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div id="contentEditor" class="editor">
+                                        <div class="editor__toolbar">
+                                            <div class="editor__toolbar__group">
+                                                <button data-toolbar="bold" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__bold"></i>
+                                                </button>
+                                                <button data-toolbar="italic" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__italic"></i>
+                                                </button>
+                                                <button data-toolbar="underline" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__underline"></i>
+                                                </button>
+                                            </div>
+                                            <div class="editor__toolbar__group">
+                                                <button data-toolbar="textAlignLeft" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__alignLeft"></i>
+                                                </button>
+                                                <button data-toolbar="textAlignCenter" data-cmd-option="center" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__alignCenter"></i>
+                                                </button>
+                                                <button data-toolbar="textAlignRight" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__alignRight"></i>
+                                                </button>
+                                                <button data-toolbar="textAlignJustify" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <i data-icon="feather__alignJustify"></i>
+                                                </button>
+                                            </div>
+                                            <div class="editor__toolbar__group">
+                                                <button data-toolbar="ol" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon opacity-50">
+                                                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path d="M55.1 56.04C55.1 42.78 66.74 32.04 79.1 32.04H111.1C125.3 32.04 135.1 42.78 135.1 56.04V176H151.1C165.3 176 175.1 186.8 175.1 200C175.1 213.3 165.3 224 151.1 224H71.1C58.74 224 47.1 213.3 47.1 200C47.1 186.8 58.74 176 71.1 176H87.1V80.04H79.1C66.74 80.04 55.1 69.29 55.1 56.04V56.04zM118.7 341.2C112.1 333.8 100.4 334.3 94.65 342.4L83.53 357.9C75.83 368.7 60.84 371.2 50.05 363.5C39.26 355.8 36.77 340.8 44.47 330.1L55.59 314.5C79.33 281.2 127.9 278.8 154.8 309.6C176.1 333.1 175.6 370.5 153.7 394.3L118.8 432H152C165.3 432 176 442.7 176 456C176 469.3 165.3 480 152 480H64C54.47 480 45.84 474.4 42.02 465.6C38.19 456.9 39.9 446.7 46.36 439.7L118.4 361.7C123.7 355.9 123.8 347.1 118.7 341.2L118.7 341.2zM512 64C529.7 64 544 78.33 544 96C544 113.7 529.7 128 512 128H256C238.3 128 224 113.7 224 96C224 78.33 238.3 64 256 64H512zM512 224C529.7 224 544 238.3 544 256C544 273.7 529.7 288 512 288H256C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224H512zM512 384C529.7 384 544 398.3 544 416C544 433.7 529.7 448 512 448H256C238.3 448 224 433.7 224 416C224 398.3 238.3 384 256 384H512z" />
+                                                    </svg>
+                                                </button>
+                                                <button data-toolbar="ul" class="editor__toolbar__item button button--icon button--flat button--flat--soft">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon opacity-50">
+                                                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                                        <path d="M16 96C16 69.49 37.49 48 64 48C90.51 48 112 69.49 112 96C112 122.5 90.51 144 64 144C37.49 144 16 122.5 16 96zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 416C16 389.5 37.49 368 64 368C90.51 368 112 389.5 112 416C112 442.5 90.51 464 64 464C37.49 464 16 442.5 16 416zM112 256C112 282.5 90.51 304 64 304C37.49 304 16 282.5 16 256C16 229.5 37.49 208 64 208C90.51 208 112 229.5 112 256z" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="editor__toolbar__group"></div>
+                                        </div>
+                                        <div class="editor__body"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END: Dialog Body -->
+                            <!-- BEGIN: Dialog Footer -->
+                            <div class="modal__footer flex items-center">
+                                <button type="button" class="button button--icon button--flat">
+                                    <i data-icon="feather__paperclip"></i>
+                                </button>
+                                <button type="button" class="button button--icon button--flat">
+                                    <i data-icon="feather__link"></i>
+                                </button>
+                                <button type="button" class="button button--icon button--flat">
+                                    <i data-icon="feather__smile"></i>
+                                </button>
+                                <button type="button" class="button button--icon button--flat">
+                                    <i data-icon="feather__image"></i>
+                                </button>
+                                <div class="ml-auto button-group">
+                                    <button type="button" class="ml-auto button button">
+                                        Send
+                                    </button>
+                                    <button type="button" class="button button--icon" data-dropdown-toggle data-tippy-placement="bottom-end">
+                                        <i data-icon="feather__chevronDown"></i>
+                                    </button>
+                                    <ul class="dropdown font-normal">
+                                        <li class="dropdown__item">
+                                            <button>Save as Draft</button>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <button>Discard</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- END: Dialog Footer -->
+                        </form>
+                    </div>
+                </div>
+                <!-- END: Compose Dialog -->
+            </main>
+            <footer></footer>
+        </div>
+        <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+@layer components {
+  .input-group {
+    --input-group-color-state-soft: var(--field-color-state-soft, theme(colors.gray.100));
+    --input-group-color-state: var(--field-color-state, theme(colors.gray.200));
+    --input-group-font-size: theme(fontSize.base);
+    --input-group-space-x: theme(spacing.4);
+    --input-group-space-y: theme(spacing.2);
+    @apply flex rounded px-px w-full;
+
+    &__addon,
+    & .form-control {
+      @apply -mx-px;
+    }
+
+    &__addon {
+      @apply flex items-center justify-center bg-[color:var(--input-group-color-state-soft)] border border-[color:var(--input-group-color-state)] first-of-type:rounded-l last-of-type:rounded-r px-[var(--input-group-space-x)];
+    }
+
+    & > .form-control {
+      @apply flex-1 min-w-0 focus-within:relative focus-within:z-[2] hover:relative hover:z-[1];
+    }
+
+    & > .form-control {
+      &:not(:first-child):not(:last-child) {
+        @apply rounded-none;
+      }
+
+      &:first-child {
+        @apply rounded-r-none;
+      }
+
+      &:last-child {
+        @apply rounded-l-none;
+      }
+    }
+
+    & > .button {
+      &:not(:first-child):not(:last-child) {
+        @apply rounded-none;
+      }
+
+      &:first-child {
+        @apply rounded-r-none;
+      }
+
+      &:last-child {
+        @apply rounded-l-none;
+      }
+    }
+
+    &--lg {
+      --input-group-font-size: theme(fontSize.lg);
+      --input-group-space-x: theme(spacing.5);
+      --input-group-space-y: theme(spacing.3);
+      @apply text-lg;
+    }
+
+    &--sm {
+      --input-group-font-size: theme(fontSize.sm);
+      --input-group-space-x: theme(spacing[3]);
+      --input-group-space-y: theme(spacing.1);
+      @apply text-sm;
+    }
+  }
+}

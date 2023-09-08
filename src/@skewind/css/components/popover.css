@@ -1,0 +1,26 @@
+[data-theme="popover"] {
+  @apply bg-transparent text-current text-base leading-normal;
+
+  & .tippy-content {
+    @apply p-0;
+  }
+
+  & .tippy-arrow {
+    @apply text-white;
+  }
+}
+
+@layer components {
+  .popover {
+    min-width: 11rem;
+    @apply bg-white shadow-lg rounded relative hidden;
+
+    [data-tippy-root] & {
+      @apply block;
+    }
+
+    &__content {
+      @apply px-5 py-3;
+    }
+  }
+}

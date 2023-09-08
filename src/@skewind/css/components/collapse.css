@@ -1,0 +1,10 @@
+@layer components {
+  .collapse {
+    visibility: visible !important;
+    @apply overflow-hidden h-0 transition-[height] duration-[var(--collapse-duration)] ease-linear;
+
+    &--show {
+      @apply h-auto;
+    }
+  }
+}

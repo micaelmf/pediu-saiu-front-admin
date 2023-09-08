@@ -1,0 +1,108 @@
+@layer components {
+  .badge {
+    --badge-bg-color: theme(colors.scheme.500 / var(--tw-bg-opacity));
+    --badge-text-color: theme(colors.scheme.200 / var(--tw-text-opacity));
+    --badge-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+    --badge-icon-size: theme(width.3);
+    @apply scheme-gray px-2 inline-flex items-center justify-center gap-2 leading-relaxed rounded text-xs bg-scheme-500 text-white bg-opacity-100 min-w-[12px] min-h-[12px] border-opacity-100;
+
+    &, &--solid {
+      @apply bg-[color:var(--badge-bg-color)] text-[color:var(--badge-text-color)] border border-[color:var(--badge-border-color)];
+
+      & .icon {
+        @apply transform;
+      }
+    }
+
+    &--soft {
+      --badge-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
+      --badge-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      --badge-border-color: theme(colors.scheme.100 / var(--tw-border-opacity));
+    }
+
+    &--flat {
+      --badge-text-color: theme(colors.scheme.600 / var(--tw-text-opacity));
+      @apply shadow-none border-transparent bg-transparent;
+    }
+
+    &--flat&--soft {
+      --badge-text-color: theme(colors.scheme.400 / var(--tw-text-opacity));
+
+      &.button__badge {
+        --badge-text-color: theme(colors.scheme.200 / var(--tw-text-opacity));
+      }
+    }
+
+    &--outline {
+      --badge-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+      --badge-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+      @apply shadow-none bg-transparent;
+    }
+
+    &--outline&--soft {
+      --badge-border-color: theme(colors.scheme.200 / var(--tw-border-opacity));
+
+      &.button__badge {
+        --badge-text-color: theme(colors.scheme.200 / var(--tw-text-opacity));
+      }
+    }
+
+    &--dot {
+      &:before {
+        @apply content-[''] w-2 h-2 bg-[color:var(--badge-text-color)] rounded-full;
+      }
+    }
+
+    & .icon {
+      width: var(--badge-icon-size);
+      height: var(--badge-icon-size);
+    }
+
+    &--icon {
+      @apply px-0 py-0 h-[1.35rem] w-[1.35rem];
+
+      & .icon:first-of-type:last-of-type,
+      & .badged-icon {
+        @apply translate-x-0 w-1/2 h-1/2;
+      }
+    }
+  }
+
+  .avatar__badge {
+    font-size: .6rem;
+    @apply absolute bottom-0 left-full transform -translate-x-4 rounded-full px-[.3rem] leading-tight border border-white;
+  }
+
+  .badged-icon {
+    @apply relative inline-block;
+
+    &__badge {
+      font-size: .6rem;
+      @apply absolute -top-1 left-full transform -translate-x-3 rounded-full px-[.3rem] leading-snug border;
+
+      &.badge,
+      &.badge--solid {
+        --badge-border-color: theme(colors.gray.50 / var(--tw-border-opacity));
+      }
+
+      &.badge--outline {
+        --badge-bg-color: theme(colors.gray.50 / var(--tw-bg-opacity));
+        --badge-border-color: theme(colors.scheme.600 / var(--tw-border-opacity));
+        @apply bg-[color:var(--badge-bg-color)];
+      }
+
+      &.badge--outline.badge--soft {
+        --badge-border-color: theme(colors.scheme.300 / var(--tw-border-opacity));
+      }
+
+      &.badge--flat {
+        --badge-bg-color: theme(colors.gray.200 / var(--tw-bg-opacity));
+        @apply bg-[color:var(--badge-bg-color)];
+      }
+
+      &.badge--flat.badge--soft {
+        --badge-bg-color: theme(colors.gray.100 / var(--tw-bg-opacity));
+      }
+    }
+  }
+}

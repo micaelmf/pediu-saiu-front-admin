@@ -1,0 +1,186 @@
+@layer components {
+  .form-control {
+    --input-font-size: var(--input-group-font-size, theme(fontSize.base));
+    --input-space-x: var(--input-group-space-x, theme(spacing.4));
+    --input-space-y: var(--input-group-space-y, theme(spacing.2));
+    --checkbox-scale: var(--input-group-scale, .85);
+    --default-border-color: theme(colors.gray.200);
+    --default-border-hover-color: theme(colors.gray.300);
+    @apply flex items-center gap-x-3 text-gray-400 focus-within:text-gray-500 leading-normal border border-[color:var(--field-feedback-color,var(--default-border-color))] transition rounded bg-white;
+
+    &:hover:not(&--disabled) {
+      @apply border-[color:var(--field-feedback-color,var(--default-border-hover-color))];
+    }
+
+    &--has-feedback {
+      --field-feedback-color: rgb(var(--scheme-500));
+    }
+
+    &:focus-within,
+    &:focus-within:hover {
+      @apply border-scheme-400 shadow;
+    }
+
+    & [type='text'], & [type='email'], & [type='url'], & [type='password'], & [type='number'], & [type='date'], & [type='datetime-local'], & [type='month'], & [type='search'], & [type='tel'], & [type='time'], & [type='week'], & [type='file'], & [multiple], & textarea, & select {
+      @apply flex-1 border-0 px-0 py-[var(--input-space-y)] enabled:bg-transparent text-[length:var(--input-font-size)] focus:shadow-none first:rounded-l-none last:rounded-r-none;
+    }
+
+    & > [type='text'], & > [type='email'], & > [type='url'], & > [type='password'], & > [type='number'], & > [type='date'], & > [type='datetime-local'], & > [type='month'], & > [type='search'], & > [type='tel'], & > [type='time'], & > [type='week'], & > [type='file'], & > [multiple], & > textarea, & select {
+      @apply min-w-0;
+
+      &:not(select) {
+        @apply w-0;
+      }
+    }
+
+    & textarea {
+      @apply last:mr-0;
+    }
+
+    & select {
+      @apply first:pl-[var(--input-space-x)] last:pr-[calc(var(--input-space-x)*3)];
+    }
+
+    & [type="file"]::file-selector-button {
+      @apply appearance-none border-0 bg-transparent border-r border-gray-50 text-gray-600 pr-[var(--input-space-x)] mr-[var(--input-space-x)] h-[21px];
+    }
+
+    & [data-textarea-grow] {
+      @apply grid items-stretch w-full;
+
+      &:after {
+        content: attr(data-replicated-value) " ";
+        @apply whitespace-pre-wrap py-2 leading-normal invisible;
+      }
+
+      & > textarea {
+        @apply resize-none;
+      }
+
+      &:after,
+      & > textarea {
+        grid-area: 1 / 1 / 2 / 2;
+        @apply max-h-96;
+      }
+    }
+
+    & .ts-wrapper {
+      @apply flex-1 min-w-0;
+
+      & .ts-control,
+      &.multi.has-items .ts-control,
+      &.single.input-active .ts-control {
+        @apply bg-transparent;
+      }
+
+      & .ts-control {
+        @apply border-0;
+      }
+
+      & .ts-control,
+      &.multi.has-items .ts-control {
+        @apply px-0;
+      }
+
+      &:nth-child(2) {
+        & .ts-control,
+        &.multi.has-items .ts-control {
+          @apply pl-[var(--input-space-x)];
+        }
+      }
+
+      &:not(.form-control):not(.form-select).single:last-child {
+        & .ts-control {
+          @apply pr-[calc(var(--input-space-x)*3)];
+        }
+      }
+
+      &:last-child.multi.has-items .ts-control {
+        @apply pr-[var(--input-space-x)];
+      }
+
+      &.disabled {
+        & .ts-control {
+          @apply bg-gray-200 opacity-100;
+        }
+      }
+
+      & .ts-dropdown {
+        & .option,
+        & .optgroup-header,
+        & .no-results,
+        & .create {
+          @apply px-[var(--input-space-x)];
+        }
+      }
+    }
+
+    & .flatpickr-input:first-child + * {
+      @apply pl-[var(--input-space-x)];
+    }
+
+    & > *:not(select, .ts-wrapper, .toggle) {
+      @apply first:pl-[var(--input-space-x)];
+
+      &:not(textarea, [data-textarea-grow]) {
+        @apply last:pr-[var(--input-space-x)];
+      }
+    }
+
+    &--lg {
+      --input-font-size: theme(fontSize.lg);
+      --input-space-x: theme(spacing.5);
+      --input-space-y: theme(spacing.3);
+      --checkbox-scale: var(--input-group-scale, 1);
+      @apply text-lg;
+    }
+
+    &--sm {
+      --input-font-size: theme(fontSize.sm);
+      --input-space-x: theme(spacing.3);
+      --input-space-y: theme(spacing.1);
+      --checkbox-scale: var(--input-group-scale, .75);
+      @apply text-sm;
+    }
+  }
+
+  .check-control {
+    --input-font-size: var(--input-group-font-size, theme(fontSize.base));
+    --input-space-x: var(--input-group-space-x, theme(spacing.4));
+    --input-space-y: var(--input-group-space-y, theme(spacing.2));
+    --checkbox-space-y: theme(spacing[0.5]);
+    @apply flex items-start gap-x-3 border border-transparent py-[var(--input-space-y)] pr-[calc(var(--input-space-x)*2)] text-[length:var(--input-font-size)] leading-[1.5rem];
+
+    &--has-feedback {
+      --field-feedback-color: rgb(var(--scheme-500));
+    }
+
+    & [type='checkbox'], & [type='radio'] {
+      --default-border-color: theme(colors.gray.200);
+      --default-border-hover-color: theme(colors.gray.300);
+
+      &:not(:checked) {
+        @apply border-[color:var(--field-feedback-color,var(--default-border-color))] enabled:hover:border-[color:var(--field-feedback-color,var(--default-border-hover-color))];
+      }
+    }
+
+    &--lg {
+      --input-font-size: theme(fontSize.lg);
+      --input-space-x: theme(spacing.5);
+      --input-space-y: theme(spacing.3);
+      --checkbox-size: theme(width.6);
+      --toggle-size: theme(width.8);
+      --toggle-space-y: calc(theme(spacing[1]) * -1);
+    }
+
+    &--sm {
+      --input-font-size: theme(fontSize.sm);
+      --input-space-x: theme(spacing.3);
+      --input-space-y: theme(spacing.1);
+      --checkbox-size: theme(width.4);
+      --checkbox-space-y: theme(spacing.1);
+      --toggle-size: theme(width.5);
+      --toggle-space-y: theme(spacing[0.5]);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import 'dropzone/dist/dropzone.css';
+
+.dropzone {
+  @apply bg-white border-2 border-gray-300 border-dashed p-md flex;
+}
+
+.dropzone .dz-message {
+  @apply self-center my-0 mx-auto;
+}
+
+.dz-default {
+  @apply text-xl font-semibold;
+}
+
+.dropzone .dz-preview .dz-error-mark {
+  @apply bg-danger-600/80;
+}
+
+.dropzone .dz-preview .dz-error-message {
+  @apply top-auto bottom-full bg-red-500 text-center mb-3 after:top-full after:border-b-0 after:border-t-[6px] after:border-t-red-500;
+}
+
+.dropzone .dz-preview .dz-remove {
+  @apply pt-1 text-sm text-gray-500;
+}
