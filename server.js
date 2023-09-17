@@ -23,4 +23,12 @@ app.get("/produtos", (_, res) => {
     res.render("products", page)
 });
 
+app.get("/contatos", (_, res) => {
+    const page = {
+        title: 'Contatos'
+    }
+
+    res.render("contacts", page)
+});
+
 viteExpress.listen(app, port, () => console.log("Server is listening on port " + port));
