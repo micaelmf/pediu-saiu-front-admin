@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('partials/header') %>
+
+    <body style="display: none">
+        <!-- BEGIN: Root Layout -->
+        <div class="layout">
+            <!-- BEGIN: Sidebar -->
+            <nav class="sidebar">
+                <%- include('partials/logo') %>
+                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
+            </nav>
+            <!-- End: Sidebar -->
+            <!-- BEGIN: Wrapper Main -->
+            <div class="wrapper">
+                <header class="navbar">
+                    <div class="navbar__left lg:hidden">
+                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                            <i data-icon="heroiconsOutline__menuAlt1"></i>
+                        </a>
+                    </div>
+                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+                    <div class="navbar__center"></div>
+                    <div class="navbar__right">
+                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
+                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
+                                <%- include('partials/account-menu') %> <!-- Account Menu -->
+                    </div>
+                </header>
+                <main class="main">
+                    <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar"
+                        data-scrollbar data-scrollbar-auto-hide="false">
+                        <!-- BEGIN: Page Header -->
+                        <header class="page__header flex items-end justify-between">
+                            <div>
+                                <div class="breadcrumb">
+                                    <div>
+                                        <a href="/" class="breadcrumb__item">Home</a>
+                                        <span class="breadcrumb__separator">/</span>
+                                        <a href="" class="breadcrumb__item">Cadastrar Produtos</a>
+                                    </div>
+                                </div>
+                                <div class="page__title">
+                                    <h1 class="page__title__text text-3xl">Produtos</h1>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#" class="button scheme-primary">
+                                    <i data-icon="feather__plus"></i>
+                                    <span>Cadastrar</span>
+                                </a>
+                            </div>
+                        </header>
+                        <!-- END: Page Header -->
+                        <!-- BEGIN: Page Body -->
+                        <div class="page__body">
+                            <style>
+                                @media (max-width: 600px) {
+                                    .acoes {
+                                        position: sticky;
+                                        right: 0;
+                                        background: rgba(255, 255, 255, 0.5);
+                                        /* para sobrepor o conteúdo ao rolar */
+                                    }
+
+                                    .table-row {
+                                        display: flex;
+                                        flex-direction: column;
+                                    }
+                                }
+                            </style>
+
+                            <div class="flex flex-col gap-5 mb-4">
+                                <div class="card">
+                                    <div class="card__header">
+                                        <div>
+                                            <h3 class="text-xl">Filtro</h3>
+                                        </div>
+                                        <a href="javascript:;"
+                                            class="button button--icon button--flat scheme-info rounded-full">
+                                            <i data-icon="feather__helpCircle"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card__body">
+                                        <div class="grid grid-cols-1 mb-5">
+                                            <fieldset class="field">
+                                                <div class="input-group">
+                                                    <div class="flex-1 form-control scheme-gray">
+                                                        <input type="text" placeholder="Texto">
+                                                    </div>
+                                                    <div class="form-control [.input-group>&]:flex-initial scheme-gray">
+                                                        <select>
+                                                            <option value="produtc">Produto</option>
+                                                            <option value="category">Categoria</option>
+                                                            <option value="description">Descrição</option>
+                                                        </select>
+                                                    </div>
+                                                    <button class="button scheme-primary">Buscar</button>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="flex justify-end gap-2">
+                                            <button type="button"
+                                                class="button button--icon button--flat button--md scheme-gray">
+                                                <i data-icon="iconScout__filterSlash"></i>
+                                            </button>
+                                            <label class="flex items-center gap-2">
+                                                <span class="toggle">
+                                                    <input type="checkbox" checked="">
+                                                    <span class="toggle__ui"></span>
+                                                </span>
+                                                <span>Filtro Avançado</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="card__divider"></div>
+                                    <div class="card__header">
+                                        <div>
+                                            <h3 class="text-xl">Avançado</h3>
+                                        </div>
+                                        <a href="javascript:;"
+                                            class="button button--icon button--flat scheme-info rounded-full">
+                                            <i data-icon="feather__helpCircle"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card__body">
+                                        <div class="grid md:grid-cols-2 gap-5 mb5">
+                                            <fieldset class="field">
+                                                <label for="visibility" class="field__label">Visibilidade</label>
+                                                <div class="flex-1 form-control scheme-gray">
+                                                    <select>
+                                                        <option value="">Selecione</option>
+                                                        <option value="1">Visível</option>
+                                                        <option value="0">Oculto</option>
+                                                    </select>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="field">
+                                                <label for="visibility" class="field__label">Quantidade</label>
+                                                <div class="input-group">
+                                                    <div class="form-control [.input-group>&]:flex-initial scheme-gray">
+                                                        <select>
+                                                            <option value="">Maior que</option>
+                                                            <option value="agriculture">Igual a</option>
+                                                            <option value="electronics">Menor que</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="flex-1 form-control scheme-gray">
+                                                        <input type="text" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                        </div>
+                                        <div class="flex gap-5 justify-end">
+                                            <button type="button" class="button scheme-primary">Buscar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
+                                <thead>
+                                    <tr class="table-row">
+                                        <th class="table-cell">#</th>
+                                        <th class="table-cell">Produto</th>
+                                        <th class="table-cell">Categoria</th>
+                                        <th class="table-cell">Preço</th>
+                                        <th class="table-cell" data-tooltip="Quantidade">Qtd</th>
+                                        <th class="table-cell">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-row">
+                                        <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
+                                        <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
+                                        <td class="table-cell">1</td>
+                                        <td class="table-cell">Refrigerante Zero Açucar</td>
+                                        <td class="table-cell">Lionel Messi</td>
+                                        <td class="table-cell">$187999</td>
+                                        <td class="table-cell">10</td>
+                                        <td class="acoes">
+                                            <div class="button-group">
+                                                <button type="button" class="button button--outline button--xs"
+                                                    data-dropdown-toggle="#splitButtonDropdown"
+                                                    data-tippy-placement="bottom-end" aria-haspopup="true"
+                                                    class="button button--icon">
+                                                    <i data-icon="feather__moreVertical"
+                                                        class="transform transition"></i>
+                                                </button>
+                                            </div>
+                                            <ul id="splitButtonDropdown" class="dropdown">
+                                                <li class="dropdown__item">
+                                                    <a href="" class="flex justify-between gap-1">
+                                                        <div class="flex items-center">
+                                                            <i data-icon="feather__eye"></i><span>Exbir</span>
+                                                        </div>
+                                                        <div class="flex align-middle hidden">
+                                                            <i data-icon="feather__check"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown__item">
+                                                    <a href="" class="flex justify-between gap-1">
+                                                        <div class="flex items-center">
+                                                            <i data-icon="feather__eyeOff"></i><span>Ocultar</span>
+                                                        </div>
+                                                        <div class="flex align-middle">
+                                                            <i data-icon="feather__check"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown__divider"></li>
+                                                <li class="dropdown__item">
+                                                    <a href=""><i data-icon="feather__edit"></i><span>Editar</span></a>
+                                                </li>
+                                                <li class="dropdown__item">
+                                                    <a href=""><i
+                                                            data-icon="feather__trash2"></i><span>Excluir</span></a>
+                                                </li>
+                                                <!-- And so on.. -->
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="table-cell">1</td>
+                                        <td class="table-cell">Refrigerante Zero Açucar</td>
+                                        <td class="table-cell">Lionel Messi</td>
+                                        <td class="table-cell">$187999</td>
+                                        <td class="table-cell">10</td>
+                                        <td class="acoes">
+                                            <div class="button-group">
+                                                <button type="button" class="button button--outline button--xs"
+                                                    data-dropdown-toggle="#splitButtonDropdown"
+                                                    data-tippy-placement="bottom-end" aria-haspopup="true"
+                                                    class="button button--icon">
+                                                    <i data-icon="feather__moreVertical"
+                                                        class="transform transition"></i>
+                                                </button>
+                                            </div>
+                                            <ul id="splitButtonDropdown" class="dropdown">
+                                                <li class="dropdown__item">
+                                                    <a href="" class="flex justify-between gap-1">
+                                                        <div class="flex items-center">
+                                                            <i data-icon="feather__eye"></i><span>Exbir</span>
+                                                        </div>
+                                                        <div class="flex align-middle hidden">
+                                                            <i data-icon="feather__check"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown__item">
+                                                    <a href="" class="flex justify-between gap-1">
+                                                        <div class="flex items-center">
+                                                            <i data-icon="feather__eyeOff"></i><span>Ocultar</span>
+                                                        </div>
+                                                        <div class="flex align-middle">
+                                                            <i data-icon="feather__check"></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown__divider"></li>
+                                                <li class="dropdown__item">
+                                                    <a href=""><i data-icon="feather__edit"></i><span>Editar</span></a>
+                                                </li>
+                                                <li class="dropdown__item">
+                                                    <a href=""><i
+                                                            data-icon="feather__trash2"></i><span>Excluir</span></a>
+                                                </li>
+                                                <!-- And so on.. -->
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END: Page Body -->
+                    </section>
+                </main>
+                <%- include('partials/footer') %>
+            </div>
+            <!-- END: Wrapper Main -->
+        </div>
+        <!--END: Root Layout -->
+    </body>
+
+    <script>
+        const settings = {
+            async: true,
+            crossDomain: true,
+            url: 'https://catfact.ninja/fact',
+            method: 'GET'
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            $("#teste").html(response.fact)
+        });
+    </script>
+
+</html>

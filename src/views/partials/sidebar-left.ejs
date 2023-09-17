@@ -1,0 +1,97 @@
+<div class="sidebar__scroll-wrapper">
+    <div id="sidebarNavScroll" class="sidebar__scroll scrollbar" data-scrollbar>
+        <nav class="navigation">
+            <!-- BEGIN: Dashboard -->
+            <div class="navigation__title">DASHBOARDS<small>Useful dashboard designs</small></div>
+            <ul>
+                <li class="navigation__item navigation__item--active">
+                    <a href="/" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__shoppingBag"></i>
+                        </span>
+                        <span class="navigation__item__title">Ecommerce</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/dashboard-analytics.html" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__barChart2"></i>
+                        </span>
+                        <span class="navigation__item__title">Analytics</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- END: Dashboard -->
+            <!-- BEGIN: Applications -->
+            <div class="navigation__title">APPLICATIONS<small>Prebuilt application designs</small></div>
+            <ul>
+                <li class="navigation__item">
+                    <a href="/produtos" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__shoppingBag"></i>
+                        </span>
+                        <span class="navigation__item__title">Produtos</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/contacts.html" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__users"></i>
+                        </span>
+                        <span class="navigation__item__title">Contacts</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/chat.html" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__messageSquare"></i>
+                        </span>
+                        <span class="navigation__item__title">Chat</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/email.html" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__mail"></i>
+                        </span>
+                        <span class="navigation__item__title">Email</span>
+                        <span class="badge badge--soft scheme-danger opacity-75 font-bold mx-2">34</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/file-manager.html" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="feather__file"></i>
+                        </span>
+                        <span class="navigation__item__title">File Manager</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- END: Applications -->
+        </nav>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        activeMenuItem();
+    });
+
+    function activeMenuItem () {
+        let current = location.pathname;
+
+        if (current === '/') {
+            $('.navigation__item').first().addClass('navigation__item--active');
+        } 
+        
+        if (current !== '/') {
+            $('.navigation__item a').each(function() {
+                let $this = $(this);
+                if ($this.attr('href').indexOf(current) !== -1) {
+                    $('.navigation__item').removeClass('navigation__item--active');
+                    $this.parent().addClass('navigation__item--active');
+                }
+            });
+        }
+    }
+</script>
