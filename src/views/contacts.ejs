@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('partials/header') %>
+
+<body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+        <!-- BEGIN: Sidebar -->
+        <nav class="sidebar">
+            <%- include('partials/logo') %>
+            <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
+        </nav>
+        <!-- End: Sidebar -->
+        <!-- BEGIN: Wrapper Main -->
+        <div class="wrapper">
+            <header class="navbar">
+                <div class="navbar__left lg:hidden">
+                    <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                        <i data-icon="heroiconsOutline__menuAlt1"></i>
+                    </a>
+                </div>
+                <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+                <div class="navbar__center"></div>
+                <div class="navbar__right">
+                    <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
+                    <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
+                    <%- include('partials/account-menu') %> <!-- Account Menu -->
+                </div>
+            </header>
+            <main class="main">
+                <section data-script="contacts" class="cols main__full">
+                    <!-- BEGIN: Main Content -->
+                    <div class="cols__main">
+                        <div class="h-full scrollbar" data-scrollbar>
+                            <div class="page">
+                                <header class="page__header flex justify-between">
+                                    <div class="page__title flex-1">
+                                        <h1 class="page__title__text">Contacts</h1>
+                                        <p class="page__title__subtext">39 contacts</p>
+                                    </div>
+                                    <a href="#" data-col-show="contactForm" class="button scheme-primary">
+                                        <i data-icon="feather__plus"></i>
+                                        <span>Add</span>
+                                    </a>
+                                </header>
+                                <div class="page__body">
+                                    <div class="card">
+                                        <div class="card__header py-3 sm:py-4">
+                                            <label class="form-control w-full">
+                                                <span><i data-icon="feather__search"></i></span>
+                                                <input type="text" placeholder="Search contacts" />
+                                            </label>
+                                        </div>
+                                        <div id="contactList">
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">A</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-d5ab0db5655e5a08fd3788a3263db159.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Abelardo Heller</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">District Accountability Assistant</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-a7fdb3952feeeb121d3e1b786997a582.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Ahmed Nolan</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Investor Applications Developer</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-b7d9c10a8b01ad29d1c8f9893f2f11e4.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Aiyana Schmitt</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Internal Infrastructure Orchestrator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-c1823dfda847adeda0adb8fd9ba51f9c.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Alba Krajcik</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Direct Configuration Designer</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-3c33f241f32e5f11e827b482731a1b05.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Alexandro Batz</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Internal Security Planner</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-c1460d62591b35e354268f2383fa5085.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Allene Metz</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Senior Security Architect</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-ce44dcc7d50b6bf47c35f684c30e88ec.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Amaya Zieme</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Legacy Solutions Agent</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-da1381975e691227627569ef19097c49.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Annabelle Kunze</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Corporate Accountability Agent</span>
+                                                </span>
+                                            </a>
+
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">B</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-1eaf4924ae01d66f6e118a10665caa61.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Bartholome Hayes</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Investor Implementation Associate</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-8fe8ae321388c951dbcad9e1fb52b09f.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Boris Kessler</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Internal Optimization Supervisor</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-4fcf69f63f8166ebd4aacf104f95a651.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Brad Wilkinson</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Investor Accounts Strategist</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-99282957efd40fd06a214fc37e58a767.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Brendon Rau</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Forward Identity Facilitator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-5fe1f583e60756c409735983e51b13d9.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Bret Zemlak</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Investor Accounts Producer</span>
+                                                </span>
+                                            </a>
+
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">C</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-fae3deb3551faf192fa75dbe335cc2f4.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Candido Nicolas</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">District Configuration Liaison</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-c4ad2d072bfca85626670852299444be.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Carissa Greenfelder</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Future Configuration Associate</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-bc7469208ef65de9d114a22b166b2191.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Casey Miller</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Investor Implementation Officer</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-85247f48c8c5da6a628e0188a6ae040d.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Cassie Tromp</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Global Assurance Engineer</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-c5c206a7afb4fb47f16a3a73018758cc.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Catharine Nikolaus</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Investor Accounts Supervisor</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-2fbdd1459063e62a942b81f4dba0d985.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Charles Bednar</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Legacy Group Representative</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-176d1e24e0e3aa613f0775f929230809.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Chaz Hand</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Dynamic Group Administrator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-d0cc3115ada1b63ee855a2f2e22f6945.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Claudia Ferry</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Senior Intranet Orchestrator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-e1621504eaffdc13d19c1d90a48379cf.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Cleo Rohan</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">District Factors Analyst</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-6de6486b139cdb9ac375b95809c66992.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Colten Harris</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Direct Infrastructure Agent</span>
+                                                </span>
+                                            </a>
+
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">D</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-58fb70c5a54785d9b81286b72026b7db.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Dave Blanda</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Internal Integration Orchestrator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-5e2e13a314aef09c0bdc568a28f3f253.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Demarcus Hagenes</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Central Division Liaison</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-1316a221acc2b27c968e631f78b28a6f.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Destiny Farrell</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Dynamic Accounts Architect</span>
+                                                </span>
+                                            </a>
+
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">E</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-efa0ff44ab6e849e85831ff4abbcc498.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Edmond Gorczany</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Internal Response Specialist</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-2a4d4d9492fff03aef65ccd10aa2b56c.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Efren Haag</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Lead Interactions Strategist</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-f24f2b6260ba7089fcd8b7684dde4e06.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Eldora Kuphal</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Global Communications Consultant</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-cdb7453231b4194d64153e22dfc24cd4.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Eliseo Graham</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Dynamic Creative Specialist</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-481f5f518c7ba4362b78581e766a58f8.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Eric Harvey</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Customer Accounts Facilitator</span>
+                                                </span>
+                                            </a>
+
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">G</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-1566c135ef8faaf4999bd9584e54af9c.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Georgette Corwin</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Senior Integration Facilitator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-8d9e247e2c495003ce96ea435f5776f2.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Grayce Price</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Regional Solutions Director</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-6ec8325bc8eb5ce98c2076e2f8d1d2a2.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Greg Beier</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Senior Program Facilitator</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-06f64be86c95c3936932cf870376fb2b.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Greyson Streich</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Global Mobility Technician</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-7808b0bf1624f91555aa99d531b58b57.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Gunner Beahan</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Direct Assurance Designer</span>
+                                                </span>
+                                            </a>
+
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">I</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-f340f6086498451b28d31f6844f31733.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Ila Schneider</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Lead Solutions Manager</span>
+                                                </span>
+                                            </a>
+                                            <div class="bg-gray-100 px-8 py-2 border-y sticky top-0 z-10">J</div>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-31015a7790d4c15cadbd21f5acc3455e.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Jannie McGlynn</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">Chief Usability Consultant</span>
+                                                </span>
+                                            </a>
+
+                                            <a href="#" class="card__body py-3.5 flex items-center gap-x-5 hover:bg-white hover:shadow">
+                                                <span class="avatar">
+                                                    <img src="/assets/demo/avatar-4d698ea1541533146d9a43cfadd1d9d3.jpg" alt="Contact Avatar" class="avatar__object" />
+                                                </span>
+                                                <span class="flex-1 flex flex-col">
+                                                    <span class="font-bold line-clamp-1">Jeff Moore</span>
+                                                    <span class="text-sm text-gray-400 line-clamp-1">International Quality Strategist</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Main Content -->
+                    <!-- BEGIN: Contact Details -->
+                    <aside id="contactDetails" class="col lg:col--relative" data-col-group="colRight">
+                        <div class="col__inner bg-gray-50 shadow flex flex-col">
+                            <div class="flex-1 min-h-0">
+                                <div class="h-full scrollbar" data-scrollbar>
+                                    <div class="h-40 bg-cover relative" style="background-image: url(/assets/img/unsplash.jpg)">
+                                        <a data-col-hide="contactDetails" href="#" class="button button--icon bg-black bg-opacity-30 border-transparent absolute top-3 left-5 hover:bg-opacity-40 text-white">
+                                            <i data-icon="feather__x"></i>
+                                        </a>
+                                        <span class="avatar w-32 top-full transform -translate-y-1/2 left-1/2 -translate-x-1/2">
+                                            <img src="/assets/demo/avatar-e70b3c6aaeca7cdb3f73054d5d50ecd9.jpg" alt="Abelardo Avatar" class="avatar__object border-2 border-gray-50 shadow" />
+                                        </span>
+                                    </div>
+                                    <div class="pt-12">
+                                        <div class="p-md lg:p-lg">
+                                            <div class="text-center">
+                                                <div class="text-xl">Abelardo Heller</div>
+                                                <span class="text-sm text-gray-400">District Accountability Assistant</span>
+                                            </div>
+                                            <div class="mt-10 flex flex-col gap-y-5">
+                                                <div class="flex">
+                                                    <i data-icon="heroiconsOutline__officeBuilding" class="shrink-0"></i>
+                                                    <div class="py-0.5 ml-5 flex-1">Microsoft</div>
+                                                </div>
+                                                <div class="flex">
+                                                    <i data-icon="feather__mail" class="shrink-0"></i>
+                                                    <div class="py-0.5 ml-5 flex-1 min-w-0 break-words">abelardo.heller@example.com</div>
+                                                </div>
+                                                <div class="flex">
+                                                    <i data-icon="feather__phone" class="shrink-0"></i>
+                                                    <div class="py-0.5 ml-5 flex-1 flex flex-col gap-y-2">
+                                                        <span>+60 881 472 3113<br /><span class="text-gray-400 text-sm">Mobile</span></span>
+                                                        <span>+60 881 472 3114<br /><span class="text-gray-400 text-sm">Work</span></span>
+                                                        <span>+60 881 472 3115<br /><span class="text-gray-400 text-sm">Home</span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex">
+                                                    <i data-icon="heroiconsOutline__cake" class="shrink-0"></i>
+                                                    <div class="py-0.5 ml-5 flex-1">December 19, 1973</div>
+                                                </div>
+                                                <div class="flex">
+                                                    <i data-icon="feather__alignLeft" class="shrink-0"></i>
+                                                    <div class="py-0.5 ml-5 flex-1">
+                                                        <p class="mb-5">Non proident pariatur nostrud dolor incididunt occaecat amet officia sunt magna anim dolor labore culpa ut laborum id incididunt officia amet mollit anim ea proident laboris non incididunt incididunt sint.</p>
+                                                        <p class="mb-5">Nulla minim consectetur nostrud magna anim irure consectetur labore cupidatat laborum reprehenderit et et adipisicing in qui elit ipsum reprehenderit esse nisi non ipsum exercitation sunt eu elit velit fugiat.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-md lg:px-lg bg-gray-100 border-y grid grid-cols-2 gap-x-5">
+                                <a href="#" class="button scheme-primary">
+                                    <i data-icon="feather__messageSquare"></i>
+                                    <span>Message</span>
+                                </a>
+                                <a id="editContactButton" href="#" class="button">
+                                    <i data-icon="feather__edit"></i>
+                                    <span>Edit</span>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- END: Contact Details -->
+                    <!-- BEGIN: Contact Form -->
+                    <aside id="contactForm" class="col lg:col--relative" data-col-group="colRight">
+                        <form class="col__inner bg-gray-50 shadow flex flex-col">
+                            <div class="flex-1 min-h-0">
+                                <div class="h-full scrollbar" data-scrollbar>
+                                    <div class="h-40 bg-cover relative" style="background-image: url(/assets/img/unsplash.jpg)">
+                                        <a data-col-hide="contactForm" href="#" class="button button--icon bg-black bg-opacity-30 border-transparent absolute top-3 left-5 hover:bg-opacity-40 text-white">
+                                            <i data-icon="feather__x"></i>
+                                        </a>
+                                        <span class="avatar w-32 top-full transform -translate-y-1/2 left-1/2 -translate-x-1/2">
+                                            <img src="/assets/demo/avatar-e70b3c6aaeca7cdb3f73054d5d50ecd9.jpg" alt="Abelardo Avatar" class="avatar__object border-2 border-gray-50 shadow" />
+                                        </span>
+                                    </div>
+                                    <div class="pt-12">
+                                        <div class="p-md lg:p-lg">
+                                            <div class="field">
+                                                <label class="field__label">Name<span class="field__asterisk">*</span></label>
+                                                <div class="form-control">
+                                                    <span><i data-icon="feather__user"></i></span>
+                                                    <input type="text" name="name" placeholder="Name" />
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Title</label>
+                                                <div class="form-control">
+                                                    <span><i data-icon="feather__briefcase"></i></span>
+                                                    <input type="text" name="title" placeholder="Title" />
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Company</label>
+                                                <div class="form-control">
+                                                    <span><i data-icon="heroiconsOutline__officeBuilding"></i></span>
+                                                    <input type="text" name="company" placeholder="Company" />
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Email</label>
+                                                <div class="form-control">
+                                                    <span><i data-icon="feather__mail"></i></span>
+                                                    <input type="email" name="email" placeholder="Email" />
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Phone</label>
+                                                <div class="space-y-3">
+                                                    <div class="form-control">
+                                                        <span class="border-r pr-3 w-20">Mobile</span>
+                                                        <input type="text" name="mobile_phone" placeholder="+6xxxx" />
+                                                    </div>
+                                                    <div class="form-control">
+                                                        <span class="border-r pr-3 w-20">Work</span>
+                                                        <input type="text" name="work_phone" placeholder="+6xxxx" />
+                                                    </div>
+                                                    <div class="form-control">
+                                                        <span class="border-r pr-3 w-20">Home</span>
+                                                        <input type="text" name="home_phone" placeholder="+6xxxx" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Address</label>
+                                                <label class="form-control items-start">
+                                                    <span><i data-icon="feather__mapPin" class="mt-2"></i></span>
+                                                    <textarea name="address" placeholder="Address"></textarea>
+                                                </label>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Birthdate</label>
+                                                <label class="form-control items-start">
+                                                    <span><i data-icon="feather__gift" class="mt-2"></i></span>
+                                                    <input type="text" name="birthdate" placeholder="Birthdate" data-datepicker data-datepicker-alt-input="true" data-datepicker-alt-format="F j, Y" />
+                                                </label>
+                                            </div>
+                                            <div class="field">
+                                                <label class="field__label">Notes</label>
+                                                <div class="form-control items-start">
+                                                    <span><i data-icon="feather__alignLeft" class="mt-2"></i></span>
+                                                    <textarea name="notes" placeholder="Notes"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-md lg:px-lg bg-gray-100 border-y grid grid-cols-2 gap-x-5">
+                                <button type="submit" class="button scheme-primary">
+                                    <i data-icon="feather__save"></i>
+                                    <span>Save</span>
+                                </button>
+                                <button type="reset" class="button">
+                                    <i data-icon="feather__x"></i>
+                                    <span>Reset</span>
+                                </button>
+                            </div>
+                        </form>
+                    </aside>
+                    <!-- END: Contact Form -->
+                </section>
+            </main>
+            <%- include('partials/footer') %>
+        </div>
+        <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+</body>
+
+<script>
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url: 'https://catfact.ninja/fact',
+        method: 'GET'
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        $("#teste").html(response.fact)
+    });
+</script>
+
+</html>
