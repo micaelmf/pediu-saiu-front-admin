@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- BEGIN: Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png">
+    <!-- END: Favicon -->
+
+    <!-- BEGIN: Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <!-- END: Fonts CSS -->
+
+    <!-- BEGIN: Bookmark & Search Meta Data -->
+    <meta name="title" content="Dashboard Ecommerce" />
+    <meta name="icon" content="feather__shoppingBag" />
+    <!-- END: Bookmark Meta -->
+
+    <!-- BEGIN: Vite -->
+    <link rel="stylesheet" href="./css/app.css" />
+    <script type="module" src="./js/app.js"></script> <!-- END: Vite -->
+
+    <title>Dashboard Ecommerce - Skewind</title>
+</head>
+
+<body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+        <!-- BEGIN: Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <a class="inline-flex items-center">
+                    <i data-icon="feather__wind" class="text-primary-600 transform rotate-180 mr-2 w-6 h-6"></i>
+                    <span class="text-2xl italic transform -skew-x-3 font-semibold text-gray-500">Skewind</span>
+                </a>
+            </div>
+            <!-- BEGIN: Sidebar Scroll -->
+            <div class="sidebar__scroll-wrapper">
+                <div id="sidebarNavScroll" class="sidebar__scroll scrollbar" data-scrollbar>
+                    <nav class="navigation">
+                        <!-- BEGIN: Dashboard -->
+                        <div class="navigation__title">DASHBOARDS<small>Useful dashboard designs</small></div>
+                        <ul>
+                            <li class="navigation__item navigation__item--active">
+                                <a href="/" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__shoppingBag"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/dashboard-analytics.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__barChart2"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Analytics</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Dashboard -->
+                        <!-- BEGIN: Applications -->
+                        <div class="navigation__title">APPLICATIONS<small>Prebuilt application designs</small></div>
+                        <ul>
+                            <li class="navigation__item">
+                                <a href="/contacts.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__users"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Contacts</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/chat.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__messageSquare"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Chat</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/email.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__mail"></i>
+                                    </span>
+                                    <span class="navigation__item__title">Email</span>
+                                    <span class="badge badge--soft scheme-danger opacity-75 font-bold mx-2">34</span>
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <a href="/file-manager.html" class="navigation__item__toggler">
+                                    <span class="navigation__item__icon">
+                                        <i data-icon="feather__file"></i>
+                                    </span>
+                                    <span class="navigation__item__title">File Manager</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- END: Applications -->
+                    </nav>
+                </div>
+            </div>
+            <!-- END: Sidebar Scroll Wrapper -->
+        </nav>
+        <!-- End: Sidebar -->
+        <!-- BEGIN: Wrapper Main -->
+        <div class="wrapper">
+            <header class="navbar">
+                <div class="navbar__left lg:hidden">
+                    <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                        <i data-icon="heroiconsOutline__menuAlt1"></i>
+                    </a>
+                </div>
+                <div class="navbar__left bottombar bookmark" id="bookmark"></div>
+                <div class="navbar__center"></div>
+                <div class="navbar__right">
+                    <!-- BEGIN: Messages Dropdown Wrapper -->
+                    <div>
+                        <a id="messagesDropdownToggle" href="javascript:;" class="navbar__icon-link"
+                            data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__messageSquare"></i>
+                                <span class="badged-icon__badge badge bg-info-500">2</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="messages">
+                                <div class="messages__header">
+                                    <h4>Messages</h4>
+                                    <a href="javascript:;" data-dropdown-toggle data-tippy-placement="bottom-end">
+                                        <i data-icon="heroiconsOutline__dotsHorizontal"></i>
+                                    </a>
+                                    <ul class="dropdown">
+                                        <li class="dropdown__heading">
+                                            <h4 class="text-sm uppercase font-bold text-gray-500">Chat Settings</h4>
+                                            <p class="font-normal text-xs text-gray-400">
+                                                Customize your chat experience.
+                                            </p>
+                                        </li>
+                                        <li class="dropdown__divider"></li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__check"></i>
+                                                Mark all as read
+                                            </a>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <a href="#">
+                                                <i data-icon="feather__settings"></i>
+                                                Notification settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="messages__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="message message--unread">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-249eda8dc8c1894744b239ddb17172d1.jpg"
+                                                    alt="Hadiyat Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    Hadiyat Virgiawan
+                                                </span>
+                                                <span class="message__body">
+                                                    You sent an attachment.
+                                                </span>
+                                                <span class="message__date">
+                                                    16 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="message">
+                                        <a href="#">
+                                            <span class="avatar">
+                                                <img src="/assets/demo/avatar-21f2a6af8bfb8f96cb4114145ce4133f.jpg"
+                                                    alt="John Low Avatar" class="avatar__object" />
+                                            </span>
+                                            <span class="flex-1">
+                                                <span class="message__title">
+                                                    John Low
+                                                </span>
+                                                <span class="message__body">
+                                                    Wait a sec..
+                                                </span>
+                                                <span class="message__date">
+                                                    22 hours ago
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Messages Dropdown Wrapper -->
+                    <!-- BEGIN: Notifications Dropdown Wrapper -->
+                    <div>
+                        <a id="notificationsDropdownToggle" href="javascript:;" class="navbar__icon-link"
+                            data-dropdown-toggle data-tippy-placement="bottom-end" data-tippy-offset="[0, 15]">
+                            <span class="badged-icon">
+                                <i data-icon="feather__bell"></i>
+                                <span class="badged-icon__badge badge bg-red-500">1</span>
+                            </span>
+                        </a>
+                        <div class="popover">
+                            <div class="notifications">
+                                <div class="notifications__header">
+                                    <h4>Notifications</h4>
+                                    <a href="javascript:;" class="notifications__header__action">Mark all as read</a>
+                                </div>
+                                <div class="notifications__content scrollbar max-h-96" data-scrollbar>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Today</div>
+                                        <a href="#" class="notification notification--unread">
+                                            <span class="notification__icon avatar"><span
+                                                    class="avatar__object bg-blue-400">MC</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Margo Corn</strong> has invited you to the project
+                                                    <strong>Untitled</strong></span>
+                                            </span>
+                                            <span class="notification__date">2 min</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span
+                                                    class="avatar__object bg-green-400">EH</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Elsa Hoffman</strong> removed you</span>
+                                            </span>
+                                            <span class="notification__date">1 hr</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">Yesterday</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span
+                                                    class="avatar__object bg-yellow-400">MP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> mentioned you in a comment in the
+                                                    project <strong>Untitled 2</strong></span>
+                                                <span class="block mt-2 text-gray-400">"Mike, we need to fix this
+                                                    asap"</span>
+                                            </span>
+                                            <span class="notification__date">14:12</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span
+                                                    class="avatar__object bg-indigo-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Konstantin Konstantinovich</strong> removed you from
+                                                    <strong>Mobile Dolfin</strong></span>
+                                            </span>
+                                            <span class="notification__date">12:03</span>
+                                        </a>
+                                    </div>
+                                    <div class="notifications__group">
+                                        <div class="notifications__date">25 Mar</div>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span
+                                                    class="avatar__object bg-yellow-400">NP</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Nadya Pasutri</strong> accepted your invitation the
+                                                    project <strong>Untitled 2</strong></span>
+                                            </span>
+                                            <span class="notification__date">09:45</span>
+                                        </a>
+                                        <a href="#" class="notification">
+                                            <span class="notification__icon avatar"><span
+                                                    class="avatar__object bg-green-400">KK</span></span>
+                                            <span class="notification__text">
+                                                <span><strong>Siti</strong> accepted the invitation to the project
+                                                    <strong>Tablature</strong></span>
+                                            </span>
+                                            <span class="notification__date">08:15</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Notifications Dropdown Wrapper -->
+                    <!-- BEGIN: Account Menu -->
+                    <div>
+                        <a href="javascript:;" class="navbar__icon-link lg:rounded-none" data-dropdown-toggle
+                            data-tippy-placement="bottom-end" data-tippy-offset="[0, 7]">
+                            <span class="account">
+                                <span class="avatar w-10 account__avatar">
+                                    <img src="/assets/demo/avatar-840733bfb5fe9e63362764fd24338c3f.jpg"
+                                        alt="John Avatar" class="avatar__object" />
+                                    <span class="avatar__badge badge bg-green-400"></span>
+                                </span>
+                                <span class="account__user">
+                                    <span class="account__user__name">John Doe</span>
+                                    <small class="account__user__role">Administrator</small>
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown dropdown--has-icon">
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__user"></i>Profile</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__inbox"></i>Inbox</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__checkSquare"></i>Task</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__messageSquare"></i>Chat</a>
+                            </li>
+                            <li class="dropdown__divider"></li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__settings"></i>Settings</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__helpCircle"></i>Help</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#"><i data-icon="feather__power"></i>Sign Out</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END: Account Menu -->
+                </div>
+            </header>
+            <main class="main">
+                <div data-script="dashboardEcommerce" class="page">
+                    <div class="page__body">
+                        <div class="grid grid-cols-6 xl:grid-cols-3 gap-8">
+                            <div class="col-span-6 xl:col-span-2">
+                                <!-- BEGIN: Greetings -->
+                                <div class="pb-8 xl:pb-16 relative overflow-hidden">
+                                    <svg data-src="undraw_investment_data"
+                                        class="absolute h-1/3 sm:h-[90%] w-auto -right-5 -bottom-[2px] z-[-1] text-scheme-400"></svg>
+                                    <div class="ml-5">
+                                        <%
+                                            const nome = 'Micael 2'
+                                        %>
+                                        <%- include('./partials/test.ejs') %>
+                                        <div class="text-3xl">Good morning, <%= nome %></div>
+                                        <div class="text-xl text-gray-500">Here's what's happening at the store today.
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap md:justify-around gap-8 mt-10 mr-72 ml-5">
+                                        <a href="#"
+                                            class="flex space-x-3 transform transition-transform hover:scale-105">
+                                            <span class="flex flex-col items-center">
+                                                <i data-icon="feather__shoppingBag" class="text-indigo-500 w-5 h-5"></i>
+                                                <i data-icon="feather__chevronUp"
+                                                    class="text-green-500 w-4 h-4 mt-2"></i>
+                                                <span class="text-xs text-green-500">3%</span>
+                                            </span>
+                                            <span>
+                                                <span class="block text-sm text-gray-500 mb-2">Total Sales</span>
+                                                <span class="text-3xl">$12,400</span>
+                                            </span>
+                                        </a>
+                                        <a href="#"
+                                            class="flex space-x-3 transform transition-transform hover:scale-105">
+                                            <span class="flex flex-col items-center">
+                                                <i data-icon="feather__users" class="text-yellow-500 w-5 h-5"></i>
+                                                <i data-icon="feather__chevronUp"
+                                                    class="text-green-500 w-4 h-4 mt-2"></i>
+                                                <span class="text-xs text-green-500">5%</span>
+                                            </span>
+                                            <span>
+                                                <span class="block text-sm text-gray-500 mb-2">Total Visits</span>
+                                                <span class="text-3xl">123,540</span>
+                                            </span>
+                                        </a>
+                                        <a href="#"
+                                            class="flex space-x-3 transform transition-transform hover:scale-105">
+                                            <span class="flex flex-col items-center">
+                                                <i data-icon="feather__shoppingCart" class="text-sky-500 w-5 h-5"></i>
+                                                <i data-icon="feather__chevronDown"
+                                                    class="text-red-500 w-4 h-4 mt-2"></i>
+                                                <span class="text-xs text-red-500">7%</span>
+                                            </span>
+                                            <span>
+                                                <span class="block text-sm text-gray-500 mb-2">Total Expenses</span>
+                                                <span class="text-3xl">$54,300</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- END: Greetings -->
+                                <!-- BEGIN: Revenue -->
+                                <div class="card">
+                                    <div class="card__header">
+                                        <h3 class="text-2xl">Our Revenue</h3>
+                                        <ul class="flex flex-col sm:flex-row justify-end items-end text-sm space-x-5">
+                                            <li class="flex items-center"><span
+                                                    class="w-3 h-3 rounded-full mr-2 bg-primary-400"></span>Earnings
+                                            </li>
+                                            <li class="flex items-center"><span
+                                                    class="w-3 h-3 rounded-full mr-2 bg-info-300"></span>Expenses</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card__body sm:flex">
+                                        <div id="revenueChart" class="flex-1"></div>
+                                        <div
+                                            class="mt-8 sm:mt-0 pt-8 sm:pt-0 sm:ml-8 sm:pl-8 pb-5 flex flex-col items-center justify-between border-t sm:border-t-0 sm:border-l sm:max-w-[200px]">
+                                            <div class="form-control min-w-[100px]">
+                                                <select>
+                                                    <option>2022</option>
+                                                    <option>2021</option>
+                                                    <option>2020</option>
+                                                    <option>2020</option>
+                                                </select>
+                                            </div>
+                                            <div id="revenueSumChart"></div>
+                                            <div class="flex space-x-3">
+                                                <div class="flex flex-col items-center">
+                                                    <i data-icon="feather__dollarSign"
+                                                        class="text-primary-500 w-5 h-5"></i>
+                                                    <i data-icon="feather__chevronUp"
+                                                        class="text-green-500 w-4 h-4 mt-2"></i>
+                                                    <span class="text-xs text-green-500">7%</span>
+                                                </div>
+                                                <div>
+                                                    <div class="text-sm text-gray-500 mb-2 whitespace-nowrap">Total
+                                                        Revenue</div>
+                                                    <div class="text-3xl">$1,176</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END: Revenue -->
+                            </div>
+                            <!-- BEGIN: Recent Orders -->
+                            <div class="col-span-6 xl:col-span-2 card">
+                                <div class="card__header">
+                                    <h3 class="text-2xl">Recent Orders</h3>
+                                </div>
+                                <div class="card__body px-0 scrollbar" data-scrollbar data-scrollbar-auto-hide="false">
+                                    <table class="table">
+                                        <thead class="border-b-2 border-gray-300">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Product</th>
+                                                <th>Customer</th>
+                                                <th>Status</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="whitespace-nowrap">Oct 03, 2021</td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[125px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/photo-6d5629de272f01d07740bd21b6abd198.jpg"
+                                                                alt="Shoes Photo" class="avatar__object rounded" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Nike Sporty HD</span>
+                                                            <span class="text-gray-400 text-xs">Shoes</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[150px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/avatar-ab831da658ce62538a6d14693e2b3142.jpg"
+                                                                alt="Ronald Avatar" class="avatar__object" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Ronald Moore</span>
+                                                            <span class="text-gray-400 text-xs">Gaza, Palestine</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="badge scheme-green">Completed</span>
+                                                </td>
+                                                <td class="text-xl">$1,358.75</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="whitespace-nowrap">Oct 02, 2021</td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[125px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/photo-6fa90029752db9c368a6915b7b42d67f.jpg"
+                                                                alt="TV Photo" class="avatar__object rounded" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Samsung HD TV</span>
+                                                            <span class="text-gray-400 text-xs">Electronics</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[150px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/avatar-3810d880682509f5296ffce7e416c199.jpg"
+                                                                alt="Mobel Avatar" class="avatar__object" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Mobel Potter</span>
+                                                            <span class="text-gray-400 text-xs">Kiev, Ukraine</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="badge scheme-gray">Pending</span>
+                                                </td>
+                                                <td class="text-xl">$364.22</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="whitespace-nowrap">Oct 02, 2021</td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[125px]">
+                                                        <span class="avatar avatar--square w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/photo-34e74799af5f2de40c6f55ff26d6a692.jpg"
+                                                                alt="Bag Photo" class="avatar__object rounded" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Gucci Shopping Bag</span>
+                                                            <span class="text-gray-400 text-xs">Women's</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[150px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/avatar-625068aba81163e4fb3ff3022aeb362b.jpg"
+                                                                alt="Lusy Avatar" class="avatar__object" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Lusyana Zulfa</span>
+                                                            <span class="text-gray-400 text-xs">Bangkok, Thailand</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="badge scheme-green">Completed</span>
+                                                </td>
+                                                <td class="text-xl">$539.16</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="whitespace-nowrap">Sept 28, 2021</td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[125px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/photo-5643da4b863dc4bd454ab6dd38149f45.jpg"
+                                                                alt="iPhone Photo" class="avatar__object rounded" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Apple iPhone</span>
+                                                            <span class="text-gray-400 text-xs">Phones</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[150px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/avatar-faf80566e935db8e36c0d64ae162b2d7.jpg"
+                                                                alt="Steve Avatar" class="avatar__object" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Steve Gates</span>
+                                                            <span class="text-gray-400 text-xs">Brazilia, Brazil</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="badge scheme-green">Completed</span>
+                                                </td>
+                                                <td class="text-xl">$1,082.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="whitespace-nowrap">Sept 27, 2021</td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[125px]">
+                                                        <span class="avatar avatar--square w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/photo-71235b201fe617dcfe0d7d8f34569321.jpg"
+                                                                alt="Necklace Photo" class="avatar__object rounded" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Necklace C2406</span>
+                                                            <span class="text-gray-400 text-xs">Jewellery</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="flex items-center hover:text-primary-500 min-w-[150px]">
+                                                        <span class="avatar w-8 h-8 mr-3">
+                                                            <img src="/assets/demo/avatar-15d179124b445785d1e18998b9846abf.jpg"
+                                                                alt="Amanda Photo" class="avatar__object" />
+                                                        </span>
+                                                        <span class="flex flex-col">
+                                                            <span class="line-clamp-1 text-sm">Amanda Zain</span>
+                                                            <span class="text-gray-400 text-xs">Kuala Lumpur,
+                                                                Malaysia</span>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <span class="badge scheme-red">Canceled</span>
+                                                </td>
+                                                <td class="text-xl">$2,639.01</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END: Recent Orders -->
+                        </div>
+                    </div>
+                </div>
+                <div data-script="dashboardAnalytics" class="page">
+                    <!-- BEGIN: Page Header -->
+                    <div class="page__header flex flex-wrap gap-5 justify-between">
+                        <div class="page__title">
+                            <h1 class="page__title__text">Analytics</h1>
+                            <p class="page__title__subtext">Analytic by graphics</p>
+                        </div>
+                        <div class="form-control min-w-[100px]">
+                            <select>
+                                <option>Visitor</option>
+                                <option>Content</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- END: Page Header -->
+                    <!-- BEGIN: Page  Body -->
+                    <div class="page__body">
+                        <!-- BEGIN: Summary -->
+                        <div class="card">
+                            <div class="grid grid-cols-2 md:grid-cols-4">
+                                <a href="#"
+                                    class="relative px-4 pt-5 pb-24 xl:pb-5 border-b md:border-b-0 border-r flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span
+                                            class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-info-100 to-info-200 rounded-b border-b-2 border-info-100 text-info-600 shadow-sm">
+                                            <i data-icon="feather__users"></i>
+                                        </span>
+                                        <span
+                                            class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">Total Visitor</span>
+                                        <span class="text-2xl font-bold">1,683</span>
+                                    </span>
+                                    <span id="totalVisitorChart"
+                                        class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                                <a href="#"
+                                    class="relative px-4 pt-5 pb-24 xl:pb-5 border-b md:border-b-0 border-r flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span
+                                            class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-indigo-100 to-indigo-200 rounded-b border-b-2 border-indigo-100 text-indigo-600 shadow-sm">
+                                            <i data-icon="feather__userCheck"></i>
+                                        </span>
+                                        <span
+                                            class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">New User</span>
+                                        <span class="text-2xl font-bold">782</span>
+                                    </span>
+                                    <span id="newUserChart"
+                                        class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                                <a href="#"
+                                    class="relative px-4 pt-5 pb-24 xl:pb-5 border-r flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span
+                                            class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-blue-100 to-blue-200 rounded-b border-b-2 border-blue-100 text-blue-600 shadow-sm">
+                                            <i data-icon="feather__userPlus"></i>
+                                        </span>
+                                        <span
+                                            class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">New Visitor</span>
+                                        <span class="text-2xl font-bold">229</span>
+                                    </span>
+                                    <span id="newVisitorChart"
+                                        class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                                <a href="#" class="relative px-4 pt-5 pb-24 xl:pb-5 flex flex-wrap items-start gap-x-3">
+                                    <span class="flex flex-col items-center space-y-2 relative -top-5">
+                                        <span
+                                            class="pt-4 pb-2.5 px-2.5 bg-gradient-to-b from-green-100 to-green-200 rounded-b border-b-2 border-green-100 text-green-600 shadow-sm">
+                                            <i data-icon="feather__creditCard"></i>
+                                        </span>
+                                        <span
+                                            class="absolute top-full left-1/2 transform -translate-x-1/2 text-green-500 text-sm">+28%</span>
+                                    </span>
+                                    <span class="summary-text flex-1 flex flex-col ml-1">
+                                        <span class="text-sm text-gray-400">Subscription</span>
+                                        <span class="text-2xl font-bold">3,172</span>
+                                    </span>
+                                    <span id="subscriptionChart"
+                                        class="xl:w-16 absolute bottom-0 left-0 right-0 xl:static xl:h-12"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END: Summary -->
+                    </div>
+                    <!-- End: Page Body -->
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+        <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+</body>
+
+</html>
