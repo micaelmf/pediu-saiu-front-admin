@@ -3,7 +3,7 @@
     "private": true,
     "version": "1.0.0",
     "scripts": {
-        "dev": "npm run theme:preval && node --watch server.js && vite",
+        "dev": "npm run theme:preval && node server.js && vite",
         "build": "npm run theme:preval && vite build --emptyOutDir",
         "preview": "vite preview",
         "theme:preval": "node ./src/@skewind/bin/themePreval.js --input tailwind.config.js --output src",
@@ -44,7 +44,8 @@
         "tippy.js": "^6.3.7",
         "toastify-js": "^1.12.0",
         "tom-select": "^2.0.1",
-        "vite-express": "^0.10.0"
+        "vite-express": "^0.10.0",
+        "vite-plugin-ejs": "^1.6.4"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.14",
@@ -53,6 +54,7 @@
         "esm": "^3.2.25",
         "html-minifier": "^4.0.0",
         "minimist": "^1.2.6",
+        "nodemon": "^3.0.1",
         "postcss": "^8.1.14",
         "prettier": "^3.0.0",
         "prettier-plugin-tailwindcss": "^0.4.1",

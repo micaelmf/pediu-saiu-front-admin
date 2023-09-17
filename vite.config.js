@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 const path = require('path')
 const fg = require('fast-glob')
+const { ViteEjsPlugin } = require('vite-plugin-ejs');
 
 const srcPath = path.resolve(__dirname, './src')
 
@@ -26,4 +27,7 @@ export default defineConfig({
       input,
     },
   },
+  plugins: [
+    ViteEjsPlugin()
+  ]
 })
