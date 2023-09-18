@@ -73,25 +73,24 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         activeMenuItem();
     });
 
-    function activeMenuItem () {
-        let current = location.pathname;
+    function activeMenuItem() {
+        let current = location.pathname.split('/')[1]; // Pega o nome após a primeira barra
 
-        if (current === '/') {
+        if (current === '') {
             $('.navigation__item').first().addClass('navigation__item--active');
-        } 
-        
-        if (current !== '/') {
-            $('.navigation__item a').each(function() {
+        } else {
+            $('.navigation__item a').each(function () {
                 let $this = $(this);
-                if ($this.attr('href').indexOf(current) !== -1) {
+                if ($this.attr('href').split('/')[1] === current) { // Compara com o nome após a primeira barra no href
                     $('.navigation__item').removeClass('navigation__item--active');
                     $this.parent().addClass('navigation__item--active');
                 }
             });
         }
     }
+
 </script>

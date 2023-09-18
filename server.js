@@ -25,6 +25,15 @@ app.get("/produtos", (req, res) => {
     res.render("products", page)
 });
 
+app.get("/produtos/cadastrar", (req, res) => {
+    const page = {
+        title: 'Cadastrar Produto',
+        url: req.path
+    }
+
+    res.render("products-form", page)
+});
+
 app.get("/contatos", (req, res) => {
     const page = {
         title: 'Contatos',

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('partials/header') %>
+
+    <body style="display: none">
+        <!-- BEGIN: Root Layout -->
+        <div class="layout">
+            <!-- BEGIN: Sidebar -->
+            <nav class="sidebar">
+                <%- include('partials/logo') %>
+                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
+            </nav>
+            <!-- End: Sidebar -->
+            <!-- BEGIN: Wrapper Main -->
+            <div class="wrapper">
+                <header class="navbar">
+                    <div class="navbar__left lg:hidden">
+                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                            <i data-icon="heroiconsOutline__menuAlt1"></i>
+                        </a>
+                    </div>
+                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+                    <div class="navbar__center"></div>
+                    <div class="navbar__right">
+                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
+                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
+                                <%- include('partials/account-menu') %> <!-- Account Menu -->
+                    </div>
+                </header>
+                <main class="main">
+                    <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar"
+                        data-scrollbar data-scrollbar-auto-hide="false">
+                        <!-- BEGIN: Page Header -->
+                        <header class="page__header flex items-end justify-between">
+                            <div>
+                                <%- include('partials/breadcrumb') %>
+                                    <div class="page__title">
+                                        <h1 class="page__title__text text-3xl">Cadastrar</h1>
+                                    </div>
+                            </div>
+                        </header>
+                        <!-- END: Page Header -->
+                        <!-- BEGIN: Page Body -->
+                        <div class="page__body">
+                            <div class="w-full max-w-4xl">
+                                <form method="post" class="card">
+                                    <div class="card__header">
+                                        <div>
+                                            <h3 class="text-xl">Account information</h3>
+                                            <p class="text-sm text-gray-400">Set your login preferences and account
+                                                experiences.</p>
+                                        </div>
+                                        <a href="javascript:;"
+                                            class="button button--icon button--flat scheme-info rounded-full">
+                                            <i data-icon="feather__helpCircle"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card__body">
+                                        <fieldset class="field">
+                                            <label class="form-control">
+                                                <span><i data-icon="feather__mail"></i></span>
+                                                <input type="email" placeholder="Email address" />
+                                            </label>
+                                        </fieldset>
+                                        <fieldset class="field">
+                                            <div class="form-control">
+                                                <span class="self-stretch flex items-center">
+                                                    <i data-icon="feather__mapPin"></i>
+                                                </span>
+                                                <select id="country" data-select
+                                                    data-select-placeholder="Country/Region">
+                                                    <option value="">Country/Region</option>
+                                                    <option>Belgium</option>
+                                                    <option>France</option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="field">
+                                            <div class="form-control">
+                                                <span class="self-stretch flex items-center">
+                                                    <i data-icon="heroiconsOutline__translate"></i>
+                                                </span>
+                                                <select id="lang" data-select data-select-placeholder="Language">
+                                                    <option value="">Language</option>
+                                                    <option>Turkish</option>
+                                                    <option>Russian</option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="card__divider"></div>
+                                    <div class="card__header">
+                                        <div>
+                                            <h3 class="text-xl">Profile</h3>
+                                            <p class="text-sm text-gray-400">Complete your profile in seconds.</p>
+                                        </div>
+                                        <a href="javascript:;"
+                                            class="button button--icon button--flat scheme-info rounded-full">
+                                            <i data-icon="feather__helpCircle"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card__body">
+                                        <fieldset class="field">
+                                            <label for="fullName" class="field__label">Full Name</label>
+                                            <label class="form-control">
+                                                <span><i data-icon="feather__user"></i></span>
+                                                <input id="fullName" type="text" placeholder="Full name" />
+                                            </label>
+                                        </fieldset>
+                                        <fieldset class="field">
+                                            <label for="profileUrl" class="field__label">Profile URL</label>
+                                            <label class="form-control">
+                                                <span>https://example.com/</span>
+                                                <input id="profileUrl" type="text" placeholder="username" />
+                                            </label>
+                                        </fieldset>
+                                        <fieldset class="field">
+                                            <label for="about" class="field__label">About</label>
+                                            <label class="form-control">
+                                                <span class="self-start mt-2"><i
+                                                        data-icon="feather__alignLeft"></i></span>
+                                                <span data-textarea-grow>
+                                                    <textarea id="about" placeholder="About"></textarea>
+                                                </span>
+                                            </label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="card__divider"></div>
+                                    <div class="card__header">
+                                        <div>
+                                            <h3 class="text-xl">Notifications</h3>
+                                            <p class="text-sm text-gray-400">We will let you know about updates and
+                                                changes you want.</p>
+                                        </div>
+                                        <a href="javascript:;"
+                                            class="button button--icon button--flat scheme-info rounded-full">
+                                            <i data-icon="feather__helpCircle"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card__body">
+                                        <fieldset class="field mb-0">
+                                            <label class="check-control">
+                                                <input type="checkbox" />
+                                                <span>By email</span>
+                                            </label>
+                                        </fieldset>
+                                        <fieldset class="field">
+                                            <label class="check-control">
+                                                <input type="checkbox" />
+                                                <span>By push notification</span>
+                                            </label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="card__divider"></div>
+                                    <div class="card__footer gap-5">
+                                        <a href="/produtos" class="button button--flat button--soft ml-auto">
+                                            Cancelar
+                                        </a>
+                                        <button type="submit" class="button scheme-primary">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END: Page Body -->
+                    </section>
+                </main>
+                <%- include('partials/footer') %>
+            </div>
+            <!-- END: Wrapper Main -->
+        </div>
+        <!--END: Root Layout -->
+    </body>
+
+</html>
