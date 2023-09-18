@@ -1,12 +1,18 @@
-<!-- breadcrumb.ejs -->
 <div class="breadcrumb">
     <div>
         <a href="/" class="breadcrumb__item">Dashboard</a>
         <% var urlArray = url.split('/'); %>
+        <% var lastIsInteger = Number.isInteger(Number(urlArray[urlArray.length - 1])); %>
         <% for(var i = 1; i < urlArray.length; i++) { %>
             <% if(urlArray[i]) { %>
                 <span class="breadcrumb__separator">/</span>
-                <a href="<%= '/' + urlArray.slice(1, i + 1).join('/') %>" class="breadcrumb__item"><%= urlArray[i] %></a>
+                <% var isLastTwo = (i >= urlArray.length - 2); %>
+                <% var capitalized = urlArray[i].charAt(0).toUpperCase() + urlArray[i].slice(1); %>
+                <% if(lastIsInteger && isLastTwo) { %>
+                    <span class="breadcrumb__item"><%= capitalized %></span>
+                <% } else { %>
+                    <a href="<%= '/' + urlArray.slice(1, i + 1).join('/') %>" class="breadcrumb__item"><%= capitalized %></a>
+                <% } %>
             <% } %>
         <% } %>
     </div>

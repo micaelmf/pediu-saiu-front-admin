@@ -32,7 +32,7 @@ app.get("/produtos", (req, res) => {
 
 app.get("/produtos/cadastrar", (req, res) => {
     const page = {
-        title: 'Cadastrar Produto',
+        title: 'Cadastrar',
         url: req.path
     }
 
@@ -41,7 +41,7 @@ app.get("/produtos/cadastrar", (req, res) => {
 
 app.get("/produtos/editar/:id", (req, res) => {
     const page = {
-        title: 'Editar Produto',
+        title: 'Editar',
         url: req.path
     }
 
