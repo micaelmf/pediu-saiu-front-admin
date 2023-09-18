@@ -1,0 +1,13 @@
+<!-- breadcrumb.ejs -->
+<div class="breadcrumb">
+    <div>
+        <a href="/" class="breadcrumb__item">Dashboard</a>
+        <% var urlArray = url.split('/'); %>
+        <% for(var i = 1; i < urlArray.length; i++) { %>
+            <% if(urlArray[i]) { %>
+                <span class="breadcrumb__separator">/</span>
+                <a href="<%= '/' + urlArray.slice(1, i + 1).join('/') %>" class="breadcrumb__item"><%= urlArray[i] %></a>
+            <% } %>
+        <% } %>
+    </div>
+</div>

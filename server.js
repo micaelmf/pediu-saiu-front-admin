@@ -8,24 +8,27 @@ const port = 3002;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 
-app.get("/", (_, res) => {
+app.get("/", (req, res) => {
     const page = {
-        title: 'Produtos'
+        title: 'Dashboard',
+        url: req.path
     }
     res.render("blank-page", page)
 });
 
-app.get("/produtos", (_, res) => {
+app.get("/produtos", (req, res) => {
     const page = {
-        title: 'Produtos'
+        title: 'Produtos',
+        url: req.path
     }
 
     res.render("products", page)
 });
 
-app.get("/contatos", (_, res) => {
+app.get("/contatos", (req, res) => {
     const page = {
-        title: 'Contatos'
+        title: 'Contatos',
+        url: req.path
     }
 
     res.render("contacts", page)

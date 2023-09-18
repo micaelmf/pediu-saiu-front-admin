@@ -33,16 +33,10 @@
                         <!-- BEGIN: Page Header -->
                         <header class="page__header flex items-end justify-between">
                             <div>
-                                <div class="breadcrumb">
-                                    <div>
-                                        <a href="/" class="breadcrumb__item">Home</a>
-                                        <span class="breadcrumb__separator">/</span>
-                                        <a href="" class="breadcrumb__item">Cadastrar Produtos</a>
+                                <%- include('partials/breadcrumb') %>
+                                    <div class="page__title">
+                                        <h1 class="page__title__text text-3xl">Produtos</h1>
                                     </div>
-                                </div>
-                                <div class="page__title">
-                                    <h1 class="page__title__text text-3xl">Produtos</h1>
-                                </div>
                             </div>
                             <div>
                                 <a href="#" class="button scheme-primary">
