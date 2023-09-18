@@ -49,6 +49,10 @@
                         <!-- BEGIN: Page Body -->
                         <div class="page__body">
                             <style>
+                                .table-row {
+                                    cursor: pointer;
+                                }
+                                
                                 @media (max-width: 600px) {
                                     .acoes {
                                         position: sticky;
@@ -164,106 +168,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="table-row">
+                                    <% products.forEach(function(product) { %>
                                         <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
                                         <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
-                                        <td class="table-cell">1</td>
-                                        <td class="table-cell">Refrigerante Zero Açucar</td>
-                                        <td class="table-cell">Lionel Messi</td>
-                                        <td class="table-cell">$187999</td>
-                                        <td class="table-cell">10</td>
-                                        <td class="acoes">
-                                            <div class="button-group">
-                                                <button type="button" class="button button--outline button--xs"
-                                                    data-dropdown-toggle="#splitButtonDropdown"
-                                                    data-tippy-placement="bottom-end" aria-haspopup="true"
-                                                    class="button button--icon">
-                                                    <i data-icon="feather__moreVertical"
-                                                        class="transform transition"></i>
-                                                </button>
-                                            </div>
-                                            <ul id="splitButtonDropdown" class="dropdown">
-                                                <li class="dropdown__item">
-                                                    <a href="" class="flex justify-between gap-1">
-                                                        <div class="flex items-center">
-                                                            <i data-icon="feather__eye"></i><span>Exbir</span>
-                                                        </div>
-                                                        <div class="flex align-middle hidden">
-                                                            <i data-icon="feather__check"></i>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li class="dropdown__item">
-                                                    <a href="" class="flex justify-between gap-1">
-                                                        <div class="flex items-center">
-                                                            <i data-icon="feather__eyeOff"></i><span>Ocultar</span>
-                                                        </div>
-                                                        <div class="flex align-middle">
-                                                            <i data-icon="feather__check"></i>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li class="dropdown__divider"></li>
-                                                <li class="dropdown__item">
-                                                    <a href=""><i data-icon="feather__edit"></i><span>Editar</span></a>
-                                                </li>
-                                                <li class="dropdown__item">
-                                                    <a href=""><i
-                                                            data-icon="feather__trash2"></i><span>Excluir</span></a>
-                                                </li>
-                                                <!-- And so on.. -->
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr class="table-row">
-                                        <td class="table-cell">1</td>
-                                        <td class="table-cell">Refrigerante Zero Açucar</td>
-                                        <td class="table-cell">Lionel Messi</td>
-                                        <td class="table-cell">$187999</td>
-                                        <td class="table-cell">10</td>
-                                        <td class="acoes">
-                                            <div class="button-group">
-                                                <button type="button" class="button button--outline button--xs"
-                                                    data-dropdown-toggle="#splitButtonDropdown"
-                                                    data-tippy-placement="bottom-end" aria-haspopup="true"
-                                                    class="button button--icon">
-                                                    <i data-icon="feather__moreVertical"
-                                                        class="transform transition"></i>
-                                                </button>
-                                            </div>
-                                            <ul id="splitButtonDropdown" class="dropdown">
-                                                <li class="dropdown__item">
-                                                    <a href="" class="flex justify-between gap-1">
-                                                        <div class="flex items-center">
-                                                            <i data-icon="feather__eye"></i><span>Exbir</span>
-                                                        </div>
-                                                        <div class="flex align-middle hidden">
-                                                            <i data-icon="feather__check"></i>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li class="dropdown__item">
-                                                    <a href="" class="flex justify-between gap-1">
-                                                        <div class="flex items-center">
-                                                            <i data-icon="feather__eyeOff"></i><span>Ocultar</span>
-                                                        </div>
-                                                        <div class="flex align-middle">
-                                                            <i data-icon="feather__check"></i>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li class="dropdown__divider"></li>
-                                                <li class="dropdown__item">
-                                                    <a href=""><i data-icon="feather__edit"></i><span>Editar</span></a>
-                                                </li>
-                                                <li class="dropdown__item">
-                                                    <a href=""><i
-                                                            data-icon="feather__trash2"></i><span>Excluir</span></a>
-                                                </li>
-                                                <!-- And so on.. -->
-                                            </ul>
-                                        </td>
-                                    </tr>
+                                        <tr class="table-row" data-id="<%= product.id %>">
+                                            <td class="table-cell">
+                                                <%= product.id %>
+                                            </td>
+                                            <td class="table-cell">
+                                                <%= product.name %>
+                                            </td>
+                                            <td class="table-cell">
+                                                <%= product.owner %>
+                                            </td>
+                                            <td class="table-cell">$<%= product.price %>
+                                            </td>
+                                            <td class="table-cell">
+                                                <%= product.quantity %>
+                                            </td>
+                                            <td class="acoes">
+                                                <%- include('partials/products-dropdown', {product}) %>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
                                 </tbody>
                             </table>
                         </div>
@@ -277,18 +204,6 @@
         <!--END: Root Layout -->
     </body>
 
-    <script>
-        const settings = {
-            async: true,
-            crossDomain: true,
-            url: 'https://catfact.ninja/fact',
-            method: 'GET'
-        };
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            $("#teste").html(response.fact)
-        });
-    </script>
+    <script src="/js/product-list.js"></script>
 
 </html>

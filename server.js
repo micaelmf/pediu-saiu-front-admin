@@ -7,6 +7,7 @@ const port = 3002;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
+// app.use(express.static('public'));
 
 app.get("/", (req, res) => {
     const page = {
@@ -19,7 +20,11 @@ app.get("/", (req, res) => {
 app.get("/produtos", (req, res) => {
     const page = {
         title: 'Produtos',
-        url: req.path
+        url: req.path,
+        products: [
+            {id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10},
+            {id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10},
+        ]
     }
 
     res.render("products", page)
@@ -28,6 +33,15 @@ app.get("/produtos", (req, res) => {
 app.get("/produtos/cadastrar", (req, res) => {
     const page = {
         title: 'Cadastrar Produto',
+        url: req.path
+    }
+
+    res.render("products-form", page)
+});
+
+app.get("/produtos/editar/:id", (req, res) => {
+    const page = {
+        title: 'Editar Produto',
         url: req.path
     }
 
