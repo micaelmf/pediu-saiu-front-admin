@@ -287,7 +287,7 @@ export {
   // feather__zoomIn,
   // feather__zoomOut,
   // heroiconsOutline__academicCap,
-  // heroiconsOutline__adjustments,
+  heroiconsOutline__adjustments,
   // heroiconsOutline__annotation,
   // heroiconsOutline__archive,
   // heroiconsOutline__arrowCircleDown,
