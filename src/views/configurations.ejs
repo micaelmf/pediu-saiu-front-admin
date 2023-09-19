@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('partials/header') %>
+
+    <body style="display: none">
+        <!-- BEGIN: Root Layout -->
+        <div class="layout">
+            <!-- BEGIN: Sidebar -->
+            <nav class="sidebar">
+                <%- include('partials/logo') %>
+                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
+            </nav>
+            <!-- End: Sidebar -->
+            <!-- BEGIN: Wrapper Main -->
+            <div class="wrapper">
+                <header class="navbar">
+                    <div class="navbar__left lg:hidden">
+                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                            <i data-icon="heroiconsOutline__menuAlt1"></i>
+                        </a>
+                    </div>
+                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+                    <div class="navbar__center"></div>
+                    <div class="navbar__right">
+                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
+                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
+                                <%- include('partials/account-menu') %> <!-- Account Menu -->
+                    </div>
+                </header>
+                <main class="main">
+                    <section data-script="forms/layoutSectioned" class="page">
+                        <!-- BEGIN: Page Header -->
+                        <header class="page__header">
+                            <div class="page__title">
+                                <h1 class="page__title__text text-3xl">Configurações</h1>
+                                <p class="page__title__subtext text-base">Personalize sua experiência no nosso sistema.
+                                </p>
+                            </div>
+                        </header>
+                        <!-- END: Page Header -->
+                        <!-- BEGIN: Page Body -->
+                        <div class="page__body">
+                            <div class="card">
+                                <div class="card__body">
+                                    <fieldset class="field">
+                                        <div class="input-group">
+                                            <div class="flex-1 form-control scheme-gray">
+                                                <input type="text" placeholder="Buscar configuração">
+                                            </div>
+                                            <button type="button"
+                                                class="button button--icon button--solid button--md scheme-primary">
+                                                <i data-icon="feather__search"></i>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-4 py-4">
+                                <a href="#"
+                                    class="grid gap-4 grid-flow-col-dense min-w-[180px] justify-start h-fit bg-gray-50 hover:bg-scheme-50 active:bg-scheme-500 hover:text-scheme-600 hover:shadow-sm active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                    <i data-icon="dripicons__document"></i>
+                                    <span>Planos</span>
+                                </a>
+                                <a href="#"
+                                    class="grid gap-4 grid-flow-col-dense min-w-[180px] justify-start h-fit bg-gray-50 hover:bg-scheme-50 active:bg-scheme-500 hover:text-scheme-600 hover:shadow-sm active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                    <i data-icon="ionicons__bicycle"></i>
+                                    <span>Delivery</span>
+                                </a>
+                                <a href="#"
+                                    class="grid gap-4 grid-flow-col-dense min-w-[180px] justify-start h-fit bg-gray-50 hover:bg-scheme-50 active:bg-scheme-500 hover:text-scheme-600 hover:shadow-sm active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                    <i data-icon="ionicons__storefrontOutline"></i>
+                                    <span>Vitrine</span>
+                                </a>
+                                <a href="configuracoes/aparencia"
+                                    class="grid gap-4 grid-flow-col-dense min-w-[180px] justify-start h-fit bg-gray-50 hover:bg-scheme-50 active:bg-scheme-500 hover:text-scheme-600 hover:shadow-sm active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                    <i data-icon="dripicons__brush"></i>
+                                    <span>Aparência</span>
+                                    <!-- <span class="badge badge--outline rounded-full badge--dot scheme-success">Novo</span> -->
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END: Page Body -->
+                    </section>
+                </main>
+                <%- include('partials/footer') %>
+            </div>
+            <!-- END: Wrapper Main -->
+        </div>
+        <!--END: Root Layout -->
+    </body>
+
+</html>
