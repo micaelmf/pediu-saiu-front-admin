@@ -28,140 +28,203 @@
                     </div>
                 </header>
                 <main class="main">
-                    <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar"
-                        data-scrollbar data-scrollbar-auto-hide="false">
-                        <!-- BEGIN: Page Header -->
-                        <header class="page__header flex items-end justify-between">
-                            <div>
+                    <section id="contentscroll" aria-labelledby="contentscroll-tab"
+                        class="page main__full flex flex-col">
+                        <header class="page__header">
+                            <div class="flex flex-col">
                                 <%- include('partials/breadcrumb') %>
-                                    <div class="page__title">
-                                        <h1 class="page__title__text text-3xl"><%= title %></h1>
+                                <div class="flex justify-between">
+                                    <div class="page__title flex-1">
+                                        <h2 class="page__title__text">
+                                            <%= title %>
+                                        </h2>
                                     </div>
+                                    <button data-col-toggle="contentscrollSidebar"
+                                        class="button button--icon button--flat mr-3">
+                                        <i data-icon="feather__menu"></i>
+                                    </button>
+                                </div>
                             </div>
                         </header>
-                        <!-- END: Page Header -->
-                        <!-- BEGIN: Page Body -->
-                        <div class="page__body">
-                            <div class="w-full max-w-4xl">
-                                <form method="post" class="card">
-                                    <div class="card__header">
-                                        <div>
-                                            <h3 class="text-xl">Account information</h3>
-                                            <p class="text-sm text-gray-400">Set your login preferences and account
-                                                experiences.</p>
-                                        </div>
-                                        <a href="javascript:;"
-                                            class="button button--icon button--flat scheme-info rounded-full">
-                                            <i data-icon="feather__helpCircle"></i>
-                                        </a>
-                                    </div>
-                                    <div class="card__body">
-                                        <fieldset class="field">
-                                            <label class="form-control">
-                                                <span><i data-icon="feather__mail"></i></span>
-                                                <input type="email" placeholder="Email address" />
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <div class="form-control">
-                                                <span class="self-stretch flex items-center">
-                                                    <i data-icon="feather__mapPin"></i>
-                                                </span>
-                                                <select id="country" data-select
-                                                    data-select-placeholder="Country/Region">
-                                                    <option value="">Country/Region</option>
-                                                    <option>Belgium</option>
-                                                    <option>France</option>
-                                                </select>
+                        <div class="page__body flex-1 min-h-0">
+                            <div class="card cols h-full">
+                                <!-- BEGIN: Main Content -->
+                                <div class="cols__main h-full scrollbar" data-scrollbar
+                                    data-scrollbar-auto-hide="false">
+                                    <form method="post" class="card">
+                                        <div class="card__header">
+                                            <div>
+                                                <h3 class="text-xl">Account information</h3>
+                                                <p class="text-sm text-gray-400">Set your login preferences and account
+                                                    experiences.</p>
                                             </div>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <div class="form-control">
-                                                <span class="self-stretch flex items-center">
-                                                    <i data-icon="heroiconsOutline__translate"></i>
-                                                </span>
-                                                <select id="lang" data-select data-select-placeholder="Language">
-                                                    <option value="">Language</option>
-                                                    <option>Turkish</option>
-                                                    <option>Russian</option>
-                                                </select>
+                                            <a href="javascript:;"
+                                                class="button button--icon button--flat scheme-info rounded-full">
+                                                <i data-icon="feather__helpCircle"></i>
+                                            </a>
+                                        </div>
+                                        <div class="card__body">
+                                            <fieldset class="field">
+                                                <label class="form-control">
+                                                    <span><i data-icon="feather__mail"></i></span>
+                                                    <input type="email" placeholder="Email address" />
+                                                </label>
+                                            </fieldset>
+                                            <fieldset class="field">
+                                                <div class="form-control">
+                                                    <span class="self-stretch flex items-center">
+                                                        <i data-icon="feather__mapPin"></i>
+                                                    </span>
+                                                    <select id="country" data-select
+                                                        data-select-placeholder="Country/Region">
+                                                        <option value="">Country/Region</option>
+                                                        <option>Belgium</option>
+                                                        <option>France</option>
+                                                    </select>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="field">
+                                                <div class="form-control">
+                                                    <span class="self-stretch flex items-center">
+                                                        <i data-icon="heroiconsOutline__translate"></i>
+                                                    </span>
+                                                    <select id="lang" data-select data-select-placeholder="Language">
+                                                        <option value="">Language</option>
+                                                        <option>Turkish</option>
+                                                        <option>Russian</option>
+                                                    </select>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="card__divider"></div>
+                                        <div class="card__header">
+                                            <div>
+                                                <h3 class="text-xl">Profile</h3>
+                                                <p class="text-sm text-gray-400">Complete your profile in seconds.</p>
                                             </div>
-                                        </fieldset>
-                                    </div>
-                                    <div class="card__divider"></div>
-                                    <div class="card__header">
-                                        <div>
-                                            <h3 class="text-xl">Profile</h3>
-                                            <p class="text-sm text-gray-400">Complete your profile in seconds.</p>
+                                            <a href="javascript:;"
+                                                class="button button--icon button--flat scheme-info rounded-full">
+                                                <i data-icon="feather__helpCircle"></i>
+                                            </a>
                                         </div>
-                                        <a href="javascript:;"
-                                            class="button button--icon button--flat scheme-info rounded-full">
-                                            <i data-icon="feather__helpCircle"></i>
-                                        </a>
-                                    </div>
-                                    <div class="card__body">
-                                        <fieldset class="field">
-                                            <label for="fullName" class="field__label">Full Name</label>
-                                            <label class="form-control">
-                                                <span><i data-icon="feather__user"></i></span>
-                                                <input id="fullName" type="text" placeholder="Full name" />
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label for="profileUrl" class="field__label">Profile URL</label>
-                                            <label class="form-control">
-                                                <span>https://example.com/</span>
-                                                <input id="profileUrl" type="text" placeholder="username" />
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label for="about" class="field__label">About</label>
-                                            <label class="form-control">
-                                                <span class="self-start mt-2"><i
-                                                        data-icon="feather__alignLeft"></i></span>
-                                                <span data-textarea-grow>
-                                                    <textarea id="about" placeholder="About"></textarea>
-                                                </span>
-                                            </label>
-                                        </fieldset>
-                                    </div>
-                                    <div class="card__divider"></div>
-                                    <div class="card__header">
-                                        <div>
-                                            <h3 class="text-xl">Notifications</h3>
-                                            <p class="text-sm text-gray-400">We will let you know about updates and
-                                                changes you want.</p>
+                                        <div class="card__body">
+                                            <fieldset class="field">
+                                                <label for="fullName" class="field__label">Full Name</label>
+                                                <label class="form-control">
+                                                    <span><i data-icon="feather__user"></i></span>
+                                                    <input id="fullName" type="text" placeholder="Full name" />
+                                                </label>
+                                            </fieldset>
+                                            <fieldset class="field">
+                                                <label for="profileUrl" class="field__label">Profile URL</label>
+                                                <label class="form-control">
+                                                    <span>https://example.com/</span>
+                                                    <input id="profileUrl" type="text" placeholder="username" />
+                                                </label>
+                                            </fieldset>
+                                            <fieldset class="field">
+                                                <label for="about" class="field__label">About</label>
+                                                <label class="form-control">
+                                                    <span class="self-start mt-2"><i
+                                                            data-icon="feather__alignLeft"></i></span>
+                                                    <span data-textarea-grow>
+                                                        <textarea id="about" placeholder="About"></textarea>
+                                                    </span>
+                                                </label>
+                                            </fieldset>
                                         </div>
-                                        <a href="javascript:;"
-                                            class="button button--icon button--flat scheme-info rounded-full">
-                                            <i data-icon="feather__helpCircle"></i>
-                                        </a>
+                                        <div class="card__divider"></div>
+                                        <div class="card__header">
+                                            <div>
+                                                <h3 class="text-xl">Notifications</h3>
+                                                <p class="text-sm text-gray-400">We will let you know about updates and
+                                                    changes you want.</p>
+                                            </div>
+                                            <a href="javascript:;"
+                                                class="button button--icon button--flat scheme-info rounded-full">
+                                                <i data-icon="feather__helpCircle"></i>
+                                            </a>
+                                        </div>
+                                        <div class="card__body">
+                                            <fieldset class="field mb-0">
+                                                <label class="check-control">
+                                                    <input type="checkbox" />
+                                                    <span>By email</span>
+                                                </label>
+                                            </fieldset>
+                                            <fieldset class="field">
+                                                <label class="check-control">
+                                                    <input type="checkbox" />
+                                                    <span>By push notification</span>
+                                                </label>
+                                            </fieldset>
+                                        </div>
+                                        <div class="card__divider"></div>
+                                        <div class="card__footer gap-5">
+                                            <a href="/produtos" class="button button--flat button--soft ml-auto">
+                                                Cancelar
+                                            </a>
+                                            <button type="submit" class="button scheme-primary">Salvar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END: Main Content -->
+                                <!-- BEGIN: Sidebar -->
+                                <aside id="contentscrollSidebar"
+                                    class="col lg:col--relative col-w-80 lg:col--expanded h-full">
+                                    <div class="col__inner card rounded-none h-full scrollbar" data-scrollbar
+                                        data-scrollbar-auto-hide="false">
+                                        <div class="card__header text-2xl">
+                                            Acesso Rápido
+                                        </div>
+                                        <div class="card__body">
+                                            <button type="button"
+                                                class="button scheme-primary w-full [&[aria-expanded=true]>.icon]:rotate-180"
+                                                data-dropdown-toggle aria-haspopup="true">
+                                                <span>Cadastrar</span>
+                                                <i data-icon="feather__chevronDown" class="transform transition"></i>
+                                            </button>
+                                            <ul class="dropdown">
+                                                <li class="dropdown__item">
+                                                    <a href="">Categoria</a>
+                                                </li>
+                                            </ul>
+                                            <form method="post" class="flex flex-col gap-4 py-4">
+                                                <div class="">
+                                                    <fieldset class="field">
+                                                        <label class="form-control">
+                                                            <input type="text" placeholder="Nome" />
+                                                        </label>
+                                                    </fieldset>
+                                                    <fieldset class="field">
+                                                        <label class="form-control">
+                                                            <span data-textarea-grow="">
+                                                                <textarea id="description" placeholder="Descriçao"
+                                                                    rows="4"></textarea>
+                                                            </span>
+                                                        </label>
+                                                    </fieldset>
+                                                    <div class="form-control">
+                                                        <select data-select data-select-placeholder="Visibilidade">
+                                                            <option value="">Visibilidade</option>
+                                                            <option>Visível</option>
+                                                            <option>Oculta</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-between gap-5">
+                                                    <a href="/#" class="button button--flat button--soft">
+                                                        Cancelar
+                                                    </a>
+                                                    <button type="submit" class="button scheme-primary">Salvar</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="card__body">
-                                        <fieldset class="field mb-0">
-                                            <label class="check-control">
-                                                <input type="checkbox" />
-                                                <span>By email</span>
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label class="check-control">
-                                                <input type="checkbox" />
-                                                <span>By push notification</span>
-                                            </label>
-                                        </fieldset>
-                                    </div>
-                                    <div class="card__divider"></div>
-                                    <div class="card__footer gap-5">
-                                        <a href="/produtos" class="button button--flat button--soft ml-auto">
-                                            Cancelar
-                                        </a>
-                                        <button type="submit" class="button scheme-primary">Salvar</button>
-                                    </div>
-                                </form>
+                                </aside>
+                                <!-- END: Sidebar -->
                             </div>
                         </div>
-                        <!-- END: Page Body -->
                     </section>
                 </main>
                 <%- include('partials/footer') %>
