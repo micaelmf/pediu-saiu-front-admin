@@ -3,3 +3,12 @@
 
 /* BEGIN: Your Application CSS */
 @import './features/index';
+
+.logo {
+    background-color: #242424;
+    @apply flex justify-center p-2;
+}
+
+img {
+    @apply w-auto h-[40px];
+}
