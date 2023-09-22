@@ -89,6 +89,12 @@
                                                 </label>
                                             </fieldset>
                                             <fieldset class="field">
+                                                <label class="check-control">
+                                                    <input id="free" type="checkbox">
+                                                    <span>Grátis</span>
+                                                </label>
+                                            </fieldset>
+                                            <fieldset class="field">
                                                 <label for="category" class="field__label">Categoria</label>
                                                 <div class="form-control">
                                                     <select id="category">
@@ -160,24 +166,9 @@
                                             Acesso Rápido
                                         </div>
                                         <div class="card__body">
-                                            <button type="button"
-                                                id="quickAccess"
-                                                class="button scheme-primary w-full [&[aria-expanded=true]>.icon]:rotate-180"
-                                                data-dropdown-toggle aria-haspopup="true">
-                                                <span>Cadastrar</span>
-                                                <i data-icon="feather__chevronDown" class="transform transition"></i>
-                                            </button>
-                                            <ul class="dropdown">
-                                                <li id="category" class="dropdown__item">
-                                                    <a href="">Categoria</a>
-                                                </li>
-                                                <li id="additional" class="dropdown__item">
-                                                    <a href="">Acompanhamento/Adicional</a>
-                                                </li>
-                                            </ul>
-                                            <form id="category" method="post" class="flex flex-col gap-4 py-4 hidden">
+                                            <form id="category" method="post" class="flex flex-col gap-4 py-4">
                                                 <div class="text-xl flex">
-                                                    Categoria
+                                                    Cadastrar Categoria
                                                 </div>
                                                 <div class="">
                                                     <fieldset class="field">
@@ -200,36 +191,6 @@
                                                             <option>Oculta</option>
                                                         </select>
                                                     </div>
-                                                </div>
-                                                <div class="flex justify-between gap-5">
-                                                    <a href="/#" class="button button--flat button--soft">
-                                                        Cancelar
-                                                    </a>
-                                                    <button type="submit" class="button scheme-primary">Salvar</button>
-                                                </div>
-                                            </form>
-                                            <form id="additional" method="post" class="flex flex-col gap-4 py-4 hidden">
-                                                <div class="text-xl flex">
-                                                    Acompanhamento/Adicional
-                                                </div>
-                                                <div class="">
-                                                    <fieldset class="field">
-                                                        <label class="form-control">
-                                                            <input type="text" placeholder="Nome" />
-                                                        </label>
-                                                    </fieldset>
-                                                    <fieldset class="field">
-                                                        <label class="form-control">
-                                                            <span class="self-start mt-2">R$</span>
-                                                            <input type="text" id="price" placeholder="Preço" />
-                                                        </label>
-                                                    </fieldset>
-                                                    <fieldset class="field">
-                                                        <label class="check-control">
-                                                            <input id="free" type="checkbox">
-                                                            <span>Grátis</span>
-                                                        </label>
-                                                    </fieldset>
                                                 </div>
                                                 <div class="flex justify-between gap-5">
                                                     <a href="/#" class="button button--flat button--soft">
