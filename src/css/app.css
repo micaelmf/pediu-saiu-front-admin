@@ -3,3 +3,8 @@
 
 /* BEGIN: Your Application CSS */
 @import './features/index';
+
+.span-disabled {
+    background-color: #e2e8f0;
+    cursor: not-allowed;
+}

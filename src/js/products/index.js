@@ -6,7 +6,7 @@ $('li#category').on('click', function (e) {
     e.preventDefault()
 
     $('form#category').toggleClass('hidden')
-    $('form#addtional').addClass('hidden')
+    $('form#additional').addClass('hidden')
 })
 
 $('li#additional').on('click', function (e) {
@@ -16,15 +16,18 @@ $('li#additional').on('click', function (e) {
     $('form#category').addClass('hidden')
 })
 
-$('form#additional #free').on('click', function (e) {
-    let priceElement = $('form#additional #price');
+$('form#product #free').on('click', function (e) {
+    let priceElement = $('form#product #price');
     let fieldsetElement = priceElement.closest('fieldset');
+    let labelElement = priceElement.closest('label');
 
     if ($(this).is(':checked')) {
         priceElement.addClass('form-control--disabled');
+        labelElement.addClass('span-disabled');
         fieldsetElement.attr('disabled', true);
     } else {
         priceElement.removeClass('form-control--disabled');
+        labelElement.removeClass('span-disabled');
         fieldsetElement.attr('disabled', false);
     }
 })
