@@ -349,7 +349,7 @@ export {
   // heroiconsOutline__cloud,
   // heroiconsOutline__code,
   // heroiconsOutline__cog,
-  // heroiconsOutline__collection,
+  heroiconsOutline__collection,
   // heroiconsOutline__colorSwatch,
   // heroiconsOutline__creditCard,
   // heroiconsOutline__cubeTransparent,
