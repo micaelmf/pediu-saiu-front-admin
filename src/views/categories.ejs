@@ -35,11 +35,11 @@
                             <div>
                                 <%- include('partials/breadcrumb') %>
                                     <div class="page__title">
-                                        <h1 class="page__title__text text-3xl">Produtos</h1>
+                                        <h1 class="page__title__text text-3xl"><%= title %></h1>
                                     </div>
                             </div>
                             <div>
-                                <a href="produtos/cadastrar" class="button scheme-primary">
+                                <a href="categorias/cadastrar" class="button scheme-primary">
                                     <i data-icon="feather__plus"></i>
                                     <span>Cadastrar</span>
                                 </a>
@@ -54,24 +54,23 @@
                                         <div>
                                             <h3 class="text-xl">Filtro</h3>
                                         </div>
-                                        <div>
-                                            <button type="button" class="button button--xs button--outline"
-                                                data-collapse-toggle="#advancedFilterTarget"
-                                                aria-expanded="false">Avançado</button>
-                                        </div>
                                     </div>
                                     <div class="card__body">
                                         <div class="grid grid-cols-1 mb-5">
-                                            <fieldset class="field">
+                                            <fieldset id="filter-categories" class="field">
                                                 <div class="input-group">
                                                     <div class="flex-1 form-control scheme-gray">
-                                                        <input type="text" placeholder="Texto">
+                                                        <input id="filter-text"type="text" placeholder="Texto">
+                                                        <select id="filter-options" style="display: none; padding-left: 12px;" >
+                                                            <option value="visible">Visível</option>
+                                                            <option value="hidden">Oculto</option>
+                                                        </select>
                                                     </div>
                                                     <div class="form-control [.input-group>&]:flex-initial scheme-gray">
                                                         <select>
-                                                            <option value="produtc">Produto</option>
                                                             <option value="category">Categoria</option>
                                                             <option value="description">Descrição</option>
+                                                            <option value="status">Status</option>
                                                         </select>
                                                     </div>
                                                     <button type="button"
@@ -82,92 +81,33 @@
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <div class="card__divider"></div>
-                                    <div id="advancedFilterTarget" class="collapse">
-                                        <div class="card__header">
-                                            <div>
-                                                <h3 class="text-xl">Avançado</h3>
-                                            </div>
-                                            <a href="javascript:;"
-                                                class="button button--icon button--flat scheme-info rounded-full">
-                                                <i data-icon="feather__helpCircle"></i>
-                                            </a>
-                                        </div>
-                                        <div class="card__body">
-                                            <div class="grid md:grid-cols-2 gap-5 mb5">
-                                                <fieldset class="field">
-                                                    <label for="visibility" class="field__label">Visibilidade</label>
-                                                    <div class="flex-1 form-control scheme-gray">
-                                                        <select>
-                                                            <option value="">Selecione</option>
-                                                            <option value="1">Visível</option>
-                                                            <option value="0">Oculto</option>
-                                                        </select>
-                                                    </div>
-                                                </fieldset>
-                                                <fieldset class="field">
-                                                    <label for="visibility" class="field__label">Quantidade</label>
-                                                    <div class="input-group">
-                                                        <div
-                                                            class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                            <select>
-                                                                <option value="">Maior que</option>
-                                                                <option value="agriculture">Igual a</option>
-                                                                <option value="electronics">Menor que</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="flex-1 form-control scheme-gray">
-                                                            <input type="text" placeholder="">
-                                                        </div>
-                                                    </div>
-                                                </fieldset>
-                                            </div>
-                                            <div class="flex gap-5 justify-end">
-                                                <button type="button"
-                                                    class="button button--solid button--md scheme-black">
-                                                    Limpar Filtros
-                                                </button>
-                                                <button type="button"
-                                                    class="button button--solid button--md scheme-primary">
-                                                    Buscar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
                                 <thead>
                                     <tr class="table-row">
                                         <th class="table-cell">#</th>
-                                        <th class="table-cell">Produto</th>
                                         <th class="table-cell">Categoria</th>
-                                        <th class="table-cell">Preço</th>
-                                        <th class="table-cell" data-tooltip="Quantidade">Qtd</th>
+                                        <th class="table-cell">Status</th>
                                         <th class="table-cell">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% products.forEach(function(product) { %>
+                                    <% categories.forEach(function(category) { %>
                                         <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
                                         <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
-                                        <tr class="table-row" data-id="<%= product.id %>">
+                                        <tr class="table-row" data-id="<%= category.id %>">
                                             <td class="table-cell">
-                                                <%= product.id %>
+                                                <%= category.id %>
                                             </td>
                                             <td class="table-cell">
-                                                <%= product.name %>
+                                                <%= category.name %>
                                             </td>
                                             <td class="table-cell">
-                                                <%= product.owner %>
-                                            </td>
-                                            <td class="table-cell">$<%= product.price %>
-                                            </td>
-                                            <td class="table-cell">
-                                                <%= product.quantity %>
+                                                <%= category.status %>
                                             </td>
                                             <td class="acoes">
-                                                <%- include('partials/products-dropdown', {product}) %>
+                                                <%- include('partials/categories-dropdown', {category}) %>
                                             </td>
                                         </tr>
                                     <% }); %>
@@ -184,6 +124,6 @@
         <!--END: Root Layout -->
     </body>
 
-    <script src="/js/products-list.js"></script>
+    <script src="/js/categories-list.js"></script>
 
 </html>

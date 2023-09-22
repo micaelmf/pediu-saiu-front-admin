@@ -17,3 +17,25 @@
 img {
     @apply w-auto h-[40px];
 }
+
+.card__footer {
+    justify-content: flex-end;
+}
+
+.table-row {
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .acoes {
+        position: sticky;
+        right: 0;
+        background: rgba(255, 255, 255, 0.5);
+        /* para sobrepor o conteúdo ao rolar */
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+    }
+}
