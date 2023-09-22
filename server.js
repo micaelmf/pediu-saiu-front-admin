@@ -48,6 +48,37 @@ app.get("/produtos/editar/:id", (req, res) => {
     res.render("products-form", page)
 });
 
+app.get("/categorias", (req, res) => {
+    const page = {
+        title: 'Categorias',
+        url: req.path,
+        categories: [
+            {id: 1, name: 'Combos', status: 'visible'},
+            {id: 2, name: 'Adicionais', status: 'hidden'},
+        ]
+    }
+
+    res.render("categories", page)
+});
+
+app.get("/categorias/cadastrar", (req, res) => {
+    const page = {
+        title: 'Cadastrar',
+        url: req.path
+    }
+
+    res.render("categories-form", page)
+});
+
+app.get("/categorias/editar/:id", (req, res) => {
+    const page = {
+        title: 'Editar',
+        url: req.path
+    }
+
+    res.render("categories-form", page)
+});
+
 app.get("/contatos", (req, res) => {
     const page = {
         title: 'Contatos',
