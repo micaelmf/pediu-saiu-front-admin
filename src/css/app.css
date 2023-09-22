@@ -9,3 +9,11 @@
     cursor: not-allowed;
 
 }
+
+.logo {
+    @apply flex justify-center p-2;
+}
+
+img {
+    @apply w-auto h-[40px];
+}
