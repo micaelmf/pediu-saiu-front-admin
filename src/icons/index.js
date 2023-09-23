@@ -1786,7 +1786,7 @@ export {
   // ionicons__medkitOutline,
   // ionicons__medkitSharp,
   // ionicons__medkit,
-  // ionicons__megaphoneOutline,
+  ionicons__megaphoneOutline,
   // ionicons__megaphoneSharp,
   // ionicons__megaphone,
   // ionicons__menuOutline,

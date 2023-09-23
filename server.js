@@ -79,6 +79,37 @@ app.get("/categorias/editar/:id", (req, res) => {
     res.render("categories-form", page)
 });
 
+app.get("/promocoes", (req, res) => {
+    const page = {
+        title: 'Promoções',
+        url: req.path,
+        promotions: [
+            {id: 1, name: 'Combos', status: 'visible'},
+            {id: 2, name: 'Adicionais', status: 'hidden'},
+        ]
+    }
+
+    res.render("promotions", page)
+});
+
+app.get("/promocoes/cadastrar", (req, res) => {
+    const page = {
+        title: 'Cadastrar',
+        url: req.path
+    }
+
+    res.render("promotions-form", page)
+});
+
+app.get("/promocoes/editar/:id", (req, res) => {
+    const page = {
+        title: 'Editar',
+        url: req.path
+    }
+
+    res.render("promotions-form", page)
+});
+
 app.get("/contatos", (req, res) => {
     const page = {
         title: 'Contatos',
