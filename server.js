@@ -79,6 +79,47 @@ app.get("/categorias/editar/:id", (req, res) => {
     res.render("categories-form", page)
 });
 
+app.get("/combos", (req, res) => {
+    const page = {
+        title: 'Combos',
+        url: req.path,
+        combos: [
+            {id: 1, name: 'Combos', status: 'visible'},
+            {id: 2, name: 'Adicionais', status: 'hidden'},
+        ]
+    }
+
+    res.render("combos", page)
+});
+
+app.get("/combos/cadastrar", (req, res) => {
+    const page = {
+        title: 'Cadastrar',
+        url: req.path,
+        products: [
+            {id: 1, name: 'Rapadura', price: 4000.50, quantity: 10},
+            {id: 2, name: 'Refrigerante Zero Açucar', price: 7, quantity: 4},
+            {id: 3, name: 'Batata', price: 4, quantity: 9},
+        ]
+    }
+
+    res.render("combos-form", page)
+});
+
+app.get("/combos/editar/:id", (req, res) => {
+    const page = {
+        title: 'Editar',
+        url: req.path,
+        products: [
+            {id: 1, name: 'Rapadura', price: 4.50, quantity: 10},
+            {id: 2, name: 'Refrigerante Zero Açucar', price: 7, quantity: 4},
+            {id: 3, name: 'Batata', price: 4, quantity: 9},
+        ]
+    }
+
+    res.render("combos-form", page)
+});
+
 app.get("/promocoes", (req, res) => {
     const page = {
         title: 'Promoções',

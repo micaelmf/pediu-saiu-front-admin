@@ -38,3 +38,47 @@ document.querySelectorAll('[data-dropdown-toggle]').forEach(dropdownToggleEl => 
     Icon.replace(instance.getContentEl())
   }, { once: true })
 })
+
+// const selectEl = document.querySelector('#products')
+// const settings = { maxItems: 2 }
+// const instance = RichSelect.createInstance(selectEl, settings)
+
+// import { getInstance, createInstance } from './src/@skewind/components/richSelect.js'
+
+// const selectEl = document.querySelector('#products')
+// const options = {  }
+
+// let instance = getInstance(selectEl)
+
+// if (!instance) {
+//   instance = createInstance(selectEl, options)
+// }
+
+// console.log('vaivendo', instance)
+
+// console.log('teste')
+
+// const { getInstance, createInstance, destroyInstance } = window.RichSelect
+
+// let selectEl = document.querySelector('#products')
+// const options = { maxItems: 2 }
+
+// let instance = getInstance(selectEl)
+
+// if (instance) {
+//     destroyInstance(instance)
+//     // Cria um novo elemento select
+//     let newSelectEl = document.createElement('select')
+//     newSelectEl.id = 'products'
+  
+//     // Substitui o elemento select original pelo novo
+//     selectEl.parentNode.replaceChild(newSelectEl, selectEl)
+  
+//     // Atualiza a referência para o elemento select
+//     selectEl = newSelectEl
+  
+//     // Cria uma nova instância do TomSelect
+//     instance = createInstance(selectEl, options)
+//   }
+
+// console.log('vaivendo', instance)

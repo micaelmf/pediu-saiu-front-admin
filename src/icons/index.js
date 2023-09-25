@@ -1423,7 +1423,7 @@ export {
   // ionicons__expandOutline,
   // ionicons__expandSharp,
   // ionicons__expand,
-  // ionicons__extensionPuzzleOutline,
+  ionicons__extensionPuzzleOutline,
   // ionicons__extensionPuzzleSharp,
   // ionicons__extensionPuzzle,
   // ionicons__eyeOffOutline,
