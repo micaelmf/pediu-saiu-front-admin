@@ -2,7 +2,7 @@
     <div id="sidebarNavScroll" class="sidebar__scroll scrollbar" data-scrollbar>
         <nav class="navigation">
             <!-- BEGIN: Dashboard -->
-            <div class="navigation__title">DASHBOARDS<small>Useful dashboard designs</small></div>
+            <div class="navigation__title">DASHBOARDS<small>Analise seu desempenho</small></div>
             <ul>
                 <li class="navigation__item">
                     <a href="/" class="navigation__item__toggler">
@@ -22,8 +22,8 @@
                 </li>
             </ul>
             <!-- END: Dashboard -->
-            <!-- BEGIN: Applications -->
-            <div class="navigation__title">APPLICATIONS<small>Prebuilt application designs</small></div>
+            <!-- BEGIN: ERP -->
+            <div class="navigation__title">ERP<small>Gerencie seu e-commerce</small></div>
             <ul>
                 <li class="navigation__item">
                     <a href="/produtos" class="navigation__item__toggler">
@@ -31,6 +31,14 @@
                             <i data-icon="feather__shoppingBag"></i>
                         </span>
                         <span class="navigation__item__title">Produtos</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/combos" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="ionicons__extensionPuzzleOutline"></i>
+                        </span>
+                        <span class="navigation__item__title">Combos</span>
                     </a>
                 </li>
                 <li class="navigation__item">
@@ -42,6 +50,14 @@
                     </a>
                 </li>
                 <li class="navigation__item">
+                    <a href="/promocoes" class="navigation__item__toggler">
+                        <span class="navigation__item__icon">
+                            <i data-icon="ionicons__megaphoneOutline"></i>
+                        </span>
+                        <span class="navigation__item__title">Promoções</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
                     <a href="/contatos" class="navigation__item__toggler">
                         <span class="navigation__item__icon">
                             <i data-icon="feather__users"></i>
@@ -49,6 +65,11 @@
                         <span class="navigation__item__title">Contatos</span>
                     </a>
                 </li>
+            </ul>
+            <!-- END: ERP -->
+            <!-- BEGIN: OUTROS -->
+            <div class="navigation__title">OUTROS</div>
+            <ul>
                 <li class="navigation__item">
                     <a href="/configuracoes" class="navigation__item__toggler">
                         <span class="navigation__item__icon">
@@ -57,9 +78,8 @@
                         <span class="navigation__item__title">Configurações</span>
                     </a>
                 </li>
-
             </ul>
-            <!-- END: Applications -->
+            <!-- END: OUTROS -->
         </nav>
     </div>
 </div>
@@ -84,5 +104,4 @@
             });
         }
     }
-
 </script>

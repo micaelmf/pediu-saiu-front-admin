@@ -10,6 +10,7 @@ import Cols from '@skewind/components/cols'
 import Dismissible from '@skewind/components/dismissible'
 import RichSelect from '@skewind/components/richSelect'
 import Tooltip from '@skewind/components/tooltip'
+import DatePicker from '@skewind/components/datepicker'
 
 // Expose core components
 window.Icon = Icon
@@ -20,6 +21,7 @@ window.Cols = Cols
 window.Dismissible = Dismissible
 window.RichSelect = RichSelect
 window.Tooltip = Tooltip
+window.DatePicker = DatePicker
 
 // Common Features
 import './features/drawer'
@@ -38,3 +40,10 @@ document.querySelectorAll('[data-dropdown-toggle]').forEach(dropdownToggleEl => 
     Icon.replace(instance.getContentEl())
   }, { once: true })
 })
+
+// const rangeDate = document.getElementById('period')
+// console.log('e',rangeDate)
+// const settings = {}
+// const instance = DatePicker.createInstance(rangeDate, settings)
+
+// console.log(instance)
