@@ -155,6 +155,37 @@ app.get("/promocoes/editar/:id", (req, res) => {
     res.render("promotions-form", page)
 });
 
+app.get("/etiquetas", (req, res) => {
+    const page = {
+        title: 'Etiquetas',
+        url: req.path,
+        tags: [
+            { id: 1, name: 'Mais Pedido', status: 'ativo' },
+            { id: 2, name: 'Promoção', status: 'inativo' },
+        ]
+    }
+
+    res.render("tags", page)
+});
+
+app.get("/etiquetas/cadastrar", (req, res) => {
+    const page = {
+        title: 'Cadastrar',
+        url: req.path
+    }
+
+    res.render("tags-form", page)
+});
+
+app.get("/etiquetas/editar/:id", (req, res) => {
+    const page = {
+        title: 'Editar',
+        url: req.path
+    }
+
+    res.render("tags-form", page)
+});
+
 app.get("/contatos", (req, res) => {
     const page = {
         title: 'Contatos',
