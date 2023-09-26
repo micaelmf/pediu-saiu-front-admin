@@ -38,3 +38,8 @@ img {
         flex-direction: column;
     }
 }
+
+.flatpickr-calendar.flatpickr-months .flatpickr-prev-month, .flatpickr-calendar
+.flatpickr-months .flatpickr-next-month {
+    top: auto;
+}

@@ -35,11 +35,11 @@
                             <div>
                                 <%- include('partials/breadcrumb') %>
                                     <div class="page__title">
-                                        <h1 class="page__title__text text-3xl">Produtos</h1>
+                                        <h1 class="page__title__text text-3xl">Promoções</h1>
                                     </div>
                             </div>
                             <div>
-                                <a href="produtos/cadastrar" class="button scheme-primary">
+                                <a href="promocoes/cadastrar" class="button scheme-primary">
                                     <i data-icon="feather__plus"></i>
                                     <span>Cadastrar</span>
                                 </a>
@@ -67,13 +67,6 @@
                                                     <div class="flex-1 form-control scheme-gray">
                                                         <input type="text" placeholder="Texto">
                                                     </div>
-                                                    <div class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                        <select>
-                                                            <option value="produtc">Produto</option>
-                                                            <option value="category">Categoria</option>
-                                                            <option value="description">Descrição</option>
-                                                        </select>
-                                                    </div>
                                                     <button type="button"
                                                         class="button button--icon button--solid button--md scheme-primary">
                                                         <i data-icon="feather__search"></i>
@@ -96,30 +89,20 @@
                                         <div class="card__body">
                                             <div class="grid md:grid-cols-2 gap-5 mb5">
                                                 <fieldset class="field">
-                                                    <label for="visibility" class="field__label">Visibilidade</label>
+                                                    <label for="status" class="field__label">Status</label>
                                                     <div class="flex-1 form-control scheme-gray">
-                                                        <select>
+                                                        <select id="status">
                                                             <option value="">Selecione</option>
-                                                            <option value="1">Visível</option>
-                                                            <option value="0">Oculto</option>
+                                                            <option value="1">Ativo</option>
+                                                            <option value="0">Inativo</option>
                                                         </select>
                                                     </div>
                                                 </fieldset>
                                                 <fieldset class="field">
-                                                    <label for="visibility" class="field__label">Quantidade</label>
-                                                    <div class="input-group">
-                                                        <div
-                                                            class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                            <select>
-                                                                <option value="">Maior que</option>
-                                                                <option value="agriculture">Igual a</option>
-                                                                <option value="electronics">Menor que</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="flex-1 form-control scheme-gray">
-                                                            <input type="text" placeholder="">
-                                                        </div>
-                                                    </div>
+                                                    <label for="visibility" class="field__label">Período</label>
+                                                    <label class="form-control">
+                                                        <input type="text" id="period" />
+                                                    </label>
                                                 </fieldset>
                                             </div>
                                             <div class="flex gap-5 justify-end">
@@ -140,7 +123,7 @@
                                 <thead>
                                     <tr class="table-row">
                                         <th class="table-cell">#</th>
-                                        <th class="table-cell">Produto</th>
+                                        <th class="table-cell">Promoção</th>
                                         <th class="table-cell">Categoria</th>
                                         <th class="table-cell">Preço</th>
                                         <th class="table-cell" data-tooltip="Quantidade">Qtd</th>
@@ -184,6 +167,6 @@
         <!--END: Root Layout -->
     </body>
 
-    <script src="/js/products-list.js"></script>
+    <script type="module" src="/js/promotions-list.js"></script>
 
 </html>

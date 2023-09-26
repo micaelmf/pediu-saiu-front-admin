@@ -10,6 +10,7 @@ import Cols from '@skewind/components/cols'
 import Dismissible from '@skewind/components/dismissible'
 import RichSelect from '@skewind/components/richSelect'
 import Tooltip from '@skewind/components/tooltip'
+import DatePicker from '@skewind/components/datepicker'
 
 // Expose core components
 window.Icon = Icon
@@ -20,6 +21,7 @@ window.Cols = Cols
 window.Dismissible = Dismissible
 window.RichSelect = RichSelect
 window.Tooltip = Tooltip
+window.DatePicker = DatePicker
 
 // Common Features
 import './features/drawer'
@@ -39,46 +41,9 @@ document.querySelectorAll('[data-dropdown-toggle]').forEach(dropdownToggleEl => 
   }, { once: true })
 })
 
-// const selectEl = document.querySelector('#products')
-// const settings = { maxItems: 2 }
-// const instance = RichSelect.createInstance(selectEl, settings)
+// const rangeDate = document.getElementById('period')
+// console.log('e',rangeDate)
+// const settings = {}
+// const instance = DatePicker.createInstance(rangeDate, settings)
 
-// import { getInstance, createInstance } from './src/@skewind/components/richSelect.js'
-
-// const selectEl = document.querySelector('#products')
-// const options = {  }
-
-// let instance = getInstance(selectEl)
-
-// if (!instance) {
-//   instance = createInstance(selectEl, options)
-// }
-
-// console.log('vaivendo', instance)
-
-// console.log('teste')
-
-// const { getInstance, createInstance, destroyInstance } = window.RichSelect
-
-// let selectEl = document.querySelector('#products')
-// const options = { maxItems: 2 }
-
-// let instance = getInstance(selectEl)
-
-// if (instance) {
-//     destroyInstance(instance)
-//     // Cria um novo elemento select
-//     let newSelectEl = document.createElement('select')
-//     newSelectEl.id = 'products'
-  
-//     // Substitui o elemento select original pelo novo
-//     selectEl.parentNode.replaceChild(newSelectEl, selectEl)
-  
-//     // Atualiza a referência para o elemento select
-//     selectEl = newSelectEl
-  
-//     // Cria uma nova instância do TomSelect
-//     instance = createInstance(selectEl, options)
-//   }
-
-// console.log('vaivendo', instance)
+// console.log(instance)

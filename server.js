@@ -22,8 +22,8 @@ app.get("/produtos", (req, res) => {
         title: 'Produtos',
         url: req.path,
         products: [
-            {id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10},
-            {id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10},
+            { id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10 },
+            { id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10 },
         ]
     }
 
@@ -53,8 +53,8 @@ app.get("/categorias", (req, res) => {
         title: 'Categorias',
         url: req.path,
         categories: [
-            {id: 1, name: 'Combos', status: 'visible'},
-            {id: 2, name: 'Adicionais', status: 'hidden'},
+            { id: 1, name: 'Combos', status: 'visible' },
+            { id: 2, name: 'Adicionais', status: 'hidden' },
         ]
     }
 
@@ -84,8 +84,8 @@ app.get("/combos", (req, res) => {
         title: 'Combos',
         url: req.path,
         combos: [
-            {id: 1, name: 'Combos', status: 'visible'},
-            {id: 2, name: 'Adicionais', status: 'hidden'},
+            { id: 1, name: 'Combos', status: 'visible' },
+            { id: 2, name: 'Adicionais', status: 'hidden' },
         ]
     }
 
@@ -97,9 +97,9 @@ app.get("/combos/cadastrar", (req, res) => {
         title: 'Cadastrar',
         url: req.path,
         products: [
-            {id: 1, name: 'Rapadura', price: 4000.50, quantity: 10},
-            {id: 2, name: 'Refrigerante Zero Açucar', price: 7, quantity: 4},
-            {id: 3, name: 'Batata', price: 4, quantity: 9},
+            { id: 1, name: 'Rapadura', price: 4000.50, quantity: 10 },
+            { id: 2, name: 'Refrigerante Zero Açucar', price: 7, quantity: 4 },
+            { id: 3, name: 'Batata', price: 4, quantity: 9 },
         ]
     }
 
@@ -111,9 +111,9 @@ app.get("/combos/editar/:id", (req, res) => {
         title: 'Editar',
         url: req.path,
         products: [
-            {id: 1, name: 'Rapadura', price: 4.50, quantity: 10},
-            {id: 2, name: 'Refrigerante Zero Açucar', price: 7, quantity: 4},
-            {id: 3, name: 'Batata', price: 4, quantity: 9},
+            { id: 1, name: 'Rapadura', price: 4.50, quantity: 10 },
+            { id: 2, name: 'Refrigerante Zero Açucar', price: 7, quantity: 4 },
+            { id: 3, name: 'Batata', price: 4, quantity: 9 },
         ]
     }
 
@@ -125,8 +125,8 @@ app.get("/promocoes", (req, res) => {
         title: 'Promoções',
         url: req.path,
         promotions: [
-            {id: 1, name: 'Combos', status: 'visible'},
-            {id: 2, name: 'Adicionais', status: 'hidden'},
+            { id: 1, name: 'Combos', status: 'visible' },
+            { id: 2, name: 'Adicionais', status: 'hidden' },
         ]
     }
 
@@ -136,7 +136,11 @@ app.get("/promocoes", (req, res) => {
 app.get("/promocoes/cadastrar", (req, res) => {
     const page = {
         title: 'Cadastrar',
-        url: req.path
+        url: req.path,
+        products: [
+            { id: 1, name: 'Rapadura', owner: 'Lionel Messi', price: 187999, quantity: 10 },
+            { id: 2, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 12.50, quantity: 10 },
+        ]
     }
 
     res.render("promotions-form", page)
