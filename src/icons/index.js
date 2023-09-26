@@ -227,7 +227,7 @@ export {
   // feather__smartphone,
   feather__smile,
   // feather__speaker,
-  // feather__square,
+  feather__square,
   feather__star,
   // feather__stopCircle,
   // feather__sun,
