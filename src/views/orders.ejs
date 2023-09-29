@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('partials/header') %>
+
+    <body style="display: none">
+        <!-- BEGIN: Root Layout -->
+        <div class="layout">
+            <!-- BEGIN: Sidebar -->
+            <nav class="sidebar">
+                <%- include('partials/logo') %>
+                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
+            </nav>
+            <!-- End: Sidebar -->
+            <!-- BEGIN: Wrapper Main -->
+            <div class="wrapper">
+                <header class="navbar">
+                    <div class="navbar__left lg:hidden">
+                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+                            <i data-icon="heroiconsOutline__menuAlt1"></i>
+                        </a>
+                    </div>
+                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+                    <div class="navbar__center"></div>
+                    <div class="navbar__right">
+                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
+                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
+                                <%- include('partials/account-menu') %> <!-- Account Menu -->
+                    </div>
+                </header>
+                <main class="main">
+                    <section data-script="forms/layoutSectioned" class="page">
+                        <!-- BEGIN: Page Header -->
+                        <header class="page__header">
+                            <div class="page__title">
+                                <h1 class="page__title__text text-3xl">Pedidos</h1>
+                                <p class="page__title__subtext text-base">O show vai começar, gerencie seus pedidos.
+                                </p>
+                            </div>
+                        </header>
+                        <!-- END: Page Header -->
+                        <!-- BEGIN: Page Body -->
+                        <div class="page__body">
+                            <div class="card">
+                                <div class="card__body">
+                                    <fieldset class="field">
+                                        <div class="input-group">
+                                            <div class="flex-1 form-control scheme-gray">
+                                                <input type="text" placeholder="Buscar pedido">
+                                            </div>
+                                            <button type="button"
+                                                class="button button--icon button--solid button--md scheme-primary">
+                                                <i data-icon="feather__search"></i>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="divide-y divide-gray-300 divide-dashed">
+                                <div>
+                                    <a href="javascript:;" data-collapse-toggle role="button" aria-expanded="true"
+                                        class="flex w-full items-center justify-between text-lg py-2.5 font-semibold [&[aria-expanded=true]>.icon]:rotate-180">
+                                        Sem atendimento
+                                        <i data-icon="feather__chevronDown"></i>
+                                    </a>
+                                    <div class="collapse" data-collapse-group="basicAccordion">
+                                        <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-4 py-4">
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[320px] max-w-[480px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Itens</span>
+                                                        <span>4</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Total</span>
+                                                        <span>R$ 94,00</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Endereço</span>
+                                                        <span>Vila Matoso, 836 - Centro/Russas</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>3min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__dollarSign"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="ionicons__chatboxEllipsesOutline"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__fileText"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__printer"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-danger"><i
+                                                                data-icon="feather__x"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-success"><i
+                                                                data-icon="feather__check"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[320px] max-w-[480px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Itens</span>
+                                                        <span>4</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Total</span>
+                                                        <span>R$ 94,00</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Endereço</span>
+                                                        <span>Vila Matoso, 836 - Centro/Russas</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>3min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__dollarSign"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="ionicons__chatboxEllipsesOutline"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__fileText"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__printer"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-danger"><i
+                                                                data-icon="feather__x"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-success"><i
+                                                                data-icon="feather__check"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" data-collapse-toggle role="button" aria-expanded="false"
+                                        class="flex w-full items-center justify-between text-lg py-2.5 font-semibold [&[aria-expanded=true]>.icon]:rotate-180">
+                                        Preparando/Separando
+                                        <i data-icon="feather__chevronDown"></i>
+                                    </a>
+                                    <div class="collapse" data-collapse-group="basicAccordion">
+                                        <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-4 py-4">
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[240px] max-w-[320px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-4">
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="flex justify-between">
+                                                            <span>SMASH DUPLO COM CHEDDAR</span>
+                                                            <span>x1</span>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2 pl-5"
+                                                            style="border-left: solid 1px lightgray;">
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Acopanhmentos</strong>
+                                                                <div class="flex flex-col">
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Adicionais</strong>
+                                                                <div flex flex-col>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Bebidas</strong>
+                                                                <div class="flex justify-between">
+                                                                    <span>Rapadura</span>
+                                                                    <span>x1</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Observações</strong>
+                                                                <div>Coloque mais molho, tire a carne o alface e pão.
+                                                                    Não
+                                                                    demore pra entregar pois eu estou com fome</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="flex justify-between">
+                                                            <span>SMASH DUPLO COM CHEDDAR</span>
+                                                            <span>x1</span>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2 pl-5"
+                                                            style="border-left: solid 1px lightgray;">
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Acopanhmentos</strong>
+                                                                <div class="flex flex-col">
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Adicionais</strong>
+                                                                <div flex flex-col>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Bebidas</strong>
+                                                                <div class="flex justify-between">
+                                                                    <span>Rapadura</span>
+                                                                    <span>x1</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Observações</strong>
+                                                                <div>Coloque mais molho, tire a carne o alface e pão.
+                                                                    Não
+                                                                    demore pra entregar pois eu estou com fome</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>10min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__printer"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-danger"><i
+                                                                data-icon="feather__x"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-success"><i
+                                                                data-icon="feather__check"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[240px] max-w-[320px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-4">
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="flex justify-between">
+                                                            <span>SMASH DUPLO COM CHEDDAR</span>
+                                                            <span>x1</span>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2 pl-5"
+                                                            style="border-left: solid 1px lightgray;">
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Acopanhmentos</strong>
+                                                                <div class="flex flex-col">
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Adicionais</strong>
+                                                                <div flex flex-col>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Bebidas</strong>
+                                                                <div class="flex justify-between">
+                                                                    <span>Rapadura</span>
+                                                                    <span>x1</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Observações</strong>
+                                                                <div>Coloque mais molho, tire a carne o alface e pão.
+                                                                    Não
+                                                                    demore pra entregar pois eu estou com fome</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="flex justify-between">
+                                                            <span>SMASH DUPLO COM CHEDDAR</span>
+                                                            <span>x1</span>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2 pl-5"
+                                                            style="border-left: solid 1px lightgray;">
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Acopanhmentos</strong>
+                                                                <div class="flex flex-col">
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Adicionais</strong>
+                                                                <div flex flex-col>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Queijo</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                    <div class="flex justify-between">
+                                                                        <span>Rapadura</span>
+                                                                        <span>x1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Bebidas</strong>
+                                                                <div class="flex justify-between">
+                                                                    <span>Rapadura</span>
+                                                                    <span>x1</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex flex-col justify-between">
+                                                                <strong>Observações</strong>
+                                                                <div>Coloque mais molho, tire a carne o alface e pão.
+                                                                    Não
+                                                                    demore pra entregar pois eu estou com fome</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>10min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__printer"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-danger"><i
+                                                                data-icon="feather__x"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-success"><i
+                                                                data-icon="feather__check"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" data-collapse-toggle role="button" aria-expanded="false"
+                                        class="flex w-full items-center justify-between text-lg py-2.5 font-semibold [&[aria-expanded=true]>.icon]:rotate-180">
+                                        Entregando
+                                        <i data-icon="feather__chevronDown"></i>
+                                    </a>
+                                    <div class="collapse" data-collapse-group="basicAccordion">
+                                        <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-4 py-4">
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[320px] max-w-[480px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <strong>Endereço</strong>
+                                                        <span>Rua Vila Matoso, 836</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <strong>Referência</strong>
+                                                        <span>Prox. Salão da Michelle</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <strong>Bairro</strong>
+                                                        <span>Centro - Russas</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>20min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__dollarSign"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="ionicons__chatboxEllipsesOutline"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__fileText"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-danger"><i
+                                                                data-icon="feather__x"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-success"><i
+                                                                data-icon="feather__check"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:;" data-collapse-toggle role="button" aria-expanded="false"
+                                        class="flex w-full items-center justify-between text-lg py-2.5 font-semibold [&[aria-expanded=true]>.icon]:rotate-180">
+                                        Encerrado
+                                        <i data-icon="feather__chevronDown"></i>
+                                    </a>
+                                    <div class="collapse" data-collapse-group="basicAccordion">
+                                        <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-4 py-4">
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[320px] max-w-[480px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Itens</span>
+                                                        <span>4</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Taxas</span>
+                                                        <span>R$ 3,00</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Total</span>
+                                                        <span>R$ 94,00</span>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <span>Forma de pagamento</span>
+                                                        <div class="flex flex-col pl-5" style="border-left: solid 1px lightgray;">
+                                                            <div class="flex flex-row justify-between">
+                                                                <span>Dinheiro</span>
+                                                                <span>R$ 100,00</span>
+                                                            </div>
+                                                            <div class="flex flex-row justify-between">
+                                                                <span>Troco</span>
+                                                                <span>R$ 6,00</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>3min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__printer"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__dollarSign"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__fileText"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div
+                                                class="flex flex-col gap-5 min-w-[320px] max-w-[480px] justify-betweenb bg-gray-50 active:text-scheme-100 focus:outline-none focus:ring rounded shadow p-4">
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row gap-2">
+                                                        <div class="flex flex-row gap-2">
+                                                            <span>#1</span>
+                                                        </div>
+                                                        <div>Micael Ferreira</div>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-info"><i
+                                                                data-icon="feather__maximize"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="heroiconsOutline__dotsVertical"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Itens</span>
+                                                        <span>4</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Taxas</span>
+                                                        <span>R$ 3,00</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2 justify-between">
+                                                        <span>Total</span>
+                                                        <span>R$ 94,00</span>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <span>Forma de pagamento</span>
+                                                        <div class="flex flex-col pl-5" style="border-left: solid 1px lightgray;">
+                                                            <div class="flex flex-row justify-between">
+                                                                <span>Dinheiro</span>
+                                                                <span>R$ 100,00</span>
+                                                            </div>
+                                                            <div class="flex flex-row justify-between">
+                                                                <span>Troco</span>
+                                                                <span>R$ 6,00</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-row justify-between items-center gap-2">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <i data-icon="feather__clock"></i>
+                                                        <span>3min atrás</span>
+                                                    </div>
+                                                    <div class="flex flex-row gap-2">
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__printer"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__dollarSign"></i></button>
+                                                        <button type="button"
+                                                            class="button button--icon button--flat button--md scheme-gray"><i
+                                                                data-icon="feather__fileText"></i></button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- And so on... -->
+                            </div>
+
+                            <p>
+                            <ul>
+                                <li>Abrir/fechar vitrine</li>
+                                <li>Lista de epedidos sem atendimento</li>
+                                <li>Lista com os pedidos em preparo/separacao</li>
+                                <li>Lista com os pedidos que saíram para entrega</li>
+                                <li>Lista com os últimos pedidos encerrados</li>
+                                <li>Personalizar os cards de cada lista pra exibir informações mais relevantes. ex:
+                                    <ul>
+                                        <li>na lista de preparo, mostrar todos os itens e suas observações, ocultar
+                                            endereço e outros</li>
+                                        <li>na lista de que saíram para entrega, priviligar o endereço</li>
+                                        <li>na lista de encerrados, priviligar o valor</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                            </p>
+                        </div>
+                        <!-- END: Page Body -->
+                    </section>
+                </main>
+                <%- include('partials/footer') %>
+            </div>
+            <!-- END: Wrapper Main -->
+        </div>
+        <!--END: Root Layout -->
+    </body>
+
+</html>
