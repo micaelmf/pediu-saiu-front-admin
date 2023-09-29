@@ -186,6 +186,119 @@ app.get("/etiquetas/editar/:id", (req, res) => {
     res.render("tags-form", page)
 });
 
+app.get("/Pedidos", (req, res) => {
+    const page = {
+        title: 'Pedidos',
+        url: req.path,
+        orders: [
+            {
+                id: 3,
+                items: [
+                    { 
+                        sequence: 1,
+                        product: 'sanduba do bom',
+                        unitaryValue: 29.90,
+                        quantity: 2,
+                        observations: "Sem carne =)",
+                        additional: [11, 27, 31],
+                        accompaniment: [71, 21, 12]                        
+                    },
+                    { 
+                        sequence: 1,
+                        product: 'sanduba do bom',
+                        unitaryValue: 29.90,
+                        quantity: 2,
+                        observations: "Sem carne =)",
+                        additional: [11, 27, 31],
+                        accompaniment: [71, 21, 12]                        
+                    },
+                    { 
+                        sequence: 1,
+                        product: 'sanduba do bom',
+                        unitaryValue: 29.90,
+                        quantity: 2,
+                        observations: "Sem carne =)",
+                        additional: [11, 27, 31],
+                        accompaniment: [71, 21, 12]                        
+                    }
+                ],
+                qtdItems: 3,
+                totalValue: 99.60,
+                paymentMethod: "cash",
+                changeTo: 100.00,
+                status:"waiting",
+                customer: {
+                    name: "Micael Ferreira",
+                    contact: {
+                        celPhone: "88996609498",
+                        ddi: "55",
+                        email: "micaelmf2@gmail.com",
+                    },
+                    address: {
+                        street: "Vila Matoso",
+                        number: "836",
+                        district: "Centro",
+                        city: "Russas"
+                    }
+                }
+            },
+            {
+                id: 3,
+                items: [
+                    { 
+                        sequence: 1,
+                        product: 'sanduba do bom',
+                        unitaryValue: 29.90,
+                        quantity: 2,
+                        observations: "Sem carne =)",
+                        additional: [11, 27, 31],
+                        accompaniment: [71, 21, 12]                        
+                    },
+                    { 
+                        sequence: 1,
+                        product: 'sanduba do bom',
+                        unitaryValue: 29.90,
+                        quantity: 2,
+                        observations: "Sem carne =)",
+                        additional: [11, 27, 31],
+                        accompaniment: [71, 21, 12]                        
+                    },
+                    { 
+                        sequence: 1,
+                        product: 'sanduba do bom',
+                        unitaryValue: 29.90,
+                        quantity: 2,
+                        observations: "Sem carne =)",
+                        additional: [11, 27, 31],
+                        accompaniment: [71, 21, 12]                        
+                    }
+                ],
+                qtdItems: 3,
+                totalValue: 99.60,
+                paymentMethod: "cash",
+                changeTo: 100.00,
+                status:"waiting",
+                customer: {
+                    name: "Micael Ferreira",
+                    contact: {
+                        celPhone: "88996609498",
+                        ddi: "55",
+                        email: "micaelmf2@gmail.com",
+                    },
+                    address: {
+                        street: "Vila Matoso",
+                        number: "836",
+                        district: "Centro",
+                        city: "Russas"
+                    }
+                }
+            }
+        ]
+    }
+
+    res.render("orders", page)
+});
+
 app.get("/contatos", (req, res) => {
     const page = {
         title: 'Contatos',
