@@ -17,6 +17,14 @@ app.get("/", (req, res) => {
     res.render("blank-page", page)
 });
 
+app.get("/login", (req, res) => {
+    const page = {
+        title: 'Entrar',
+        url: req.path
+    }
+    res.render("login", page)
+});
+
 app.get("/produtos", (req, res) => {
     const page = {
         title: 'Produtos',
@@ -194,39 +202,39 @@ app.get("/Pedidos", (req, res) => {
             {
                 id: 3,
                 items: [
-                    { 
+                    {
                         sequence: 1,
                         product: 'sanduba do bom',
                         unitaryValue: 29.90,
                         quantity: 2,
                         observations: "Sem carne =)",
                         additional: [11, 27, 31],
-                        accompaniment: [71, 21, 12]                        
+                        accompaniment: [71, 21, 12]
                     },
-                    { 
+                    {
                         sequence: 1,
                         product: 'sanduba do bom',
                         unitaryValue: 29.90,
                         quantity: 2,
                         observations: "Sem carne =)",
                         additional: [11, 27, 31],
-                        accompaniment: [71, 21, 12]                        
+                        accompaniment: [71, 21, 12]
                     },
-                    { 
+                    {
                         sequence: 1,
                         product: 'sanduba do bom',
                         unitaryValue: 29.90,
                         quantity: 2,
                         observations: "Sem carne =)",
                         additional: [11, 27, 31],
-                        accompaniment: [71, 21, 12]                        
+                        accompaniment: [71, 21, 12]
                     }
                 ],
                 qtdItems: 3,
                 totalValue: 99.60,
                 paymentMethod: "cash",
                 changeTo: 100.00,
-                status:"waiting",
+                status: "waiting",
                 customer: {
                     name: "Micael Ferreira",
                     contact: {
@@ -245,39 +253,39 @@ app.get("/Pedidos", (req, res) => {
             {
                 id: 3,
                 items: [
-                    { 
+                    {
                         sequence: 1,
                         product: 'sanduba do bom',
                         unitaryValue: 29.90,
                         quantity: 2,
                         observations: "Sem carne =)",
                         additional: [11, 27, 31],
-                        accompaniment: [71, 21, 12]                        
+                        accompaniment: [71, 21, 12]
                     },
-                    { 
+                    {
                         sequence: 1,
                         product: 'sanduba do bom',
                         unitaryValue: 29.90,
                         quantity: 2,
                         observations: "Sem carne =)",
                         additional: [11, 27, 31],
-                        accompaniment: [71, 21, 12]                        
+                        accompaniment: [71, 21, 12]
                     },
-                    { 
+                    {
                         sequence: 1,
                         product: 'sanduba do bom',
                         unitaryValue: 29.90,
                         quantity: 2,
                         observations: "Sem carne =)",
                         additional: [11, 27, 31],
-                        accompaniment: [71, 21, 12]                        
+                        accompaniment: [71, 21, 12]
                     }
                 ],
                 qtdItems: 3,
                 totalValue: 99.60,
                 paymentMethod: "cash",
                 changeTo: 100.00,
-                status:"waiting",
+                status: "waiting",
                 customer: {
                     name: "Micael Ferreira",
                     contact: {
@@ -297,6 +305,15 @@ app.get("/Pedidos", (req, res) => {
     }
 
     res.render("orders", page)
+});
+
+app.get("/usuario/perfil", (req, res) => {
+    const page = {
+        title: 'Perfil',
+        url: req.path
+    }
+
+    res.render("user-perfil-form", page)
 });
 
 app.get("/contatos", (req, res) => {

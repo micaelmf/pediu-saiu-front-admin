@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header') %>
+
+    <body>
+        <div class="min-h-screen flex flex-col items-center justify-center py-5 lg:py-10 px-md lg:px-lg">
+            <a class="inline-flex items-center">
+                <i data-icon="feather__wind" class="text-primary-600 transform rotate-180 mr-2 w-6 h-6"></i>
+                <span class="text-2xl italic transform -skew-x-3 font-semibold text-gray-500">Skewind</span>
+            </a>
+            <div class="p-10 text-center">
+                <h1 class="text-4xl font-bold mb-2">Entrar</h1>
+                <p class="text-lg text-gray-400">Faça login para continuar</p>
+            </div>
+            <div class="card w-full max-w-md">
+                <form class="p-lg flex flex-col">
+                    <label class="field">
+                        <span class="field__label">Email</span>
+                        <span class="form-control">
+                            <input type="email" name="email" />
+                        </span>
+                    </label>
+                    <label class="field">
+                        <span class="field__label">Senha</span>
+                        <span class="form-control">
+                            <input type="password" name="password" />
+                        </span>
+                    </label>
+                    <div class="flex items-center justify-between">
+                        <label class="check-control">
+                            <input type="checkbox" name="remember" />
+                            <span>Lembrar</span>
+                        </label>
+                        <a href="" class="text-right">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" id="login" class="button button--lg scheme-primary my-10">Entrar</button>
+                    <p class="text-center">
+                        Não tem uma conta?
+                        <a href="/register.html" class="text-scheme-500 font-bold p-2 whitespace-nowrap">Criar conta</a>
+                    </p>
+                </form>
+            </div>
+            <p class="mt-5 text-sm text-gray-400">&copy; 2023. Todos os direitos reservados</p>
+        </div>
+    </body>
+
+    <script type="module" src="/js/login.js"></script>
+</html>
