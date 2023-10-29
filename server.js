@@ -1,10 +1,16 @@
+require('dotenv').config();
 const path = require('path')
 const express = require("express");
 const viteExpress = require("vite-express");
+const axios = require('axios');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 3002;
 
+// app.use(express.json()); // Para processar dados JSON
+app.use(express.urlencoded({ extended: true })); // Para processar dados de formulário HTML
+app.use(cookieParser());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
 // app.use(express.static('public'));
@@ -56,35 +62,135 @@ app.get("/produtos/editar/:id", (req, res) => {
     res.render("products-form", page)
 });
 
-app.get("/categorias", (req, res) => {
-    const page = {
-        title: 'Categorias',
-        url: req.path,
-        categories: [
-            { id: 1, name: 'Combos', status: 'visible' },
-            { id: 2, name: 'Adicionais', status: 'hidden' },
-        ]
-    }
+app.get("/categorias", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
 
-    res.render("categories", page)
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const response = await axios.get(apiUrl + "/categories", {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const page = {
+            title: 'Categorias',
+            url: req.path,
+            categories: response.data
+        };
+
+        res.render("categories", page);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 });
 
 app.get("/categorias/cadastrar", (req, res) => {
     const page = {
         title: 'Cadastrar',
-        url: req.path
+        operation: 'new',
+        url: req.path,
+        category: {}
     }
 
     res.render("categories-form", page)
 });
 
-app.get("/categorias/editar/:id", (req, res) => {
-    const page = {
-        title: 'Editar',
-        url: req.path
-    }
+app.post("/categorias/cadastrar", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
 
-    res.render("categories-form", page)
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const newData = {
+            name: req.body.name,
+            description: req.body.description,
+            status: req.body.status
+        };
+
+        const response = await axios.post(`${apiUrl}/categories`, newData, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const page = {
+            title: 'Cadastrar',
+            url: req.path
+        }
+
+        res.redirect(`/categorias`);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.get("/categorias/editar/:id", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
+
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const response = await axios.get(`${apiUrl}/categories/${req.params.id}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const page = {
+            title: 'Editar',
+            operation: 'edit',
+            url: req.path,
+            category: response.data
+        }
+
+        res.render("categories-form", page)
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.post("/categorias/editar/:id", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
+
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const categoryId = req.params.id;
+        const updatedData = {
+            name: req.body.name,
+            description: req.body.description,
+            status: req.body.status
+        };
+
+        const response = await axios.put(`${apiUrl}/categories/${categoryId}`, updatedData, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        // Redirecione o usuário para a página de detalhes ou para onde desejar após a atualização
+        res.redirect(`/categorias`);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 });
 
 app.get("/combos", (req, res) => {

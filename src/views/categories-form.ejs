@@ -47,7 +47,10 @@
                                         <div class="popover">
                                             <div class="popover__content">
                                                 <div class="font-bold mb-2">Ajuda</div>
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eius repellat. Repellat laudantium adipisci perferendis voluptate ex blanditiis sapiente ducimus eius consectetur dolorum delectus quia, alias quo. Eligendi, nisi earum.</p>
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eius
+                                                    repellat. Repellat laudantium adipisci perferendis voluptate ex
+                                                    blanditiis sapiente ducimus eius consectetur dolorum delectus quia,
+                                                    alias quo. Eligendi, nisi earum.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +58,10 @@
                         </header>
                         <div class="page__body">
                             <div class="w-full max-w-4xl">
-                                <form class="card">
+
+                                <form class="card"
+                                    action="<%= operation === 'edit' ? `/categorias/editar/${category.id}` : '/categorias/cadastrar' %>"
+                                    method="POST">
                                     <div class="card__header">
                                         <div>
                                             <h3 class="text-xl">Categoria</h3>
@@ -64,29 +70,35 @@
                                     <div class="card__body">
                                         <fieldset class="field">
                                             <label class="form-control">
-                                                <input type="text" placeholder="Nome" />
+                                                <input type="text" name="name" placeholder="Nome"
+                                                    value="<%= category.name || '' %>" />
                                             </label>
                                         </fieldset>
                                         <fieldset class="field">
                                             <label class="form-control">
                                                 <span data-textarea-grow="">
-                                                    <textarea id="description" placeholder="Descriçao"
-                                                        rows="4"></textarea>
+                                                    <textarea id="description" name="description"
+                                                        placeholder="Descriçao"
+                                                        rows="4"><%= category.description || '' %></textarea>
                                                 </span>
                                             </label>
                                         </fieldset>
                                         <div class="form-control">
-                                            <select data-select data-select-placeholder="Visibilidade">
+                                            <select name="status" data-select data-select-placeholder="Visibilidade">
                                                 <option value="">Visibilidade</option>
-                                                <option>Visível</option>
-                                                <option>Oculta</option>
+                                                <option value="visible" <%=(category.status==='visible' ) ? 'selected'
+                                                    : '' %>>Visível</option>
+                                                <option value="invisible" <%=(category.status==='invisible' )
+                                                    ? 'selected' : '' %>>Oculta</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="card__divider"></div>
                                     <div class="card__footer gap-5">
                                         <button type="button" class="button button--flat button--soft">Cancelar</button>
-                                        <button type="button" class="button scheme-primary">Salvar</button>
+                                        <button type="submit" class="button scheme-primary">
+                                            <%= operation==='edit' ? 'Editar' : 'Salvar' %>
+                                        </button>
                                     </div>
                                 </form>
                             </div>
