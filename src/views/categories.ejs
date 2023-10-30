@@ -35,7 +35,9 @@
                             <div>
                                 <%- include('partials/breadcrumb') %>
                                     <div class="page__title">
-                                        <h1 class="page__title__text text-3xl"><%= title %></h1>
+                                        <h1 class="page__title__text text-3xl">
+                                            <%= title %>
+                                        </h1>
                                     </div>
                             </div>
                             <div>
@@ -60,8 +62,9 @@
                                             <fieldset id="filter-categories" class="field">
                                                 <div class="input-group">
                                                     <div class="flex-1 form-control scheme-gray">
-                                                        <input id="filter-text"type="text" placeholder="Texto">
-                                                        <select id="filter-options" style="display: none; padding-left: 12px;" >
+                                                        <input id="filter-text" type="text" placeholder="Texto">
+                                                        <select id="filter-options"
+                                                            style="display: none; padding-left: 12px;">
                                                             <option value="visible">Visível</option>
                                                             <option value="hidden">Oculto</option>
                                                         </select>
@@ -96,7 +99,8 @@
                                     <% categories.forEach(function(category) { %>
                                         <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
                                         <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
-                                        <tr class="table-row" data-id="<%= category.id %>">
+                                        <tr class="table-row" data-id="<%= category.id %>"
+                                            data-status="<%= category.status %>">
                                             <td class="table-cell">
                                                 <%= category.id %>
                                             </td>
@@ -110,7 +114,7 @@
                                                 <%- include('partials/categories-dropdown', {category}) %>
                                             </td>
                                         </tr>
-                                    <% }); %>
+                                        <% }); %>
                                 </tbody>
                             </table>
                         </div>

@@ -11,6 +11,8 @@ import Dismissible from '@skewind/components/dismissible'
 import RichSelect from '@skewind/components/richSelect'
 import Tooltip from '@skewind/components/tooltip'
 import DatePicker from '@skewind/components/datepicker'
+import Toast from '@skewind/components/toast';
+
 
 // Expose core components
 window.Icon = Icon
@@ -22,6 +24,7 @@ window.Dismissible = Dismissible
 window.RichSelect = RichSelect
 window.Tooltip = Tooltip
 window.DatePicker = DatePicker
+window.Toast = Toast
 
 // Common Features
 import './features/drawer'

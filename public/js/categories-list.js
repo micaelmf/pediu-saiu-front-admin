@@ -13,14 +13,64 @@ $(document).ready(function () {
         window.location.href = '/categorias/editar/' + id;
     });
 
-    $(document).on('change', '#filter-categories select', function (e) {
-        if ($(this).val() == 'status') {
-            $('#filter-text').hide()
-            $('#filter-options').show()
-        } else {
-            $('#filter-options').hide()
-            $('#filter-text').show()
-        }
+    $(document).on('click', '.status-visible, .status-invisible', function (e) {
+        e.preventDefault();
+        let id = $(this).closest('.table-row').data('id');
+        let self = this;
+        let status = $(this).hasClass('status-visible') ? 'visible' : 'invisible';
+        atualizarVisibilidade(id, status, self);
     });
 
+    $(document).on('change', '#filter-categories select', function (e) {
+        if ($(this).val() == 'status') {
+            $('#filter-text').hide();
+            $('#filter-options').show();
+        } else {
+            $('#filter-options').hide();
+            $('#filter-text').show();
+        }
+    });
 });
+
+function startSpinner(element) {
+    $(element).find('.small-spinner').show(300);
+}
+
+function stopSpinner(element){
+    $(element).find('.small-spinner').hide();
+}
+
+function atualizarVisibilidade(id, status, self) {
+    let preload = Toast('Salvando...', { duration: -1, close: true, }).showToast();
+    $(self).addClass('link-disabled');
+    startSpinner(self);
+
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `/categorias/${id}/atualizar-visibilidade`,
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+        },
+        "processData": false,
+        "data": JSON.stringify({
+            status: status
+        })
+    };
+
+    $.ajax(settings).done(function (response) {
+        preload.hideToast()
+        Toast.success('Sucesso!').showToast();
+        stopSpinner(self);
+        const oppositeStatus = status === 'visible' ? 'invisible' : 'visible';
+        $(self).closest('ul').find(`.status-${oppositeStatus} .check`).addClass('hidden');
+        $(self).find('.check').removeClass('hidden');
+        $(self).removeClass('link-disabled');
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 401) {
+            alert("Credenciais incorretas. Tente novamente.");
+            Cookies.remove('jwtToken');
+        }
+    });
+}

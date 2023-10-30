@@ -8,8 +8,11 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3002;
 
-// app.use(express.json()); // Para processar dados JSON
-app.use(express.urlencoded({ extended: true })); // Para processar dados de formulário HTML
+// Middleware para analisar dados JSON
+app.use(express.json());
+// Middleware para analisar dados codificados em URL
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src/views'));
@@ -188,6 +191,33 @@ app.post("/categorias/editar/:id", async (req, res) => {
 
         // Redirecione o usuário para a página de detalhes ou para onde desejar após a atualização
         res.redirect(`/categorias`);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.post("/categorias/:id/atualizar-visibilidade", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
+
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const categoryId = req.params.id;
+        const updatedData = {
+            status: req.body.status
+        };
+
+        const response = await axios.patch(`${apiUrl}/categories/${categoryId}`, updatedData, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        res.status(200).json({ message: 'sucesso' });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
