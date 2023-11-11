@@ -196,7 +196,34 @@ app.post("/categorias/editar/:id", async (req, res) => {
     }
 });
 
-app.post("/categorias/:id/atualizar-visibilidade", async (req, res) => {
+app.post("/categorias/:id/atualizar-status", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
+
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const categoryId = req.params.id;
+        const updatedData = {
+            status: req.body.status
+        };
+
+        const response = await axios.patch(`${apiUrl}/categories/${categoryId}`, updatedData, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        res.status(200).json({ message: 'sucesso' });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+app.post("/categorias/:id/excluir", async (req, res) => {
     try {
         const token = req.cookies.jwtToken;
 

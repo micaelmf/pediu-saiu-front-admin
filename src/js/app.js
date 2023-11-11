@@ -12,6 +12,7 @@ import RichSelect from '@skewind/components/richSelect'
 import Tooltip from '@skewind/components/tooltip'
 import DatePicker from '@skewind/components/datepicker'
 import Toast from '@skewind/components/toast';
+import Modal from '@skewind/components/modal';
 
 
 // Expose core components
@@ -25,6 +26,7 @@ window.RichSelect = RichSelect
 window.Tooltip = Tooltip
 window.DatePicker = DatePicker
 window.Toast = Toast
+window.Modal = Modal
 
 // Common Features
 import './features/drawer'

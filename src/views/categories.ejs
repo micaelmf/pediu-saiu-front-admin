@@ -101,13 +101,13 @@
                                         <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
                                         <tr class="table-row" data-id="<%= category.id %>"
                                             data-status="<%= category.status %>">
-                                            <td class="table-cell">
+                                            <td class="table-cell id">
                                                 <%= category.id %>
                                             </td>
-                                            <td class="table-cell">
+                                            <td class="table-cell name">
                                                 <%= category.name %>
                                             </td>
-                                            <td class="table-cell">
+                                            <td class="table-cell status">
                                                 <%= category.status %>
                                             </td>
                                             <td class="acoes">
@@ -126,6 +126,20 @@
             <!-- END: Wrapper Main -->
         </div>
         <!--END: Root Layout -->
+
+        <!-- BEGIN: Confirmation modal -->
+        <button id="modal-open" type="button" class="button" data-modal-toggle="smallerDialog" style="display: none;">Smaller Modal</button>
+        <div id="smallerDialog" class="modal max-w-lg">
+            <div class="modal__header">
+                <div class="modal__title">Atenção!</div>
+            </div>
+            <div class="modal__body">Tem certeza que deseja excluir?</div>
+            <div class="modal__footer">
+                <button type="button" class="button cancel" data-modal-toggle="smallerDialog">Não</button>
+                <button type="button" class="button confirm scheme-primary" data-modal-toggle="smallerDialog">Sim</button>
+            </div>
+        </div>
+        <!-- END: Confirmation modal -->
     </body>
 
     <script src="/js/categories-list.js"></script>
