@@ -82,9 +82,6 @@ function updateStatus(id, status, self) {
         $(self).closest('ul').find(`.status-${oppositeStatus} .check`).addClass('hidden');
         $(self).find('.check').removeClass('hidden');
         $(self).removeClass('link-disabled');
-
-        console.log($(self).closest('.table-row'))
-
         $(self).closest('.table-row').find('.table-cell.status').html(status);
     }).fail(function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status === 401) {
