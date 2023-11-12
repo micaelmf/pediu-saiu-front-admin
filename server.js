@@ -93,6 +93,43 @@ app.get("/categorias", async (req, res) => {
     }
 });
 
+app.get("/categorias/procurar", async (req, res) => {
+    try {
+        const token = req.cookies.jwtToken;
+
+        if (!token) {
+            res.status(401).json({ error: 'Token não fornecido' });
+            return;
+        }
+
+        const apiUrl = process.env.API_URL;
+        const queryExists = Object.keys(req.query).length > 0;
+
+        if (!queryExists) {
+            res.redirect("/categorias");
+            return;
+        }
+
+        const response = await axios.get(apiUrl + "/categories/search", {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            params: req.query
+        });
+
+        const page = {
+            title: 'Categorias',
+            url: req.path,
+            categories: response.data
+        };
+
+        res.render("categories", page);
+
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
 app.get("/categorias/cadastrar", (req, res) => {
     const page = {
         title: 'Cadastrar',

@@ -59,29 +59,38 @@
                                     </div>
                                     <div class="card__body">
                                         <div class="grid grid-cols-1 mb-5">
-                                            <fieldset id="filter-categories" class="field">
-                                                <div class="input-group">
-                                                    <div class="flex-1 form-control scheme-gray">
-                                                        <input id="filter-text" type="text" placeholder="Texto">
-                                                        <select id="filter-options"
-                                                            style="display: none; padding-left: 12px;">
-                                                            <option value="visible">Visível</option>
-                                                            <option value="hidden">Oculto</option>
-                                                        </select>
+                                            <form action="/categorias/procurar" method="GET">
+                                                <fieldset id="filter-categories" class="field">
+                                                    <div class="input-group">
+                                                        <div id="filter-text" class="flex-1 form-control scheme-gray">
+                                                            <input type="text" name="name" placeholder="Texto">
+                                                        </div>
+                                                        <div id="filter-status" class="flex-1 form-control scheme-gray"
+                                                            style="display: none;">
+                                                            <select name="status">
+                                                                <option value="">Selecione</option>
+                                                                <option value="visible">Visível</option>
+                                                                <option value="invisible">Oculto</option>
+                                                                <!-- <option value="deleted">Excluídos</option> -->
+                                                            </select>
+                                                        </div>
+                                                        <div id="filter-type"
+                                                            class="form-control [.input-group>&]:flex-initial scheme-gray">
+                                                            <select>
+                                                                <option value="category">Nome</option>
+                                                                <!-- <option value="description">Descrição</option> -->
+                                                                <option value="status">Status</option>
+                                                            </select>
+                                                        </div>
+                                                        <button type="submit" id="search"
+                                                            class="button button--icon button--solid button--md scheme-primary">
+                                                            <i data-icon="feather__search"></i>
+                                                            <i class="loader loader--05 mr-2"
+                                                                style="display: none;"></i>
+                                                        </button>
                                                     </div>
-                                                    <div class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                        <select>
-                                                            <option value="category">Categoria</option>
-                                                            <option value="description">Descrição</option>
-                                                            <option value="status">Status</option>
-                                                        </select>
-                                                    </div>
-                                                    <button type="button"
-                                                        class="button button--icon button--solid button--md scheme-primary">
-                                                        <i data-icon="feather__search"></i>
-                                                    </button>
-                                                </div>
-                                            </fieldset>
+                                                </fieldset>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +137,8 @@
         <!--END: Root Layout -->
 
         <!-- BEGIN: Confirmation modal -->
-        <button id="modal-open" type="button" class="button" data-modal-toggle="smallerDialog" style="display: none;">Smaller Modal</button>
+        <button id="modal-open" type="button" class="button" data-modal-toggle="smallerDialog"
+            style="display: none;">Smaller Modal</button>
         <div id="smallerDialog" class="modal max-w-lg">
             <div class="modal__header">
                 <div class="modal__title">Atenção!</div>
@@ -136,7 +146,8 @@
             <div class="modal__body">Tem certeza que deseja excluir?</div>
             <div class="modal__footer">
                 <button type="button" class="button cancel" data-modal-toggle="smallerDialog">Não</button>
-                <button type="button" class="button confirm scheme-primary" data-modal-toggle="smallerDialog">Sim</button>
+                <button type="button" class="button confirm scheme-primary"
+                    data-modal-toggle="smallerDialog">Sim</button>
             </div>
         </div>
         <!-- END: Confirmation modal -->

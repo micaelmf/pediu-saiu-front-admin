@@ -39,9 +39,9 @@ $(document).ready(function () {
     $(document).on('change', '#filter-categories select', function (e) {
         if ($(this).val() == 'status') {
             $('#filter-text').hide();
-            $('#filter-options').show();
+            $('#filter-status').show();
         } else {
-            $('#filter-options').hide();
+            $('#filter-status').hide();
             $('#filter-text').show();
         }
     });
@@ -94,7 +94,7 @@ function updateStatus(id, status, self) {
 function deleteCategory(id, self) {
     let preload = Toast('Salvando...', { duration: -1, close: true, }).showToast();
     $(rowToDelete).find('a, button').addClass('link-disabled')
-    
+
     const settings = {
         "async": true,
         "crossDomain": true,
