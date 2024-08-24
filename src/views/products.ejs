@@ -142,6 +142,7 @@
                                         <th class="table-cell">#</th>
                                         <th class="table-cell">Produto</th>
                                         <th class="table-cell">Categoria</th>
+                                        <th class="table-cell">Status</th>
                                         <th class="table-cell">Preço</th>
                                         <th class="table-cell" data-tooltip="Quantidade">Qtd</th>
                                         <th class="table-cell">Ações</th>
@@ -155,13 +156,17 @@
                                             <td class="table-cell">
                                                 <%= product.id %>
                                             </td>
-                                            <td class="table-cell">
+                                            <td class="table-cell id">
                                                 <%= product.name %>
                                             </td>
-                                            <td class="table-cell">
-                                                <%= product.owner %>
+                                            <td class="table-cell name">
+                                                <%= product.category %>
                                             </td>
-                                            <td class="table-cell">$<%= product.price %>
+                                            <td class="table-cell status">
+                                                <%= product.status %>
+                                            </td>
+                                            <td class="table-cell">
+                                                <%= product.price %>
                                             </td>
                                             <td class="table-cell">
                                                 <%= product.quantity %>

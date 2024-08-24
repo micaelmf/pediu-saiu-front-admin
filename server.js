@@ -34,35 +34,267 @@ app.get("/login", (req, res) => {
   res.render("login", page)
 });
 
-app.get("/produtos", (req, res) => {
-  const page = {
-    title: 'Produtos',
-    url: req.path,
-    products: [
-      { id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10 },
-      { id: 1, name: 'Refrigerante Zero Açucar', owner: 'Lionel Messi', price: 187999, quantity: 10 },
-    ]
-  }
+app.get("/produtos", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
 
-  res.render("products", page)
+    if (!token) {
+      res.redirect("/login");
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+    const response = await axios.get(apiUrl + "/products", {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+
+    // Converter o preço para o formato de moeda brasileira
+    response.data.forEach(product => {
+      product.price = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price);
+    });
+
+
+    const page = {
+      title: 'Produtos',
+      url: req.path,
+      products: response.data
+    };
+
+    res.render("products", page);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
-app.get("/produtos/cadastrar", (req, res) => {
-  const page = {
-    title: 'Cadastrar',
-    url: req.path
-  }
+app.get("/produtos/cadastrar", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
 
-  res.render("products-form", page)
+    if (!token) {
+      res.status(401).json({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+
+    const [responseCategories, responseAccompaniments, responseAddtionals] = await Promise.all([
+      axios.get(apiUrl + "/categories", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }),
+      axios.get(apiUrl + "/products/search?type=accompaniments", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        params: req.query
+      }),
+      axios.get(apiUrl + "/products/search?type=additionals", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        params: req.query
+      })
+    ]);
+
+    const page = {
+      title: 'Cadastrar',
+      operation: 'new',
+      url: req.path,
+      product: {},
+      categories: responseCategories.data || [],
+      accompaniments: responseAccompaniments.data || [],
+      additionals: responseAddtionals.data || []
+    }
+
+    res.render("products-form", page)
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
-app.get("/produtos/editar/:id", (req, res) => {
-  const page = {
-    title: 'Editar',
-    url: req.path
-  }
+app.post("/produtos/cadastrar", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
 
-  res.render("products-form", page)
+    if (!token) {
+      res.status(401).json({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+    const newData = {
+      name: req.body.name,
+      description: req.body.description,
+      type: req.body.type,
+      price: req.body.price,
+      free: req.body.free,
+      status: req.body.status,
+      categoryId: req.body.categoryId,
+      accompanimentsId: req.body.accompaniments,
+      maxAccompaniments: req.body.maxAccompaniments,
+      additionals: req.body.additionals,
+      maxAdditionals: req.body.maxAdditionals
+    };
+
+    console.log(newData);
+
+    const response = await axios.post(`${apiUrl}/products`, newData, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    const page = {
+      title: 'Cadastrar',
+      url: req.path
+    }
+
+    res.redirect(`/produtos`);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.get("/produtos/editar/:id", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
+
+    if (!token) {
+      res.status(401).json({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+
+    const [responseProduct, responseCategories, responseAccompaniments, responseAddtionals] = await Promise.all([
+      axios.get(`${apiUrl}/products/${req.params.id}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        params: req.query
+      }),
+      axios.get(`${apiUrl}/categories`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }),
+      axios.get(`${apiUrl}/products/search?type=accompaniments`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        params: req.query
+      }),
+      axios.get(`${apiUrl}/products/search?type=additionals`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        params: req.query
+      })
+    ]);
+
+    const page = {
+      title: 'Editar',
+      operation: 'edit',
+      url: req.path,
+      product: responseProduct.data || [],
+      categories: responseCategories.data || [],
+      accompaniments: responseAccompaniments.data || [],
+      additionals: responseAddtionals.data || []
+    }
+
+    res.render("products-form", page)
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.post("/produtos/editar/:id", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
+
+    if (!token) {
+      res.status(401).json({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+    const productId = req.params.id;
+    const updatedData = {
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      status: req.body.status
+    };
+
+    const response = await axios.put(`${apiUrl}/products/${productId}`, updatedData, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    // Redirecione o usuário para a página de detalhes ou para onde desejar após a atualização
+    res.redirect(`/produtos`);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.post("/produtos/:id/atualizar-status", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
+
+    if (!token) {
+      res.status(401).json({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+    const productId = req.params.id;
+    const updatedData = {
+      status: req.body.status
+    };
+
+    const response = await axios.patch(`${apiUrl}/products/${productId}`, updatedData, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    res.status(200).json({ message: 'sucesso' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.post("/produtos/:id/excluir", async (req, res) => {
+  try {
+    const token = req.cookies.jwtToken;
+
+    if (!token) {
+      res.status(401).json({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const apiUrl = process.env.API_URL;
+    const productId = req.params.id;
+    const updatedData = {
+      status: req.body.status
+    };
+
+    const response = await axios.patch(`${apiUrl}/products/${productId}`, updatedData, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    res.status(200).json({ message: 'sucesso' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
 app.get("/categorias", async (req, res) => {
@@ -131,6 +363,13 @@ app.get("/categorias/procurar", async (req, res) => {
 });
 
 app.get("/categorias/cadastrar", (req, res) => {
+  const token = req.cookies.jwtToken;
+
+  if (!token) {
+    res.status(401).json({ error: 'Token não fornecido' });
+    return;
+  }
+
   const page = {
     title: 'Cadastrar',
     operation: 'new',
