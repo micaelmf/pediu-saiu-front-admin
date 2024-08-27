@@ -5,5 +5,5 @@
  * @returns
  */
 export const isFunction = (fn) => {
-  return fn && {}.toString.call(fn) === '[object Function]'
-}
+  return fn && {}.toString.call(fn) === "[object Function]";
+};

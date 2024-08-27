@@ -1,79 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-<body style="display: none">
+  <body style="display: none">
     <!-- BEGIN: Root Layout -->
     <div class="layout">
-        <!-- BEGIN: Sidebar -->
-        <nav class="sidebar">
-            <%- include('partials/logo') %>
-            <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
-        </nav>
-        <!-- End: Sidebar -->
-        <!-- BEGIN: Wrapper Main -->
-        <div class="wrapper">
-            <header class="navbar">
-                <div class="navbar__left lg:hidden">
-                    <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
-                        <i data-icon="heroiconsOutline__menuAlt1"></i>
-                    </a>
-                </div>
-                <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
-                <div class="navbar__center"></div>
-                <div class="navbar__right">
-                    <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
-                    <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
-                    <%- include('partials/account-menu') %> <!-- Account Menu -->
-                </div>
+      <!-- BEGIN: Sidebar -->
+      <nav class="sidebar">
+        <%- include('partials/logo') %> <%- include('partials/sidebar-left') %>
+        <!-- Sidebar Scroll -->
+      </nav>
+      <!-- End: Sidebar -->
+      <!-- BEGIN: Wrapper Main -->
+      <div class="wrapper">
+        <header class="navbar">
+          <div class="navbar__left lg:hidden">
+            <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+              <i data-icon="heroiconsOutline__menuAlt1"></i>
+            </a>
+          </div>
+          <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+          <div class="navbar__center"></div>
+          <div class="navbar__right">
+            <%- include('partials/message-notifications-menu') %>
+            <!-- Messages Dropdown Wrapper -->
+            <%- include('partials/notifications-menu') %>
+            <!-- Notifications Dropdown Wrapper -->
+            <%- include('partials/account-menu') %>
+            <!-- Account Menu -->
+          </div>
+        </header>
+        <main class="main">
+          <section data-script="forms/layoutSectioned" class="page">
+            <!-- BEGIN: Page Header -->
+            <header class="page__header">
+              <div class="breadcrumb">
+                <a href="/" class="breadcrumb__item">Home</a>
+                <span class="breadcrumb__separator">/</span>
+                <a href="" class="breadcrumb__item">User Interface</a>
+                <span class="breadcrumb__separator">/</span>
+                <a href="" class="breadcrumb__item">Forms</a>
+                <span class="breadcrumb__separator">/</span>
+                <a href="" class="breadcrumb__item">Forms Layouts</a>
+              </div>
+              <div class="page__title">
+                <h1 class="page__title__text text-3xl">Sectioned 1</h1>
+                <p class="page__title__subtext text-base">This sectioned form layout uses a card with dividers to separate sections of the form.</p>
+              </div>
             </header>
-            <main class="main">
-                <section data-script="forms/layoutSectioned" class="page">
-                    <!-- BEGIN: Page Header -->
-                    <header class="page__header">
-                        <div class="breadcrumb">
-                            <a href="/" class="breadcrumb__item">Home</a>
-                            <span class="breadcrumb__separator">/</span>
-                            <a href="" class="breadcrumb__item">User Interface</a>
-                            <span class="breadcrumb__separator">/</span>
-                            <a href="" class="breadcrumb__item">Forms</a>
-                            <span class="breadcrumb__separator">/</span>
-                            <a href="" class="breadcrumb__item">Forms Layouts</a>
-                        </div>
-                        <div class="page__title">
-                            <h1 class="page__title__text text-3xl">Sectioned 1</h1>
-                            <p class="page__title__subtext text-base">This sectioned form layout uses a card with
-                                dividers to separate sections of the form.</p>
-                        </div>
-                    </header>
-                    <!-- END: Page Header -->
-                    <!-- BEGIN: Page Body -->
-                    <div class="page__body">
-                        <p>Usar de exemplo</p>
-                        <div id="teste"></div>
-                    </div>
-                    <!-- END: Page Body -->
-                </section>
-            </main>
-            <%- include('partials/footer') %>
-        </div>
-        <!-- END: Wrapper Main -->
+            <!-- END: Page Header -->
+            <!-- BEGIN: Page Body -->
+            <div class="page__body">
+              <p>Usar de exemplo</p>
+              <div id="teste"></div>
+            </div>
+            <!-- END: Page Body -->
+          </section>
+        </main>
+        <%- include('partials/footer') %>
+      </div>
+      <!-- END: Wrapper Main -->
     </div>
     <!--END: Root Layout -->
-</body>
+  </body>
 
-<script>
+  <script>
     const settings = {
-        async: true,
-        crossDomain: true,
-        url: 'https://catfact.ninja/fact',
-        method: 'GET'
+      async: true,
+      crossDomain: true,
+      url: 'https://catfact.ninja/fact',
+      method: 'GET',
     };
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
-        $("#teste").html(response.fact)
+      console.log(response);
+      $('#teste').html(response.fact);
     });
-</script>
-
+  </script>
 </html>

@@ -1,5 +1,5 @@
-import { mapKeys } from './object'
-import { camelize } from './string'
+import { mapKeys } from "./object";
+import { camelize } from "./string";
 
 /**
  * This function is commonly used by class components to manage it's instances
@@ -14,39 +14,39 @@ import { camelize } from './string'
  * @returns {Object}
  */
 export function manageInstances({
-  key = 'instance',
+  key = "instance",
   create,
   destroy = () => {},
   iterable = false,
 }) {
-  const instances = iterable ? new Map() : new WeakMap()
+  const instances = iterable ? new Map() : new WeakMap();
 
-  const getInstance = (targetEl) => instances.get(targetEl)
+  const getInstance = (targetEl) => instances.get(targetEl);
 
-  const createInstance =  (targetEl, options) => {
-    const instance = create(targetEl, options)
+  const createInstance = (targetEl, options) => {
+    const instance = create(targetEl, options);
 
-    instances.set(targetEl, instance)
-    targetEl.dispatchEvent(new Event(`${key}.created`))
+    instances.set(targetEl, instance);
+    targetEl.dispatchEvent(new Event(`${key}.created`));
 
-    return instance
-  }
+    return instance;
+  };
 
   const getOrCreateInstance = (targetEl, options) => {
-    if (instances.has(targetEl)) return getInstance(targetEl)
+    if (instances.has(targetEl)) return getInstance(targetEl);
 
-    return createInstance(targetEl, options)
-  }
+    return createInstance(targetEl, options);
+  };
 
   const destroyInstance = (targetEl) => {
-    if (!instances.has(targetEl)) return
+    if (!instances.has(targetEl)) return;
 
-    const instance = getInstance(targetEl)
-    destroy(instance)
+    const instance = getInstance(targetEl);
+    destroy(instance);
 
-    instances.delete(targetEl)
-    targetEl.dispatchEvent(new Event(`${key}.destroyed`))
-  }
+    instances.delete(targetEl);
+    targetEl.dispatchEvent(new Event(`${key}.destroyed`));
+  };
 
   return {
     instances,
@@ -54,7 +54,7 @@ export function manageInstances({
     createInstance,
     getOrCreateInstance,
     destroyInstance,
-  }
+  };
 }
 
 /**
@@ -66,26 +66,22 @@ export function manageInstances({
  * @returns {object}
  */
 export const optionsFromData = (element, prefix) => {
-  const dataset = Object.assign({}, element.dataset)
-  Object.keys(dataset).map(key => {
+  const dataset = Object.assign({}, element.dataset);
+  Object.keys(dataset).map((key) => {
     if (!key.includes(prefix)) {
-      delete dataset[key]
+      delete dataset[key];
     } else {
-      const value = dataset[key]
+      const value = dataset[key];
       try {
-        const parsedValue = JSON.parse(value)
-        dataset[key] = parsedValue
+        const parsedValue = JSON.parse(value);
+        dataset[key] = parsedValue;
       } catch (e) {
         // sstt
       }
     }
-  })
+  });
 
-  return mapKeys(
-    dataset,
-    (val, key) =>
-      key == prefix
-        ? key
-        : camelize(key.replace(prefix, ''))
-  )
-}
+  return mapKeys(dataset, (val, key) =>
+    key == prefix ? key : camelize(key.replace(prefix, "")),
+  );
+};

@@ -37,21 +37,22 @@
     --button-text-color: theme(colors.scheme.200 / var(--tw-text-opacity));
     --button-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
     --button-ring-color: theme(colors.scheme.500 / var(--tw-ring-opacity));
-    @apply scheme-gray inline-flex justify-center items-center leading-[1.5rem] rounded focus:outline-none font-bold disabled:opacity-75 disabled:cursor-not-allowed transition transform bg-opacity-100 text-opacity-100 border-opacity-100 ring-opacity-100 px-[var(--button-space-x)] py-[var(--button-space-y)] text-[length:var(--button-font-size)] uppercase;
+    @apply inline-flex transform items-center justify-center rounded border-opacity-100 bg-opacity-100 px-[var(--button-space-x)] py-[var(--button-space-y)] text-[length:var(--button-font-size)] font-bold uppercase leading-[1.5rem] text-opacity-100 ring-opacity-100 transition scheme-gray focus:outline-none disabled:cursor-not-allowed disabled:opacity-75;
 
-    &, &--solid {
-      @apply bg-[color:var(--button-bg-color)] text-[color:var(--button-text-color)] border border-[color:var(--button-border-color)] shadow;
+    &,
+    &--solid {
+      @apply border border-[color:var(--button-border-color)] bg-[color:var(--button-bg-color)] text-[color:var(--button-text-color)] shadow;
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         --button-text-color: theme(colors.scheme.50 / var(--tw-text-opacity));
         @apply shadow-lg;
       }
 
       &:active,
       &.expanded,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         @apply shadow-inner;
       }
 
@@ -67,13 +68,15 @@
     &--soft {
       --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
       --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
-      --button-border-color: theme(colors.scheme.100 / var(--tw-border-opacity));
+      --button-border-color: theme(
+        colors.scheme.100 / var(--tw-border-opacity)
+      );
       --button-ring-color: theme(colors.scheme.50 / var(--tw-ring-opacity));
       @apply shadow-none;
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
         --button-border-color: theme(colors.transparent);
       }
@@ -87,7 +90,7 @@
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         --button-bg-color: theme(colors.scheme.200 / var(--tw-bg-opacity));
         --button-border-color: theme(colors.transparent);
         --button-text-color: theme(colors.scheme.700 / var(--tw-text-opacity));
@@ -100,7 +103,7 @@
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
         --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
       }
@@ -109,12 +112,14 @@
     &--outline {
       --button-bg-color: theme(colors.transparent);
       --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
-      --button-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
+      --button-border-color: theme(
+        colors.scheme.500 / var(--tw-border-opacity)
+      );
       @apply shadow-none;
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         --button-bg-color: theme(colors.scheme.500 / var(--tw-bg-opacity));
         --button-text-color: theme(colors.scheme.50 / var(--tw-text-opacity));
         @apply shadow-none;
@@ -122,17 +127,20 @@
     }
 
     &--outline&--soft {
-      --button-border-color: theme(colors.scheme.200 / var(--tw-border-opacity));
+      --button-border-color: theme(
+        colors.scheme.200 / var(--tw-border-opacity)
+      );
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded=true] {
+      &[aria-expanded="true"] {
         --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
         --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
       }
     }
 
-    &, &--md {
+    &,
+    &--md {
       --icon-size: theme(width.6);
       --button-font-size: var(--button-group-font-size, theme(fontSize.sm));
       --button-space-x: var(--button-group-space-x, theme(spacing.5));
@@ -203,7 +211,7 @@
     }
 
     &--icon {
-      @apply px-[var(--button-space-y)] inline-flex items-center justify-center;
+      @apply inline-flex items-center justify-center px-[var(--button-space-y)];
 
       & .icon:first-of-type:last-of-type {
         @apply translate-x-0;
@@ -216,7 +224,7 @@
     }
 
     &__badge {
-      @apply transform translate-x-2 opacity-75;
+      @apply translate-x-2 transform opacity-75;
     }
   }
 }

@@ -1,9 +1,9 @@
 @layer components {
   .cols {
-    @apply flex relative w-full overflow-x-hidden;
+    @apply relative flex w-full overflow-x-hidden;
 
     &__main {
-      @apply flex-1 min-w-0 min-h-full;
+      @apply min-h-full min-w-0 flex-1;
     }
 
     &__backdrop {
@@ -14,7 +14,7 @@
   .col {
     --col-width: 24rem;
     --col-duration: 0;
-    @apply w-[calc(0rem)] transition-[width] duration-[var(--col-duration)] absolute top-0 bottom-0 z-[1050] overflow-hidden flex flex-col items-end left-0;
+    @apply absolute bottom-0 left-0 top-0 z-[1050] flex w-[calc(0rem)] flex-col items-end overflow-hidden transition-[width] duration-[var(--col-duration)];
 
     &--expanded {
       @apply w-[var(--col-width)] overflow-visible;
@@ -26,13 +26,13 @@
   }
 
   .cols__main ~ .col {
-    @apply items-start right-0 left-auto;
+    @apply left-auto right-0 items-start;
   }
 }
 
 @layer utilities {
   .col--static {
-    @apply static w-[var(--col-width)] overflow-visible z-auto;
+    @apply static z-auto w-[var(--col-width)] overflow-visible;
   }
 
   .col--relative {

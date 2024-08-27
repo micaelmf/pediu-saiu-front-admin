@@ -8,7 +8,7 @@
   .progress {
     --progress-bg: theme(colors.scheme.500 / var(--tw-bg-opacity));
     --progress-bar-animation: none;
-    @apply bg-gray-200 rounded h-3 relative scheme-primary max-h-10;
+    @apply relative h-3 max-h-10 rounded bg-gray-200 scheme-primary;
 
     &--striped {
       --progress-bg: repeating-linear-gradient(
@@ -25,18 +25,18 @@
     }
 
     &:before {
-      @apply content-[''] absolute -top-5 -bottom-5 left-0 right-0;
+      @apply absolute -bottom-5 -top-5 left-0 right-0 content-[''];
     }
 
     &__bar {
       animation: var(--progress-bar-animation);
       background: var(--progress-bg);
       background-size: 200% 200%;
-      @apply rounded h-full left-0 w-0 absolute z-10 text-white text-xs flex items-center justify-end after:content-[''] after:block after:w-2;
+      @apply absolute left-0 z-10 flex h-full w-0 items-center justify-end rounded text-xs text-white after:block after:w-2 after:content-[''];
     }
 
     &__label {
-      @apply opacity-0 transition absolute left-full top-1/2 -translate-y-1/2 -translate-x-1/2 bg-scheme-500 text-white font-bold text-sm rounded-full px-2;
+      @apply absolute left-full top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-scheme-500 px-2 text-sm font-bold text-white opacity-0 transition;
     }
 
     &:hover &__label {

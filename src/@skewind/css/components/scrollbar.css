@@ -4,7 +4,7 @@
     @apply overflow-auto;
 
     & .simplebar-scrollbar:before {
-      @apply bg-gray-300 left-1.5 right-0.5;
+      @apply left-1.5 right-0.5 bg-gray-300;
     }
 
     & .simplebar-scrollbar.simplebar-hover:before {
@@ -12,7 +12,7 @@
     }
 
     & .simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
-      @apply h-1 top-1;
+      @apply top-1 h-1;
     }
 
     & .simplebar-scrollbar.simplebar-visible:before {

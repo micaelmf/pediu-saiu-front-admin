@@ -1,32 +1,31 @@
-import Backdrop from '@skewind/utils/backdrop'
+import Backdrop from "@skewind/utils/backdrop";
 
 /**
  * Default options
  */
 
 const Default = {
-  showClass: 'sidebar--drawer',
-}
+  showClass: "sidebar--drawer",
+};
 
 /**
  * Class definition
  */
 
 class Drawer {
-
   constructor(sidebarEl, options) {
-    this._sidebarEl = sidebarEl
-    this._shown = false
+    this._sidebarEl = sidebarEl;
+    this._shown = false;
 
     this._backdrop = new Backdrop(document.body, {
       onClick: this.hide,
-      class: 'drawer-backdrop'
-    })
+      class: "drawer-backdrop",
+    });
 
     this._options = {
       ...Default,
       ...options,
-    }
+    };
   }
 
   /**
@@ -36,10 +35,8 @@ class Drawer {
    * @returns {void}
    */
   toggle = () => {
-    this._shown
-      ? this.hide()
-      : this.show()
-  }
+    this._shown ? this.hide() : this.show();
+  };
 
   /**
    * Hide the drawer by removing class
@@ -48,10 +45,10 @@ class Drawer {
    * @returns {void}
    */
   hide = () => {
-    this._shown = false
-    this._sidebarEl.classList.remove(this._options.showClass)
-    this._backdrop.hide()
-  }
+    this._shown = false;
+    this._sidebarEl.classList.remove(this._options.showClass);
+    this._backdrop.hide();
+  };
 
   /**
    * Hide the drawer by adding class
@@ -60,41 +57,39 @@ class Drawer {
    * @returns {void}
    */
   show = () => {
-    this._shown = true
-    this._sidebarEl.classList.add(this._options.showClass)
-    this._backdrop.show()
-  }
-
+    this._shown = true;
+    this._sidebarEl.classList.add(this._options.showClass);
+    this._backdrop.show();
+  };
 }
 
 /**
  * Single instance
  */
-let instance
+let instance;
 
 const init = () => {
   // Creating instance
-  const sidebarEl = document.querySelector('.sidebar')
-  if (!sidebarEl) return
+  const sidebarEl = document.querySelector(".sidebar");
+  if (!sidebarEl) return;
 
-  instance = new Drawer(sidebarEl)
+  instance = new Drawer(sidebarEl);
 
   // Toggle implementation through Data API
-  document.querySelectorAll(`[data-drawer-toggle]`)
-    .forEach((toggleEl) => {
-      toggleEl.addEventListener('click', (e) => {
-        e.preventDefault()
-        instance.toggle()
-      })
-    })
-}
+  document.querySelectorAll(`[data-drawer-toggle]`).forEach((toggleEl) => {
+    toggleEl.addEventListener("click", (e) => {
+      e.preventDefault();
+      instance.toggle();
+    });
+  });
+};
 
-if (document.readyState && document.readyState !== 'loading') {
-  init()
+if (document.readyState && document.readyState !== "loading") {
+  init();
 } else {
-  document.addEventListener('DOMContentLoaded', () => {
-    init()
-  })
+  document.addEventListener("DOMContentLoaded", () => {
+    init();
+  });
 }
 
-export default instance
+export default instance;

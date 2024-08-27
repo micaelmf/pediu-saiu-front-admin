@@ -1,9 +1,9 @@
 @layer components {
   .avatar {
-    @apply inline-block w-14 relative font-bold text-sm;
+    @apply relative inline-block w-14 text-sm font-bold;
 
     &:before {
-      content: '';
+      content: "";
       padding-top: 100%;
       @apply block w-full;
     }
@@ -11,7 +11,7 @@
     &__object {
       --avatar-bg-color: theme(colors.scheme.500 / var(--tw-bg-opacity));
       --avatar-text-color: theme(colors.white / var(--tw-text-opacity));
-      @apply absolute w-full h-full inset-0 object-cover flex items-center justify-center rounded-full scheme-gray bg-[color:var(--avatar-bg-color)] text-[color:var(--avatar-text-color)];
+      @apply absolute inset-0 flex h-full w-full items-center justify-center rounded-full bg-[color:var(--avatar-bg-color)] object-cover text-[color:var(--avatar-text-color)] scheme-gray;
 
       &--soft {
         --avatar-bg-color: theme(colors.scheme.200 / var(--tw-bg-opacity));

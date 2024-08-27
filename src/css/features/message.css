@@ -3,14 +3,14 @@
     @apply w-96;
 
     &__header {
-      @apply uppercase py-3 px-6 border-b shadow-sm flex justify-between items-center;
+      @apply flex items-center justify-between border-b px-6 py-3 uppercase shadow-sm;
 
       & h4 {
-        @apply text-sm font-bold inline-flex items-center;
+        @apply inline-flex items-center text-sm font-bold;
       }
 
       & a:hover,
-      & a[aria-expanded=true] {
+      & a[aria-expanded="true"] {
         @apply text-scheme-500;
       }
 
@@ -22,7 +22,7 @@
 
   .message {
     & > a {
-      @apply text-sm py-3 px-4 flex items-center justify-between space-x-3 hover:bg-gray-100 transition;
+      @apply flex items-center justify-between space-x-3 px-4 py-3 text-sm transition hover:bg-gray-100;
     }
 
     &--unread {

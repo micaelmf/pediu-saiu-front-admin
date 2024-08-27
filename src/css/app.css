@@ -1,111 +1,115 @@
-@import './tailwind';
-@import '@skewind/bootstrap.css';
+@import "./tailwind";
+@import "@skewind/bootstrap.css";
 
 /* BEGIN: Your Application CSS */
-@import './features/index';
+@import "./features/index";
 
 .span-disabled {
-    background-color: #e2e8f0;
-    cursor: not-allowed;
+  background-color: #e2e8f0;
+  cursor: not-allowed;
 }
 
 .link-disabled {
-    pointer-events: none;
-    opacity: 0.6;
-    cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .logo {
-    @apply flex justify-center p-2;
+  @apply flex justify-center p-2;
 }
 
 img {
-    @apply w-auto h-[40px];
+  @apply h-[40px] w-auto;
 }
 
 .card__footer {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .table-row {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
-    .acoes {
-        position: sticky;
-        right: 0;
-        background: rgba(255, 255, 255, 0.5);
-        /* para sobrepor o conteúdo ao rolar */
-    }
+  .acoes {
+    position: sticky;
+    right: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /* para sobrepor o conteúdo ao rolar */
+  }
 
-    .table-row {
-        display: flex;
-        flex-direction: column;
-    }
+  .table-row {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .flatpickr-calendar.flatpickr-months .flatpickr-prev-month,
 .flatpickr-calendar .flatpickr-months .flatpickr-next-month {
-    top: auto;
+  top: auto;
 }
 
-.navigation__item__content>.navigation-level {
-    margin-top: 0.6rem;
-    margin-bottom: 0.9rem;
-    margin-left: 2rem;
+.navigation__item__content > .navigation-level {
+  margin-top: 0.6rem;
+  margin-bottom: 0.9rem;
+  margin-left: 2rem;
 }
 
 .navigation-level {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: .625rem;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  overflow: hidden;
 }
 
 .navigation-level__item a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-left-width: 1px;
-    border-color: transparent;
-    padding: .25rem 1.25rem;
-    --tw-text-opacity: 1;
-    color: rgb(100 116 139 / var(--tw-text-opacity));
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-left-width: 1px;
+  border-color: transparent;
+  padding: 0.25rem 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 .navigation-level:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    border-left-width: 1px;
-    border-color: rgb(203 213 225 / var(--tw-border-opacity));
-    --tw-border-opacity: .6;
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border-left-width: 1px;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity));
+  --tw-border-opacity: 0.6;
 }
 
 .navigation-level__item a:hover {
-    --tw-border-opacity: 1;
-    border-color: rgb(96 138 208 / var(--tw-border-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(var(--scheme-500) / var(--tw-text-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgb(96 138 208 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(var(--scheme-500) / var(--tw-text-opacity));
 }
 
-[aria-expanded=true] .navigation__item__chevron {
-    --tw-rotate: -180deg;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+[aria-expanded="true"] .navigation__item__chevron {
+  --tw-rotate: -180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .navigation__item__chevron {
-    margin-left: auto;
-    height: 1rem;
-    width: 1rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    stroke-width: 2;
-    --tw-text-opacity: 1;
-    color: rgb(100 116 139 / var(--tw-text-opacity));
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: .3s;
+  margin-left: auto;
+  height: 1rem;
+  width: 1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  stroke-width: 2;
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
 }

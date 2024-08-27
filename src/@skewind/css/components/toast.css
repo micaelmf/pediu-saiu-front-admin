@@ -1,7 +1,7 @@
 .toastify {
   max-width: calc(50% - 20px);
   z-index: 2147483647;
-  @apply py-3 px-5 bg-white rounded shadow-lg fixed opacity-0 transition-all cursor-pointer border-l-2 border-scheme-500 mt-16 flex gap-5;
+  @apply fixed mt-16 flex cursor-pointer gap-5 rounded border-l-2 border-scheme-500 bg-white px-5 py-3 opacity-0 shadow-lg transition-all;
 }
 
 .toastify.on {
@@ -9,11 +9,11 @@
 }
 
 .toast-close {
-  @apply content-[''] w-7 h-7 p-1 -mr-2 overflow-hidden;
+  @apply -mr-2 h-7 w-7 overflow-hidden p-1 content-[''];
 
   &:before {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon icon--feather"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>');
-    @apply content-[''] inline-block w-5 h-5 bg-contain opacity-50;
+    @apply inline-block h-5 w-5 bg-contain opacity-50 content-[''];
   }
 }
 
@@ -50,7 +50,8 @@
 }
 
 @media only screen and (max-width: 360px) {
-  .toastify-right, .toastify-left {
+  .toastify-right,
+  .toastify-left {
     margin-left: auto;
     margin-right: auto;
     left: 0;

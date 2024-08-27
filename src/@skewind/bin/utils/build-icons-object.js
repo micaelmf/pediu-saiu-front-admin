@@ -1,7 +1,7 @@
-const path = require('path')
-const cheerio = require('cheerio')
-const htmlMinifier = require('html-minifier')
-const { minify } = htmlMinifier
+const path = require("path");
+const cheerio = require("cheerio");
+const htmlMinifier = require("html-minifier");
+const { minify } = htmlMinifier;
 
 /**
  * Build an object in the format: `{ <name>: <contents> }`.
@@ -11,16 +11,16 @@ const { minify } = htmlMinifier
  */
 function buildIconsObject(svgFiles, getSvg) {
   return svgFiles
-    .map(svgFile => {
-      const name = path.basename(svgFile, '.svg')
-      const svg = getSvg(svgFile)
-      const contents = getSvgContents(svg)
-      return { name, contents }
+    .map((svgFile) => {
+      const name = path.basename(svgFile, ".svg");
+      const svg = getSvg(svgFile);
+      const contents = getSvgContents(svg);
+      return { name, contents };
     })
     .reduce((icons, icon) => {
-      icons[icon.name] = icon.contents
-      return icons
-    }, {})
+      icons[icon.name] = icon.contents;
+      return icons;
+    }, {});
 }
 
 /**
@@ -29,8 +29,8 @@ function buildIconsObject(svgFiles, getSvg) {
  * @returns {string}
  */
 function getSvgContents(svg) {
-  const $ = cheerio.load(svg)
-  return minify($('svg').html(), { collapseWhitespace: true })
+  const $ = cheerio.load(svg);
+  return minify($("svg").html(), { collapseWhitespace: true });
 }
 
-module.exports = buildIconsObject
+module.exports = buildIconsObject;

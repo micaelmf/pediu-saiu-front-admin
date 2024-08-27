@@ -4,10 +4,11 @@
     --badge-text-color: theme(colors.scheme.200 / var(--tw-text-opacity));
     --badge-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
     --badge-icon-size: theme(width.3);
-    @apply scheme-gray px-2 inline-flex items-center justify-center gap-2 leading-relaxed rounded text-xs bg-scheme-500 text-white bg-opacity-100 min-w-[12px] min-h-[12px] border-opacity-100;
+    @apply inline-flex min-h-[12px] min-w-[12px] items-center justify-center gap-2 rounded border-opacity-100 bg-scheme-500 bg-opacity-100 px-2 text-xs leading-relaxed text-white scheme-gray;
 
-    &, &--solid {
-      @apply bg-[color:var(--badge-bg-color)] text-[color:var(--badge-text-color)] border border-[color:var(--badge-border-color)];
+    &,
+    &--solid {
+      @apply border border-[color:var(--badge-border-color)] bg-[color:var(--badge-bg-color)] text-[color:var(--badge-text-color)];
 
       & .icon {
         @apply transform;
@@ -22,7 +23,7 @@
 
     &--flat {
       --badge-text-color: theme(colors.scheme.600 / var(--tw-text-opacity));
-      @apply shadow-none border-transparent bg-transparent;
+      @apply border-transparent bg-transparent shadow-none;
     }
 
     &--flat&--soft {
@@ -36,7 +37,7 @@
     &--outline {
       --badge-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
       --badge-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
-      @apply shadow-none bg-transparent;
+      @apply bg-transparent shadow-none;
     }
 
     &--outline&--soft {
@@ -49,7 +50,7 @@
 
     &--dot {
       &:before {
-        @apply content-[''] w-2 h-2 bg-[color:var(--badge-text-color)] rounded-full;
+        @apply h-2 w-2 rounded-full bg-[color:var(--badge-text-color)] content-[''];
       }
     }
 
@@ -59,26 +60,26 @@
     }
 
     &--icon {
-      @apply px-0 py-0 h-[1.35rem] w-[1.35rem];
+      @apply h-[1.35rem] w-[1.35rem] px-0 py-0;
 
       & .icon:first-of-type:last-of-type,
       & .badged-icon {
-        @apply translate-x-0 w-1/2 h-1/2;
+        @apply h-1/2 w-1/2 translate-x-0;
       }
     }
   }
 
   .avatar__badge {
-    font-size: .6rem;
-    @apply absolute bottom-0 left-full transform -translate-x-4 rounded-full px-[.3rem] leading-tight border border-white;
+    font-size: 0.6rem;
+    @apply absolute bottom-0 left-full -translate-x-4 transform rounded-full border border-white px-[.3rem] leading-tight;
   }
 
   .badged-icon {
     @apply relative inline-block;
 
     &__badge {
-      font-size: .6rem;
-      @apply absolute -top-1 left-full transform -translate-x-3 rounded-full px-[.3rem] leading-snug border;
+      font-size: 0.6rem;
+      @apply absolute -top-1 left-full -translate-x-3 transform rounded-full border px-[.3rem] leading-snug;
 
       &.badge,
       &.badge--solid {
@@ -87,12 +88,16 @@
 
       &.badge--outline {
         --badge-bg-color: theme(colors.gray.50 / var(--tw-bg-opacity));
-        --badge-border-color: theme(colors.scheme.600 / var(--tw-border-opacity));
+        --badge-border-color: theme(
+          colors.scheme.600 / var(--tw-border-opacity)
+        );
         @apply bg-[color:var(--badge-bg-color)];
       }
 
       &.badge--outline.badge--soft {
-        --badge-border-color: theme(colors.scheme.300 / var(--tw-border-opacity));
+        --badge-border-color: theme(
+          colors.scheme.300 / var(--tw-border-opacity)
+        );
       }
 
       &.badge--flat {

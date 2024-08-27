@@ -1,36 +1,39 @@
-.tippy-box[data-theme~=tooltip] {
+.tippy-box[data-theme~="tooltip"] {
   @apply bg-scheme-500/90;
 }
 
-.tippy-box[data-theme~=tooltip]>.tippy-arrow {
-  width:14px;
-  height:14px
+.tippy-box[data-theme~="tooltip"] > .tippy-arrow {
+  width: 14px;
+  height: 14px;
 }
 
-.tippy-box[data-theme~=tooltip][data-placement^=top]>.tippy-arrow:before {
-  border-width:7px 7px 0;
+.tippy-box[data-theme~="tooltip"][data-placement^="top"] > .tippy-arrow:before {
+  border-width: 7px 7px 0;
   @apply border-t-scheme-500/90;
 }
 
-.tippy-box[data-theme~=tooltip][data-placement^=bottom]>.tippy-arrow:before {
-  border-width:0 7px 7px;
+.tippy-box[data-theme~="tooltip"][data-placement^="bottom"]
+  > .tippy-arrow:before {
+  border-width: 0 7px 7px;
   @apply border-b-scheme-500/90;
 }
 
-.tippy-box[data-theme~=tooltip][data-placement^=left]>.tippy-arrow:before {
-  border-width:7px 0 7px 7px;
+.tippy-box[data-theme~="tooltip"][data-placement^="left"]
+  > .tippy-arrow:before {
+  border-width: 7px 0 7px 7px;
   @apply border-l-scheme-500/90;
 }
 
-.tippy-box[data-theme~=tooltip][data-placement^=right]>.tippy-arrow:before {
-  border-width:7px 7px 7px 0;
+.tippy-box[data-theme~="tooltip"][data-placement^="right"]
+  > .tippy-arrow:before {
+  border-width: 7px 7px 7px 0;
   @apply border-r-scheme-500/90;
 }
 
-.tippy-box[data-theme~=tooltip]>.tippy-backdrop {
+.tippy-box[data-theme~="tooltip"] > .tippy-backdrop {
   @apply bg-scheme-500/90;
 }
 
-.tippy-box[data-theme~=tooltip]>.tippy-svg-arrow {
+.tippy-box[data-theme~="tooltip"] > .tippy-svg-arrow {
   @apply fill-scheme-500/90;
 }

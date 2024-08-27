@@ -17,11 +17,11 @@
     }
 
     &__label {
-      @apply block mt-[var(--field-label-mt)] mb-[var(--field-label-mb)] px-1 w-[var(--field-label-w)] font-semibold text-gray-500;
+      @apply mb-[var(--field-label-mb)] mt-[var(--field-label-mt)] block w-[var(--field-label-w)] px-1 font-semibold text-gray-500;
     }
 
     &__asterisk {
-      @apply text-red-500 font-bold mx-1;
+      @apply mx-1 font-bold text-red-500;
     }
 
     &__helper,

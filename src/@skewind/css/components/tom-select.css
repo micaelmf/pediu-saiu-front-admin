@@ -6,10 +6,10 @@
 .ts-wrapper {
   & .ts-control,
   &.multi.has-items .ts-control {
-    @apply py-2 px-4 bg-white border-gray-200 hover:border-gray-300 gap-2;
+    @apply gap-2 border-gray-200 bg-white px-4 py-2 hover:border-gray-300;
 
     .focus& {
-      @apply shadow-none border-scheme-400;
+      @apply border-scheme-400 shadow-none;
     }
   }
 
@@ -21,7 +21,7 @@
   }
 
   &.multi .ts-control > .item {
-    @apply py-0 px-2 m-0 bg-scheme-100;
+    @apply m-0 bg-scheme-100 px-2 py-0;
 
     &.active {
       @apply bg-scheme-500 text-white;
@@ -39,7 +39,7 @@
     & .optgroup-header,
     & .no-results,
     & .create {
-      @apply py-2 px-4;
+      @apply px-4 py-2;
     }
 
     &-content {
@@ -66,6 +66,6 @@
   }
 
   .ts-dropdown [data-selectable] .highlight {
-    @apply bg-primary-200 rounded;
+    @apply rounded bg-primary-200;
   }
 }

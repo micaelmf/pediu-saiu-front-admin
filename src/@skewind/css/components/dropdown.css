@@ -4,7 +4,7 @@
 }
 
 [data-theme="dropdown"] {
-  @apply bg-transparent text-current text-base leading-normal;
+  @apply bg-transparent text-base leading-normal text-current;
 
   & .tippy-content {
     @apply p-0;
@@ -18,14 +18,14 @@
 @layer components {
   .dropdown {
     min-width: 11rem;
-    @apply bg-white shadow-md rounded relative hidden py-2 scheme-gray;
+    @apply relative hidden rounded bg-white py-2 shadow-md scheme-gray;
 
     [data-tippy-root] & {
       @apply block;
     }
 
     &__heading {
-      @apply py-2 px-4 text-sm font-semibold text-scheme-400;
+      @apply px-4 py-2 text-sm font-semibold text-scheme-400;
     }
 
     &__item {
@@ -33,14 +33,14 @@
 
       & a,
       & button {
-        @apply flex items-center py-2 px-4 relative;
+        @apply relative flex items-center px-4 py-2;
 
         .dropdown--has-icon & {
           @apply relative overflow-hidden;
 
           &:before {
-            content: '';
-            @apply absolute top-1 bottom-1 -left-2 w-12 bg-white bg-opacity-80 border rounded transform -translate-x-10 transition;
+            content: "";
+            @apply absolute -left-2 bottom-1 top-1 w-12 -translate-x-10 transform rounded border bg-white bg-opacity-80 transition;
           }
 
           &:hover:before {
@@ -58,12 +58,12 @@
       }
 
       & .icon {
-        @apply mr-3 w-4 h-4 shrink-0 transition-all;
+        @apply mr-3 h-4 w-4 shrink-0 transition-all;
       }
     }
 
     &__divider {
-      @apply border-b border-black border-opacity-5 my-2;
+      @apply my-2 border-b border-black border-opacity-5;
     }
   }
 }

@@ -1,12 +1,12 @@
 @layer components {
   [data-icon] {
     --default-icon-size: theme(width.6);
-    @apply block w-[var(--icon-size,var(--default-icon-size))] h-[var(--icon-size,var(--default-icon-size))] m-[var(--icon-margin,0)];
+    @apply m-[var(--icon-margin,0)] block h-[var(--icon-size,var(--default-icon-size))] w-[var(--icon-size,var(--default-icon-size))];
   }
 
   .icon {
     --default-icon-size: theme(width.6);
-    @apply w-[var(--icon-size,var(--default-icon-size))] h-[var(--icon-size,var(--default-icon-size))] m-[var(--icon-margin,0)];
+    @apply m-[var(--icon-margin,0)] h-[var(--icon-size,var(--default-icon-size))] w-[var(--icon-size,var(--default-icon-size))];
 
     &--flag {
       @apply rounded;

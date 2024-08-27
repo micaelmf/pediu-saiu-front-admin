@@ -1,6 +1,6 @@
-import classnames from 'classnames/dedupe'
-import config from '@/icons/icon.config.js'
-import * as iconPaths from '@/icons'
+import classnames from "classnames/dedupe";
+import config from "@/icons/icon.config.js";
+import * as iconPaths from "@/icons";
 
 /**
  * Icon: this class responsible to create svg icon from icon:build distribution
@@ -8,20 +8,19 @@ import * as iconPaths from '@/icons'
  */
 
 class Icon {
-
   /**
    * Attributes definition & call initialization.
    *
    * @returns {void}
    */
   constructor(iconName, attrs = {}, path = null) {
-    this._iconName = iconName
-    this._vendor = null
-    this._icon = null
-    this._attrs = attrs
-    this._path = path
+    this._iconName = iconName;
+    this._vendor = null;
+    this._icon = null;
+    this._attrs = attrs;
+    this._path = path;
 
-    this._init()
+    this._init();
   }
 
   /**
@@ -32,20 +31,22 @@ class Icon {
    */
   toSvg = (attrs = {}) => {
     const combinedAttrs = {
-      ...{ xmlns: 'http://www.w3.org/2000/svg' },
+      ...{ xmlns: "http://www.w3.org/2000/svg" },
       ...config[this._vendor].attrs, // from icon.config.js
-      ...this._attrs,  // from constructor
-      ...attrs,  // from toSvg(attrs),
-      ...{ class: classnames(
-        config[this._vendor].attrs.class,  // from icon.config.js
-        this._attrs.class, // from constructor
-        `icon icon--${this._vendor}`,
-        attrs.class,  // from toSvg(attrs)
-      )},
-    }
+      ...this._attrs, // from constructor
+      ...attrs, // from toSvg(attrs),
+      ...{
+        class: classnames(
+          config[this._vendor].attrs.class, // from icon.config.js
+          this._attrs.class, // from constructor
+          `icon icon--${this._vendor}`,
+          attrs.class, // from toSvg(attrs)
+        ),
+      },
+    };
 
-    return `<svg ${attrsToString(combinedAttrs)}>${this._path}</svg>`
-  }
+    return `<svg ${attrsToString(combinedAttrs)}>${this._path}</svg>`;
+  };
 
   /**
    * Get vendor of the icon
@@ -53,8 +54,8 @@ class Icon {
    * @returns {string}
    */
   getVendor = () => {
-    return this._vendor
-  }
+    return this._vendor;
+  };
 
   /**
    * Resolve icon path and set more data to attributes.
@@ -64,20 +65,22 @@ class Icon {
   _init = () => {
     // Set icon path
     if (this._path === null) {
-      const path = iconPaths[this._iconName]
+      const path = iconPaths[this._iconName];
 
       if (!path) {
-        throw new Error(`Icon not found: "${this._iconName}". Consider checking on the "icons/index.js" whether the icon is correctly imported`)
+        throw new Error(
+          `Icon not found: "${this._iconName}". Consider checking on the "icons/index.js" whether the icon is correctly imported`,
+        );
       }
 
-      this._path = path
+      this._path = path;
     }
 
     // Icon was found, let's set vendor and icon
-    const [vendor, icon] = this._iconName.split('__')
-    this._vendor = vendor
-    this._icon = icon
-  }
+    const [vendor, icon] = this._iconName.split("__");
+    this._vendor = vendor;
+    this._icon = icon;
+  };
 }
 
 /**
@@ -88,8 +91,8 @@ class Icon {
  */
 function attrsToString(attrs) {
   return Object.keys(attrs)
-    .map(key => `${key}="${attrs[key]}"`)
-    .join(' ')
+    .map((key) => `${key}="${attrs[key]}"`)
+    .join(" ");
 }
 
 /**
@@ -103,24 +106,24 @@ function replace(wrapper = document) {
     try {
       // Get element attrs
       const attrs = iconEl.getAttributeNames().reduce((acc, name) => {
-        if (name === 'data-icon') return acc
-        return { ...acc, [name]: iconEl.getAttribute(name) }
-      }, {})
+        if (name === "data-icon") return acc;
+        return { ...acc, [name]: iconEl.getAttribute(name) };
+      }, {});
 
       // Build svg element
-      const instance = new Icon(iconEl.dataset.icon, attrs)
-      const svgString = instance.toSvg(attrs)
+      const instance = new Icon(iconEl.dataset.icon, attrs);
+      const svgString = instance.toSvg(attrs);
       const svgDocument = new DOMParser().parseFromString(
         svgString,
-        'image/svg+xml',
-      )
-      const svgElement = svgDocument.querySelector('svg')
+        "image/svg+xml",
+      );
+      const svgElement = svgDocument.querySelector("svg");
 
-      iconEl.parentNode.replaceChild(svgElement, iconEl)
+      iconEl.parentNode.replaceChild(svgElement, iconEl);
     } catch (e) {
-      console.error(iconEl, e)
+      console.error(iconEl, e);
     }
-  })
+  });
 }
 
 /**
@@ -131,19 +134,19 @@ function replace(wrapper = document) {
  * @returns {Icon}
  */
 const create = (iconName, attrs = {}, path) => {
-  return new Icon(iconName, attrs, path)
-}
+  return new Icon(iconName, attrs, path);
+};
 
 /**
  * Data API implementation
  */
 
-if (document.readyState && document.readyState !== 'loading') {
-  replace(document)
+if (document.readyState && document.readyState !== "loading") {
+  replace(document);
 } else {
-  document.addEventListener('DOMContentLoaded', () => {
-    replace(document)
-  })
+  document.addEventListener("DOMContentLoaded", () => {
+    replace(document);
+  });
 }
 
-export default { replace, create }
+export default { replace, create };

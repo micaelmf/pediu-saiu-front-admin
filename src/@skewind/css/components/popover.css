@@ -1,5 +1,5 @@
 [data-theme="popover"] {
-  @apply bg-transparent text-current text-base leading-normal;
+  @apply bg-transparent text-base leading-normal text-current;
 
   & .tippy-content {
     @apply p-0;
@@ -13,7 +13,7 @@
 @layer components {
   .popover {
     min-width: 11rem;
-    @apply bg-white shadow-lg rounded relative hidden;
+    @apply relative hidden rounded bg-white shadow-lg;
 
     [data-tippy-root] & {
       @apply block;

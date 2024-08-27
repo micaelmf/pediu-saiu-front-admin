@@ -10,12 +10,12 @@
         @apply relative;
 
         &:after {
-          @apply content-[''] absolute -bottom-0.5 left-2 right-2 h-1 bg-scheme-300 rounded-full pointer-events-none;
+          @apply pointer-events-none absolute -bottom-0.5 left-2 right-2 h-1 rounded-full bg-scheme-300 content-[''];
         }
       }
 
       &--unbookmarked {
-        @apply order-last opacity-75 relative;
+        @apply relative order-last opacity-75;
 
         &:after {
           @apply left-4 right-4;
@@ -36,14 +36,14 @@
     }
 
     &__tooltip {
-      @apply flex text-sm items-center;
+      @apply flex items-center text-sm;
     }
 
     &__delete {
-      @apply ml-2 hover:bg-white hover:bg-opacity-20 rounded-full;
+      @apply ml-2 rounded-full hover:bg-white hover:bg-opacity-20;
 
       & .icon {
-        @apply w-4 h-4;
+        @apply h-4 w-4;
       }
     }
   }

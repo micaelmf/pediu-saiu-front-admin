@@ -1,6 +1,6 @@
 @layer components {
   .search {
-    @apply px-5 relative transition-all w-full;
+    @apply relative w-full px-5 transition-all;
 
     & select,
     & [data-icon] {
@@ -8,11 +8,11 @@
     }
 
     & > .icon {
-      @apply absolute top-1/2 transform -translate-y-1/2 left-5 z-10 ml-3 text-gray-500;
+      @apply absolute left-5 top-1/2 z-10 ml-3 -translate-y-1/2 transform text-gray-500;
     }
 
     & .ts-wrapper:not(.form-select).single .ts-control {
-      @apply pl-12 bg-none;
+      @apply bg-none pl-12;
     }
 
     & .ts-control {

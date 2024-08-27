@@ -1,171 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-    <body style="display: none">
-        <!-- BEGIN: Root Layout -->
-        <div class="layout">
-            <!-- BEGIN: Sidebar -->
-            <nav class="sidebar">
-                <%- include('partials/logo') %>
-                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
-            </nav>
-            <!-- End: Sidebar -->
-            <!-- BEGIN: Wrapper Main -->
-            <div class="wrapper">
-                <header class="navbar">
-                    <div class="navbar__left lg:hidden">
-                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
-                            <i data-icon="heroiconsOutline__menuAlt1"></i>
-                        </a>
+  <body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+      <!-- BEGIN: Sidebar -->
+      <nav class="sidebar">
+        <%- include('partials/logo') %> <%- include('partials/sidebar-left') %>
+        <!-- Sidebar Scroll -->
+      </nav>
+      <!-- End: Sidebar -->
+      <!-- BEGIN: Wrapper Main -->
+      <div class="wrapper">
+        <header class="navbar">
+          <div class="navbar__left lg:hidden">
+            <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+              <i data-icon="heroiconsOutline__menuAlt1"></i>
+            </a>
+          </div>
+          <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+          <div class="navbar__center"></div>
+          <div class="navbar__right">
+            <%- include('partials/message-notifications-menu') %>
+            <!-- Messages Dropdown Wrapper -->
+            <%- include('partials/notifications-menu') %>
+            <!-- Notifications Dropdown Wrapper -->
+            <%- include('partials/account-menu') %>
+            <!-- Account Menu -->
+          </div>
+        </header>
+        <main class="main">
+          <section id="contentscroll" aria-labelledby="contentscroll-tab" class="page main__full flex flex-col">
+            <header class="page__header">
+              <div class="flex flex-col">
+                <%- include('partials/breadcrumb') %>
+                <div class="flex justify-between">
+                  <div class="page__title flex-1">
+                    <h2 class="page__title__text"><%= title %></h2>
+                  </div>
+                  <a href="javascript:;" class="button button--icon button--flat scheme-info rounded-full" data-popover-toggle aria-haspopup="true">
+                    <i data-icon="feather__helpCircle"></i>
+                  </a>
+                  <div class="popover">
+                    <div class="popover__content">
+                      <div class="font-bold mb-2">Ajuda</div>
+                      <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eius repellat. Repellat laudantium adipisci perferendis voluptate ex
+                        blanditiis sapiente ducimus eius consectetur dolorum delectus quia, alias quo. Eligendi, nisi earum.
+                      </p>
                     </div>
-                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
-                    <div class="navbar__center"></div>
-                    <div class="navbar__right">
-                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
-                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
-                                <%- include('partials/account-menu') %> <!-- Account Menu -->
+                  </div>
+                </div>
+              </div>
+            </header>
+            <div class="page__body">
+              <div class="w-full max-w-4xl">
+                <form class="card">
+                  <div class="card__header">
+                    <div>
+                      <h3 class="text-xl">Combo</h3>
                     </div>
-                </header>
-                <main class="main">
-                    <section id="contentscroll" aria-labelledby="contentscroll-tab"
-                        class="page main__full flex flex-col">
-                        <header class="page__header">
-                            <div class="flex flex-col">
-                                <%- include('partials/breadcrumb') %>
-                                    <div class="flex justify-between">
-                                        <div class="page__title flex-1">
-                                            <h2 class="page__title__text">
-                                                <%= title %>
-                                            </h2>
-                                        </div>
-                                        <a href="javascript:;"
-                                            class="button button--icon button--flat scheme-info rounded-full"
-                                            data-popover-toggle aria-haspopup="true">
-                                            <i data-icon="feather__helpCircle"></i>
-                                        </a>
-                                        <div class="popover">
-                                            <div class="popover__content">
-                                                <div class="font-bold mb-2">Ajuda</div>
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, eius
-                                                    repellat. Repellat laudantium adipisci perferendis voluptate ex
-                                                    blanditiis sapiente ducimus eius consectetur dolorum delectus quia,
-                                                    alias quo. Eligendi, nisi earum.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </header>
-                        <div class="page__body">
-                            <div class="w-full max-w-4xl">
-                                <form class="card">
-                                    <div class="card__header">
-                                        <div>
-                                            <h3 class="text-xl">Combo</h3>
-                                        </div>
-                                    </div>
-                                    <div class="card__body">
-                                        <fieldset class="field">
-                                            <label for="name" class="field__label">Nome</label>
-                                            <label class="form-control">
-                                                <span class="self-start mt-2"><i
-                                                        data-icon="feather__alignLeft"></i></span>
-                                                <input type="text" id="name" placeholder="Nome" />
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label for="description" class="field__label">Descrição</label>
-                                            <label class="form-control">
-                                                <span class="self-start mt-2"><i
-                                                        data-icon="feather__alignLeft"></i></span>
-                                                <textarea id="description" placeholder="Descrição" rows="4"></textarea>
-                                            </label>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label for="category" class="field__label">Categoria</label>
-                                            <div class="form-control">
-                                                <select id="category">
-                                                    <option>Selecione</option>
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                </select>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label for="visible" class="field__label">Visibilidade</label>
-                                            <div class="form-control">
-                                                <select id="visible">
-                                                    <option>Selecione</option>
-                                                    <option>Visível</option>
-                                                    <option>Oculto</option>
-                                                </select>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="field">
-                                            <label for="products" class="field__label">Produtos</label>
-                                            <div class="form-control">
-                                                <!-- <select id="products" data-select data-select-placeholder="Selecione" data-select-max-items="2" multiple> -->
-                                                <select id="products" multiple>
-                                                    <option value="">Selecione</option>
-                                                    <% products.forEach(function(item) { %>
-                                                        <option value="<%= item.id %>">
-                                                            <%= item.name %>
-                                                        </option>
-                                                        <% }); %>
-                                                </select>
-                                            </div>
-                                        </fieldset>
-                                        <div class="md:flex gap-5 justify-between">
-                                            <fieldset class="field">
-                                                <label for="price-without-discount" class="field__label">Preço sem
-                                                    desconto</label>
-                                                <label class="form-control span-disabled">
-                                                    <span class="self-start mt-2">R$</span>
-                                                    <input class="form-control--disabled" type="text"
-                                                        id="price-without-discount" placeholder="0,00" disabled />
-                                                </label>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label for="discount-price" class="field__label">Preço com
-                                                    desconto</label>
-                                                <label class="form-control">
-                                                    <span class="self-start mt-2">R$</span>
-                                                    <input type="text" id="discount-price" placeholder="0,00" />
-                                                </label>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label for="discount-applied" class="field__label">Desconto
-                                                    aplicado</label>
-                                                <label class="form-control span-disabled">
-                                                    <span class="self-start mt-2">R$</span>
-                                                    <input class="form-control--disabled" type="text"
-                                                        id="discount-applied" placeholder="0,00" disabled />
-                                                </label>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="card__divider"></div>
-                                    <div class="card__footer gap-5">
-                                        <button type="button" class="button button--flat button--soft">Cancelar</button>
-                                        <button type="button" class="button scheme-primary">Salvar</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-                <%- include('partials/footer') %>
+                  </div>
+                  <div class="card__body">
+                    <fieldset class="field">
+                      <label for="name" class="field__label">Nome</label>
+                      <label class="form-control">
+                        <span class="self-start mt-2"><i data-icon="feather__alignLeft"></i></span>
+                        <input type="text" id="name" placeholder="Nome" />
+                      </label>
+                    </fieldset>
+                    <fieldset class="field">
+                      <label for="description" class="field__label">Descrição</label>
+                      <label class="form-control">
+                        <span class="self-start mt-2"><i data-icon="feather__alignLeft"></i></span>
+                        <textarea id="description" placeholder="Descrição" rows="4"></textarea>
+                      </label>
+                    </fieldset>
+                    <fieldset class="field">
+                      <label for="category" class="field__label">Categoria</label>
+                      <div class="form-control">
+                        <select id="category">
+                          <option>Selecione</option>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </fieldset>
+                    <fieldset class="field">
+                      <label for="visible" class="field__label">Visibilidade</label>
+                      <div class="form-control">
+                        <select id="visible">
+                          <option>Selecione</option>
+                          <option>Visível</option>
+                          <option>Oculto</option>
+                        </select>
+                      </div>
+                    </fieldset>
+                    <fieldset class="field">
+                      <label for="products" class="field__label">Produtos</label>
+                      <div class="form-control">
+                        <!-- <select id="products" data-select data-select-placeholder="Selecione" data-select-max-items="2" multiple> -->
+                        <select id="products" multiple>
+                          <option value="">Selecione</option>
+                          <% products.forEach(function(item) { %>
+                          <option value="<%= item.id %>"><%= item.name %></option>
+                          <% }); %>
+                        </select>
+                      </div>
+                    </fieldset>
+                    <div class="md:flex gap-5 justify-between">
+                      <fieldset class="field">
+                        <label for="price-without-discount" class="field__label">Preço sem desconto</label>
+                        <label class="form-control span-disabled">
+                          <span class="self-start mt-2">R$</span>
+                          <input class="form-control--disabled" type="text" id="price-without-discount" placeholder="0,00" disabled />
+                        </label>
+                      </fieldset>
+                      <fieldset class="field">
+                        <label for="discount-price" class="field__label">Preço com desconto</label>
+                        <label class="form-control">
+                          <span class="self-start mt-2">R$</span>
+                          <input type="text" id="discount-price" placeholder="0,00" />
+                        </label>
+                      </fieldset>
+                      <fieldset class="field">
+                        <label for="discount-applied" class="field__label">Desconto aplicado</label>
+                        <label class="form-control span-disabled">
+                          <span class="self-start mt-2">R$</span>
+                          <input class="form-control--disabled" type="text" id="discount-applied" placeholder="0,00" disabled />
+                        </label>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="card__divider"></div>
+                  <div class="card__footer gap-5">
+                    <button type="button" class="button button--flat button--soft">Cancelar</button>
+                    <button type="button" class="button scheme-primary">Salvar</button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <!-- END: Wrapper Main -->
-        </div>
-        <!--END: Root Layout -->
-    </body>
+          </section>
+        </main>
+        <%- include('partials/footer') %>
+      </div>
+      <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+  </body>
 
-    <script type="module" src="/js/combos-main.js"></script>
+  <script type="module" src="/js/combos-main.js"></script>
 
-    <script>
-        var products = <%- JSON.stringify(products) %>
-    </script>
-
+  <script>
+    var products = <%- JSON.stringify(products) %>
+  </script>
 </html>

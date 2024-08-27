@@ -1,11 +1,11 @@
-@import 'dropzone/dist/dropzone.css';
+@import "dropzone/dist/dropzone.css";
 
 .dropzone {
-  @apply bg-white border-2 border-gray-300 border-dashed p-md flex;
+  @apply flex border-2 border-dashed border-gray-300 bg-white p-md;
 }
 
 .dropzone .dz-message {
-  @apply self-center my-0 mx-auto;
+  @apply mx-auto my-0 self-center;
 }
 
 .dz-default {
@@ -17,7 +17,7 @@
 }
 
 .dropzone .dz-preview .dz-error-message {
-  @apply top-auto bottom-full bg-red-500 text-center mb-3 after:top-full after:border-b-0 after:border-t-[6px] after:border-t-red-500;
+  @apply bottom-full top-auto mb-3 bg-red-500 text-center after:top-full after:border-b-0 after:border-t-[6px] after:border-t-red-500;
 }
 
 .dropzone .dz-preview .dz-remove {

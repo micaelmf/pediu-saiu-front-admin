@@ -69,39 +69,39 @@
 @layer components {
   .slide-in-left {
     opacity: 0;
-    animation: slideInLeft .5s ease-in-out;
+    animation: slideInLeft 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: var(--delay);
   }
 
   .slide-out-left {
-    animation: slideOutLeft .5s ease-in-out;
+    animation: slideOutLeft 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: var(--delay);
   }
 
   .slide-in-right {
     opacity: 0;
-    animation: slideInRight .5s ease-in-out;
+    animation: slideInRight 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: var(--delay);
   }
 
   .slide-out-right {
-    animation: slideOutRight .5s ease-in-out;
+    animation: slideOutRight 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: var(--delay);
   }
 
   .slide-in-up {
     opacity: 0;
-    animation: slideInUp .5s ease-in-out;
+    animation: slideInUp 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: var(--delay);
   }
 
   .slide-out-up {
-    animation: slideOutUp .5s ease-in-out;
+    animation: slideOutUp 0.5s ease-in-out;
     animation-fill-mode: forwards;
     animation-delay: var(--delay);
   }

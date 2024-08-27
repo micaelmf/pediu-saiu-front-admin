@@ -1,144 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-    <body style="display: none">
-        <!-- BEGIN: Root Layout -->
-        <div class="layout">
-            <!-- BEGIN: Sidebar -->
-            <nav class="sidebar">
-                <%- include('partials/logo') %>
-                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
-            </nav>
-            <!-- End: Sidebar -->
-            <!-- BEGIN: Wrapper Main -->
-            <div class="wrapper">
-                <header class="navbar">
-                    <div class="navbar__left lg:hidden">
-                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
-                            <i data-icon="heroiconsOutline__menuAlt1"></i>
-                        </a>
+  <body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+      <!-- BEGIN: Sidebar -->
+      <nav class="sidebar">
+        <%- include('partials/logo') %> <%- include('partials/sidebar-left') %>
+        <!-- Sidebar Scroll -->
+      </nav>
+      <!-- End: Sidebar -->
+      <!-- BEGIN: Wrapper Main -->
+      <div class="wrapper">
+        <header class="navbar">
+          <div class="navbar__left lg:hidden">
+            <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+              <i data-icon="heroiconsOutline__menuAlt1"></i>
+            </a>
+          </div>
+          <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+          <div class="navbar__center"></div>
+          <div class="navbar__right">
+            <%- include('partials/message-notifications-menu') %>
+            <!-- Messages Dropdown Wrapper -->
+            <%- include('partials/notifications-menu') %>
+            <!-- Notifications Dropdown Wrapper -->
+            <%- include('partials/account-menu') %>
+            <!-- Account Menu -->
+          </div>
+        </header>
+        <main class="main">
+          <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar" data-scrollbar data-scrollbar-auto-hide="false">
+            <!-- BEGIN: Page Header -->
+            <header class="page__header flex items-end justify-between">
+              <div>
+                <%- include('partials/breadcrumb') %>
+                <div class="page__title">
+                  <h1 class="page__title__text text-3xl"><%= title %></h1>
+                </div>
+              </div>
+              <div>
+                <a href="categorias/cadastrar" class="button scheme-primary">
+                  <i data-icon="feather__plus"></i>
+                  <span>Cadastrar</span>
+                </a>
+              </div>
+            </header>
+            <!-- END: Page Header -->
+            <!-- BEGIN: Page Body -->
+            <div class="page__body">
+              <div class="flex flex-col gap-5 mb-4">
+                <div class="card">
+                  <div class="card__header">
+                    <div>
+                      <h3 class="text-xl">Filtro</h3>
                     </div>
-                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
-                    <div class="navbar__center"></div>
-                    <div class="navbar__right">
-                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
-                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
-                                <%- include('partials/account-menu') %> <!-- Account Menu -->
+                  </div>
+                  <div class="card__body">
+                    <div class="grid grid-cols-1 mb-5">
+                      <form action="/categorias/procurar" method="GET">
+                        <fieldset id="filter-categories" class="field">
+                          <div class="input-group">
+                            <div id="filter-text" class="flex-1 form-control scheme-gray">
+                              <input type="text" name="name" placeholder="Texto" />
+                            </div>
+                            <div id="filter-status" class="flex-1 form-control scheme-gray" style="display: none">
+                              <select name="status">
+                                <option value="">Selecione</option>
+                                <option value="visible">Visível</option>
+                                <option value="invisible">Oculto</option>
+                                <!-- <option value="deleted">Excluídos</option> -->
+                              </select>
+                            </div>
+                            <div id="filter-type" class="form-control [.input-group>&]:flex-initial scheme-gray">
+                              <select>
+                                <option value="category">Nome</option>
+                                <!-- <option value="description">Descrição</option> -->
+                                <option value="status">Status</option>
+                              </select>
+                            </div>
+                            <button type="submit" id="search" class="button button--icon button--solid button--md scheme-primary">
+                              <i data-icon="feather__search"></i>
+                              <i class="loader loader--05 mr-2" style="display: none"></i>
+                            </button>
+                          </div>
+                        </fieldset>
+                      </form>
                     </div>
-                </header>
-                <main class="main">
-                    <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar"
-                        data-scrollbar data-scrollbar-auto-hide="false">
-                        <!-- BEGIN: Page Header -->
-                        <header class="page__header flex items-end justify-between">
-                            <div>
-                                <%- include('partials/breadcrumb') %>
-                                    <div class="page__title">
-                                        <h1 class="page__title__text text-3xl">
-                                            <%= title %>
-                                        </h1>
-                                    </div>
-                            </div>
-                            <div>
-                                <a href="categorias/cadastrar" class="button scheme-primary">
-                                    <i data-icon="feather__plus"></i>
-                                    <span>Cadastrar</span>
-                                </a>
-                            </div>
-                        </header>
-                        <!-- END: Page Header -->
-                        <!-- BEGIN: Page Body -->
-                        <div class="page__body">
-                            <div class="flex flex-col gap-5 mb-4">
-                                <div class="card">
-                                    <div class="card__header">
-                                        <div>
-                                            <h3 class="text-xl">Filtro</h3>
-                                        </div>
-                                    </div>
-                                    <div class="card__body">
-                                        <div class="grid grid-cols-1 mb-5">
-                                            <form action="/categorias/procurar" method="GET">
-                                                <fieldset id="filter-categories" class="field">
-                                                    <div class="input-group">
-                                                        <div id="filter-text" class="flex-1 form-control scheme-gray">
-                                                            <input type="text" name="name" placeholder="Texto">
-                                                        </div>
-                                                        <div id="filter-status" class="flex-1 form-control scheme-gray"
-                                                            style="display: none;">
-                                                            <select name="status">
-                                                                <option value="">Selecione</option>
-                                                                <option value="visible">Visível</option>
-                                                                <option value="invisible">Oculto</option>
-                                                                <!-- <option value="deleted">Excluídos</option> -->
-                                                            </select>
-                                                        </div>
-                                                        <div id="filter-type"
-                                                            class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                            <select>
-                                                                <option value="category">Nome</option>
-                                                                <!-- <option value="description">Descrição</option> -->
-                                                                <option value="status">Status</option>
-                                                            </select>
-                                                        </div>
-                                                        <button type="submit" id="search"
-                                                            class="button button--icon button--solid button--md scheme-primary">
-                                                            <i data-icon="feather__search"></i>
-                                                            <i class="loader loader--05 mr-2"
-                                                                style="display: none;"></i>
-                                                        </button>
-                                                    </div>
-                                                </fieldset>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
-                                <thead>
-                                    <tr class="table-row">
-                                        <th class="table-cell">#</th>
-                                        <th class="table-cell">Categoria</th>
-                                        <th class="table-cell">Status</th>
-                                        <th class="table-cell">Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% categories.forEach(function(category) { %>
-                                        <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
-                                        <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
-                                        <tr class="table-row" data-id="<%= category.id %>"
-                                            data-status="<%= category.status %>">
-                                            <td class="table-cell id">
-                                                <%= category.id %>
-                                            </td>
-                                            <td class="table-cell name">
-                                                <%= category.name %>
-                                            </td>
-                                            <td class="table-cell status">
-                                                <%= category.status %>
-                                            </td>
-                                            <td class="acoes">
-                                                <%- include('partials/categories-dropdown', {category}) %>
-                                            </td>
-                                        </tr>
-                                        <% }); %>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- END: Page Body -->
-                    </section>
-                </main>
-                <%- include('partials/footer') %>
+                  </div>
+                </div>
+              </div>
+              <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
+                <thead>
+                  <tr class="table-row">
+                    <th class="table-cell">#</th>
+                    <th class="table-cell">Categoria</th>
+                    <th class="table-cell">Status</th>
+                    <th class="table-cell">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% categories.forEach(function(category) { %>
+                  <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
+                  <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
+                  <tr class="table-row" data-id="<%= category.id %>" data-status="<%= category.status %>">
+                    <td class="table-cell id"><%= category.id %></td>
+                    <td class="table-cell name"><%= category.name %></td>
+                    <td class="table-cell status"><%= category.status %></td>
+                    <td class="acoes"><%- include('partials/categories-dropdown', {category}) %></td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
             </div>
-            <!-- END: Wrapper Main -->
-        </div>
-        <!--END: Root Layout -->
+            <!-- END: Page Body -->
+          </section>
+        </main>
+        <%- include('partials/footer') %>
+      </div>
+      <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
 
-        <%- include('partials/window-confirmation') %>
-    </body>
+    <%- include('partials/window-confirmation') %>
+  </body>
 
-    <script src="/js/categories-list.js"></script>
-
+  <script src="/js/categories-list.js"></script>
 </html>

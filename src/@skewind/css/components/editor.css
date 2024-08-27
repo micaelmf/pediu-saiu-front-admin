@@ -1,9 +1,9 @@
 @layer components {
   .editor {
-    @apply flex flex-col bg-gray-200 rounded-t;
+    @apply flex flex-col rounded-t bg-gray-200;
 
     &__toolbar {
-      @apply py-2 px-3 flex flex-wrap gap-5;
+      @apply flex flex-wrap gap-5 px-3 py-2;
 
       &__item {
         @apply scheme-gray;
@@ -16,10 +16,10 @@
 
     &__body {
       & .ProseMirror {
-        @apply bg-white border border-gray-200 hover:border-gray-300 rounded px-6 leading-normal prose focus:outline-none max-w-none;
+        @apply prose max-w-none rounded border border-gray-200 bg-white px-6 leading-normal hover:border-gray-300 focus:outline-none;
 
         &.ProseMirror-focused {
-          @apply ring-0 outline-0 bg-white border-scheme-400;
+          @apply border-scheme-400 bg-white outline-0 ring-0;
         }
 
         & li > p {

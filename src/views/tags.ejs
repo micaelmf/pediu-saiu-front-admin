@@ -1,124 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-    <body style="display: none">
-        <!-- BEGIN: Root Layout -->
-        <div class="layout">
-            <!-- BEGIN: Sidebar -->
-            <nav class="sidebar">
-                <%- include('partials/logo') %>
-                    <%- include('partials/sidebar-left') %> <!-- Sidebar Scroll -->
-            </nav>
-            <!-- End: Sidebar -->
-            <!-- BEGIN: Wrapper Main -->
-            <div class="wrapper">
-                <header class="navbar">
-                    <div class="navbar__left lg:hidden">
-                        <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
-                            <i data-icon="heroiconsOutline__menuAlt1"></i>
-                        </a>
+  <body style="display: none">
+    <!-- BEGIN: Root Layout -->
+    <div class="layout">
+      <!-- BEGIN: Sidebar -->
+      <nav class="sidebar">
+        <%- include('partials/logo') %> <%- include('partials/sidebar-left') %>
+        <!-- Sidebar Scroll -->
+      </nav>
+      <!-- End: Sidebar -->
+      <!-- BEGIN: Wrapper Main -->
+      <div class="wrapper">
+        <header class="navbar">
+          <div class="navbar__left lg:hidden">
+            <a href="javascript:;" class="navbar__icon-link" data-drawer-toggle>
+              <i data-icon="heroiconsOutline__menuAlt1"></i>
+            </a>
+          </div>
+          <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
+          <div class="navbar__center"></div>
+          <div class="navbar__right">
+            <%- include('partials/message-notifications-menu') %>
+            <!-- Messages Dropdown Wrapper -->
+            <%- include('partials/notifications-menu') %>
+            <!-- Notifications Dropdown Wrapper -->
+            <%- include('partials/account-menu') %>
+            <!-- Account Menu -->
+          </div>
+        </header>
+        <main class="main">
+          <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar" data-scrollbar data-scrollbar-auto-hide="false">
+            <!-- BEGIN: Page Header -->
+            <header class="page__header flex items-end justify-between">
+              <div>
+                <%- include('partials/breadcrumb') %>
+                <div class="page__title">
+                  <h1 class="page__title__text text-3xl"><%= title %></h1>
+                </div>
+              </div>
+              <div>
+                <a href="etiquetas/cadastrar" class="button scheme-primary">
+                  <i data-icon="feather__plus"></i>
+                  <span>Cadastrar</span>
+                </a>
+              </div>
+            </header>
+            <!-- END: Page Header -->
+            <!-- BEGIN: Page Body -->
+            <div class="page__body">
+              <div class="flex flex-col gap-5 mb-4">
+                <div class="card">
+                  <div class="card__header">
+                    <div>
+                      <h3 class="text-xl">Filtro</h3>
                     </div>
-                    <!-- <div class="navbar__left bottombar bookmark" id="bookmark"></div> -->
-                    <div class="navbar__center"></div>
-                    <div class="navbar__right">
-                        <%- include('partials/message-notifications-menu') %> <!-- Messages Dropdown Wrapper -->
-                            <%- include('partials/notifications-menu') %> <!-- Notifications Dropdown Wrapper -->
-                                <%- include('partials/account-menu') %> <!-- Account Menu -->
-                    </div>
-                </header>
-                <main class="main">
-                    <section id="pagescroll" aria-labelledby="pagescroll-tab" class="main__full scrollbar"
-                        data-scrollbar data-scrollbar-auto-hide="false">
-                        <!-- BEGIN: Page Header -->
-                        <header class="page__header flex items-end justify-between">
-                            <div>
-                                <%- include('partials/breadcrumb') %>
-                                    <div class="page__title">
-                                        <h1 class="page__title__text text-3xl"><%= title %></h1>
-                                    </div>
-                            </div>
-                            <div>
-                                <a href="etiquetas/cadastrar" class="button scheme-primary">
-                                    <i data-icon="feather__plus"></i>
-                                    <span>Cadastrar</span>
-                                </a>
-                            </div>
-                        </header>
-                        <!-- END: Page Header -->
-                        <!-- BEGIN: Page Body -->
-                        <div class="page__body">
-                            <div class="flex flex-col gap-5 mb-4">
-                                <div class="card">
-                                    <div class="card__header">
-                                        <div>
-                                            <h3 class="text-xl">Filtro</h3>
-                                        </div>
-                                    </div>
-                                    <div class="card__body">
-                                        <div class="grid grid-cols-1 mb-5">
-                                            <fieldset class="field">
-                                                <div class="input-group">
-                                                    <div class="flex-1 form-control scheme-gray">
-                                                        <input type="text" placeholder="Texto">
-                                                    </div>
-                                                    <button type="button"
-                                                        class="button button--icon button--solid button--md scheme-primary">
-                                                        <i data-icon="feather__search"></i>
-                                                    </button>
-                                                </div>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="card__divider"></div>
-                                    <div id="advancedFilterTarget" class="collapse">
-                                        <div class="card__header">
-                                            <a href="javascript:;"
-                                                class="button button--icon button--flat scheme-info rounded-full">
-                                                <i data-icon="feather__helpCircle"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
-                                <thead>
-                                    <tr class="table-row">
-                                        <th class="table-cell">#</th>
-                                        <th class="table-cell">Tags</th>
-                                        <th class="table-cell">Status</th>
-                                        <th class="table-cell">Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <% tags.forEach(function(tag) { %>
-                                        <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
-                                        <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
-                                        <tr class="table-row" data-id="<%= tag.id %>">
-                                            <td class="table-cell">
-                                                <%= tag.id %>
-                                            </td>
-                                            <td class="table-cell">
-                                                <%= tag.name %>
-                                            </td>
-                                            <td class="table-cell">
-                                                <%= tag.status %>
-                                            </td>
-                                            <td class="acoes">
-                                                <%- include('partials/tags-dropdown', {tag}) %>
-                                            </td>
-                                        </tr>
-                                    <% }); %>
-                                </tbody>
-                            </table>
+                  </div>
+                  <div class="card__body">
+                    <div class="grid grid-cols-1 mb-5">
+                      <fieldset class="field">
+                        <div class="input-group">
+                          <div class="flex-1 form-control scheme-gray">
+                            <input type="text" placeholder="Texto" />
+                          </div>
+                          <button type="button" class="button button--icon button--solid button--md scheme-primary">
+                            <i data-icon="feather__search"></i>
+                          </button>
                         </div>
-                        <!-- END: Page Body -->
-                    </section>
-                </main>
-                <%- include('partials/footer') %>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="card__divider"></div>
+                  <div id="advancedFilterTarget" class="collapse">
+                    <div class="card__header">
+                      <a href="javascript:;" class="button button--icon button--flat scheme-info rounded-full">
+                        <i data-icon="feather__helpCircle"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
+                <thead>
+                  <tr class="table-row">
+                    <th class="table-cell">#</th>
+                    <th class="table-cell">Tags</th>
+                    <th class="table-cell">Status</th>
+                    <th class="table-cell">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% tags.forEach(function(tag) { %>
+                  <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
+                  <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
+                  <tr class="table-row" data-id="<%= tag.id %>">
+                    <td class="table-cell"><%= tag.id %></td>
+                    <td class="table-cell"><%= tag.name %></td>
+                    <td class="table-cell"><%= tag.status %></td>
+                    <td class="acoes"><%- include('partials/tags-dropdown', {tag}) %></td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
             </div>
-            <!-- END: Wrapper Main -->
-        </div>
-        <!--END: Root Layout -->
-    </body>
+            <!-- END: Page Body -->
+          </section>
+        </main>
+        <%- include('partials/footer') %>
+      </div>
+      <!-- END: Wrapper Main -->
+    </div>
+    <!--END: Root Layout -->
+  </body>
 </html>

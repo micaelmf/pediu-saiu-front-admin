@@ -2873,4 +2873,4 @@ export {
   // fc__wiFiLogo,
   // fc__wikipedia,
   // fc__workflow,
-} from './icons.js'
+} from "./icons.js";

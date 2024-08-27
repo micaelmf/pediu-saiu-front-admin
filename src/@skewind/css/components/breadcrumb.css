@@ -1,15 +1,21 @@
 @layer components {
   .breadcrumb {
-    @apply flex flex-wrap items-center gap-x-3 gap-y-1 mb-3 text-sm text-gray-400;
+    @apply mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-400;
 
     &__item {
       --breadcrumb-text-color: theme(colors.gray.500 / var(--tw-text-opacity));
-      --breadcrumb-text-hover-color: theme(colors.gray.600 / var(--tw-text-opacity));
-      @apply inline-flex gap-2 items-center text-[color:var(--breadcrumb-text-color)] hover:text-[color:var(--breadcrumb-text-hover-color)] py-1 whitespace-nowrap;
+      --breadcrumb-text-hover-color: theme(
+        colors.gray.600 / var(--tw-text-opacity)
+      );
+      @apply inline-flex items-center gap-2 whitespace-nowrap py-1 text-[color:var(--breadcrumb-text-color)] hover:text-[color:var(--breadcrumb-text-hover-color)];
 
       a& {
-        --breadcrumb-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
-        --breadcrumb-text-hover-color: theme(colors.scheme.600 / var(--tw-text-opacity));
+        --breadcrumb-text-color: theme(
+          colors.scheme.500 / var(--tw-text-opacity)
+        );
+        --breadcrumb-text-hover-color: theme(
+          colors.scheme.600 / var(--tw-text-opacity)
+        );
       }
     }
   }

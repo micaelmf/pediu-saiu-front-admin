@@ -3,10 +3,10 @@
     --input-font-size: var(--input-group-font-size, theme(fontSize.base));
     --input-space-x: var(--input-group-space-x, theme(spacing.4));
     --input-space-y: var(--input-group-space-y, theme(spacing.2));
-    --checkbox-scale: var(--input-group-scale, .85);
+    --checkbox-scale: var(--input-group-scale, 0.85);
     --default-border-color: theme(colors.gray.200);
     --default-border-hover-color: theme(colors.gray.300);
-    @apply flex items-center gap-x-3 text-gray-400 focus-within:text-gray-500 leading-normal border border-[color:var(--field-feedback-color,var(--default-border-color))] transition rounded bg-white;
+    @apply flex items-center gap-x-3 rounded border border-[color:var(--field-feedback-color,var(--default-border-color))] bg-white leading-normal text-gray-400 transition focus-within:text-gray-500;
 
     &:hover:not(&--disabled) {
       @apply border-[color:var(--field-feedback-color,var(--default-border-hover-color))];
@@ -21,11 +21,41 @@
       @apply border-scheme-400 shadow;
     }
 
-    & [type='text'], & [type='email'], & [type='url'], & [type='password'], & [type='number'], & [type='date'], & [type='datetime-local'], & [type='month'], & [type='search'], & [type='tel'], & [type='time'], & [type='week'], & [type='file'], & [multiple], & textarea, & select {
-      @apply flex-1 border-0 px-0 py-[var(--input-space-y)] enabled:bg-transparent text-[length:var(--input-font-size)] focus:shadow-none first:rounded-l-none last:rounded-r-none;
+    & [type="text"],
+    & [type="email"],
+    & [type="url"],
+    & [type="password"],
+    & [type="number"],
+    & [type="date"],
+    & [type="datetime-local"],
+    & [type="month"],
+    & [type="search"],
+    & [type="tel"],
+    & [type="time"],
+    & [type="week"],
+    & [type="file"],
+    & [multiple],
+    & textarea,
+    & select {
+      @apply flex-1 border-0 px-0 py-[var(--input-space-y)] text-[length:var(--input-font-size)] first:rounded-l-none last:rounded-r-none focus:shadow-none enabled:bg-transparent;
     }
 
-    & > [type='text'], & > [type='email'], & > [type='url'], & > [type='password'], & > [type='number'], & > [type='date'], & > [type='datetime-local'], & > [type='month'], & > [type='search'], & > [type='tel'], & > [type='time'], & > [type='week'], & > [type='file'], & > [multiple], & > textarea, & select {
+    & > [type="text"],
+    & > [type="email"],
+    & > [type="url"],
+    & > [type="password"],
+    & > [type="number"],
+    & > [type="date"],
+    & > [type="datetime-local"],
+    & > [type="month"],
+    & > [type="search"],
+    & > [type="tel"],
+    & > [type="time"],
+    & > [type="week"],
+    & > [type="file"],
+    & > [multiple],
+    & > textarea,
+    & select {
       @apply min-w-0;
 
       &:not(select) {
@@ -42,15 +72,15 @@
     }
 
     & [type="file"]::file-selector-button {
-      @apply appearance-none border-0 bg-transparent border-r border-gray-50 text-gray-600 pr-[var(--input-space-x)] mr-[var(--input-space-x)] h-[21px];
+      @apply mr-[var(--input-space-x)] h-[21px] appearance-none border-0 border-r border-gray-50 bg-transparent pr-[var(--input-space-x)] text-gray-600;
     }
 
     & [data-textarea-grow] {
-      @apply grid items-stretch w-full;
+      @apply grid w-full items-stretch;
 
       &:after {
         content: attr(data-replicated-value) " ";
-        @apply whitespace-pre-wrap py-2 leading-normal invisible;
+        @apply invisible whitespace-pre-wrap py-2 leading-normal;
       }
 
       & > textarea {
@@ -65,7 +95,7 @@
     }
 
     & .ts-wrapper {
-      @apply flex-1 min-w-0;
+      @apply min-w-0 flex-1;
 
       & .ts-control,
       &.multi.has-items .ts-control,
@@ -139,7 +169,7 @@
       --input-font-size: theme(fontSize.sm);
       --input-space-x: theme(spacing.3);
       --input-space-y: theme(spacing.1);
-      --checkbox-scale: var(--input-group-scale, .75);
+      --checkbox-scale: var(--input-group-scale, 0.75);
       @apply text-sm;
     }
   }
@@ -155,7 +185,8 @@
       --field-feedback-color: rgb(var(--scheme-500));
     }
 
-    & [type='checkbox'], & [type='radio'] {
+    & [type="checkbox"],
+    & [type="radio"] {
       --default-border-color: theme(colors.gray.200);
       --default-border-hover-color: theme(colors.gray.300);
 

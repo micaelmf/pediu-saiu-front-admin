@@ -1,51 +1,57 @@
 <div class="button-group">
-    <button type="button" class="button button--outline button--xs" data-dropdown-toggle="#splitButtonDropdown"
-        data-tippy-placement="bottom-end" aria-haspopup="true" class="button button--icon">
-        <i data-icon="ionicons__ellipsisHorizontalSharp" class="transform transition"></i>
-    </button>
+  <button
+    type="button"
+    class="button button--outline button--xs"
+    data-dropdown-toggle="#splitButtonDropdown"
+    data-tippy-placement="bottom-end"
+    aria-haspopup="true"
+    class="button button--icon"
+  >
+    <i data-icon="ionicons__ellipsisHorizontalSharp" class="transform transition"></i>
+  </button>
 </div>
 <ul id="splitButtonDropdown" class="dropdown dropdown--has-icon">
-    <li class="dropdown__item">
-        <a href="#" class="flex justify-between gap-1 status-visible">
-            <div class="flex items-center">
-                <div class="flex align-middle">
-                    <i data-icon="feather__eye"></i>
-                </div>
-                <div class="flex items-center">
-                    <span>Exibir</span>
-                </div>
-            </div>
-            <div class="check flex align-middle <%= category.status == 'visible' ? '' : 'hidden' %>">
-                <i data-icon="feather__check"></i>
-            </div>
-            <div class="small-spinner" style="display: none;">
-                <i data-icon="feather__loader" class="spinning"></i>
-            </div>
-        </a>
-    </li>
-    <li class="dropdown__item">
-        <a href="#" class="flex justify-between gap-1 status-invisible">
-            <div class="flex items-center">
-                <div class="flex align-middle">
-                    <i data-icon="feather__eyeOff"></i>
-                </div>
-                <div class="flex items-center">
-                    <span>Ocultar</span>
-                </div>
-            </div>
-            <div class="check flex align-middle <%= category.status == 'invisible' ? '' : 'hidden' %>">
-                <i data-icon="feather__check"></i>
-            </div>
-            <div class="small-spinner" style="display: none;">
-                <i data-icon="feather__loader" class="spinning"></i>
-            </div>
-        </a>
-    </li>
-    <li class="dropdown__divider"></li>
-    <li class="dropdown__item edit">
-        <a href="#"><i data-icon="feather__edit"></i><span>Editar</span></a>
-    </li>
-    <li class="dropdown__item delete">
-        <a href="#" data-modal-toggle="smallerDialog"><i data-icon="feather__trash2"></i><span>Excluir</span></a>
-    </li>
+  <li class="dropdown__item">
+    <a href="#" class="flex justify-between gap-1 status-visible">
+      <div class="flex items-center">
+        <div class="flex align-middle">
+          <i data-icon="feather__eye"></i>
+        </div>
+        <div class="flex items-center">
+          <span>Exibir</span>
+        </div>
+      </div>
+      <div class="check flex align-middle <%= category.status == 'visible' ? '' : 'hidden' %>">
+        <i data-icon="feather__check"></i>
+      </div>
+      <div class="small-spinner" style="display: none">
+        <i data-icon="feather__loader" class="spinning"></i>
+      </div>
+    </a>
+  </li>
+  <li class="dropdown__item">
+    <a href="#" class="flex justify-between gap-1 status-invisible">
+      <div class="flex items-center">
+        <div class="flex align-middle">
+          <i data-icon="feather__eyeOff"></i>
+        </div>
+        <div class="flex items-center">
+          <span>Ocultar</span>
+        </div>
+      </div>
+      <div class="check flex align-middle <%= category.status == 'invisible' ? '' : 'hidden' %>">
+        <i data-icon="feather__check"></i>
+      </div>
+      <div class="small-spinner" style="display: none">
+        <i data-icon="feather__loader" class="spinning"></i>
+      </div>
+    </a>
+  </li>
+  <li class="dropdown__divider"></li>
+  <li class="dropdown__item edit">
+    <a href="#"><i data-icon="feather__edit"></i><span>Editar</span></a>
+  </li>
+  <li class="dropdown__item delete">
+    <a href="#" data-modal-toggle="smallerDialog"><i data-icon="feather__trash2"></i><span>Excluir</span></a>
+  </li>
 </ul>

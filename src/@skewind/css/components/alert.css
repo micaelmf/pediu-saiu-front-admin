@@ -4,10 +4,11 @@
     --alert-text-color: theme(colors.scheme.600 / var(--tw-text-opacity));
     --alert-border-color: theme(colors.transparent);
     --alert-ring-color: theme(colors.scheme.200 / var(--tw-ring-opacity));
-    @apply rounded bg-opacity-100 text-opacity-100 border-opacity-100 ring-opacity-100;
+    @apply rounded border-opacity-100 bg-opacity-100 text-opacity-100 ring-opacity-100;
 
-    &, &--default {
-      @apply bg-[color:var(--alert-bg-color)] text-[color:var(--alert-text-color)] border-[color:var(--alert-border-color)] ring-[color:var(--alert-ring-color)] px-6 py-4;
+    &,
+    &--default {
+      @apply border-[color:var(--alert-border-color)] bg-[color:var(--alert-bg-color)] px-6 py-4 text-[color:var(--alert-text-color)] ring-[color:var(--alert-ring-color)];
     }
 
     &--soft {

@@ -2,7 +2,7 @@
   .tabs {
     -ms-overflow-style: none;
     scrollbar-width: none;
-    @apply flex items-end font-semibold text-center gap-2 overflow-x-auto overflow-y-hidden;
+    @apply flex items-end gap-2 overflow-x-auto overflow-y-hidden text-center font-semibold;
 
     &::-webkit-scrollbar {
       display: none;
@@ -19,24 +19,24 @@
   }
 
   .tab {
-    @apply flex py-3 px-5 gap-x-2 items-center justify-center relative -bottom-px z-10;
+    @apply relative -bottom-px z-10 flex items-center justify-center gap-x-2 px-5 py-3;
 
     .tabs &,
     .tabs--default & {
-      @apply rounded-t hover:bg-gray-100 hover:border-gray-200 border border-transparent transition;
+      @apply rounded-t border border-transparent transition hover:border-gray-200 hover:bg-gray-100;
     }
 
     .tabs &--active,
     .tabs--default &--active {
-      @apply bg-gray-100 border-gray-200 text-scheme-500;
+      @apply border-gray-200 bg-gray-100 text-scheme-500;
     }
 
     .tabs--underline & {
-      @apply border-0 border-b-[3px] hover:bg-transparent hover:border-gray-300 hover:text-gray-500;
+      @apply border-0 border-b-[3px] hover:border-gray-300 hover:bg-transparent hover:text-gray-500;
     }
 
     .tabs--underline &--active {
-      @apply bg-transparent border-scheme-500;
+      @apply border-scheme-500 bg-transparent;
     }
 
     .tabs--pills & {
@@ -44,7 +44,7 @@
     }
 
     .tabs--pills &--active {
-      @apply bg-scheme-500 hover:bg-scheme-500 text-white hover:text-scheme-100;
+      @apply bg-scheme-500 text-white hover:bg-scheme-500 hover:text-scheme-100;
     }
   }
 }

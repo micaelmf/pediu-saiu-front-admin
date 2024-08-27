@@ -1,2 +1,2 @@
-import '../demo'
-import '@skewind/components/textareaGrow'
+import "../demo";
+import "@skewind/components/textareaGrow";

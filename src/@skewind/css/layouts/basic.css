@@ -4,7 +4,7 @@
   }
 
   .preload {
-    @apply fixed inset-0 bg-white z-[5990] flex items-center justify-center text-3xl transition;
+    @apply fixed inset-0 z-[5990] flex items-center justify-center bg-white text-3xl transition;
 
     &--loaded {
       @apply opacity-0;
@@ -16,14 +16,14 @@
   }
 
   .sidebar {
-    @apply fixed z-[5020] w-[var(--sidebar-width)] flex flex-col min-h-screen bg-gray-50 shadow-lg transition-all duration-300 transform -translate-x-full -ml-5 lg:transition-none lg:translate-x-0 lg:ml-0;
+    @apply fixed z-[5020] -ml-5 flex min-h-screen w-[var(--sidebar-width)] -translate-x-full transform flex-col bg-gray-50 shadow-lg transition-all duration-300 lg:ml-0 lg:translate-x-0 lg:transition-none;
 
     &--drawer {
-      @apply translate-x-0 ml-0 z-[5040];
+      @apply z-[5040] ml-0 translate-x-0;
     }
 
     &__scroll-wrapper {
-      @apply absolute top-16 left-0 -right-3 bottom-0;
+      @apply absolute -right-3 bottom-0 left-0 top-16;
     }
 
     &__scroll {
@@ -48,20 +48,20 @@
   }
 
   .logo {
-    @apply flex items-center px-5 height-top-bar bg-white lg:shadow;
+    @apply height-top-bar flex items-center bg-white px-5 lg:shadow;
   }
 
   .wrapper {
-    @apply min-h-screen flex flex-col pb-16 lg:pb-0 lg:ml-[var(--sidebar-width)];
+    @apply flex min-h-screen flex-col pb-16 lg:ml-[var(--sidebar-width)] lg:pb-0;
   }
 
   .navbar {
-    @apply flex h-16 px-2.5 lg:px-6 bg-white bg-opacity-90 shadow sticky z-[5010] w-full top-0;
+    @apply sticky top-0 z-[5010] flex h-16 w-full bg-white bg-opacity-90 px-2.5 shadow lg:px-6;
 
     &__icon-link {
-      @apply inline-flex items-center p-2 text-gray-500 hover:text-scheme-500 rounded;
+      @apply inline-flex items-center rounded p-2 text-gray-500 hover:text-scheme-500;
 
-      &[aria-expanded=true],
+      &[aria-expanded="true"],
       &[aria-describedby] {
         @apply bg-scheme-100 text-scheme-500;
       }
@@ -97,7 +97,7 @@
     }
 
     &__right {
-      @apply space-x-2 max-w-[50%];
+      @apply max-w-[50%] space-x-2;
 
       .search-mode & {
         @apply max-w-[0%];
@@ -110,12 +110,12 @@
   }
 
   .bottombar {
-    @apply fixed top-[100vh] transform -translate-y-full -mx-3 w-full justify-center bg-white shadow h-16;
+    @apply fixed top-[100vh] -mx-3 h-16 w-full -translate-y-full transform justify-center bg-white shadow;
   }
 
   @screen lg {
     .bottombar {
-      @apply translate-y-0 static m-0 w-auto h-auto bg-transparent shadow-none;
+      @apply static m-0 h-auto w-auto translate-y-0 bg-transparent shadow-none;
     }
   }
 
@@ -127,11 +127,11 @@
     }
 
     &__user {
-      @apply leading-tight hidden lg:flex flex-col ml-12 my-1;
+      @apply my-1 ml-12 hidden flex-col leading-tight lg:flex;
 
       &__name {
         max-width: 6rem;
-        @apply block font-semibold truncate;
+        @apply block truncate font-semibold;
       }
 
       &__role {
@@ -141,11 +141,11 @@
   }
 
   .main {
-    @apply flex-1 min-h-0;
+    @apply min-h-0 flex-1;
 
-    --main-height: calc(100vh - theme('spacing.32'));
+    --main-height: calc(100vh - theme("spacing.32"));
     @screen lg {
-      --main-height: calc(100vh - theme('spacing.16'));
+      --main-height: calc(100vh - theme("spacing.16"));
     }
 
     &-backdrop {

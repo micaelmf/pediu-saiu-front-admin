@@ -1,22 +1,24 @@
 <div class="breadcrumb">
-    <div>
-        <a href="/" class="breadcrumb__item">Dashboard</a>
-        <% var urlArray = url.split('/'); %>
-        <% var lastIsInteger = Number.isInteger(Number(urlArray[urlArray.length - 1])); %>
-        <% for(var i = 1; i < urlArray.length; i++) { %>
-            <% if(urlArray[i]) { %>
-                <span class="breadcrumb__separator">/</span>
-                <% var isLastItem = (i == urlArray.length - 1); %>
-                <% var isSecondLastItem = (i == urlArray.length - 2); %>
-                <% var capitalized = urlArray[i].charAt(0).toUpperCase() + urlArray[i].slice(1); %>
-                <% if(lastIsInteger && isLastItem) { %>
-                    <span class="breadcrumb__item"><%= capitalized %></span>
-                <% } else if((lastIsInteger && isSecondLastItem) || (!lastIsInteger && isLastItem)) { %>
-                    <span class="breadcrumb__item"><strong><u><%= capitalized %></u></strong></span>
-                <% } else { %>
-                    <a href="<%= '/' + urlArray.slice(1, i + 1).join('/') %>" class="breadcrumb__item"><%= capitalized %></a>
-                <% } %>
-            <% } %>
-        <% } %>
-    </div>
+  <div>
+    <a href="/" class="breadcrumb__item">Dashboard</a>
+    <% var urlArray = url.split('/'); %>
+    <% var lastIsInteger = Number.isInteger(Number(urlArray[urlArray.length - 1])); %>
+    <% for(var i = 1; i < urlArray.length; i++) { %>
+    <% if(urlArray[i]) { %>
+    <span class="breadcrumb__separator">/</span>
+    <% var isLastItem = (i == urlArray.length - 1); %>
+    <% var isSecondLastItem = (i == urlArray.length - 2); %>
+    <% var capitalized = urlArray[i].charAt(0).toUpperCase() + urlArray[i].slice(1); %>
+    <% if(lastIsInteger && isLastItem) { %>
+    <span class="breadcrumb__item"><%= capitalized %></span>
+    <% } else if((lastIsInteger && isSecondLastItem) || (!lastIsInteger && isLastItem)) { %>
+    <span class="breadcrumb__item"
+      ><strong><u><%= capitalized %></u></strong></span
+    >
+    <% } else { %>
+    <a href="<%= '/' + urlArray.slice(1, i + 1).join('/') %>" class="breadcrumb__item"><%= capitalized %></a>
+    <% } %>
+    <% } %>
+    <% } %>
+  </div>
 </div>
