@@ -2072,7 +2072,7 @@ export {
   // ionicons__serverSharp,
   // ionicons__server,
   // ionicons__settingsOutline,
-  // ionicons__settingsSharp,
+  ionicons__settingsSharp,
   // ionicons__settings,
   // ionicons__shapesOutline,
   // ionicons__shapesSharp,

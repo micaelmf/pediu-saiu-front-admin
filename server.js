@@ -44,24 +44,49 @@ app.get("/produtos", async (req, res) => {
     }
 
     const apiUrl = process.env.API_URL;
-    const response = await axios.get(apiUrl + "/products", {
+    const queryExists = Object.keys(req.query).length > 0;
+
+    const responseCategories = await axios.get(apiUrl + "/categories", {
       headers: {
         'Authorization': `Bearer ${token}`
       }
     });
 
+    let responseProducts = [];
+
+    if (!queryExists) {
+      responseProducts = await axios.get(apiUrl + "/products", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+    } else {
+      responseProducts = await axios.get(apiUrl + "/products/search", {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        params: req.query
+      });
+    }
 
     // Converter o preço para o formato de moeda brasileira
-    response.data.forEach(product => {
+    responseProducts.data.forEach(product => {
       product.price = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price);
     });
-
 
     const page = {
       title: 'Produtos',
       url: req.path,
-      products: response.data
+      products: responseProducts.data,
+      categories: responseCategories.data,
+      filters: req.query
     };
+
+    // Adicionar cabeçalhos para desativar o cache
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
+    res.set('Surrogate-Control', 'no-store');
 
     res.render("products", page);
   } catch (error) {

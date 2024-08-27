@@ -136,21 +136,7 @@
         </div>
         <!--END: Root Layout -->
 
-        <!-- BEGIN: Confirmation modal -->
-        <button id="modal-open" type="button" class="button" data-modal-toggle="smallerDialog"
-            style="display: none;">Smaller Modal</button>
-        <div id="smallerDialog" class="modal max-w-lg">
-            <div class="modal__header">
-                <div class="modal__title">Atenção!</div>
-            </div>
-            <div class="modal__body">Tem certeza que deseja excluir?</div>
-            <div class="modal__footer">
-                <button type="button" class="button cancel" data-modal-toggle="smallerDialog">Não</button>
-                <button type="button" class="button confirm scheme-primary"
-                    data-modal-toggle="smallerDialog">Sim</button>
-            </div>
-        </div>
-        <!-- END: Confirmation modal -->
+        <%- include('partials/window-confirmation') %>
     </body>
 
     <script src="/js/categories-list.js"></script>

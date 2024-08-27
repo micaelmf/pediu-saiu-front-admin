@@ -33,7 +33,7 @@ $(document).ready(function () {
 
   $(document).on('click', '.confirm', function (e) {
     e.preventDefault();
-    deleteCategory(idToDelete, this);
+    deleteProduct(idToDelete, this);
   });
 
   $(document).on('change', '#filter-categories select', function (e) {
@@ -96,7 +96,7 @@ $(document).ready(function () {
     });
   }
 
-  function deleteCategory(id, self) {
+  function deleteProduct(id, self) {
     let preload = Toast('Salvando...', { duration: -1, close: true, }).showToast();
     $(rowToDelete).find('a, button').addClass('link-disabled')
 

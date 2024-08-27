@@ -55,85 +55,117 @@
                                             <h3 class="text-xl">Filtro</h3>
                                         </div>
                                         <div>
-                                            <button type="button" class="button button--xs button--outline"
+                                            <% if (Object.keys(filters).length > 0) { %>
+                                                <a href="/produtos" class="button button--xs button--outline button--icon scheme-danger">
+                                                    <i data-icon="feather__x"></i>
+                                                </a>
+                                            <% } %>
+                                            <button type="button" class="button button--xs button--outline button--icon"
                                                 data-collapse-toggle="#advancedFilterTarget"
-                                                aria-expanded="false">Avançado</button>
+                                                aria-expanded="false">
+                                                <i data-icon="ionicons__settingsSharp"></i>
+                                            </button>
                                         </div>
                                     </div>
-                                    <div class="card__body">
-                                        <div class="grid grid-cols-1 mb-5">
-                                            <fieldset class="field">
-                                                <div class="input-group">
-                                                    <div class="flex-1 form-control scheme-gray">
-                                                        <input type="text" placeholder="Texto">
-                                                    </div>
-                                                    <div class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                        <select>
-                                                            <option value="produtc">Produto</option>
-                                                            <option value="category">Categoria</option>
-                                                            <option value="description">Descrição</option>
-                                                        </select>
-                                                    </div>
-                                                    <button type="button"
-                                                        class="button button--icon button--solid button--md scheme-primary">
-                                                        <i data-icon="feather__search"></i>
-                                                    </button>
-                                                </div>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="card__divider"></div>
-                                    <div id="advancedFilterTarget" class="collapse">
-                                        <div class="card__header">
-                                            <div>
-                                                <h3 class="text-xl">Avançado</h3>
-                                            </div>
-                                            <a href="javascript:;"
-                                                class="button button--icon button--flat scheme-info rounded-full">
-                                                <i data-icon="feather__helpCircle"></i>
-                                            </a>
-                                        </div>
+                                    <form action="/produtos" method="get">
                                         <div class="card__body">
-                                            <div class="grid md:grid-cols-2 gap-5 mb5">
+                                            <div class="grid grid-cols-1 mb-5">
                                                 <fieldset class="field">
-                                                    <label for="visibility" class="field__label">Visibilidade</label>
-                                                    <div class="flex-1 form-control scheme-gray">
-                                                        <select>
-                                                            <option value="">Selecione</option>
-                                                            <option value="1">Visível</option>
-                                                            <option value="0">Oculto</option>
-                                                        </select>
-                                                    </div>
-                                                </fieldset>
-                                                <fieldset class="field">
-                                                    <label for="visibility" class="field__label">Quantidade</label>
                                                     <div class="input-group">
-                                                        <div
-                                                            class="form-control [.input-group>&]:flex-initial scheme-gray">
-                                                            <select>
-                                                                <option value="">Maior que</option>
-                                                                <option value="agriculture">Igual a</option>
-                                                                <option value="electronics">Menor que</option>
+                                                        <div class="flex-1 form-control scheme-gray">
+                                                            <input type="text" name="term" value="<%= filters.term %>" placeholder="Buscar...">
+                                                        </div>
+                                                        <div class="form-control [.input-group>&]:flex-initial scheme-gray">
+                                                            <select name="field">
+                                                                <option value="name" <%= filters.field == 'name' ? 'selected' : '' %>>Nome</option>
+                                                                <option value="description" <%= filters.field == 'description' ? 'selected' : '' %>>Descrição</option>
                                                             </select>
                                                         </div>
-                                                        <div class="flex-1 form-control scheme-gray">
-                                                            <input type="text" placeholder="">
-                                                        </div>
+                                                        <button type="submit" id="search" class="button button--icon button--solid button--md scheme-primary">
+                                                            <i data-icon="feather__search"></i>
+                                                            <i class="loader loader--05 mr-2"
+                                                                style="display: none;"></i>
+                                                        </button>
                                                     </div>
                                                 </fieldset>
                                             </div>
-                                            <div class="flex gap-5 justify-end">
-                                                <button type="button"
-                                                    class="button button--solid button--md scheme-black">
-                                                    Limpar Filtros
-                                                </button>
-                                                <button type="button"
-                                                    class="button button--solid button--md scheme-primary">
-                                                    Buscar
-                                                </button>
+                                        </div>
+                                        <div class="card__divider"></div>
+                                        <div id="advancedFilterTarget" class="collapse">
+                                            <div class="card__header">
+                                                <div>
+                                                    <h3 class="text-xl">Avançado</h3>
+                                                </div>
+                                                <a href="javascript:;"
+                                                    class="button button--icon button--flat scheme-info rounded-full">
+                                                    <i data-icon="feather__helpCircle"></i>
+                                                </a>
+                                            </div>
+                                            <div class="card__body">
+                                                <div class="grid md:grid-cols-2 gap-5 mb5">
+                                                    <fieldset class="field">
+                                                        <label for="type" class="field__label">Tipo</label>
+                                                        <div class="flex-1 form-control scheme-gray">
+                                                            <select name="type">
+                                                                <option value="products" <%= filters.type == 'products' ? 'selected' : '' %>>Produtos</option>
+                                                                <option value="accompaniments" <%= filters.type == 'accompaniments' ? 'selected' : '' %>>Acompanhamentos</option>
+                                                                <option value="addictionals" <%= filters.type == 'addictionals' ? 'selected' : '' %>>Adicionais</option>
+                                                            </select>
+                                                        </div>
+                                                    </fieldset>
+                                                    <fieldset class="field">
+                                                        <label for="visibility" class="field__label">Status</label>
+                                                        <div class="flex-1 form-control scheme-gray">
+                                                            <select name="status">
+                                                                <option value="visible" <%= filters.status == 'visible' ? 'selected' : '' %>>Visível</option>
+                                                                <option value="invisible" <%= filters.status == 'invisible' ? 'selected' : '' %>>Oculto</option>
+                                                                <option value="deleted" <%= filters.status == 'deleted' ? 'selected' : '' %>>Excluído</option>
+                                                            </select>
+                                                        </div>
+                                                    </fieldset>
+                                                    <fieldset class="field">
+                                                        <label for="visibility" class="field__label">Categorias</label>
+                                                        <div class="flex-1 form-control scheme-gray">
+                                                            <select name="category">
+                                                                <option value="all" <%= filters.category == 'all' ? 'selected' : '' %>>Todas</option>
+                                                                <% categories.forEach(function(category) { %>
+                                                                    <option value="<%= category.id %>" <%= filters.category == category.id ? 'selected' : '' %>>
+                                                                        <%= category.name %>
+                                                                    </option>
+                                                                <% }); %>
+                                                            </select>
+                                                        </div>
+                                                    </fieldset>
+                                                    <!-- <fieldset class="field">
+                                                        <label for="visibility" class="field__label">Quantidade</label>
+                                                        <div class="input-group">
+                                                            <div
+                                                                class="form-control [.input-group>&]:flex-initial scheme-gray">
+                                                                <select>
+                                                                    <option value="">Maior que</option>
+                                                                    <option value="agriculture">Igual a</option>
+                                                                    <option value="electronics">Menor que</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="flex-1 form-control scheme-gray">
+                                                                <input type="text" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                    </fieldset> -->
+                                                </div>
+                                                <div class="flex gap-5 justify-end">
+                                                    <a href="/produtos"
+                                                        class="button button--solid button--md scheme-black">
+                                                        Limpar Filtros
+                                                    </a>
+                                                    <button type="submit"
+                                                        class="button button--solid button--md scheme-primary">
+                                                        Buscar
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                             <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
@@ -160,7 +192,7 @@
                                                 <%= product.name %>
                                             </td>
                                             <td class="table-cell name">
-                                                <%= product.category %>
+                                                <%= product.category.name %>
                                             </td>
                                             <td class="table-cell status">
                                                 <%= product.status %>
@@ -187,6 +219,8 @@
             <!-- END: Wrapper Main -->
         </div>
         <!--END: Root Layout -->
+
+        <%- include('partials/window-confirmation') %>
     </body>
 
     <script src="/js/products-list.js"></script>
