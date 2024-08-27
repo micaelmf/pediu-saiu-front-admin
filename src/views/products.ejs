@@ -34,16 +34,23 @@
                         <header class="page__header flex items-end justify-between">
                             <div>
                                 <%- include('partials/breadcrumb') %>
-                                    <div class="page__title">
-                                        <h1 class="page__title__text text-3xl">Produtos</h1>
-                                    </div>
+                                <div class="page__title">
+                                    <h1 class="page__title__text text-3xl">Produtos</h1>
+                                </div>
                             </div>
-                            <div>
-                                <a href="produtos/cadastrar" class="button scheme-primary">
-                                    <i data-icon="feather__plus"></i>
+                            <div class="button-group">
+                                <a href="produtos/cadastrar?type=product" type="button" class="button scheme-primary" data-tooltip="Cadastrar Produto">
                                     <span>Cadastrar</span>
                                 </a>
+                                <button type="button" data-dropdown-toggle="#splitButtonDropdown" data-tippy-placement="bottom-end" aria-haspopup="true" class="button button--icon scheme-primary">
+                                    <i data-icon="feather__chevronDown" class="transform transition"></i>
+                                </button>
                             </div>
+                            <ul id="splitButtonDropdown" class="dropdown">
+                                <li class="dropdown__item"><a href="produtos/cadastrar?type=product">Produto</a></li>
+                                <li class="dropdown__item"><a href="produtos/cadastrar?type=accompaniment">Acompanhamento</a></li>
+                                <li class="dropdown__item"><a href="produtos/cadastrar?type=additional">Adicional</a></li>
+                            </ul>
                         </header>
                         <!-- END: Page Header -->
                         <!-- BEGIN: Page Body -->
@@ -56,13 +63,14 @@
                                         </div>
                                         <div>
                                             <% if (Object.keys(filters).length > 0) { %>
-                                                <a href="/produtos" class="button button--xs button--outline button--icon scheme-danger">
+                                                <a href="/produtos" class="button button--xs button--outline button--icon scheme-danger" data-tooltip="Limpar filtros">
                                                     <i data-icon="feather__x"></i>
                                                 </a>
                                             <% } %>
                                             <button type="button" class="button button--xs button--outline button--icon"
                                                 data-collapse-toggle="#advancedFilterTarget"
-                                                aria-expanded="false">
+                                                aria-expanded="false"
+                                                data-tooltip="Filtro Avançado" >
                                                 <i data-icon="ionicons__settingsSharp"></i>
                                             </button>
                                         </div>

@@ -132,7 +132,8 @@ app.get("/produtos/cadastrar", async (req, res) => {
       product: {},
       categories: responseCategories.data || [],
       accompaniments: responseAccompaniments.data || [],
-      additionals: responseAddtionals.data || []
+      additionals: responseAddtionals.data || [],
+      params: req.query
     }
 
     res.render("products-form", page)
@@ -251,8 +252,15 @@ app.post("/produtos/editar/:id", async (req, res) => {
     const updatedData = {
       name: req.body.name,
       description: req.body.description,
+      type: req.body.type,
       price: req.body.price,
-      status: req.body.status
+      free: req.body.free,
+      status: req.body.status,
+      categoryId: req.body.categoryId,
+      accompanimentsId: req.body.accompaniments,
+      maxAccompaniments: req.body.maxAccompaniments,
+      additionals: req.body.additionals,
+      maxAdditionals: req.body.maxAdditionals
     };
 
     const response = await axios.put(`${apiUrl}/products/${productId}`, updatedData, {

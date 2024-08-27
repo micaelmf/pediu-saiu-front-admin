@@ -77,6 +77,26 @@
                                             </div>
                                         </div>
                                         <div class="card__body">
+                                            <!-- Logic -->
+                                            <%
+                                                let type = 'accompaniment'
+
+                                                if (product.type === 'product' || (typeof params !== 'undefined' && params.type === 'product')) {
+                                                    type = 'product'
+                                                }
+
+                                                if (product.type === 'additional' || (typeof params !== 'undefined' && params.type === 'additional')) {
+                                                    type = 'additional'
+                                                }
+
+                                                if (product.type === 'accompaniment' || (typeof params !== 'undefined' && params.type === 'accompaniment')) {
+                                                    type = 'accompaniment'
+                                                }
+                                            %>
+
+                                            <!-- Hidden fields -->
+                                            <input type="hidden" id="type" name="type" value="<%= type %>" />
+
                                             <fieldset class="field">
                                                 <label for="name" class="field__label">Nome</label>
                                                 <label class="form-control">
@@ -92,17 +112,14 @@
                                                 </label>
                                             </fieldset>
                                             <fieldset class="field">
-                                                <label for="price" class="field__label">Preço</label>
-                                                <label class="form-control">
-                                                    <span class="self-start mt-2">R$</span>
-                                                    <input type="text" id="price" name="price" value="<%= product.price || '' %>" placeholder="Preço" />
-                                                </label>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label class="check-control">
-                                                    <input id="free" name="free" type="checkbox" <%= product.free ? 'checked' : '' %>>
-                                                    <span>Grátis</span>
-                                                </label>
+                                                <label for="visible" class="field__label">Visibilidade</label>
+                                                <div class="form-control">
+                                                    <select id="visible" name="status">
+                                                        <option>Selecione</option>
+                                                        <option value="visible" <%= product.status === 'visible' ? 'selected' : '' %>>Visível</option>
+                                                        <option value="invisible" <%= product.status === 'invisible' ? 'selected' : '' %>>Oculto</option>
+                                                    </select>
+                                                </div>
                                             </fieldset>
                                             <fieldset class="field">
                                                 <label for="category" class="field__label">Categoria</label>
@@ -117,54 +134,61 @@
                                                     </select>
                                                 </div>
                                             </fieldset>
-                                            <fieldset class="field">
-                                                <label for="visible" class="field__label">Visibilidade</label>
-                                                <div class="form-control">
-                                                    <select id="visible" name="status">
-                                                        <option>Selecione</option>
-                                                        <option value="visible" <%= product.status === 'visible' ? 'selected' : '' %>>Visível</option>
-                                                        <option value="invisible" <%= product.status === 'invisible' ? 'selected' : '' %>>Oculto</option>
+                                            <% if (type == 'product' || type == 'additional') { %>
+                                                <fieldset class="field">
+                                                    <label class="check-control">
+                                                        <input id="free" name="free" type="checkbox" <%= product.free ? 'checked' : '' %>>
+                                                        <span>Grátis</span>
+                                                    </label>
+                                                </fieldset>
+                                                <fieldset class="field">
+                                                    <label for="price" class="field__label">Preço</label>
+                                                    <label class="form-control">
+                                                        <span class="self-start mt-2">R$</span>
+                                                        <input type="text" id="price" name="price" value="<%= product.price || '' %>" placeholder="Preço" />
+                                                    </label>
+                                                </fieldset>
+                                            <% } %>
+                                            <% if (type == 'product') { %>
+                                                <fieldset class="field">
+                                                    <label for="maximumQuantity" class="field__label">Máximo de
+                                                        Acompanhamentos</label>
+                                                    <label class="form-control">
+                                                        <input type="number" min="0" id="accompanimentsMax" name="accompanimentsMax" value="<%= product.accompanimentsMax || '0' %>"
+                                                            placeholder="" />
+                                                    </label>
+                                                </fieldset>
+                                                <fieldset class="field">
+                                                    <label for="visible" class="field__label">Acompanhamentos</label>
+                                                    <select data-select data-select-placeholder="Selecione" name="accompaniments" multiple>
+                                                        <option value="">Selecione</option>
+                                                        <% accompaniments.forEach(function(accompaniment) { %>
+                                                            <option value="<%= accompaniment.id %>" <%= accompaniment.product_id === product.id ? 'selected' : '' %>>
+                                                                <%= product.name %>
+                                                            </option>
+                                                        <% }) %>
                                                     </select>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label for="maximumQuantity" class="field__label">Máximo de
-                                                    Acompanhamentos</label>
-                                                <label class="form-control">
-                                                    <input type="number" min="0" id="accompanimentsMax" name="accompanimentsMax" value="<%= product.accompanimentsMax || '0' %>"
-                                                        placeholder="" />
-                                                </label>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label for="visible" class="field__label">Acompanhamentos</label>
-                                                <select data-select data-select-placeholder="Selecione" name="accompaniments" multiple>
-                                                    <option value="">Selecione</option>
-                                                    <% accompaniments.forEach(function(accompaniment) { %>
-                                                        <option value="<%= accompaniment.id %>" <%= accompaniment.product_id === product.id ? 'selected' : '' %>>
-                                                            <%= product.name %>
-                                                        </option>
-                                                    <% }) %>
-                                                </select>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label for="maximumQuantity" class="field__label">Máximo de
-                                                    Adicionais</label>
-                                                <label class="form-control">
-                                                    <input type="number" min="0" id="additionalsMax" name="additionalsMax" value="<%= product.accompanimentsMax || '0' %>"
-                                                        placeholder="" />
-                                                </label>
-                                            </fieldset>
-                                            <fieldset class="field">
-                                                <label for="visible" class="field__label">Adicionais</label>
-                                                <select data-select data-select-placeholder="Selecione" name="addtionals" multiple>
-                                                    <option value="">Selecione</option>
-                                                    <% additionals || [].forEach(function(addtional) { %>
-                                                        <option value="<%= addtional.id %>" <%= addtional.product_id === product.id ? 'selected' : '' %>>
-                                                            <%= addtional.name %>
-                                                        </option>
-                                                    <% }) %>
-                                                </select>
-                                            </fieldset>
+                                                </fieldset>
+                                                <fieldset class="field">
+                                                    <label for="maximumQuantity" class="field__label">Máximo de
+                                                        Adicionais</label>
+                                                    <label class="form-control">
+                                                        <input type="number" min="0" id="additionalsMax" name="additionalsMax" value="<%= product.accompanimentsMax || '0' %>"
+                                                            placeholder="" />
+                                                    </label>
+                                                </fieldset>
+                                                <fieldset class="field">
+                                                    <label for="visible" class="field__label">Adicionais</label>
+                                                    <select data-select data-select-placeholder="Selecione" name="addtionals" multiple>
+                                                        <option value="">Selecione</option>
+                                                        <% additionals || [].forEach(function(addtional) { %>
+                                                            <option value="<%= addtional.id %>" <%= addtional.product_id === product.id ? 'selected' : '' %>>
+                                                                <%= addtional.name %>
+                                                            </option>
+                                                        <% }) %>
+                                                    </select>
+                                                </fieldset>
+                                            <% } %>
                                         </div>
                                         <div class="card__divider"></div>
                                         <div class="card__footer gap-5">
