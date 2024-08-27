@@ -1,0 +1,19 @@
+{
+  "plugins": ["prettier-plugin-ejs", "prettier-plugin-tailwindcss"],
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 160,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "*.ejs",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
