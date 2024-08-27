@@ -45,14 +45,14 @@
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         --button-text-color: theme(colors.scheme.50 / var(--tw-text-opacity));
         @apply shadow-lg;
       }
 
       &:active,
       &.expanded,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         @apply shadow-inner;
       }
 
@@ -68,15 +68,13 @@
     &--soft {
       --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
       --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
-      --button-border-color: theme(
-        colors.scheme.100 / var(--tw-border-opacity)
-      );
+      --button-border-color: theme(colors.scheme.100 / var(--tw-border-opacity));
       --button-ring-color: theme(colors.scheme.50 / var(--tw-ring-opacity));
       @apply shadow-none;
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
         --button-border-color: theme(colors.transparent);
       }
@@ -90,7 +88,7 @@
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         --button-bg-color: theme(colors.scheme.200 / var(--tw-bg-opacity));
         --button-border-color: theme(colors.transparent);
         --button-text-color: theme(colors.scheme.700 / var(--tw-text-opacity));
@@ -103,7 +101,7 @@
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
         --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
       }
@@ -112,14 +110,12 @@
     &--outline {
       --button-bg-color: theme(colors.transparent);
       --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
-      --button-border-color: theme(
-        colors.scheme.500 / var(--tw-border-opacity)
-      );
+      --button-border-color: theme(colors.scheme.500 / var(--tw-border-opacity));
       @apply shadow-none;
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         --button-bg-color: theme(colors.scheme.500 / var(--tw-bg-opacity));
         --button-text-color: theme(colors.scheme.50 / var(--tw-text-opacity));
         @apply shadow-none;
@@ -127,13 +123,11 @@
     }
 
     &--outline&--soft {
-      --button-border-color: theme(
-        colors.scheme.200 / var(--tw-border-opacity)
-      );
+      --button-border-color: theme(colors.scheme.200 / var(--tw-border-opacity));
 
       &:hover:not(:disabled),
       &:active,
-      &[aria-expanded="true"] {
+      &[aria-expanded='true'] {
         --button-bg-color: theme(colors.scheme.100 / var(--tw-bg-opacity));
         --button-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
       }

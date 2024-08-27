@@ -1,5 +1,5 @@
-import { manageInstances, optionsFromData } from "../utils/component";
-import Backdrop from "../utils/backdrop";
+import { manageInstances, optionsFromData } from '../utils/component';
+import Backdrop from '../utils/backdrop';
 
 /**
  * Default options
@@ -19,8 +19,8 @@ class Modal {
     this._isHidden = true;
 
     this._backdrop = new Backdrop(document.body, {
-      position: "fixed",
-      class: "modal-backdrop",
+      position: 'fixed',
+      class: 'modal-backdrop',
       onClick: this.hide,
     });
 
@@ -43,7 +43,7 @@ class Modal {
     this._setDefaultAttributes();
     this._setHiddenAttributes();
 
-    if (this._targetEl.getAttribute("aria-modal")) {
+    if (this._targetEl.getAttribute('aria-modal')) {
       this.show();
     }
   };
@@ -61,7 +61,7 @@ class Modal {
     }
 
     // dispatch on toggle event
-    this._targetEl.dispatchEvent(new Event("modal.toggle"));
+    this._targetEl.dispatchEvent(new Event('modal.toggle'));
   };
 
   /**
@@ -81,7 +81,7 @@ class Modal {
       this._isHidden = false;
 
       // dispatch on show event
-      this._targetEl.dispatchEvent(new Event("modal.show"));
+      this._targetEl.dispatchEvent(new Event('modal.show'));
     }, 0);
   };
 
@@ -97,7 +97,7 @@ class Modal {
     this._isHidden = true;
 
     // dispatch on hide event
-    this._targetEl.dispatchEvent(new Event("modal.hide"));
+    this._targetEl.dispatchEvent(new Event('modal.hide'));
   };
 
   /**
@@ -106,8 +106,8 @@ class Modal {
    * @returns {void}
    */
   _setDefaultAttributes = () => {
-    this._targetEl.setAttribute("role", "dialog");
-    this._targetEl.setAttribute("tabindex", "-1");
+    this._targetEl.setAttribute('role', 'dialog');
+    this._targetEl.setAttribute('tabindex', '-1');
   };
 
   /**
@@ -116,8 +116,8 @@ class Modal {
    * @returns {void}
    */
   _setShownAttributes = () => {
-    this._targetEl.setAttribute("aria-modal", "true");
-    this._targetEl.removeAttribute("aria-hidden");
+    this._targetEl.setAttribute('aria-modal', 'true');
+    this._targetEl.removeAttribute('aria-hidden');
   };
 
   /**
@@ -126,8 +126,8 @@ class Modal {
    * @returns {void}
    */
   _setHiddenAttributes = () => {
-    this._targetEl.removeAttribute("aria-modal");
-    this._targetEl.setAttribute("aria-hidden", "true");
+    this._targetEl.removeAttribute('aria-modal');
+    this._targetEl.setAttribute('aria-hidden', 'true');
   };
 }
 
@@ -135,34 +135,33 @@ class Modal {
  * Instance manager
  */
 
-const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
-  manageInstances({
-    create: (targetEl, options) => new Modal(targetEl, options),
-  });
+const { getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
+  create: (targetEl, options) => new Modal(targetEl, options),
+});
 
 /**
  * Data API implementation
  */
 
 const dataApi = (wrapperEl) => {
-  wrapperEl.querySelectorAll("[data-modal-toggle]").forEach((toggleEl) => {
-    const modalId = toggleEl.getAttribute("data-modal-toggle");
+  wrapperEl.querySelectorAll('[data-modal-toggle]').forEach((toggleEl) => {
+    const modalId = toggleEl.getAttribute('data-modal-toggle');
     const modalEl = document.getElementById(modalId);
-    const options = optionsFromData(modalEl, "modal");
+    const options = optionsFromData(modalEl, 'modal');
 
     const instance = getOrCreateInstance(modalEl, options);
 
-    toggleEl.addEventListener("click", (e) => {
+    toggleEl.addEventListener('click', (e) => {
       e.preventDefault();
       instance.toggle();
     });
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

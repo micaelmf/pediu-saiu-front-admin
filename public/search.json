@@ -1,362 +1,362 @@
 [
-    {
-        "type": "page",
-        "name": "Dashboard Ecommerce",
-        "icon": "feather__shoppingBag",
-        "url": "/index.html"
-    },
-    {
-        "type": "page",
-        "name": "Dashboard Analytics",
-        "icon": "feather__barChart2",
-        "url": "/dashboard-analytics.html"
-    },
-    {
-        "type": "page",
-        "name": "Contacts",
-        "icon": "feather__users",
-        "url": "/contacts.html"
-    },
-    {
-        "type": "page",
-        "name": "Chats",
-        "icon": "feather__messageSquare",
-        "url": "/chat.html"
-    },
-    {
-        "type": "page",
-        "name": "Email",
-        "icon": "feather__inbox",
-        "url": "/email.html"
-    },
-    {
-        "type": "page",
-        "name": "File Manager",
-        "icon": "feather__file",
-        "url": "/file-manager.html"
-    },
-    {
-        "type": "page",
-        "name": "Login",
-        "icon": "feather__lock",
-        "url": "/login.html"
-    },
-    {
-        "type": "page",
-        "name": "Sign Up",
-        "icon": "feather__lock",
-        "url": "/register.html"
-    },
-    {
-        "type": "page",
-        "name": "404",
-        "icon": "feather__alertTriangle",
-        "url": "/404.html"
-    },
-    {
-        "type": "page",
-        "name": "500",
-        "icon": "feather__alertTriangle",
-        "url": "/500.html"
-    },
-    {
-        "type": "page",
-        "name": "Coming Soon",
-        "icon": "feather__alertTriangle",
-        "url": "/coming-soon.html"
-    },
-    {
-        "type": "page",
-        "name": "Typography",
-        "icon": "feather__type",
-        "url": "/typography.html"
-    },
-    {
-        "type": "page",
-        "name": "Icons",
-        "icon": "feather__feather",
-        "url": "/icons.html"
-    },
-    {
-        "type": "page",
-        "name": "Empty Page Layout",
-        "icon": "feather__layout",
-        "url": "/layouts-empty.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Single Column #1",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-single-1.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Single Column #2",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-single-2.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Left Sidebar #1",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-leftsidebar-1.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Left Sidebar #2",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-leftsidebar-2.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Left Sidebar #3",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-leftsidebar-3.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Right Sidebar #1",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-rightsidebar-1.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Right Sidebar #2",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-rightsidebar-2.html"
-    },
-    {
-        "type": "page",
-        "name": "Simple Page Layout: Right Sidebar #3",
-        "icon": "feather__layout",
-        "url": "/layouts-simple-rightsidebar-3.html"
-    },
-    {
-        "type": "page",
-        "name": "Carded Page Layout: Single Column",
-        "icon": "feather__layout",
-        "url": "/layouts-carded-single.html"
-    },
-    {
-        "type": "page",
-        "name": "Carded Page Layout: Left Sidebar #1",
-        "icon": "feather__layout",
-        "url": "/layouts-carded-leftsidebar-1.html"
-    },
-    {
-        "type": "page",
-        "name": "Carded Page Layout: Left Sidebar #2",
-        "icon": "feather__layout",
-        "url": "/layouts-carded-leftsidebar-2.html"
-    },
-    {
-        "type": "page",
-        "name": "Carded Page Layout: Right Sidebar #1",
-        "icon": "feather__layout",
-        "url": "/layouts-carded-rightsidebar-1.html"
-    },
-    {
-        "type": "page",
-        "name": "Carded Page Layout: Right Sidebar #2",
-        "icon": "feather__layout",
-        "url": "/layouts-carded-rightsidebar-2.html"
-    },
-    {
-        "type": "page",
-        "name": "Accordion Component",
-        "icon": "feather__box",
-        "url": "/components-accordion.html"
-    },
-    {
-        "type": "page",
-        "name": "Alert Component",
-        "icon": "feather__box",
-        "url": "/components-alert.html"
-    },
-    {
-        "type": "page",
-        "name": "Avatar Component",
-        "icon": "feather__box",
-        "url": "/components-avatar.html"
-    },
-    {
-        "type": "page",
-        "name": "Badges Component",
-        "icon": "feather__box",
-        "url": "/components-badges.html"
-    },
-    {
-        "type": "page",
-        "name": "Breadcrumbs Component",
-        "icon": "feather__box",
-        "url": "/components-breadcrumbs.html"
-    },
-    {
-        "type": "page",
-        "name": "Buttons Component",
-        "icon": "feather__box",
-        "url": "/components-buttons.html"
-    },
-    {
-        "type": "page",
-        "name": "Collapse Component",
-        "icon": "feather__box",
-        "url": "/components-collapse.html"
-    },
-    {
-        "type": "page",
-        "name": "Dropdown Component",
-        "icon": "feather__box",
-        "url": "/components-dropdown.html"
-    },
-    {
-        "type": "page",
-        "name": "Icon Component",
-        "icon": "feather__box",
-        "url": "/components-icon.html"
-    },
-    {
-        "type": "page",
-        "name": "Modal Component",
-        "icon": "feather__box",
-        "url": "/components-modal.html"
-    },
-    {
-        "type": "page",
-        "name": "Popover Component",
-        "icon": "feather__box",
-        "url": "/components-popover.html"
-    },
-    {
-        "type": "page",
-        "name": "Progress Component",
-        "icon": "feather__box",
-        "url": "/components-progress.html"
-    },
-    {
-        "type": "page",
-        "name": "Spinner Component",
-        "icon": "feather__box",
-        "url": "/components-spinner.html"
-    },
-    {
-        "type": "page",
-        "name": "Tabs Component",
-        "icon": "feather__box",
-        "url": "/components-tabs.html"
-    },
-    {
-        "type": "page",
-        "name": "Toast Component",
-        "icon": "feather__box",
-        "url": "/components-toast.html"
-    },
-    {
-        "type": "page",
-        "name": "Tooltip Component",
-        "icon": "feather__box",
-        "url": "/components-tooltips.html"
-    },
-    {
-        "type": "page",
-        "name": "Sectioned Form Layout 1",
-        "icon": "feather__box",
-        "url": "/form-layout-sectioned1.html"
-    },
-    {
-        "type": "page",
-        "name": "Sectioned Form Layout 2",
-        "icon": "feather__box",
-        "url": "/form-layout-sectioned2.html"
-    },
-    {
-        "type": "page",
-        "name": "Sectioned Form Layout 3",
-        "icon": "feather__box",
-        "url": "/form-layout-sectioned3.html"
-    },
-    {
-        "type": "page",
-        "name": "Form Input",
-        "icon": "feather__box",
-        "url": "/form-input.html"
-    },
-    {
-        "type": "page",
-        "name": "Form Textarea",
-        "icon": "feather__box",
-        "url": "/form-textarea.html"
-    },
-    {
-        "type": "page",
-        "name": "Form Checkbox",
-        "icon": "feather__box",
-        "url": "/form-checkbox.html"
-    },
-    {
-        "type": "page",
-        "name": "Form Radio",
-        "icon": "feather__box",
-        "url": "/form-radio.html"
-    },
-    {
-        "type": "page",
-        "name": "Form Switch",
-        "icon": "feather__box",
-        "url": "/form-switch.html"
-    },
-    {
-        "type": "page",
-        "name": "Form Select",
-        "icon": "feather__box",
-        "url": "/form-select.html"
-    },
-    {
-        "type": "page",
-        "name": "Form File Input",
-        "icon": "feather__box",
-        "url": "/form-file.html"
-    },
-    {
-        "type": "page",
-        "name": "Input Group",
-        "icon": "feather__box",
-        "url": "/form-input-group.html"
-    },
-    {
-        "type": "page",
-        "name": "Tom Select",
-        "icon": "feather__box",
-        "url": "/form-tomselect.html"
-    },
-    {
-        "type": "page",
-        "name": "Dropzone",
-        "icon": "feather__box",
-        "url": "/form-dropzone.html"
-    },
-    {
-        "type": "page",
-        "name": "Flatpickr",
-        "icon": "feather__box",
-        "url": "/form-flatpickr.html"
-    },
-    {
-        "type": "page",
-        "name": "Table",
-        "icon": "feather__table",
-        "url": "/table.html"
-    },
-    {
-        "type": "page",
-        "name": "Charts",
-        "icon": "feather__pieChart",
-        "url": "/charts.html"
-    },
-    {
-        "type": "page",
-        "name": "Dashboard Ecommerce",
-        "icon": "feather__shoppingBag",
-        "url": "/index.html"
-    }
+  {
+    "type": "page",
+    "name": "Dashboard Ecommerce",
+    "icon": "feather__shoppingBag",
+    "url": "/index.html"
+  },
+  {
+    "type": "page",
+    "name": "Dashboard Analytics",
+    "icon": "feather__barChart2",
+    "url": "/dashboard-analytics.html"
+  },
+  {
+    "type": "page",
+    "name": "Contacts",
+    "icon": "feather__users",
+    "url": "/contacts.html"
+  },
+  {
+    "type": "page",
+    "name": "Chats",
+    "icon": "feather__messageSquare",
+    "url": "/chat.html"
+  },
+  {
+    "type": "page",
+    "name": "Email",
+    "icon": "feather__inbox",
+    "url": "/email.html"
+  },
+  {
+    "type": "page",
+    "name": "File Manager",
+    "icon": "feather__file",
+    "url": "/file-manager.html"
+  },
+  {
+    "type": "page",
+    "name": "Login",
+    "icon": "feather__lock",
+    "url": "/login.html"
+  },
+  {
+    "type": "page",
+    "name": "Sign Up",
+    "icon": "feather__lock",
+    "url": "/register.html"
+  },
+  {
+    "type": "page",
+    "name": "404",
+    "icon": "feather__alertTriangle",
+    "url": "/404.html"
+  },
+  {
+    "type": "page",
+    "name": "500",
+    "icon": "feather__alertTriangle",
+    "url": "/500.html"
+  },
+  {
+    "type": "page",
+    "name": "Coming Soon",
+    "icon": "feather__alertTriangle",
+    "url": "/coming-soon.html"
+  },
+  {
+    "type": "page",
+    "name": "Typography",
+    "icon": "feather__type",
+    "url": "/typography.html"
+  },
+  {
+    "type": "page",
+    "name": "Icons",
+    "icon": "feather__feather",
+    "url": "/icons.html"
+  },
+  {
+    "type": "page",
+    "name": "Empty Page Layout",
+    "icon": "feather__layout",
+    "url": "/layouts-empty.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Single Column #1",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-single-1.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Single Column #2",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-single-2.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Left Sidebar #1",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-leftsidebar-1.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Left Sidebar #2",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-leftsidebar-2.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Left Sidebar #3",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-leftsidebar-3.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Right Sidebar #1",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-rightsidebar-1.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Right Sidebar #2",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-rightsidebar-2.html"
+  },
+  {
+    "type": "page",
+    "name": "Simple Page Layout: Right Sidebar #3",
+    "icon": "feather__layout",
+    "url": "/layouts-simple-rightsidebar-3.html"
+  },
+  {
+    "type": "page",
+    "name": "Carded Page Layout: Single Column",
+    "icon": "feather__layout",
+    "url": "/layouts-carded-single.html"
+  },
+  {
+    "type": "page",
+    "name": "Carded Page Layout: Left Sidebar #1",
+    "icon": "feather__layout",
+    "url": "/layouts-carded-leftsidebar-1.html"
+  },
+  {
+    "type": "page",
+    "name": "Carded Page Layout: Left Sidebar #2",
+    "icon": "feather__layout",
+    "url": "/layouts-carded-leftsidebar-2.html"
+  },
+  {
+    "type": "page",
+    "name": "Carded Page Layout: Right Sidebar #1",
+    "icon": "feather__layout",
+    "url": "/layouts-carded-rightsidebar-1.html"
+  },
+  {
+    "type": "page",
+    "name": "Carded Page Layout: Right Sidebar #2",
+    "icon": "feather__layout",
+    "url": "/layouts-carded-rightsidebar-2.html"
+  },
+  {
+    "type": "page",
+    "name": "Accordion Component",
+    "icon": "feather__box",
+    "url": "/components-accordion.html"
+  },
+  {
+    "type": "page",
+    "name": "Alert Component",
+    "icon": "feather__box",
+    "url": "/components-alert.html"
+  },
+  {
+    "type": "page",
+    "name": "Avatar Component",
+    "icon": "feather__box",
+    "url": "/components-avatar.html"
+  },
+  {
+    "type": "page",
+    "name": "Badges Component",
+    "icon": "feather__box",
+    "url": "/components-badges.html"
+  },
+  {
+    "type": "page",
+    "name": "Breadcrumbs Component",
+    "icon": "feather__box",
+    "url": "/components-breadcrumbs.html"
+  },
+  {
+    "type": "page",
+    "name": "Buttons Component",
+    "icon": "feather__box",
+    "url": "/components-buttons.html"
+  },
+  {
+    "type": "page",
+    "name": "Collapse Component",
+    "icon": "feather__box",
+    "url": "/components-collapse.html"
+  },
+  {
+    "type": "page",
+    "name": "Dropdown Component",
+    "icon": "feather__box",
+    "url": "/components-dropdown.html"
+  },
+  {
+    "type": "page",
+    "name": "Icon Component",
+    "icon": "feather__box",
+    "url": "/components-icon.html"
+  },
+  {
+    "type": "page",
+    "name": "Modal Component",
+    "icon": "feather__box",
+    "url": "/components-modal.html"
+  },
+  {
+    "type": "page",
+    "name": "Popover Component",
+    "icon": "feather__box",
+    "url": "/components-popover.html"
+  },
+  {
+    "type": "page",
+    "name": "Progress Component",
+    "icon": "feather__box",
+    "url": "/components-progress.html"
+  },
+  {
+    "type": "page",
+    "name": "Spinner Component",
+    "icon": "feather__box",
+    "url": "/components-spinner.html"
+  },
+  {
+    "type": "page",
+    "name": "Tabs Component",
+    "icon": "feather__box",
+    "url": "/components-tabs.html"
+  },
+  {
+    "type": "page",
+    "name": "Toast Component",
+    "icon": "feather__box",
+    "url": "/components-toast.html"
+  },
+  {
+    "type": "page",
+    "name": "Tooltip Component",
+    "icon": "feather__box",
+    "url": "/components-tooltips.html"
+  },
+  {
+    "type": "page",
+    "name": "Sectioned Form Layout 1",
+    "icon": "feather__box",
+    "url": "/form-layout-sectioned1.html"
+  },
+  {
+    "type": "page",
+    "name": "Sectioned Form Layout 2",
+    "icon": "feather__box",
+    "url": "/form-layout-sectioned2.html"
+  },
+  {
+    "type": "page",
+    "name": "Sectioned Form Layout 3",
+    "icon": "feather__box",
+    "url": "/form-layout-sectioned3.html"
+  },
+  {
+    "type": "page",
+    "name": "Form Input",
+    "icon": "feather__box",
+    "url": "/form-input.html"
+  },
+  {
+    "type": "page",
+    "name": "Form Textarea",
+    "icon": "feather__box",
+    "url": "/form-textarea.html"
+  },
+  {
+    "type": "page",
+    "name": "Form Checkbox",
+    "icon": "feather__box",
+    "url": "/form-checkbox.html"
+  },
+  {
+    "type": "page",
+    "name": "Form Radio",
+    "icon": "feather__box",
+    "url": "/form-radio.html"
+  },
+  {
+    "type": "page",
+    "name": "Form Switch",
+    "icon": "feather__box",
+    "url": "/form-switch.html"
+  },
+  {
+    "type": "page",
+    "name": "Form Select",
+    "icon": "feather__box",
+    "url": "/form-select.html"
+  },
+  {
+    "type": "page",
+    "name": "Form File Input",
+    "icon": "feather__box",
+    "url": "/form-file.html"
+  },
+  {
+    "type": "page",
+    "name": "Input Group",
+    "icon": "feather__box",
+    "url": "/form-input-group.html"
+  },
+  {
+    "type": "page",
+    "name": "Tom Select",
+    "icon": "feather__box",
+    "url": "/form-tomselect.html"
+  },
+  {
+    "type": "page",
+    "name": "Dropzone",
+    "icon": "feather__box",
+    "url": "/form-dropzone.html"
+  },
+  {
+    "type": "page",
+    "name": "Flatpickr",
+    "icon": "feather__box",
+    "url": "/form-flatpickr.html"
+  },
+  {
+    "type": "page",
+    "name": "Table",
+    "icon": "feather__table",
+    "url": "/table.html"
+  },
+  {
+    "type": "page",
+    "name": "Charts",
+    "icon": "feather__pieChart",
+    "url": "/charts.html"
+  },
+  {
+    "type": "page",
+    "name": "Dashboard Ecommerce",
+    "icon": "feather__shoppingBag",
+    "url": "/index.html"
+  }
 ]

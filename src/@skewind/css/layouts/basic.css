@@ -61,7 +61,7 @@
     &__icon-link {
       @apply inline-flex items-center rounded p-2 text-gray-500 hover:text-scheme-500;
 
-      &[aria-expanded="true"],
+      &[aria-expanded='true'],
       &[aria-describedby] {
         @apply bg-scheme-100 text-scheme-500;
       }
@@ -143,9 +143,9 @@
   .main {
     @apply min-h-0 flex-1;
 
-    --main-height: calc(100vh - theme("spacing.32"));
+    --main-height: calc(100vh - theme('spacing.32'));
     @screen lg {
-      --main-height: calc(100vh - theme("spacing.16"));
+      --main-height: calc(100vh - theme('spacing.16'));
     }
 
     &-backdrop {

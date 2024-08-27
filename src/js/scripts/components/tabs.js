@@ -1,13 +1,13 @@
-import "../demo";
-import Icon from "@/js/components/icon";
-import Tabs from "@skewind/components/tabs";
+import '../demo';
+import Icon from '@/js/components/icon';
+import Tabs from '@skewind/components/tabs';
 
 /**
  * BEGIN: Navigation Tabs Example
  */
 (() => {
-  const exampleCodeContent = document.getElementById("exampleTabsCodeContent");
-  const exampleForm = document.getElementById("tabsExampleForm");
+  const exampleCodeContent = document.getElementById('exampleTabsCodeContent');
+  const exampleForm = document.getElementById('tabsExampleForm');
 
   const updateExampleCodeContent = () => {
     const withIcon = exampleForm.with_icon.checked;
@@ -60,15 +60,15 @@ import Tabs from "@skewind/components/tabs";
     exampleCodeContent.innerHTML = code;
   };
 
-  exampleForm.querySelectorAll("input").forEach((inputEl) => {
-    inputEl.addEventListener("change", updateExampleCodeContent);
+  exampleForm.querySelectorAll('input').forEach((inputEl) => {
+    inputEl.addEventListener('change', updateExampleCodeContent);
   });
 
   updateExampleCodeContent();
 
-  const exampleTabsPreview = document.querySelector("#exampleTabsPreview");
-  const exampleTabsCode = document.querySelector("#exampleTabsCode");
-  exampleTabsCode.addEventListener("highlight.change", (e) => {
+  const exampleTabsPreview = document.querySelector('#exampleTabsPreview');
+  const exampleTabsCode = document.querySelector('#exampleTabsCode');
+  exampleTabsCode.addEventListener('highlight.change', (e) => {
     exampleTabsPreview.innerHTML = e.detail.code;
     Icon.replace(exampleTabsPreview);
   });
@@ -78,10 +78,8 @@ import Tabs from "@skewind/components/tabs";
  * BEGIN: Interactive Tabs Example
  */
 (() => {
-  const exampleCodeContent = document.getElementById(
-    "exampleInteractiveTabsCodeContent",
-  );
-  const exampleForm = document.getElementById("interactiveTabsExampleForm");
+  const exampleCodeContent = document.getElementById('exampleInteractiveTabsCodeContent');
+  const exampleForm = document.getElementById('interactiveTabsExampleForm');
   let tabInstance = null;
 
   const updateExampleCodeContent = () => {
@@ -149,17 +147,15 @@ import Tabs from "@skewind/components/tabs";
     exampleCodeContent.innerHTML = code;
   };
 
-  exampleForm.querySelectorAll("input").forEach((inputEl) => {
-    inputEl.addEventListener("change", updateExampleCodeContent);
+  exampleForm.querySelectorAll('input').forEach((inputEl) => {
+    inputEl.addEventListener('change', updateExampleCodeContent);
   });
 
   updateExampleCodeContent();
 
-  const exampleTabsPreview = document.querySelector(
-    "#exampleInteractiveTabsPreview",
-  );
-  const exampleTabsCode = document.querySelector("#exampleInteractiveTabsCode");
-  exampleTabsCode.addEventListener("highlight.change", (e) => {
+  const exampleTabsPreview = document.querySelector('#exampleInteractiveTabsPreview');
+  const exampleTabsCode = document.querySelector('#exampleInteractiveTabsCode');
+  exampleTabsCode.addEventListener('highlight.change', (e) => {
     if (tabInstance) {
       tabInstance.dispose();
     }
@@ -167,8 +163,6 @@ import Tabs from "@skewind/components/tabs";
     exampleTabsPreview.innerHTML = e.detail.code;
     Icon.replace(exampleTabsPreview);
     Tabs.dataApi(exampleTabsPreview);
-    tabInstance = Tabs.getInstance(
-      exampleTabsPreview.querySelector("#interactiveTabs"),
-    );
+    tabInstance = Tabs.getInstance(exampleTabsPreview.querySelector('#interactiveTabs'));
   });
 })();

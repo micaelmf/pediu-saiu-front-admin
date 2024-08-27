@@ -1,5 +1,5 @@
-import { mapKeys } from "./object";
-import { camelize } from "./string";
+import { mapKeys } from './object';
+import { camelize } from './string';
 
 /**
  * This function is commonly used by class components to manage it's instances
@@ -13,12 +13,7 @@ import { camelize } from "./string";
  *
  * @returns {Object}
  */
-export function manageInstances({
-  key = "instance",
-  create,
-  destroy = () => {},
-  iterable = false,
-}) {
+export function manageInstances({ key = 'instance', create, destroy = () => {}, iterable = false }) {
   const instances = iterable ? new Map() : new WeakMap();
 
   const getInstance = (targetEl) => instances.get(targetEl);
@@ -81,7 +76,5 @@ export const optionsFromData = (element, prefix) => {
     }
   });
 
-  return mapKeys(dataset, (val, key) =>
-    key == prefix ? key : camelize(key.replace(prefix, "")),
-  );
+  return mapKeys(dataset, (val, key) => (key == prefix ? key : camelize(key.replace(prefix, ''))));
 };

@@ -1,12 +1,12 @@
-import Backdrop from "../utils/backdrop";
-import { manageInstances, optionsFromData } from "../utils/component";
+import Backdrop from '../utils/backdrop';
+import { manageInstances, optionsFromData } from '../utils/component';
 
 /**
  * Default options
  */
 
 const Default = {
-  expandedClass: "col--expanded",
+  expandedClass: 'col--expanded',
   transitionDuration: 250,
 };
 
@@ -76,35 +76,22 @@ class Cols {
   };
 
   _init = () => {
-    if (
-      getComputedStyle(this._targetEl).getPropertyValue("overflow") !== "hidden"
-    ) {
+    if (getComputedStyle(this._targetEl).getPropertyValue('overflow') !== 'hidden') {
       this.show(true);
     }
 
     this._targetEl.classList.forEach((className) => {
-      if (
-        className !== this._options.expandedClass &&
-        className.includes(this._options.expandedClass)
-      ) {
+      if (className !== this._options.expandedClass && className.includes(this._options.expandedClass)) {
         this._targetEl.classList.remove(className);
       }
     });
 
-    this._options.backdrop
-      .getBackdropEl()
-      .addEventListener("backdrop.click", this.hide);
+    this._options.backdrop.getBackdropEl().addEventListener('backdrop.click', this.hide);
   };
 
   _createShadowEl = () => {
-    const el = document.createElement("div");
-    el.classList.add(
-      "absolute",
-      "z-[-9999]",
-      "w-[var(--col-width)]",
-      "invisible",
-      "translate-x-[9999]",
-    );
+    const el = document.createElement('div');
+    el.classList.add('absolute', 'z-[-9999]', 'w-[var(--col-width)]', 'invisible', 'translate-x-[9999]');
 
     this._targetEl.parentNode.appendChild(el);
 
@@ -112,29 +99,20 @@ class Cols {
   };
 
   _getExpandedWidth = () => {
-    this._shadowEl.style.setProperty(
-      "--col-width",
-      getComputedStyle(this._targetEl).getPropertyValue("--col-width"),
-    );
+    this._shadowEl.style.setProperty('--col-width', getComputedStyle(this._targetEl).getPropertyValue('--col-width'));
     return this._shadowEl.offsetWidth;
   };
 
   _preTransition = () => {
-    this._targetEl.style.setProperty(
-      "--col-duration",
-      `${this._options.transitionDuration}ms`,
-    );
+    this._targetEl.style.setProperty('--col-duration', `${this._options.transitionDuration}ms`);
     const width = this._getExpandedWidth();
     this._innerEl.style.width = `${width}px`;
   };
 
   _postTransition = () => {
     setTimeout(() => {
-      this._targetEl.style.removeProperty(
-        "--col-duration",
-        `${this._options.transitionDuration}ms`,
-      );
-      this._innerEl.style.removeProperty("width");
+      this._targetEl.style.removeProperty('--col-duration', `${this._options.transitionDuration}ms`);
+      this._innerEl.style.removeProperty('width');
     }, this._options.transitionDuration);
   };
 
@@ -153,13 +131,7 @@ class Cols {
  * Instance manager
  */
 
-const {
-  instances,
-  getInstance,
-  createInstance,
-  getOrCreateInstance,
-  destroyInstance,
-} = manageInstances({
+const { instances, getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
   create: (targetEl, options) => new Cols(targetEl, options),
   iterable: true,
 });
@@ -171,21 +143,21 @@ const {
 const setup = (wrapperEl = document) => {
   const backdrops = new WeakMap();
 
-  wrapperEl.querySelectorAll(".cols").forEach((colsEl) => {
+  wrapperEl.querySelectorAll('.cols').forEach((colsEl) => {
     backdrops.set(
       colsEl,
       new Backdrop(colsEl.firstElementChild, {
-        class: "cols__backdrop",
+        class: 'cols__backdrop',
       }),
     );
 
     // Instances
-    colsEl.querySelectorAll(".col").forEach((colEl) => {
+    colsEl.querySelectorAll('.col').forEach((colEl) => {
       const colsEl = colEl.parentNode;
       const backdrop = backdrops.get(colsEl);
 
       const options = {
-        ...optionsFromData(colEl, "col"),
+        ...optionsFromData(colEl, 'col'),
         ...{ backdrop },
       };
 
@@ -194,8 +166,8 @@ const setup = (wrapperEl = document) => {
   });
 
   // Togglers
-  wrapperEl.querySelectorAll("[data-col-toggle]").forEach((toggleEl) => {
-    toggleEl.addEventListener("click", (e) => {
+  wrapperEl.querySelectorAll('[data-col-toggle]').forEach((toggleEl) => {
+    toggleEl.addEventListener('click', (e) => {
       e.preventDefault();
       const colId = toggleEl.dataset.colToggle;
       const colEl = wrapperEl.getElementById(colId);
@@ -204,34 +176,30 @@ const setup = (wrapperEl = document) => {
   });
 
   // Showers
-  wrapperEl
-    .querySelectorAll("[data-col-show], [data-col-open]")
-    .forEach((showEl) => {
-      showEl.addEventListener("click", (e) => {
-        e.preventDefault();
-        const colId = showEl.dataset.colShow ?? showEl.dataset.colOpen;
-        const colEl = wrapperEl.getElementById(colId);
-        getInstance(colEl).show();
-      });
+  wrapperEl.querySelectorAll('[data-col-show], [data-col-open]').forEach((showEl) => {
+    showEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      const colId = showEl.dataset.colShow ?? showEl.dataset.colOpen;
+      const colEl = wrapperEl.getElementById(colId);
+      getInstance(colEl).show();
     });
+  });
 
   // Hiders
-  wrapperEl
-    .querySelectorAll("[data-col-hide], [data-col-close]")
-    .forEach((hideEl) => {
-      hideEl.addEventListener("click", (e) => {
-        e.preventDefault();
-        const colId = hideEl.dataset.colHide ?? hideEl.dataset.colClose;
-        const colEl = wrapperEl.getElementById(colId);
-        getInstance(colEl).hide();
-      });
+  wrapperEl.querySelectorAll('[data-col-hide], [data-col-close]').forEach((hideEl) => {
+    hideEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      const colId = hideEl.dataset.colHide ?? hideEl.dataset.colClose;
+      const colEl = wrapperEl.getElementById(colId);
+      getInstance(colEl).hide();
     });
+  });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   setup(document);
 } else {
-  document.addEventListener("load", () => {
+  document.addEventListener('load', () => {
     setup(document);
   });
 }

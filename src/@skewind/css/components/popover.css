@@ -1,4 +1,4 @@
-[data-theme="popover"] {
+[data-theme='popover'] {
   @apply bg-transparent text-base leading-normal text-current;
 
   & .tippy-content {

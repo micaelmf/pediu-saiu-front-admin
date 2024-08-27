@@ -22,7 +22,7 @@
         /* icon background: before is bigger than after */
         &:before,
         &:after {
-          content: "";
+          content: '';
           z-index: -1;
           @apply absolute -mx-2 -translate-x-full transform transition-all;
         }
@@ -44,7 +44,7 @@
         &:after {
           @apply -left-4 bottom-1.5 top-1.5 w-20 rounded-r-md border-r-2 border-scheme-300 bg-scheme-100;
 
-          [aria-expanded="true"]&,
+          [aria-expanded='true']&,
           .navigation__item--active & {
             @apply translate-x-0;
           }
@@ -53,7 +53,7 @@
             @apply translate-x-0;
           }
 
-          .navigation__item--active [aria-expanded="true"]&,
+          .navigation__item--active [aria-expanded='true']&,
           .navigation__item--active & {
             @apply border-scheme-300 bg-scheme-400 bg-opacity-75;
           }
@@ -64,7 +64,7 @@
         @apply my-[5px] mr-1 px-2 py-[5px] text-gray-500 transition-all;
 
         .navigation__item:hover &,
-        [aria-expanded="true"] &,
+        [aria-expanded='true'] &,
         .navigation__item--active & {
           @apply mr-4 transform text-scheme-500;
         }
@@ -79,7 +79,7 @@
         @apply flex-1 font-semibold leading-none text-gray-500 transition;
 
         .navigation__item:hover &,
-        [aria-expanded="true"] & {
+        [aria-expanded='true'] & {
           @apply text-scheme-500;
         }
 
@@ -100,7 +100,7 @@
       &__chevron {
         @apply ml-auto h-4 w-4 transform stroke-2 text-gray-500 transition-transform duration-300;
 
-        [aria-expanded="true"] & {
+        [aria-expanded='true'] & {
           @apply -rotate-270;
         }
 

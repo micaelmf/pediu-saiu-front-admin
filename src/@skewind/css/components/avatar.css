@@ -3,7 +3,7 @@
     @apply relative inline-block w-14 text-sm font-bold;
 
     &:before {
-      content: "";
+      content: '';
       padding-top: 100%;
       @apply block w-full;
     }

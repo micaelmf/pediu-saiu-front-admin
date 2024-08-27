@@ -1,6 +1,6 @@
-const path = require("path");
-const cheerio = require("cheerio");
-const htmlMinifier = require("html-minifier");
+const path = require('path');
+const cheerio = require('cheerio');
+const htmlMinifier = require('html-minifier');
 const { minify } = htmlMinifier;
 
 /**
@@ -12,7 +12,7 @@ const { minify } = htmlMinifier;
 function buildIconsObject(svgFiles, getSvg) {
   return svgFiles
     .map((svgFile) => {
-      const name = path.basename(svgFile, ".svg");
+      const name = path.basename(svgFile, '.svg');
       const svg = getSvg(svgFile);
       const contents = getSvgContents(svg);
       return { name, contents };
@@ -30,7 +30,7 @@ function buildIconsObject(svgFiles, getSvg) {
  */
 function getSvgContents(svg) {
   const $ = cheerio.load(svg);
-  return minify($("svg").html(), { collapseWhitespace: true });
+  return minify($('svg').html(), { collapseWhitespace: true });
 }
 
 module.exports = buildIconsObject;

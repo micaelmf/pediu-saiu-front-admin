@@ -23,10 +23,10 @@ export default class OnClickOutside {
   }
 
   bind() {
-    document.addEventListener("click", this.evt, false);
+    document.addEventListener('click', this.evt, false);
   }
 
   unbind() {
-    document.removeEventListener("click", this.evt, false);
+    document.removeEventListener('click', this.evt, false);
   }
 }

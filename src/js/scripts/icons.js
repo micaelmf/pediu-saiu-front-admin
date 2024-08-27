@@ -1,7 +1,7 @@
-import crel from "crel";
-import Fuse from "fuse.js";
-import "@skewind/components/tabs";
-import Icon from "@/js/components/icon";
+import crel from 'crel';
+import Fuse from 'fuse.js';
+import '@skewind/components/tabs';
+import Icon from '@/js/components/icon';
 
 let items;
 let fuse;
@@ -9,24 +9,22 @@ let fuse;
 // Building element items
 const buildItems = (icons) => {
   return Object.keys(icons).map((name) => {
-    const element = crel("a", {
-      href: "javascript:;",
-      class:
-        "flex flex-col items-center justify-center gap-5 rounded bg-gray-50 p-5 shadow text-xs transform hover:scale-105 relative",
+    const element = crel('a', {
+      href: 'javascript:;',
+      class: 'flex flex-col items-center justify-center gap-5 rounded bg-gray-50 p-5 shadow text-xs transform hover:scale-105 relative',
     });
-    const icon = Icon.create(name, { class: "w-10 h-10" }, icons[name]);
-    const text = crel("span", { class: "text-xs" }, name);
+    const icon = Icon.create(name, { class: 'w-10 h-10' }, icons[name]);
+    const text = crel('span', { class: 'text-xs' }, name);
     element.innerHTML = icon.toSvg();
     element.appendChild(text);
 
-    element.addEventListener("click", async () => {
+    element.addEventListener('click', async () => {
       const copiedEl = crel(
-        "span",
+        'span',
         {
-          class:
-            "absolute inset-0 flex items-center justify-center bg-gray-50 text-base font-semibold",
+          class: 'absolute inset-0 flex items-center justify-center bg-gray-50 text-base font-semibold',
         },
-        "Copied!",
+        'Copied!',
       );
       await navigator.clipboard.writeText(name);
       element.appendChild(copiedEl);
@@ -37,7 +35,7 @@ const buildItems = (icons) => {
 
     return {
       name: name,
-      vendor: icon.getVendor() + "__",
+      vendor: icon.getVendor() + '__',
       element,
     };
   });
@@ -46,7 +44,7 @@ const buildItems = (icons) => {
 // Init
 (async () => {
   // Load all icons
-  const iconsJSON = await import("@/icons/icons.json?raw");
+  const iconsJSON = await import('@/icons/icons.json?raw');
   const icons = JSON.parse(iconsJSON.default);
 
   // Build items once
@@ -54,7 +52,7 @@ const buildItems = (icons) => {
 
   // Make items searchable
   fuse = new Fuse(items, {
-    keys: ["name", "vendor"],
+    keys: ['name', 'vendor'],
     threshold: 0.25,
   });
 
@@ -67,13 +65,13 @@ const buildItems = (icons) => {
  */
 
 const initIndexView = () => {
-  const iconTabsEl = document.querySelector("#iconTabs");
-  iconTabsEl.addEventListener("tabs.show", (e) => {
+  const iconTabsEl = document.querySelector('#iconTabs');
+  iconTabsEl.addEventListener('tabs.show', (e) => {
     const tab = e.detail.tab;
     renderTabContent(tab.targetEl.id);
   });
 
-  renderTabContent("feather");
+  renderTabContent('feather');
 };
 
 const renderTabContent = (vendor) => {
@@ -83,18 +81,18 @@ const renderTabContent = (vendor) => {
   }
 
   let param = vendor;
-  if (vendor === "heroicons") {
+  if (vendor === 'heroicons') {
     param = {
-      $or: [{ name: "heroiconsOutline__" }, { name: "heroiconsSolid__" }],
+      $or: [{ name: 'heroiconsOutline__' }, { name: 'heroiconsSolid__' }],
     };
   }
 
-  if (vendor === "material") {
-    param = "mdOutline__";
+  if (vendor === 'material') {
+    param = 'mdOutline__';
   }
 
-  if (vendor === "flatcolor") {
-    param = "fc__";
+  if (vendor === 'flatcolor') {
+    param = 'fc__';
   }
 
   const results = fuse.search(param);
@@ -104,33 +102,33 @@ const renderTabContent = (vendor) => {
 /**
  * BEGIN: Search View
  */
-const searchResultsEl = document.querySelector("#searchResults");
-const searchForm = document.querySelector("#searchForm");
-const indexView = document.querySelector("#indexView");
+const searchResultsEl = document.querySelector('#searchResults');
+const searchForm = document.querySelector('#searchForm');
+const indexView = document.querySelector('#indexView');
 
 const initSearchView = () => {
-  searchForm.addEventListener("submit", (e) => {
+  searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     renderToSearchResults(e.target.q.value);
   });
 
-  searchInput.addEventListener("blur", (e) => {
+  searchInput.addEventListener('blur', (e) => {
     renderToSearchResults(e.target.value);
   });
 
   renderToSearchResults();
 };
 
-const renderToSearchResults = (keyword = "") => {
+const renderToSearchResults = (keyword = '') => {
   if (!keyword) {
-    indexView.classList.remove("hidden");
-    searchResultsEl.classList.add("hidden");
+    indexView.classList.remove('hidden');
+    searchResultsEl.classList.add('hidden');
     return;
   }
 
-  indexView.classList.add("hidden");
-  searchResultsEl.classList.remove("hidden");
-  searchResultsEl.innerHTML = "";
+  indexView.classList.add('hidden');
+  searchResultsEl.classList.remove('hidden');
+  searchResultsEl.innerHTML = '';
 
   const results = fuse.search(keyword);
   if (results.length) {

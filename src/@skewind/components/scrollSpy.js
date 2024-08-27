@@ -1,13 +1,13 @@
-import { manageInstances, optionsFromData } from "../utils/component";
-import { isDisabled, isVisible } from "../utils/element";
+import { manageInstances, optionsFromData } from '../utils/component';
+import { isDisabled, isVisible } from '../utils/element';
 
 /**
  * Default options
  */
 
 const Default = {
-  rootMargin: "0px 0px -25%",
-  activeClass: "active",
+  rootMargin: '0px 0px -25%',
+  activeClass: 'active',
   smoothScroll: true,
 };
 
@@ -19,7 +19,7 @@ class ScrollSpy {
   constructor(el, options) {
     // Attributes definition
     this._el = el;
-    this._rootEl = getComputedStyle(el).overflowY === "visible" ? null : el;
+    this._rootEl = getComputedStyle(el).overflowY === 'visible' ? null : el;
     this._targetEl = this._resolveTargetEl(options);
     this._options = { ...Default, ...options };
 
@@ -65,7 +65,7 @@ class ScrollSpy {
     this._targetLinks = new Map();
     this._observableSections = new Map();
 
-    this._targetEl.querySelectorAll("[href]").forEach((anchor) => {
+    this._targetEl.querySelectorAll('[href]').forEach((anchor) => {
       // ensure that the anchor has an id and is not disabled
       if (!anchor.hash || isDisabled(anchor)) {
         return;
@@ -91,10 +91,10 @@ class ScrollSpy {
       this._scrollTo(event.target.hash);
     };
 
-    this._targetEl.querySelectorAll("[href]").forEach((anchorEl) => {
+    this._targetEl.querySelectorAll('[href]').forEach((anchorEl) => {
       // unregister previous listener
-      anchorEl.removeEventListener("click", clickCallback);
-      anchorEl.addEventListener("click", clickCallback);
+      anchorEl.removeEventListener('click', clickCallback);
+      anchorEl.addEventListener('click', clickCallback);
     });
   };
 
@@ -104,7 +104,7 @@ class ScrollSpy {
       const root = this._rootEl || window;
       const height = observableSection.offsetTop - this._el.offsetTop;
       if (root.scrollTo) {
-        root.scrollTo({ top: height, behavior: "smooth" });
+        root.scrollTo({ top: height, behavior: 'smooth' });
         return;
       }
 
@@ -120,25 +120,19 @@ class ScrollSpy {
       rootMargin: this._options.rootMargin,
     };
 
-    return new IntersectionObserver(
-      (entries) => this._observerCallback(entries),
-      options,
-    );
+    return new IntersectionObserver((entries) => this._observerCallback(entries), options);
   };
 
   // The logic of selection
   _observerCallback = (entries) => {
-    const targetElement = (entry) =>
-      this._targetLinks.get(`#${entry.target.id}`);
+    const targetElement = (entry) => this._targetLinks.get(`#${entry.target.id}`);
     const activate = (entry) => {
       this._previousScrollData.visibleEntryTop = entry.target.offsetTop;
       this._process(targetElement(entry));
     };
 
-    const parentScrollTop = (this._rootEl || document.documentElement)
-      .scrollTop;
-    const userScrollsDown =
-      parentScrollTop >= this._previousScrollData.parentScrollTop;
+    const parentScrollTop = (this._rootEl || document.documentElement).scrollTop;
+    const userScrollsDown = parentScrollTop >= this._previousScrollData.parentScrollTop;
     this._previousScrollData.parentScrollTop = parentScrollTop;
 
     for (const entry of entries) {
@@ -149,8 +143,7 @@ class ScrollSpy {
         continue;
       }
 
-      const entryIsLowerThanPrevious =
-        entry.target.offsetTop >= this._previousScrollData.visibleEntryTop;
+      const entryIsLowerThanPrevious = entry.target.offsetTop >= this._previousScrollData.visibleEntryTop;
       // if we are scrolling down, pick the bigger offsetTop
       if (userScrollsDown && entryIsLowerThanPrevious) {
         activate(entry);
@@ -176,12 +169,12 @@ class ScrollSpy {
 
     this._clearActiveClass(this._targetEl);
     this._activeTarget = target;
-    target.classList.add("active");
+    target.classList.add('active');
   };
 
   _clearActiveClass = (parent) => {
-    parent.querySelectorAll(`${"[href]"}.${"active"}`).forEach((node) => {
-      node.classList.remove("active");
+    parent.querySelectorAll(`${'[href]'}.${'active'}`).forEach((node) => {
+      node.classList.remove('active');
     });
   };
 
@@ -194,7 +187,7 @@ class ScrollSpy {
   _resolveTargetEl = (options) => {
     const { target } = options;
 
-    if (typeof target === "string") {
+    if (typeof target === 'string') {
       return document.querySelector(target);
     }
 
@@ -210,11 +203,10 @@ class ScrollSpy {
  * Instance manager
  */
 
-const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
-  manageInstances({
-    create: (targetEl, options) => new ScrollSpy(targetEl, options),
-    destroy: (instance) => instance.dispose(),
-  });
+const { getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
+  create: (targetEl, options) => new ScrollSpy(targetEl, options),
+  destroy: (instance) => instance.dispose(),
+});
 
 /**
  * Data API implementation
@@ -222,15 +214,15 @@ const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
 
 const dataApi = (wrapperEl) => {
   wrapperEl.querySelectorAll(`[data-spy="scroll"]`).forEach((eachEl) => {
-    const options = optionsFromData(eachEl, "spy");
+    const options = optionsFromData(eachEl, 'spy');
     getOrCreateInstance(eachEl, options);
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

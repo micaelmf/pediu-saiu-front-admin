@@ -1,2 +1,2 @@
-import "../demo";
-import "@skewind/components/filepicker";
+import '../demo';
+import '@skewind/components/filepicker';

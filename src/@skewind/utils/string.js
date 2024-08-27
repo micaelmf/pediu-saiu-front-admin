@@ -6,12 +6,12 @@
  */
 export const toString = (input) => {
   if (input) {
-    if (typeof input === "string") {
+    if (typeof input === 'string') {
       return input;
     }
     return String(input);
   }
-  return "";
+  return '';
 };
 
 /**
@@ -36,17 +36,16 @@ export const toKebabCase = (str) =>
   str
     .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
     .map((x) => x.toLowerCase())
-    .join("-");
+    .join('-');
 
 function _toWords(input) {
   input = toString(input);
-  const regex =
-    /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
+  const regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
   return input.match(regex);
 }
 
 function _toCamelCase(inputArray) {
-  let result = "";
+  let result = '';
 
   for (let i = 0, len = inputArray.length; i < len; i++) {
     let currentStr = inputArray[i];

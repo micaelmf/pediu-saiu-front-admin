@@ -21,38 +21,38 @@
       @apply border-scheme-400 shadow;
     }
 
-    & [type="text"],
-    & [type="email"],
-    & [type="url"],
-    & [type="password"],
-    & [type="number"],
-    & [type="date"],
-    & [type="datetime-local"],
-    & [type="month"],
-    & [type="search"],
-    & [type="tel"],
-    & [type="time"],
-    & [type="week"],
-    & [type="file"],
+    & [type='text'],
+    & [type='email'],
+    & [type='url'],
+    & [type='password'],
+    & [type='number'],
+    & [type='date'],
+    & [type='datetime-local'],
+    & [type='month'],
+    & [type='search'],
+    & [type='tel'],
+    & [type='time'],
+    & [type='week'],
+    & [type='file'],
     & [multiple],
     & textarea,
     & select {
       @apply flex-1 border-0 px-0 py-[var(--input-space-y)] text-[length:var(--input-font-size)] first:rounded-l-none last:rounded-r-none focus:shadow-none enabled:bg-transparent;
     }
 
-    & > [type="text"],
-    & > [type="email"],
-    & > [type="url"],
-    & > [type="password"],
-    & > [type="number"],
-    & > [type="date"],
-    & > [type="datetime-local"],
-    & > [type="month"],
-    & > [type="search"],
-    & > [type="tel"],
-    & > [type="time"],
-    & > [type="week"],
-    & > [type="file"],
+    & > [type='text'],
+    & > [type='email'],
+    & > [type='url'],
+    & > [type='password'],
+    & > [type='number'],
+    & > [type='date'],
+    & > [type='datetime-local'],
+    & > [type='month'],
+    & > [type='search'],
+    & > [type='tel'],
+    & > [type='time'],
+    & > [type='week'],
+    & > [type='file'],
     & > [multiple],
     & > textarea,
     & select {
@@ -71,7 +71,7 @@
       @apply first:pl-[var(--input-space-x)] last:pr-[calc(var(--input-space-x)*3)];
     }
 
-    & [type="file"]::file-selector-button {
+    & [type='file']::file-selector-button {
       @apply mr-[var(--input-space-x)] h-[21px] appearance-none border-0 border-r border-gray-50 bg-transparent pr-[var(--input-space-x)] text-gray-600;
     }
 
@@ -79,7 +79,7 @@
       @apply grid w-full items-stretch;
 
       &:after {
-        content: attr(data-replicated-value) " ";
+        content: attr(data-replicated-value) ' ';
         @apply invisible whitespace-pre-wrap py-2 leading-normal;
       }
 
@@ -185,8 +185,8 @@
       --field-feedback-color: rgb(var(--scheme-500));
     }
 
-    & [type="checkbox"],
-    & [type="radio"] {
+    & [type='checkbox'],
+    & [type='radio'] {
       --default-border-color: theme(colors.gray.200);
       --default-border-hover-color: theme(colors.gray.300);
 

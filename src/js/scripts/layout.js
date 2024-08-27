@@ -1,1 +1,1 @@
-import "@skewind/components/tabs";
+import '@skewind/components/tabs';

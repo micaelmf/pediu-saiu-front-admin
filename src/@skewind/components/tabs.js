@@ -1,11 +1,11 @@
-import { manageInstances } from "../utils/component";
+import { manageInstances } from '../utils/component';
 
 /**
  * Default options
  */
 
 const Default = {
-  activeClasses: "tab--active",
+  activeClasses: 'tab--active',
   onShow: () => {},
 };
 
@@ -30,15 +30,11 @@ class Tabs {
   _init = () => {
     if (this._items.length) {
       // default active tab
-      this.show(
-        this._items.find(
-          (item) => item.triggerEl.getAttribute("aria-selected") === "true",
-        ) ?? this._items[0],
-      );
+      this.show(this._items.find((item) => item.triggerEl.getAttribute('aria-selected') === 'true') ?? this._items[0]);
 
       // show tab content based on click
       this._items.map((tab) => {
-        tab.triggerEl.addEventListener("click", this._handleTriggerClick);
+        tab.triggerEl.addEventListener('click', this._handleTriggerClick);
       });
     }
   };
@@ -49,7 +45,7 @@ class Tabs {
   dispose = () => {
     // show tab content based on click
     this._items.map((tab) => {
-      tab.triggerEl.removeEventListener("click", this._handleTriggerClick);
+      tab.triggerEl.removeEventListener('click', this._handleTriggerClick);
     });
   };
 
@@ -96,19 +92,19 @@ class Tabs {
     // hide other tabs
     this._items.map((t) => {
       if (t !== tab) {
-        t.triggerEl.classList.remove(...this._options.activeClasses.split(" "));
+        t.triggerEl.classList.remove(...this._options.activeClasses.split(' '));
         if (t.targetEl) {
-          t.targetEl.classList.add("hidden");
+          t.targetEl.classList.add('hidden');
         }
-        t.triggerEl.setAttribute("aria-selected", false);
+        t.triggerEl.setAttribute('aria-selected', false);
       }
     });
 
     // show active tab
-    tab.triggerEl.classList.add(...this._options.activeClasses.split(" "));
-    tab.triggerEl.setAttribute("aria-selected", true);
+    tab.triggerEl.classList.add(...this._options.activeClasses.split(' '));
+    tab.triggerEl.setAttribute('aria-selected', true);
     if (tab.targetEl) {
-      tab.targetEl.classList.remove("hidden");
+      tab.targetEl.classList.remove('hidden');
     }
 
     this._setActiveTab(tab);
@@ -116,7 +112,7 @@ class Tabs {
     // callback function
     this._options.onShow(this, tab);
     this._triggerEl.dispatchEvent(
-      new CustomEvent("tabs.show", {
+      new CustomEvent('tabs.show', {
         detail: { tab },
       }),
     );
@@ -127,31 +123,30 @@ class Tabs {
  * Instance manager
  */
 
-const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
-  manageInstances({
-    create: (triggerEl, options) => new Tabs(triggerEl, options),
-    destroy: (instance) => instance.dispose(),
-  });
+const { getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
+  create: (triggerEl, options) => new Tabs(triggerEl, options),
+  destroy: (instance) => instance.dispose(),
+});
 
 /**
  * Data API implementation
  */
 
 const dataApi = (wrapperEl) => {
-  wrapperEl.querySelectorAll("[data-tabs-toggle]").forEach((triggerEl) => {
+  wrapperEl.querySelectorAll('[data-tabs-toggle]').forEach((triggerEl) => {
     const items = [...triggerEl.querySelectorAll('[role="tab"')].map((el) => ({
       triggerEl: el,
-      targetEl: document.querySelector(el.getAttribute("data-tabs-target")),
+      targetEl: document.querySelector(el.getAttribute('data-tabs-target')),
     }));
 
     getOrCreateInstance(triggerEl, { items });
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

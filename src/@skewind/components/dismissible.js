@@ -1,11 +1,11 @@
-import { manageInstances, optionsFromData } from "../utils/component";
+import { manageInstances, optionsFromData } from '../utils/component';
 
 /**
  * Default options
  */
 
 const Default = {
-  triggerSelector: "[data-dismiss-trigger]",
+  triggerSelector: '[data-dismiss-trigger]',
 };
 
 /**
@@ -24,19 +24,19 @@ class Dismissible {
 
   dismiss = () => {
     this.dispose();
-    this._targetEl.dispatchEvent(new Event("dismissible.dismiss"));
+    this._targetEl.dispatchEvent(new Event('dismissible.dismiss'));
     this._targetEl.remove();
   };
 
   dispose = () => {
     this._triggerElems.forEach((triggerEl) => {
-      triggerEl.removeEventListener("click", this.dismiss);
+      triggerEl.removeEventListener('click', this.dismiss);
     });
   };
 
   _init = () => {
     this._triggerElems.forEach((triggerEl) => {
-      triggerEl.addEventListener("click", this.dismiss);
+      triggerEl.addEventListener('click', this.dismiss);
     });
   };
 
@@ -49,11 +49,10 @@ class Dismissible {
  * Instance manager
  */
 
-const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
-  manageInstances({
-    create: (targetEl, options) => new Dismissible(targetEl, options),
-    destroy: (instance) => instance.dispose(),
-  });
+const { getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
+  create: (targetEl, options) => new Dismissible(targetEl, options),
+  destroy: (instance) => instance.dispose(),
+});
 
 /**
  * Data API implementation
@@ -61,10 +60,10 @@ const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
 
 const dataApi = (wrapperEl) => {
   wrapperEl.querySelectorAll(`[data-dismissible]`).forEach((targetEl) => {
-    const options = optionsFromData(targetEl, "dismissible");
+    const options = optionsFromData(targetEl, 'dismissible');
     getOrCreateInstance(targetEl, options);
     targetEl.addEventListener(
-      "dismissible.dismiss",
+      'dismissible.dismiss',
       () => {
         destroyInstance(targetEl);
       },
@@ -73,10 +72,10 @@ const dataApi = (wrapperEl) => {
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

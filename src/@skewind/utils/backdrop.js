@@ -2,17 +2,17 @@
  * Create a backdrop anytime, anywhere
  */
 
-import classnames from "classnames/dedupe";
-import crel from "crel";
+import classnames from 'classnames/dedupe';
+import crel from 'crel';
 
 /**
  * Default options
  */
 
 const Default = {
-  position: "absolute",
+  position: 'absolute',
   transitionDuration: 300,
-  class: "",
+  class: '',
   onClick: () => {},
 };
 
@@ -37,20 +37,13 @@ class Backdrop {
 
   _init = () => {
     // Create backdrop element
-    this._backdropEl = crel("div", {
-      class: classnames(
-        "backdrop",
-        this._options.position,
-        this._options.class,
-      ),
-      style: "top: 0; left: 0; height: 100%; width: 100%",
+    this._backdropEl = crel('div', {
+      class: classnames('backdrop', this._options.position, this._options.class),
+      style: 'top: 0; left: 0; height: 100%; width: 100%',
     });
 
     // Backdrop parent
-    this._parentNode =
-      document.body === this._targetEl
-        ? document.body
-        : this._targetEl.parentNode;
+    this._parentNode = document.body === this._targetEl ? document.body : this._targetEl.parentNode;
 
     // Flag current parent node inline style position
     this._parentNodePosition = this._parentNode.style.position;
@@ -65,27 +58,18 @@ class Backdrop {
     const { _parentNode } = this;
 
     // Set relative if backdrop parent position is static
-    if (
-      getComputedStyle(_parentNode).getPropertyValue("position") === "static"
-    ) {
-      _parentNode.style.position = "relative";
+    if (getComputedStyle(_parentNode).getPropertyValue('position') === 'static') {
+      _parentNode.style.position = 'relative';
     }
 
     // Mount the backdrop element
     _parentNode.append(this._backdropEl);
 
     // Register click listener
-    this._backdropEl.addEventListener(
-      "click",
-      this._handleBackdropElClick,
-      true,
-    );
+    this._backdropEl.addEventListener('click', this._handleBackdropElClick, true);
 
     // Set transition duration
-    this._backdropEl.style.setProperty(
-      "--backdrop-duration",
-      `${this._options.transitionDuration}ms`,
-    );
+    this._backdropEl.style.setProperty('--backdrop-duration', `${this._options.transitionDuration}ms`);
   };
 
   /**
@@ -99,16 +83,14 @@ class Backdrop {
 
     // Disable body scroll if target element is the body itself
     if (this._targetIsBody) {
-      document.body.dataset.modalCount =
-        Number(document.body.dataset.modalCount ?? 0) + 1;
-      document.body.style.paddingRight =
-        window.innerWidth - document.documentElement.clientWidth + "px";
-      document.body.style.overflow = "hidden";
+      document.body.dataset.modalCount = Number(document.body.dataset.modalCount ?? 0) + 1;
+      document.body.style.paddingRight = window.innerWidth - document.documentElement.clientWidth + 'px';
+      document.body.style.overflow = 'hidden';
     }
 
     // Start transition
     setTimeout(() => {
-      this._backdropEl.classList.add("backdrop--show");
+      this._backdropEl.classList.add('backdrop--show');
     }, 0);
   };
 
@@ -119,30 +101,26 @@ class Backdrop {
    */
   hide = () => {
     // Remove backdrop listener so no follow up click on hide
-    this._backdropEl.removeEventListener(
-      "click",
-      this._handleBackdropElClick,
-      true,
-    );
+    this._backdropEl.removeEventListener('click', this._handleBackdropElClick, true);
 
     // Start transition
-    this._backdropEl.classList.remove("backdrop--show");
+    this._backdropEl.classList.remove('backdrop--show');
 
     // Simulate transition end
     setTimeout(() => {
       this._backdropEl.remove();
 
       if (!!this._parentNodePosition) {
-        this._parentNodePosition.style.removeProperty("position");
+        this._parentNodePosition.style.removeProperty('position');
       }
 
       // Reset body scroll
       if (this._targetIsBody) {
         document.body.dataset.modalCount -= 1;
         if (Number(document.body.dataset.modalCount) === 0) {
-          document.body.removeAttribute("data-modal-count");
-          document.body.style.removeProperty("padding-right");
-          document.body.style.removeProperty("overflow");
+          document.body.removeAttribute('data-modal-count');
+          document.body.style.removeProperty('padding-right');
+          document.body.style.removeProperty('overflow');
         }
       }
     }, this._options.transitionDuration);
@@ -160,7 +138,7 @@ class Backdrop {
   _handleBackdropElClick = (e) => {
     if (this._backdropEl !== e.target) return;
     this._options.onClick();
-    this._backdropEl.dispatchEvent(new Event("backdrop.click"));
+    this._backdropEl.dispatchEvent(new Event('backdrop.click'));
   };
 }
 

@@ -1,6 +1,6 @@
-import RichSelect from "@skewind/components/richSelect";
-import Backdrop from "@skewind/utils/backdrop";
-import Icon from "@/js/components/icon";
+import RichSelect from '@skewind/components/richSelect';
+import Backdrop from '@skewind/utils/backdrop';
+import Icon from '@/js/components/icon';
 
 /**
  * Class definition
@@ -9,24 +9,24 @@ import Icon from "@/js/components/icon";
 class Search {
   constructor(selectEl) {
     this._selectEl = selectEl;
-    this._navbarEl = document.querySelector(".navbar");
-    this._mainEl = document.querySelector(".main");
+    this._navbarEl = document.querySelector('.navbar');
+    this._mainEl = document.querySelector('.main');
 
     // Create backdrop instance
     this._backdrop = new Backdrop(this._mainEl, {
-      class: "main-backdrop",
+      class: 'main-backdrop',
     });
 
     // Create richselect instance
     this.tomSelect = RichSelect.getOrCreateInstance(selectEl, {
-      valueField: "url",
-      labelField: "name",
-      searchField: "name",
-      placeholder: "Search...",
+      valueField: 'url',
+      labelField: 'name',
+      searchField: 'name',
+      placeholder: 'Search...',
       openOnFocus: false,
       highlight: false,
-      onFocus: () => this._navbarEl.classList.add("search-mode"),
-      onBlur: () => this._navbarEl.classList.remove("search-mode"),
+      onFocus: () => this._navbarEl.classList.add('search-mode'),
+      onBlur: () => this._navbarEl.classList.remove('search-mode'),
       onDropdownOpen: () => this._backdrop.show(),
       onDropdownClose: () => this._backdrop.hide(),
       onChange: (value) => (window.location.href = value),
@@ -41,7 +41,7 @@ class Search {
         },
         option(item, escape) {
           // Is pages
-          if (item.type === "page") {
+          if (item.type === 'page') {
             const pageIcon = Icon.create(item.icon);
 
             return `<div class="flex items-center">
@@ -69,7 +69,7 @@ class Search {
    * @param {Function} callback
    */
   _queries = (query, callback) => {
-    var url = "/search.json?q=" + encodeURIComponent(query);
+    var url = '/search.json?q=' + encodeURIComponent(query);
     fetch(url)
       .then((response) => response.json())
       .then((items) => {
@@ -88,16 +88,16 @@ let instance;
 
 const init = () => {
   // Creating instance
-  const selectEl = document.querySelector("#tomSearch");
+  const selectEl = document.querySelector('#tomSearch');
   if (!selectEl) return;
 
   instance = new Search(selectEl);
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   init();
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     init();
   });
 }

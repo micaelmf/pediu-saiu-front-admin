@@ -10,7 +10,7 @@
       }
 
       & a:hover,
-      & a[aria-expanded="true"] {
+      & a[aria-expanded='true'] {
         @apply text-scheme-500;
       }
 

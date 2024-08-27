@@ -1,52 +1,52 @@
-import ApexCharts from "apexcharts";
-import theme from "@/theme.json";
+import ApexCharts from 'apexcharts';
+import theme from '@/theme.json';
 
 function lineChart() {
   const options = {
     title: {
-      text: "Line Chart",
-      align: "left",
+      text: 'Line Chart',
+      align: 'left',
       margin: 10,
       style: {
-        fontSize: "20px",
-        fontWeight: "semibold",
+        fontSize: '20px',
+        fontWeight: 'semibold',
         color: theme.colors.gray[600],
       },
     },
     series: [
       {
-        name: "Earnings",
+        name: 'Earnings',
         data: [291, 249, 187, 220, 98, 242, 296],
       },
       {
-        name: "Spendings",
+        name: 'Spendings',
         data: [340, 120, 150, 196, 25, 242, 196],
       },
     ],
     colors: [theme.colors.success[400], theme.colors.danger[400]],
     chart: {
-      type: "line",
-      height: "100%",
+      type: 'line',
+      height: '100%',
       toolbar: {
         show: false,
       },
-      fontFamily: theme.fontFamily.sans.join(","),
+      fontFamily: theme.fontFamily.sans.join(','),
     },
     xaxis: {
-      type: "categories",
-      categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      type: 'categories',
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       axisBorder: {
         show: false,
       },
       labels: {
         datetimeFormatter: {
-          month: "MMM",
+          month: 'MMM',
         },
       },
     },
     legend: {
-      position: "top",
-      horizontalAlign: "right",
+      position: 'top',
+      horizontalAlign: 'right',
       floating: true,
       offsetY: -45,
     },
@@ -61,25 +61,25 @@ function lineChart() {
       enabled: false,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       x: {
-        format: "MMM",
+        format: 'MMM',
       },
       style: {
-        fontSize: "0.875rem",
-        fontFamily: theme.fontFamily.sans.join(","),
+        fontSize: '0.875rem',
+        fontFamily: theme.fontFamily.sans.join(','),
       },
     },
     stroke: {
       width: 3,
-      curve: "smooth",
+      curve: 'smooth',
     },
     responsive: [
       {
         breakpoint: 1024,
         options: {
           legend: {
-            position: "bottom",
+            position: 'bottom',
             floating: false,
             offsetY: 5,
           },
@@ -88,56 +88,56 @@ function lineChart() {
     ],
   };
 
-  const chart = new ApexCharts(document.getElementById("lineChart"), options);
+  const chart = new ApexCharts(document.getElementById('lineChart'), options);
   chart.render();
 }
 
 function areaChart() {
   const options = {
     title: {
-      text: "Area Chart",
-      align: "left",
+      text: 'Area Chart',
+      align: 'left',
       margin: 10,
       style: {
-        fontSize: "20px",
-        fontWeight: "semibold",
+        fontSize: '20px',
+        fontWeight: 'semibold',
         color: theme.colors.gray[600],
       },
     },
     series: [
       {
-        name: "Earnings",
+        name: 'Earnings',
         data: [291, 249, 187, 220, 98, 242, 296],
       },
       {
-        name: "Spendings",
+        name: 'Spendings',
         data: [30, 120, 150, 196, 25, 222, 196],
       },
     ],
     colors: [theme.colors.green[400], theme.colors.red[400]],
     chart: {
-      type: "area",
-      height: "100%",
+      type: 'area',
+      height: '100%',
       toolbar: {
         show: false,
       },
-      fontFamily: theme.fontFamily.sans.join(","),
+      fontFamily: theme.fontFamily.sans.join(','),
     },
     xaxis: {
-      type: "categories",
-      categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      type: 'categories',
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       axisBorder: {
         show: false,
       },
       labels: {
         datetimeFormatter: {
-          month: "MMM",
+          month: 'MMM',
         },
       },
     },
     legend: {
-      position: "top",
-      horizontalAlign: "right",
+      position: 'top',
+      horizontalAlign: 'right',
       floating: true,
       offsetY: -45,
     },
@@ -152,25 +152,25 @@ function areaChart() {
       enabled: false,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       x: {
-        format: "MMM",
+        format: 'MMM',
       },
       style: {
-        fontSize: "0.875rem",
-        fontFamily: theme.fontFamily.sans.join(","),
+        fontSize: '0.875rem',
+        fontFamily: theme.fontFamily.sans.join(','),
       },
     },
     stroke: {
       width: 3,
-      curve: "smooth",
+      curve: 'smooth',
     },
     responsive: [
       {
         breakpoint: 1024,
         options: {
           legend: {
-            position: "bottom",
+            position: 'bottom',
             floating: false,
             offsetY: 5,
           },
@@ -179,74 +179,60 @@ function areaChart() {
     ],
   };
 
-  const chart = new ApexCharts(document.getElementById("areaChart"), options);
+  const chart = new ApexCharts(document.getElementById('areaChart'), options);
   chart.render();
 }
 
 function columnChart() {
   const options = {
     title: {
-      text: "Column Chart",
-      align: "left",
+      text: 'Column Chart',
+      align: 'left',
       margin: 10,
       style: {
-        fontSize: "20px",
-        fontWeight: "semibold",
+        fontSize: '20px',
+        fontWeight: 'semibold',
         color: theme.colors.gray[600],
       },
     },
     series: [
       {
-        name: "Net Profit",
+        name: 'Net Profit',
         data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
       },
       {
-        name: "Revenue",
+        name: 'Revenue',
         data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
       },
       {
-        name: "Free Cash Flow",
+        name: 'Free Cash Flow',
         data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
       },
     ],
-    colors: [
-      theme.colors.yellow[300],
-      theme.colors.sky[400],
-      theme.colors.green[400],
-    ],
+    colors: [theme.colors.yellow[300], theme.colors.sky[400], theme.colors.green[400]],
     chart: {
-      type: "bar",
-      height: "100%",
+      type: 'bar',
+      height: '100%',
       toolbar: {
         show: false,
       },
-      fontFamily: theme.fontFamily.sans.join(","),
+      fontFamily: theme.fontFamily.sans.join(','),
     },
     xaxis: {
-      type: "categories",
-      categories: [
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-      ],
+      type: 'categories',
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
     },
     yaxis: {
       title: {
-        text: "$ (thousands)",
+        text: '$ (thousands)',
         style: {
           color: theme.colors.gray[500],
         },
       },
     },
     legend: {
-      position: "top",
-      horizontalAlign: "right",
+      position: 'top',
+      horizontalAlign: 'right',
       floating: true,
       offsetY: -45,
     },
@@ -261,15 +247,15 @@ function columnChart() {
       enabled: false,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       y: {
         formatter: (val) => {
-          return "$ " + val + " thousands";
+          return '$ ' + val + ' thousands';
         },
       },
       style: {
-        fontSize: "0.875rem",
-        fontFamily: theme.fontFamily.sans.join(","),
+        fontSize: '0.875rem',
+        fontFamily: theme.fontFamily.sans.join(','),
       },
     },
     responsive: [
@@ -277,7 +263,7 @@ function columnChart() {
         breakpoint: 1024,
         options: {
           legend: {
-            position: "bottom",
+            position: 'bottom',
             floating: false,
             offsetY: 5,
           },
@@ -286,19 +272,19 @@ function columnChart() {
     ],
   };
 
-  const chart = new ApexCharts(document.getElementById("columnChart"), options);
+  const chart = new ApexCharts(document.getElementById('columnChart'), options);
   chart.render();
 }
 
 function barChart() {
   const options = {
     title: {
-      text: "Bar Chart",
-      align: "left",
+      text: 'Bar Chart',
+      align: 'left',
       margin: 10,
       style: {
-        fontSize: "20px",
-        fontWeight: "semibold",
+        fontSize: '20px',
+        fontWeight: 'semibold',
         color: theme.colors.gray[600],
       },
     },
@@ -309,12 +295,12 @@ function barChart() {
     ],
     colors: [theme.colors.primary[400]],
     chart: {
-      type: "bar",
-      height: "100%",
+      type: 'bar',
+      height: '100%',
       toolbar: {
         show: false,
       },
-      fontFamily: theme.fontFamily.sans.join(","),
+      fontFamily: theme.fontFamily.sans.join(','),
     },
     plotOptions: {
       bar: {
@@ -323,18 +309,7 @@ function barChart() {
       },
     },
     xaxis: {
-      categories: [
-        "South Korea",
-        "Canada",
-        "United Kingdom",
-        "Netherlands",
-        "Italy",
-        "France",
-        "Japan",
-        "United States",
-        "China",
-        "Germany",
-      ],
+      categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'Germany'],
     },
     grid: {
       borderColor: theme.colors.gray[200],
@@ -347,55 +322,51 @@ function barChart() {
       enabled: false,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       style: {
-        fontSize: "0.875rem",
-        fontFamily: theme.fontFamily.sans.join(","),
+        fontSize: '0.875rem',
+        fontFamily: theme.fontFamily.sans.join(','),
       },
     },
   };
 
-  const chart = new ApexCharts(document.getElementById("barChart"), options);
+  const chart = new ApexCharts(document.getElementById('barChart'), options);
   chart.render();
 }
 
 function radarChart() {
   const options = {
     title: {
-      text: "Radar Chart",
+      text: 'Radar Chart',
       margin: 10,
       style: {
-        fontSize: "20px",
-        fontWeight: "semibold",
+        fontSize: '20px',
+        fontWeight: 'semibold',
         color: theme.colors.gray[600],
       },
     },
     series: [
       {
-        name: "Series 1",
+        name: 'Series 1',
         data: [80, 50, 30, 40, 100, 20],
       },
       {
-        name: "Series 2",
+        name: 'Series 2',
         data: [20, 30, 40, 80, 20, 80],
       },
       {
-        name: "Series 3",
+        name: 'Series 3',
         data: [44, 76, 78, 13, 43, 10],
       },
     ],
-    colors: [
-      theme.colors.primary[400],
-      theme.colors.red[400],
-      theme.colors.green[400],
-    ],
+    colors: [theme.colors.primary[400], theme.colors.red[400], theme.colors.green[400]],
     chart: {
-      type: "radar",
-      height: "100%",
-      fontFamily: theme.fontFamily.sans.join(","),
+      type: 'radar',
+      height: '100%',
+      fontFamily: theme.fontFamily.sans.join(','),
     },
     xaxis: {
-      categories: ["2011", "2012", "2013", "2014", "2015", "2016"],
+      categories: ['2011', '2012', '2013', '2014', '2015', '2016'],
     },
     grid: {
       borderColor: theme.colors.gray[200],
@@ -404,36 +375,36 @@ function radarChart() {
       enabled: false,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       style: {
-        fontSize: "0.875rem",
-        fontFamily: theme.fontFamily.sans.join(","),
+        fontSize: '0.875rem',
+        fontFamily: theme.fontFamily.sans.join(','),
       },
     },
   };
 
-  const chart = new ApexCharts(document.getElementById("radarChart"), options);
+  const chart = new ApexCharts(document.getElementById('radarChart'), options);
   chart.render();
 }
 
 function polarChart() {
   const options = {
     title: {
-      text: "Polar Chart",
+      text: 'Polar Chart',
       margin: 10,
       style: {
-        fontSize: "20px",
-        fontWeight: "semibold",
+        fontSize: '20px',
+        fontWeight: 'semibold',
         color: theme.colors.gray[600],
       },
     },
     series: [42, 47, 52, 58, 65],
     chart: {
-      type: "polarArea",
-      height: "100%",
-      fontFamily: theme.fontFamily.sans.join(","),
+      type: 'polarArea',
+      height: '100%',
+      fontFamily: theme.fontFamily.sans.join(','),
     },
-    labels: ["Rose A", "Rose B", "Rose C", "Rose D", "Rose E"],
+    labels: ['Rose A', 'Rose B', 'Rose C', 'Rose D', 'Rose E'],
     fill: {
       opacity: 1,
     },
@@ -445,7 +416,7 @@ function polarChart() {
       show: false,
     },
     legend: {
-      position: "bottom",
+      position: 'bottom',
     },
     plotOptions: {
       polarArea: {
@@ -461,20 +432,20 @@ function polarChart() {
       monochrome: {
         enabled: true,
         color: theme.colors.primary[600],
-        shadeTo: "light",
+        shadeTo: 'light',
         shadeIntensity: 0.6,
       },
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       style: {
-        fontSize: "0.875rem",
-        fontFamily: theme.fontFamily.sans.join(","),
+        fontSize: '0.875rem',
+        fontFamily: theme.fontFamily.sans.join(','),
       },
     },
   };
 
-  const chart = new ApexCharts(document.getElementById("polarChart"), options);
+  const chart = new ApexCharts(document.getElementById('polarChart'), options);
   chart.render();
 }
 

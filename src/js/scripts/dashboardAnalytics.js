@@ -1,33 +1,33 @@
-import ApexCharts from "apexcharts";
-import theme from "@/theme.json";
+import ApexCharts from 'apexcharts';
+import theme from '@/theme.json';
 
 const fourSerialChart = {
   chart: {
-    type: "line",
+    type: 'line',
     sparkline: {
       enabled: true,
     },
   },
   xaxis: {
-    type: "categories",
-    categories: ["Sun", "Mon", "Tue", "Wed", "Thu"],
+    type: 'categories',
+    categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu'],
   },
   tooltip: {
-    theme: "dark",
+    theme: 'dark',
     custom({ ctx, series, seriesIndex, dataPointIndex }) {
       return `<div class="text-sm py-2 px-3">${ctx.opts.xaxis.categories[dataPointIndex]}: <span class="font-bold">${series[seriesIndex][dataPointIndex]}</span></div>`;
     },
   },
   stroke: {
     width: 2,
-    curve: "smooth",
+    curve: 'smooth',
   },
   responsive: [
     {
       breakpoint: 1280,
       options: {
         chart: {
-          type: "area",
+          type: 'area',
           height: 75,
         },
         fill: {
@@ -49,7 +49,7 @@ function totalVisitorChart() {
   const options = {
     series: [
       {
-        name: "Visitor",
+        name: 'Visitor',
         data: [520, 745, 468, 976, 1683],
       },
     ],
@@ -57,10 +57,7 @@ function totalVisitorChart() {
     ...fourSerialChart,
   };
 
-  const chart = new ApexCharts(
-    document.getElementById("totalVisitorChart"),
-    options,
-  );
+  const chart = new ApexCharts(document.getElementById('totalVisitorChart'), options);
   chart.render();
 }
 
@@ -68,7 +65,7 @@ function newUserChart() {
   const options = {
     series: [
       {
-        name: "New User",
+        name: 'New User',
         data: [239, 745, 468, 976, 782],
       },
     ],
@@ -76,10 +73,7 @@ function newUserChart() {
     ...fourSerialChart,
   };
 
-  const chart = new ApexCharts(
-    document.getElementById("newUserChart"),
-    options,
-  );
+  const chart = new ApexCharts(document.getElementById('newUserChart'), options);
   chart.render();
 }
 
@@ -87,7 +81,7 @@ function newVisitorChart() {
   const options = {
     series: [
       {
-        name: "New Visitor",
+        name: 'New Visitor',
         data: [151, 145, 303, 259, 229],
       },
     ],
@@ -95,10 +89,7 @@ function newVisitorChart() {
     ...fourSerialChart,
   };
 
-  const chart = new ApexCharts(
-    document.getElementById("newVisitorChart"),
-    options,
-  );
+  const chart = new ApexCharts(document.getElementById('newVisitorChart'), options);
   chart.render();
 }
 
@@ -106,7 +97,7 @@ function subscriptionChart() {
   const options = {
     series: [
       {
-        name: "Subscription",
+        name: 'Subscription',
         data: [1298, 1572, 2572, 2172, 3172],
       },
     ],
@@ -114,10 +105,7 @@ function subscriptionChart() {
     ...fourSerialChart,
   };
 
-  const chart = new ApexCharts(
-    document.getElementById("subscriptionChart"),
-    options,
-  );
+  const chart = new ApexCharts(document.getElementById('subscriptionChart'), options);
   chart.render();
 }
 
@@ -125,18 +113,18 @@ function directTrafficChart() {
   const options = {
     series: [
       {
-        name: "Earning",
+        name: 'Earning',
         data: [291, 249, 187, 220, 98, 242, 296],
       },
     ],
     colors: [theme.colors.primary[400]],
     chart: {
-      type: "area",
-      height: "100%",
+      type: 'area',
+      height: '100%',
       toolbar: {
         show: false,
       },
-      fontFamily: "Quicksand",
+      fontFamily: 'Quicksand',
     },
     fill: {
       gradient: {
@@ -144,14 +132,14 @@ function directTrafficChart() {
       },
     },
     xaxis: {
-      type: "categories",
-      categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      type: 'categories',
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       axisBorder: {
         show: false,
       },
       labels: {
         datetimeFormatter: {
-          month: "MMM",
+          month: 'MMM',
         },
       },
     },
@@ -169,13 +157,13 @@ function directTrafficChart() {
       enabled: false,
     },
     tooltip: {
-      theme: "dark",
+      theme: 'dark',
       x: {
-        format: "MMM",
+        format: 'MMM',
       },
       style: {
-        fontSize: "0.875rem",
-        fontFamily: "Quicksand",
+        fontSize: '0.875rem',
+        fontFamily: 'Quicksand',
       },
     },
     responsive: [
@@ -200,29 +188,21 @@ function directTrafficChart() {
     ],
     stroke: {
       width: 3,
-      curve: "smooth",
+      curve: 'smooth',
     },
   };
 
-  const chart = new ApexCharts(
-    document.getElementById("directTrafficChart"),
-    options,
-  );
+  const chart = new ApexCharts(document.getElementById('directTrafficChart'), options);
   chart.render();
 }
 
 function activeUserChart() {
   var options = {
     series: [750, 375, 371, 190],
-    labels: ["Desktop", "Tablet", "Mobile", "Unknown"],
-    colors: [
-      theme.colors.indigo[400],
-      theme.colors.green[400],
-      theme.colors.orange[300],
-      theme.colors.gray[300],
-    ],
+    labels: ['Desktop', 'Tablet', 'Mobile', 'Unknown'],
+    colors: [theme.colors.indigo[400], theme.colors.green[400], theme.colors.orange[300], theme.colors.gray[300]],
     chart: {
-      type: "donut",
+      type: 'donut',
     },
     legend: {
       show: false,
@@ -237,16 +217,16 @@ function activeUserChart() {
       pie: {
         customScale: 1,
         donut: {
-          size: "75%",
+          size: '75%',
           labels: {
             show: true,
             name: {
-              fontFamily: "Quicksand",
-              fontSize: "0.875rem",
+              fontFamily: 'Quicksand',
+              fontSize: '0.875rem',
             },
             value: {
-              fontFamily: "Quicksand",
-              fontSize: "1.25rem",
+              fontFamily: 'Quicksand',
+              fontSize: '1.25rem',
               offsetY: 0,
               fontWeight: 700,
             },
@@ -256,9 +236,6 @@ function activeUserChart() {
     },
   };
 
-  var chart = new ApexCharts(
-    document.getElementById("activeUserChart"),
-    options,
-  );
+  var chart = new ApexCharts(document.getElementById('activeUserChart'), options);
   chart.render();
 }

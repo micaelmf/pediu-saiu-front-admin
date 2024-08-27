@@ -1,16 +1,16 @@
-import tippy from "tippy.js";
+import tippy from 'tippy.js';
 // import Icon from '../../js/components/icon'
-import { manageInstances, optionsFromData } from "../utils/component";
+import { manageInstances, optionsFromData } from '../utils/component';
 
 /**
  * Default options
  */
 
 const Default = {
-  trigger: "click",
+  trigger: 'click',
   interactive: true,
-  animation: "shift-toward",
-  placement: "bottom-start",
+  animation: 'shift-toward',
+  placement: 'bottom-start',
 };
 
 /**
@@ -21,9 +21,7 @@ class Dropdown {
   constructor(toggleEl, options) {
     // Attributes definition
     this._toggleEl = toggleEl;
-    this._contentEl = options.content
-      ? options.content
-      : toggleEl.nextElementSibling;
+    this._contentEl = options.content ? options.content : toggleEl.nextElementSibling;
     this.Scrollbar = null;
     this._options = {
       ...Default,
@@ -32,7 +30,7 @@ class Dropdown {
 
     // Tippy instance
     this.tippy = tippy(this._toggleEl, {
-      theme: "dropdown",
+      theme: 'dropdown',
       ...this._options,
       ...{
         content: this._contentEl,
@@ -42,7 +40,7 @@ class Dropdown {
     });
 
     // Icon.replace(this._contentEl)
-    this._toggleEl.dispatchEvent(new Event("dropdown.init"));
+    this._toggleEl.dispatchEvent(new Event('dropdown.init'));
   }
 
   /**
@@ -69,7 +67,7 @@ class Dropdown {
    */
   dispose = () => {
     this.tippy.destroy();
-    this._toggleEl.dispatchEvent(new Event("dropdown.dispose"));
+    this._toggleEl.dispatchEvent(new Event('dropdown.dispose'));
   };
 
   /**
@@ -78,7 +76,7 @@ class Dropdown {
    * @returns {void}
    */
   _handleHide = () => {
-    this._toggleEl.dispatchEvent(new Event("dropdown.hide"));
+    this._toggleEl.dispatchEvent(new Event('dropdown.hide'));
 
     const { onHide } = this._options;
     if (onHide) {
@@ -96,7 +94,7 @@ class Dropdown {
       this.Scrollbar.dataApi(this._contentEl);
     }
 
-    this._toggleEl.dispatchEvent(new Event("dropdown.show"));
+    this._toggleEl.dispatchEvent(new Event('dropdown.show'));
 
     const { onShow } = this._options;
     if (onShow) {
@@ -109,11 +107,10 @@ class Dropdown {
  * Instance manager
  */
 
-const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
-  manageInstances({
-    create: (toggleEl, options = {}) => new Dropdown(toggleEl, options),
-    destroy: (instance) => instance.dispose(),
-  });
+const { getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
+  create: (toggleEl, options = {}) => new Dropdown(toggleEl, options),
+  destroy: (instance) => instance.dispose(),
+});
 
 /**
  * Data API implementation
@@ -122,16 +119,16 @@ const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
 const dataApi = (wrapperEl) => {
   // Dropdowns
   wrapperEl.querySelectorAll(`[data-dropdown-toggle]`).forEach((toggleEl) => {
-    const options = optionsFromData(toggleEl, "dropdown");
+    const options = optionsFromData(toggleEl, 'dropdown');
     if (options.toggle) {
       options.content = document.querySelector(options.toggle);
     }
 
-    if ("toggle" in options) {
+    if ('toggle' in options) {
       delete options.toggle;
     }
 
-    if (options.appendTo && options.appendTo !== "parent") {
+    if (options.appendTo && options.appendTo !== 'parent') {
       options.appendTo = document.querySelector(options.appendTo);
     }
 
@@ -140,18 +137,18 @@ const dataApi = (wrapperEl) => {
 
   // Popovers
   wrapperEl.querySelectorAll(`[data-popover-toggle]`).forEach((toggleEl) => {
-    const options = optionsFromData(toggleEl, "popover");
-    options.theme = "popover";
+    const options = optionsFromData(toggleEl, 'popover');
+    options.theme = 'popover';
 
     if (options.toggle) {
       options.content = document.querySelector(options.toggle);
     }
 
-    if (options.appendTo && options.appendTo !== "parent") {
+    if (options.appendTo && options.appendTo !== 'parent') {
       options.appendTo = document.querySelector(options.appendTo);
     }
 
-    if ("toggle" in options) {
+    if ('toggle' in options) {
       delete options.toggle;
     }
 
@@ -159,10 +156,10 @@ const dataApi = (wrapperEl) => {
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

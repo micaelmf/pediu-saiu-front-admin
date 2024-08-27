@@ -1,6 +1,6 @@
-import tippy from "tippy.js";
-import { manageInstances } from "../utils/component";
-import { schemePlugin } from "../utils/tippy";
+import tippy from 'tippy.js';
+import { manageInstances } from '../utils/component';
+import { schemePlugin } from '../utils/tippy';
 
 tippy.setDefaultProps({
   plugins: [schemePlugin],
@@ -10,10 +10,10 @@ tippy.setDefaultProps({
  * Default options
  */
 const Default = {
-  text: "",
-  theme: "tooltip",
-  animation: "shift-toward",
-  scheme: "scheme-gray",
+  text: '',
+  theme: 'tooltip',
+  animation: 'shift-toward',
+  scheme: 'scheme-gray',
 };
 
 /**
@@ -48,7 +48,7 @@ class Tooltip {
    */
   dispose = () => {
     this.tippy.destroy();
-    this._targetEl.dispatchEvent(new Event("tooltip.dispose"));
+    this._targetEl.dispatchEvent(new Event('tooltip.dispose'));
   };
 
   /**
@@ -64,7 +64,7 @@ class Tooltip {
       return text;
     }
 
-    if (typeof content === "string") {
+    if (typeof content === 'string') {
       return document.querySelector(content);
     }
 
@@ -92,30 +92,29 @@ class Tooltip {
  * Instance Manager
  */
 
-const { getInstance, createInstance, getOrCreateInstance, destroyInstance } =
-  manageInstances({
-    create: (targetEl, options) => new Tooltip(targetEl, options),
-    destroy: (instance) => instance.dispose(),
-  });
+const { getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
+  create: (targetEl, options) => new Tooltip(targetEl, options),
+  destroy: (instance) => instance.dispose(),
+});
 
 /**
  * Data API implementation
  */
 
 const dataApi = (wrapperEl) => {
-  wrapperEl.querySelectorAll("[data-tooltip]").forEach((el) => {
+  wrapperEl.querySelectorAll('[data-tooltip]').forEach((el) => {
     const options = {
-      text: el.getAttribute("data-tooltip"),
+      text: el.getAttribute('data-tooltip'),
     };
 
     getOrCreateInstance(el, options);
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

@@ -14,36 +14,36 @@
     @apply min-h-screen overflow-x-hidden overscroll-y-none bg-scheme-100 bg-opacity-60 font-sans font-normal antialiased;
   }
 
-  [type="text"],
-  [type="email"],
-  [type="url"],
-  [type="password"],
-  [type="number"],
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="search"],
-  [type="tel"],
-  [type="time"],
-  [type="week"],
-  [type="file"],
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [type='file'],
   [multiple],
   textarea,
   select {
     @apply rounded border-gray-200 px-4 py-2 placeholder-gray-400 transition focus:shadow focus:outline-0 focus:ring-0 focus:ring-offset-0 enabled:hover:border-gray-300 enabled:focus:border-scheme-400 disabled:cursor-not-allowed disabled:bg-gray-200;
   }
 
-  [type="checkbox"],
-  [type="radio"] {
+  [type='checkbox'],
+  [type='radio'] {
     --default-checkbox-size: theme(width.5);
     @apply my-[var(--checkbox-space-y,0)] h-[var(--checkbox-size,var(--default-checkbox-size))] w-[var(--checkbox-size,var(--default-checkbox-size))] border-gray-200 checked:bg-scheme-500 focus:outline-0 focus:ring-0 focus:ring-offset-0 enabled:checked:shadow enabled:hover:border-gray-300 enabled:checked:hover:border-scheme-600 enabled:checked:hover:bg-scheme-600 enabled:checked:focus:bg-scheme-600 disabled:cursor-not-allowed disabled:bg-gray-200 checked:disabled:bg-scheme-200 disabled:checked:hover:bg-scheme-200;
   }
 
-  [type="checkbox"] {
+  [type='checkbox'] {
     @apply rounded;
   }
 
-  [type="radio"] {
+  [type='radio'] {
     @apply rounded-full;
   }
 }

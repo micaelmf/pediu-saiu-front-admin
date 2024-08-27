@@ -70,7 +70,7 @@
       animation: 1s loader-04 linear infinite;
       position: relative;
       &:before {
-        content: "";
+        content: '';
         display: block;
         width: 0;
         height: 0;
@@ -98,7 +98,7 @@
       animation: 1s loader-05 linear infinite;
       position: relative;
       &:before {
-        content: "";
+        content: '';
         display: block;
         width: inherit;
         height: inherit;
@@ -146,7 +146,7 @@
       position: relative;
       &:before,
       &:after {
-        content: "";
+        content: '';
         border: 0.2em solid currentcolor;
         border-radius: 50%;
         width: inherit;
@@ -183,7 +183,7 @@
       position: relative;
       &:before,
       &:after {
-        content: "";
+        content: '';
         width: inherit;
         height: inherit;
         border-radius: 50%;
@@ -230,7 +230,7 @@
       animation: loader-10-1 2s infinite linear;
       &:before,
       &:after {
-        content: "";
+        content: '';
         width: 0;
         height: 0;
         border: 0.5em solid currentcolor;
@@ -287,7 +287,7 @@
       position: relative;
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         background-color: currentcolor;
@@ -340,7 +340,7 @@
       }
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         top: 0;
@@ -369,7 +369,7 @@
       top: -1em;
       &:after,
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         width: inherit;
         height: inherit;
@@ -406,7 +406,7 @@
       margin: 0 0.5em;
       &:after,
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         width: inherit;
         height: inherit;
@@ -443,7 +443,7 @@
       border-radius: 50%;
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         top: 0;
@@ -514,7 +514,7 @@
       border-radius: 50%;
       &:after,
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         width: 0.25em;
         height: 0.25em;
@@ -551,7 +551,7 @@
       position: relative;
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         border-radius: 50%;
@@ -605,7 +605,7 @@
       &:after,
       &:before {
         position: absolute;
-        content: "";
+        content: '';
         background-color: currentcolor;
         top: 0.5em;
         left: 0.5em;
@@ -636,7 +636,7 @@
       &:before,
       &:after {
         position: absolute;
-        content: "";
+        content: '';
       }
       &:before {
         width: 80%;
@@ -680,7 +680,7 @@
       &:after,
       &:before {
         position: absolute;
-        content: "";
+        content: '';
         background-color: currentcolor;
       }
       &:after {
@@ -720,7 +720,7 @@
         background-color: currentcolor;
         border-radius: 0px 0.5em 0.5em 0px;
         position: absolute;
-        content: "";
+        content: '';
         top: 0;
         left: calc(100% + 0.1em);
       }
@@ -744,7 +744,7 @@
       &:after,
       &:before {
         position: absolute;
-        content: "";
+        content: '';
       }
       &:after {
         width: 0.2em;
@@ -786,7 +786,7 @@
         width: 0.2em;
         height: 0.2em;
         position: absolute;
-        content: "";
+        content: '';
         background-color: currentcolor;
         bottom: calc(100% + 0.2em);
         left: -0.4em;
@@ -848,7 +848,7 @@
       position: relative;
       margin-left: 1.2em;
       &:before {
-        content: "";
+        content: '';
         display: block;
         width: inherit;
         height: inherit;
@@ -867,7 +867,7 @@
         left: 50%;
         top: 25%;
         position: absolute;
-        content: "";
+        content: '';
         animation: loader-27 2s linear infinite alternate;
       }
     }
@@ -885,7 +885,7 @@
       position: relative;
       animation: 2s loader-28-1 infinite;
       &:before {
-        content: "";
+        content: '';
         display: block;
         width: inherit;
         height: inherit;
@@ -895,7 +895,7 @@
         border-width: 0.1em 0.05em 0.05em 0.1em;
       }
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 0.2em;
         height: 0.2em;
@@ -967,7 +967,7 @@
       animation: 1s loader-30 linear infinite;
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: 0;
         height: 0;
@@ -1004,7 +1004,7 @@
       transform: rotateX(-60deg) perspective(1000px);
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         top: 0;
@@ -1057,7 +1057,7 @@
       animation: 1s loader-32 linear infinite;
       &:before,
       &:after {
-        content: "";
+        content: '';
         display: block;
         width: inherit;
         height: inherit;
@@ -1095,7 +1095,7 @@
       &:after,
       &:before {
         position: absolute;
-        content: "";
+        content: '';
       }
       &:after {
         height: 0.1em;
@@ -1150,7 +1150,7 @@
       &:after,
       &:before {
         position: absolute;
-        content: "";
+        content: '';
         height: 0.4em;
         width: 0.4em;
         top: 0;
@@ -1206,7 +1206,7 @@
         border-radius: 50%;
         background-color: currentcolor;
         animation: loader-35 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
-        content: "";
+        content: '';
         width: inherit;
         height: inherit;
         top: 0;
@@ -1237,7 +1237,7 @@
       position: relative;
       &:before,
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -1291,7 +1291,7 @@
       animation: loader-37 800ms linear infinite;
       &:before,
       &:after {
-        content: "";
+        content: '';
         width: 0.8em;
         height: 0.8em;
         display: block;
@@ -1436,7 +1436,7 @@
       animation: loader-39-1 30s infinite linear;
       &:before,
       &:after {
-        content: "";
+        content: '';
         border-radius: 100%;
         position: absolute;
         top: 50%;
@@ -1487,7 +1487,7 @@
       position: relative;
       &:after,
       &:before {
-        content: "";
+        content: '';
         border-radius: 50%;
         position: absolute;
         width: inherit;
@@ -1520,22 +1520,8 @@
       border: 0.05em currentcolor solid;
       border-radius: 0.2em;
       position: relative;
-      background: linear-gradient(
-          45deg,
-          transparent 48%,
-          currentcolor 50%,
-          currentcolor 50%,
-          transparent 52%,
-          transparent
-        ),
-        linear-gradient(
-          -45deg,
-          transparent 48%,
-          currentcolor 50%,
-          currentcolor 50%,
-          transparent 52%,
-          transparent
-        );
+      background: linear-gradient(45deg, transparent 48%, currentcolor 50%, currentcolor 50%, transparent 52%, transparent),
+        linear-gradient(-45deg, transparent 48%, currentcolor 50%, currentcolor 50%, transparent 52%, transparent);
       background-size: 0.5em 0.5em;
       background-position: 0% 0%;
       animation: loader-41 1s infinite linear;
@@ -1554,15 +1540,7 @@
       height: 0.66em;
       border: 0.05em currentcolor solid;
       border-radius: 0.1em;
-      background: linear-gradient(
-        -60deg,
-        transparent 0%,
-        transparent 50%,
-        currentcolor 50%,
-        currentcolor 75%,
-        transparent 75%,
-        transparent
-      );
+      background: linear-gradient(-60deg, transparent 0%, transparent 50%, currentcolor 50%, currentcolor 75%, transparent 75%, transparent);
       background-size: 1em 2em;
       background-position: 0 0;
       animation: loader-42 0.8s infinite linear;

@@ -2,28 +2,26 @@
  * Tailwind plugin implementation
  */
 
-const plugin = require("tailwindcss/plugin");
-const { parseColor } = require("tailwindcss/lib/util/color");
-const {
-  default: createUtilityPlugin,
-} = require("tailwindcss/lib/util/createUtilityPlugin");
+const plugin = require('tailwindcss/plugin');
+const { parseColor } = require('tailwindcss/lib/util/color');
+const { default: createUtilityPlugin } = require('tailwindcss/lib/util/createUtilityPlugin');
 
 module.exports = plugin(
   function (context) {
     const { matchUtilities, theme, addUtilities } = context;
 
     // scheme utils
-    const textColors = theme("textColor");
+    const textColors = theme('textColor');
     matchUtilities(
       {
         scheme: (value) => {
           const attrs = {};
 
-          if (typeof value === "object") {
+          if (typeof value === 'object') {
             for (shade in value) {
               const parsedColor = parseColor(value[shade]);
               if (parsedColor && parsedColor.color) {
-                attrs[`--scheme-${shade}`] = parsedColor.color.join(" ");
+                attrs[`--scheme-${shade}`] = parsedColor.color.join(' ');
               }
             }
           }
@@ -31,18 +29,16 @@ module.exports = plugin(
           return attrs;
         },
       },
-      { values: textColors, type: "color" },
+      { values: textColors, type: 'color' },
     );
 
     // col width utils
-    createUtilityPlugin("width", [["col-w", ["--col-width"]]])(context);
+    createUtilityPlugin('width', [['col-w', ['--col-width']]])(context);
 
     // padding size utils
-    skewindSpacing = theme("skewindSpacing");
+    skewindSpacing = theme('skewindSpacing');
     Object.keys(skewindSpacing).forEach((size) => {
-      const [x, y] = skewindSpacing[size].map((each) =>
-        theme(`spacing[${each}]`),
-      );
+      const [x, y] = skewindSpacing[size].map((each) => theme(`spacing[${each}]`));
       const gapX = { columnGap: x };
       const gapY = { rowGap: x };
       const pt = { paddingTop: y };

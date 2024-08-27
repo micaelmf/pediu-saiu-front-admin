@@ -125,7 +125,8 @@
                                                 <label for="category" class="field__label">Categoria</label>
                                                 <div class="form-control">
                                                     <select id="category" name="categoryId">
-                                                        <option value="">Selecione</option>
+                                                        <option
+                                                        value="">Selecione</option>
                                                         <% categories.forEach(function(category) { %>
                                                             <option value="<%= category.id %>" <%= product.categoryId === category.id ? 'selected' : '' %>>
                                                                 <%= category.name %>

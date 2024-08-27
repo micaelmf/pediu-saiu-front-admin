@@ -1,4 +1,4 @@
-@import "dropzone/dist/dropzone.css";
+@import 'dropzone/dist/dropzone.css';
 
 .dropzone {
   @apply flex border-2 border-dashed border-gray-300 bg-white p-md;

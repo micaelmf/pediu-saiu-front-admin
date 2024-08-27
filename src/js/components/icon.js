@@ -1,6 +1,6 @@
-import classnames from "classnames/dedupe";
-import config from "@/icons/icon.config.js";
-import * as iconPaths from "@/icons";
+import classnames from 'classnames/dedupe';
+import config from '@/icons/icon.config.js';
+import * as iconPaths from '@/icons';
 
 /**
  * Icon: this class responsible to create svg icon from icon:build distribution
@@ -31,7 +31,7 @@ class Icon {
    */
   toSvg = (attrs = {}) => {
     const combinedAttrs = {
-      ...{ xmlns: "http://www.w3.org/2000/svg" },
+      ...{ xmlns: 'http://www.w3.org/2000/svg' },
       ...config[this._vendor].attrs, // from icon.config.js
       ...this._attrs, // from constructor
       ...attrs, // from toSvg(attrs),
@@ -68,16 +68,14 @@ class Icon {
       const path = iconPaths[this._iconName];
 
       if (!path) {
-        throw new Error(
-          `Icon not found: "${this._iconName}". Consider checking on the "icons/index.js" whether the icon is correctly imported`,
-        );
+        throw new Error(`Icon not found: "${this._iconName}". Consider checking on the "icons/index.js" whether the icon is correctly imported`);
       }
 
       this._path = path;
     }
 
     // Icon was found, let's set vendor and icon
-    const [vendor, icon] = this._iconName.split("__");
+    const [vendor, icon] = this._iconName.split('__');
     this._vendor = vendor;
     this._icon = icon;
   };
@@ -92,7 +90,7 @@ class Icon {
 function attrsToString(attrs) {
   return Object.keys(attrs)
     .map((key) => `${key}="${attrs[key]}"`)
-    .join(" ");
+    .join(' ');
 }
 
 /**
@@ -106,18 +104,15 @@ function replace(wrapper = document) {
     try {
       // Get element attrs
       const attrs = iconEl.getAttributeNames().reduce((acc, name) => {
-        if (name === "data-icon") return acc;
+        if (name === 'data-icon') return acc;
         return { ...acc, [name]: iconEl.getAttribute(name) };
       }, {});
 
       // Build svg element
       const instance = new Icon(iconEl.dataset.icon, attrs);
       const svgString = instance.toSvg(attrs);
-      const svgDocument = new DOMParser().parseFromString(
-        svgString,
-        "image/svg+xml",
-      );
-      const svgElement = svgDocument.querySelector("svg");
+      const svgDocument = new DOMParser().parseFromString(svgString, 'image/svg+xml');
+      const svgElement = svgDocument.querySelector('svg');
 
       iconEl.parentNode.replaceChild(svgElement, iconEl);
     } catch (e) {
@@ -141,10 +136,10 @@ const create = (iconName, attrs = {}, path) => {
  * Data API implementation
  */
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   replace(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     replace(document);
   });
 }

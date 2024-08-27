@@ -2,7 +2,7 @@
  * Data API implementation
  */
 
-const svgs = import.meta.glob("../../svg/**/*.svg");
+const svgs = import.meta.glob('../../svg/**/*.svg');
 
 export const setup = (wrapperEl = document) => {
   wrapperEl.querySelectorAll(`svg[data-src]`).forEach(async (eachEl) => {
@@ -10,11 +10,11 @@ export const setup = (wrapperEl = document) => {
       const svgModule = await svgs[`../../svg/${eachEl.dataset.src}.svg`]();
       const response = await fetch(svgModule.default);
       const svg = await response.text();
-      const svgDoc = new DOMParser().parseFromString(svg, "image/svg+xml");
+      const svgDoc = new DOMParser().parseFromString(svg, 'image/svg+xml');
       const svgEl = svgDoc.firstElementChild;
 
       [].slice.call(eachEl.attributes).forEach((attr) => {
-        if (attr.name === "data-src") return;
+        if (attr.name === 'data-src') return;
         svgEl.setAttribute(attr.name, attr.value);
       });
 
@@ -25,6 +25,6 @@ export const setup = (wrapperEl = document) => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   setup(document);
 });

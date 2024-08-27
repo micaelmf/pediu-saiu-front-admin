@@ -19,7 +19,7 @@
       @apply relative text-sm font-bold uppercase;
 
       &:after {
-        content: "";
+        content: '';
         @apply absolute bottom-3 right-0 top-3 border-r border-[color:rgb(var(--table-border-color)/var(--tw-border-opacity))];
       }
 

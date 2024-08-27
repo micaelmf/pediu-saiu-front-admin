@@ -3,7 +3,7 @@
     --default-toggle-size: theme(width.6);
     @apply relative my-[var(--toggle-space-y,0)] inline-flex h-[var(--toggle-size,var(--default-toggle-size))] w-[calc(2*var(--toggle-size,var(--default-toggle-size)))] cursor-pointer items-center;
 
-    & [type="checkbox"] {
+    & [type='checkbox'] {
       @apply sr-only;
     }
 
@@ -14,17 +14,17 @@
         @apply block h-full scale-75 transform rounded-full border border-gray-300 bg-white transition-all content-[''];
       }
 
-      [type="checkbox"]:disabled ~ & {
+      [type='checkbox']:disabled ~ & {
         @apply cursor-not-allowed opacity-75;
       }
     }
 
-    & [type="checkbox"]:active ~ &__ui {
+    & [type='checkbox']:active ~ &__ui {
       @apply ring-2 ring-scheme-300;
     }
 
-    & [type="checkbox"]:checked ~ &__ui,
-    &[aria-expanded="true"] &__ui {
+    & [type='checkbox']:checked ~ &__ui,
+    &[aria-expanded='true'] &__ui {
       @apply bg-scheme-500 after:translate-x-full after:border-white;
     }
   }

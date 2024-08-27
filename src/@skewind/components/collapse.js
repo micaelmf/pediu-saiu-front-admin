@@ -1,12 +1,12 @@
-import { manageInstances, optionsFromData } from "../utils/component";
+import { manageInstances, optionsFromData } from '../utils/component';
 
 /**
  * Default options
  */
 
 const Default = {
-  showClass: "collapse--show",
-  group: "",
+  showClass: 'collapse--show',
+  group: '',
   transitionDuration: 150,
 };
 
@@ -39,7 +39,7 @@ class Collapse {
    * @returns {void}
    */
   toggle = () => {
-    this._targetEl.dispatchEvent(new Event("collapse.toggle"));
+    this._targetEl.dispatchEvent(new Event('collapse.toggle'));
 
     if (this._expandState) {
       return this.hide();
@@ -63,7 +63,7 @@ class Collapse {
     }
 
     this._expandState = true;
-    this._targetEl.dispatchEvent(new Event("collapse.show"));
+    this._targetEl.dispatchEvent(new Event('collapse.show'));
 
     setTimeout(() => {
       this._setHeight();
@@ -72,7 +72,7 @@ class Collapse {
 
     setTimeout(() => {
       this._unsetHeight();
-      this._targetEl.dispatchEvent(new Event("collapse.shown"));
+      this._targetEl.dispatchEvent(new Event('collapse.shown'));
     }, this._options.transitionDuration);
   };
 
@@ -85,7 +85,7 @@ class Collapse {
     if (!this._expandState) return;
 
     this._expandState = false;
-    this._targetEl.dispatchEvent(new Event("collapse.hide"));
+    this._targetEl.dispatchEvent(new Event('collapse.hide'));
     this._setTransitionDuration();
     this._setHeight();
 
@@ -101,7 +101,7 @@ class Collapse {
     }, 0);
 
     setTimeout(() => {
-      this._targetEl.dispatchEvent(new Event("collapse.hidden"));
+      this._targetEl.dispatchEvent(new Event('collapse.hidden'));
     }, this._options.transitionDuration);
   };
 
@@ -129,7 +129,7 @@ class Collapse {
    * Clean listeners if any
    */
   dispose = () => {
-    this._targetEl.dispatchEvent(new Event("collapse.dispose"));
+    this._targetEl.dispatchEvent(new Event('collapse.dispose'));
   };
 
   /**
@@ -138,10 +138,7 @@ class Collapse {
    * @returns {void}
    */
   _setTransitionDuration = () => {
-    this._targetEl.style.setProperty(
-      "--collapse-duration",
-      `${this._options.transitionDuration}ms`,
-    );
+    this._targetEl.style.setProperty('--collapse-duration', `${this._options.transitionDuration}ms`);
   };
 
   /**
@@ -150,10 +147,7 @@ class Collapse {
    * @returns {void}
    */
   _setHeight = () => {
-    this._targetEl.style.setProperty(
-      "height",
-      `${this._targetEl.scrollHeight}px`,
-    );
+    this._targetEl.style.setProperty('height', `${this._targetEl.scrollHeight}px`);
   };
 
   /**
@@ -162,7 +156,7 @@ class Collapse {
    * @returns {void}
    */
   _unsetHeight = () => {
-    this._targetEl.style.removeProperty("height");
+    this._targetEl.style.removeProperty('height');
   };
 }
 
@@ -170,13 +164,7 @@ class Collapse {
  * Instance manager
  */
 
-const {
-  instances,
-  getInstance,
-  createInstance,
-  getOrCreateInstance,
-  destroyInstance,
-} = manageInstances({
+const { instances, getInstance, createInstance, getOrCreateInstance, destroyInstance } = manageInstances({
   create: (targetEl, options) => new Collapse(targetEl, options),
   destroy: (instance) => instance.dispose(),
   iterable: true,
@@ -197,7 +185,7 @@ const dataApi = (wrapperEl) => {
 
     if (!collapseEl) return;
 
-    const options = optionsFromData(collapseEl, "collapse");
+    const options = optionsFromData(collapseEl, 'collapse');
     const instance = getOrCreateInstance(collapseEl, options);
 
     // Toggle on toggle element click
@@ -205,38 +193,38 @@ const dataApi = (wrapperEl) => {
       e.preventDefault();
       instance.toggle();
     };
-    toggleEl.addEventListener("click", handleToggleElClick);
+    toggleEl.addEventListener('click', handleToggleElClick);
 
     // Set expanded to true on collapse show
     const handleCollapseShow = () => {
-      toggleEl.setAttribute("aria-expanded", true);
+      toggleEl.setAttribute('aria-expanded', true);
     };
-    collapseEl.addEventListener("collapse.show", handleCollapseShow);
+    collapseEl.addEventListener('collapse.show', handleCollapseShow);
 
     // Set expanded to false on collapse hide
     const handleCollapseHide = () => {
-      toggleEl.setAttribute("aria-expanded", false);
+      toggleEl.setAttribute('aria-expanded', false);
     };
-    collapseEl.addEventListener("collapse.hide", handleCollapseHide);
+    collapseEl.addEventListener('collapse.hide', handleCollapseHide);
 
     // Remove listeners on collapse dispose
-    collapseEl.addEventListener("collapse.dispose", () => {
-      toggleEl.removeEventlistener("click", handleToggleElClick);
-      collapseEl.removeEventlistener("collapse.show", handleCollapseShow);
-      collapseEl.removeEventlistener("collapse.hide", handleCollapseHide);
+    collapseEl.addEventListener('collapse.dispose', () => {
+      toggleEl.removeEventlistener('click', handleToggleElClick);
+      collapseEl.removeEventlistener('collapse.show', handleCollapseShow);
+      collapseEl.removeEventlistener('collapse.hide', handleCollapseHide);
     });
 
     // Is shown by default?
-    if (toggleEl.getAttribute("aria-expanded") === "true") {
+    if (toggleEl.getAttribute('aria-expanded') === 'true') {
       instance.show();
     }
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   dataApi(document);
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     dataApi(document);
   });
 }

@@ -1,12 +1,12 @@
-import "../demo";
+import '../demo';
 
-document.querySelectorAll("#spinnerList > a").forEach((spinnerEl) => {
+document.querySelectorAll('#spinnerList > a').forEach((spinnerEl) => {
   const titleEl = spinnerEl.firstElementChild;
-  spinnerEl.addEventListener("click", async () => {
+  spinnerEl.addEventListener('click', async () => {
     const copied = `<i class="loader ${spinnerEl.innerText}"></i>`;
     await navigator.clipboard.writeText(copied);
     const innerHTML = titleEl.innerHTML;
-    titleEl.innerHTML = "Copied!";
+    titleEl.innerHTML = 'Copied!';
     setTimeout(() => {
       titleEl.innerHTML = innerHTML;
     }, 1000);

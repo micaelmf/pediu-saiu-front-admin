@@ -19,7 +19,7 @@ export const getAttrs = (element) => {
  * @returns {void}
  */
 export const wrap = (element, wrapperEl) => {
-  wrapperEl = wrapperEl || document.createElement("div");
+  wrapperEl = wrapperEl || document.createElement('div');
   element.replaceWith(wrapperEl);
   wrapperEl.appendChild(element);
 };
@@ -34,15 +34,15 @@ export const unwrap = (element) => {
 };
 
 const isElement = (object) => {
-  if (!object || typeof object !== "object") {
+  if (!object || typeof object !== 'object') {
     return false;
   }
 
-  if (typeof object.jquery !== "undefined") {
+  if (typeof object.jquery !== 'undefined') {
     object = object[0];
   }
 
-  return typeof object.nodeType !== "undefined";
+  return typeof object.nodeType !== 'undefined';
 };
 
 export const isDisabled = (element) => {
@@ -50,18 +50,15 @@ export const isDisabled = (element) => {
     return true;
   }
 
-  if (element.classList.contains("disabled")) {
+  if (element.classList.contains('disabled')) {
     return true;
   }
 
-  if (typeof element.disabled !== "undefined") {
+  if (typeof element.disabled !== 'undefined') {
     return element.disabled;
   }
 
-  return (
-    element.hasAttribute("disabled") &&
-    element.getAttribute("disabled") !== "false"
-  );
+  return element.hasAttribute('disabled') && element.getAttribute('disabled') !== 'false';
 };
 
 export const isVisible = (element) => {
@@ -69,17 +66,16 @@ export const isVisible = (element) => {
     return false;
   }
 
-  const elementIsVisible =
-    getComputedStyle(element).getPropertyValue("visibility") === "visible";
+  const elementIsVisible = getComputedStyle(element).getPropertyValue('visibility') === 'visible';
   // Handle `details` element as its content may falsie appear visible when it is closed
-  const closedDetails = element.closest("details:not([open])");
+  const closedDetails = element.closest('details:not([open])');
 
   if (!closedDetails) {
     return elementIsVisible;
   }
 
   if (closedDetails !== element) {
-    const summary = element.closest("summary");
+    const summary = element.closest('summary');
     if (summary && summary.parentNode !== closedDetails) {
       return false;
     }

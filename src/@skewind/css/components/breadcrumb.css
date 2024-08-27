@@ -4,18 +4,12 @@
 
     &__item {
       --breadcrumb-text-color: theme(colors.gray.500 / var(--tw-text-opacity));
-      --breadcrumb-text-hover-color: theme(
-        colors.gray.600 / var(--tw-text-opacity)
-      );
+      --breadcrumb-text-hover-color: theme(colors.gray.600 / var(--tw-text-opacity));
       @apply inline-flex items-center gap-2 whitespace-nowrap py-1 text-[color:var(--breadcrumb-text-color)] hover:text-[color:var(--breadcrumb-text-hover-color)];
 
       a& {
-        --breadcrumb-text-color: theme(
-          colors.scheme.500 / var(--tw-text-opacity)
-        );
-        --breadcrumb-text-hover-color: theme(
-          colors.scheme.600 / var(--tw-text-opacity)
-        );
+        --breadcrumb-text-color: theme(colors.scheme.500 / var(--tw-text-opacity));
+        --breadcrumb-text-hover-color: theme(colors.scheme.600 / var(--tw-text-opacity));
       }
     }
   }

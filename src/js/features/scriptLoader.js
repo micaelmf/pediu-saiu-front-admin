@@ -2,7 +2,7 @@
  * Script loader: Only load when needed.
  */
 
-const scripts = import.meta.glob("../scripts/**/*.js");
+const scripts = import.meta.glob('../scripts/**/*.js');
 
 export const setup = (wrapperEl = document) => {
   wrapperEl.querySelectorAll(`[data-script]`).forEach(async (eachEl) => {
@@ -15,6 +15,6 @@ export const setup = (wrapperEl = document) => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   setup(document);
 });

@@ -3,7 +3,7 @@
   @apply bg-transparent;
 }
 
-[data-theme="dropdown"] {
+[data-theme='dropdown'] {
   @apply bg-transparent text-base leading-normal text-current;
 
   & .tippy-content {
@@ -39,7 +39,7 @@
           @apply relative overflow-hidden;
 
           &:before {
-            content: "";
+            content: '';
             @apply absolute -left-2 bottom-1 top-1 w-12 -translate-x-10 transform rounded border bg-white bg-opacity-80 transition;
           }
 

@@ -88,16 +88,12 @@
 
       &.badge--outline {
         --badge-bg-color: theme(colors.gray.50 / var(--tw-bg-opacity));
-        --badge-border-color: theme(
-          colors.scheme.600 / var(--tw-border-opacity)
-        );
+        --badge-border-color: theme(colors.scheme.600 / var(--tw-border-opacity));
         @apply bg-[color:var(--badge-bg-color)];
       }
 
       &.badge--outline.badge--soft {
-        --badge-border-color: theme(
-          colors.scheme.300 / var(--tw-border-opacity)
-        );
+        --badge-border-color: theme(colors.scheme.300 / var(--tw-border-opacity));
       }
 
       &.badge--flat {

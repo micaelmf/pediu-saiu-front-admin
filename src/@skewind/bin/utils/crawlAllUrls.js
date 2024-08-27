@@ -1,4 +1,4 @@
-const Crawler = require("crawler");
+const Crawler = require('crawler');
 
 let obselete = []; // Array of what was crawled already
 
@@ -16,18 +16,12 @@ function crawlAllUrls(url, processResult) {
       processResult(res);
       let $ = res.$;
       try {
-        let urls = $("a");
+        let urls = $('a');
         Object.keys(urls).forEach((item) => {
-          if (urls[item].type === "tag") {
+          if (urls[item].type === 'tag') {
             let href = urls[item].attribs.href;
-            if (
-              !href ||
-              !isInternal(href) ||
-              href.startsWith("#") ||
-              href.startsWith("javascript:")
-            )
-              return;
-            href = href.split("#")[0];
+            if (!href || !isInternal(href) || href.startsWith('#') || href.startsWith('javascript:')) return;
+            href = href.split('#')[0];
 
             const UrlHref = new URL(href.trim(), res.options.uri);
 
@@ -42,8 +36,8 @@ function crawlAllUrls(url, processResult) {
           }
         });
       } catch (e) {
-        if (res.request.uri.path === "/") {
-          indexHref = new URL("/index.html", res.options.uri).href;
+        if (res.request.uri.path === '/') {
+          indexHref = new URL('/index.html', res.options.uri).href;
           obselete.push(indexHref);
           crawlAllUrls(indexHref, processResult);
           return;

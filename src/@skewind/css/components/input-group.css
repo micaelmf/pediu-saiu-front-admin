@@ -1,9 +1,6 @@
 @layer components {
   .input-group {
-    --input-group-color-state-soft: var(
-      --field-color-state-soft,
-      theme(colors.gray.100)
-    );
+    --input-group-color-state-soft: var(--field-color-state-soft, theme(colors.gray.100));
     --input-group-color-state: var(--field-color-state, theme(colors.gray.200));
     --input-group-font-size: theme(fontSize.base);
     --input-group-space-x: theme(spacing.4);

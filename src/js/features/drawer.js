@@ -1,11 +1,11 @@
-import Backdrop from "@skewind/utils/backdrop";
+import Backdrop from '@skewind/utils/backdrop';
 
 /**
  * Default options
  */
 
 const Default = {
-  showClass: "sidebar--drawer",
+  showClass: 'sidebar--drawer',
 };
 
 /**
@@ -19,7 +19,7 @@ class Drawer {
 
     this._backdrop = new Backdrop(document.body, {
       onClick: this.hide,
-      class: "drawer-backdrop",
+      class: 'drawer-backdrop',
     });
 
     this._options = {
@@ -70,24 +70,24 @@ let instance;
 
 const init = () => {
   // Creating instance
-  const sidebarEl = document.querySelector(".sidebar");
+  const sidebarEl = document.querySelector('.sidebar');
   if (!sidebarEl) return;
 
   instance = new Drawer(sidebarEl);
 
   // Toggle implementation through Data API
   document.querySelectorAll(`[data-drawer-toggle]`).forEach((toggleEl) => {
-    toggleEl.addEventListener("click", (e) => {
+    toggleEl.addEventListener('click', (e) => {
       e.preventDefault();
       instance.toggle();
     });
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   init();
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     init();
   });
 }

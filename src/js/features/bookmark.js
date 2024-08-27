@@ -1,6 +1,6 @@
-import crel from "crel";
-import Tooltip from "@skewind/components/tooltip";
-import Icon from "@/js/components/icon";
+import crel from 'crel';
+import Tooltip from '@skewind/components/tooltip';
+import Icon from '@/js/components/icon';
 
 /**
  * Class definition
@@ -36,7 +36,7 @@ class Bookmark {
     }
 
     this._wrapperEl.dispatchEvent(
-      new CustomEvent("bookmark.change", {
+      new CustomEvent('bookmark.change', {
         detail: { items: this._items },
       }),
     );
@@ -59,7 +59,7 @@ class Bookmark {
     }
 
     this._wrapperEl.dispatchEvent(
-      new CustomEvent("bookmark.change", {
+      new CustomEvent('bookmark.change', {
         detail: { items: this._items },
       }),
     );
@@ -75,13 +75,8 @@ class Bookmark {
    * }}
    */
   _populateActiveItem = () => {
-    const name =
-      document.querySelector('meta[name="title"]')?.content ??
-      document.title ??
-      "Untitled";
-    const icon =
-      document.querySelector('meta[name="icon"]')?.content ??
-      "icon--feather_bookmark";
+    const name = document.querySelector('meta[name="title"]')?.content ?? document.title ?? 'Untitled';
+    const icon = document.querySelector('meta[name="icon"]')?.content ?? 'icon--feather_bookmark';
     const url = window.location.pathname + window.location.search;
 
     return { name, icon, url };
@@ -116,36 +111,26 @@ class Bookmark {
    * @returns {Element}
    */
   _createItemElement = (item, active = false) => {
-    const linkEl = crel("a", { href: item.url, class: `navbar__icon-link` });
+    const linkEl = crel('a', { href: item.url, class: `navbar__icon-link` });
     linkEl.innerHTML = Icon.create(item.icon).toSvg();
 
-    const deleteIconLinkEl = crel("a", {
-      href: "javascript:;",
-      title: "Unpin",
-      class: "bookmark__delete",
+    const deleteIconLinkEl = crel('a', {
+      href: 'javascript:;',
+      title: 'Unpin',
+      class: 'bookmark__delete',
     });
-    deleteIconLinkEl.innerHTML = Icon.create("feather__x").toSvg();
+    deleteIconLinkEl.innerHTML = Icon.create('feather__x').toSvg();
     deleteIconLinkEl.addEventListener(
-      "click",
+      'click',
       () => {
         this.remove(item.url);
       },
       { once: true },
     );
 
-    const tooltipEl = crel(
-      "div",
-      { class: "bookmark__tooltip" },
-      item.name,
-      deleteIconLinkEl,
-    );
+    const tooltipEl = crel('div', { class: 'bookmark__tooltip' }, item.name, deleteIconLinkEl);
 
-    const itemEl = crel(
-      "div",
-      { class: `bookmark__item${active ? " bookmark__item--active" : ""}` },
-      linkEl,
-      tooltipEl,
-    );
+    const itemEl = crel('div', { class: `bookmark__item${active ? ' bookmark__item--active' : ''}` }, linkEl, tooltipEl);
 
     Tooltip.getOrCreateInstance(linkEl, {
       content: tooltipEl,
@@ -178,11 +163,7 @@ class Bookmark {
    * @returns {boolean}
    */
   _activeIsBookmarked = () => {
-    return (
-      this._items.findIndex(
-        (eachItem) => eachItem.url === this._activeItem.url,
-      ) >= 0
-    );
+    return this._items.findIndex((eachItem) => eachItem.url === this._activeItem.url) >= 0;
   };
 
   /**
@@ -191,9 +172,7 @@ class Bookmark {
    * @returns {void}
    */
   _updateActiveUnbookmarked = () => {
-    let unbookmarkedItemEl = this._wrapperEl.querySelector(
-      ".bookmark__item--unbookmarked",
-    );
+    let unbookmarkedItemEl = this._wrapperEl.querySelector('.bookmark__item--unbookmarked');
     if (unbookmarkedItemEl) {
       this._removeUnbookmarkedItemElement(unbookmarkedItemEl);
     }
@@ -210,26 +189,17 @@ class Bookmark {
    * @returns {Element}
    */
   _createUnbookmarkedItemElement = () => {
-    const linkEl = crel("a", {
-      href: "javascript:;",
+    const linkEl = crel('a', {
+      href: 'javascript:;',
       class: `navbar__icon-link`,
     });
     linkEl.innerHTML = Icon.create(this._activeItem.icon).toSvg();
-    linkEl.innerHTML += Icon.create("feather__plus").toSvg();
-    linkEl.addEventListener("click", this._handleAddToBookmarkClick);
+    linkEl.innerHTML += Icon.create('feather__plus').toSvg();
+    linkEl.addEventListener('click', this._handleAddToBookmarkClick);
 
-    const tooltipEl = crel(
-      "div",
-      { class: "bookmark__tooltip" },
-      this._activeItem.name,
-    );
+    const tooltipEl = crel('div', { class: 'bookmark__tooltip' }, this._activeItem.name);
 
-    const itemEl = crel(
-      "div",
-      { class: `bookmark__item bookmark__item--unbookmarked` },
-      linkEl,
-      tooltipEl,
-    );
+    const itemEl = crel('div', { class: `bookmark__item bookmark__item--unbookmarked` }, linkEl, tooltipEl);
 
     Tooltip.getOrCreateInstance(linkEl, {
       content: tooltipEl,
@@ -253,8 +223,8 @@ class Bookmark {
     }
 
     // Remove add listener
-    const addLinkEl = this._wrapperEl.querySelector(".navbar__icon-link");
-    addLinkEl.removeEventListener("click", this._handleAddToBookmarkClick);
+    const addLinkEl = this._wrapperEl.querySelector('.navbar__icon-link');
+    addLinkEl.removeEventListener('click', this._handleAddToBookmarkClick);
 
     unbookmarkedItemEl.remove();
   };
@@ -290,19 +260,19 @@ let instance;
 
 const init = () => {
   // Creating instance
-  const bookmarkEl = document.getElementById("bookmark");
+  const bookmarkEl = document.getElementById('bookmark');
   if (!bookmarkEl) return;
 
   // Sample bookmark items from localStorage
   const items = [
-    { name: "File Manager", icon: "feather__file", url: "/file-manager.html" },
-    { name: "Chat", icon: "feather__messageSquare", url: "/chat.html" },
-    { name: "Email", icon: "feather__mail", url: "/email.html" },
-    { name: "Contacts", icon: "feather__users", url: "/contacts.html" },
+    { name: 'File Manager', icon: 'feather__file', url: '/file-manager.html' },
+    { name: 'Chat', icon: 'feather__messageSquare', url: '/chat.html' },
+    { name: 'Email', icon: 'feather__mail', url: '/email.html' },
+    { name: 'Contacts', icon: 'feather__users', url: '/contacts.html' },
   ];
 
   instance = new Bookmark(bookmarkEl, items);
-  bookmarkEl.addEventListener("bookmark.change", (e) => {
+  bookmarkEl.addEventListener('bookmark.change', (e) => {
     const items = e.detail.items;
 
     // Save items to localStorage or user database
@@ -310,10 +280,10 @@ const init = () => {
   });
 };
 
-if (document.readyState && document.readyState !== "loading") {
+if (document.readyState && document.readyState !== 'loading') {
   init();
 } else {
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
     init();
   });
 }
