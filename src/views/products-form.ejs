@@ -145,7 +145,7 @@
                                                     <label for="price" class="field__label">Preço</label>
                                                     <label class="form-control">
                                                         <span class="self-start mt-2">R$</span>
-                                                        <input type="text" id="price" name="price" value="<%= product.price || '' %>" placeholder="Preço" />
+                                                        <input type="text" id="price" name="price" initial-value="<%= product.price || '' %>" value="<%= product.price || '' %>" placeholder="Preço" />
                                                     </label>
                                                 </fieldset>
                                             <% } %>
@@ -154,8 +154,14 @@
                                                     <label for="maximumQuantity" class="field__label">Máximo de
                                                         Acompanhamentos</label>
                                                     <label class="form-control">
-                                                        <input type="number" min="0" id="accompanimentsMax" name="accompanimentsMax" value="<%= product.accompanimentsMax || '0' %>"
-                                                            placeholder="" />
+                                                        <input
+                                                            type="number"
+                                                            min="0"
+                                                            id="accompanimentsMax"
+                                                            name="accompanimentsMax"
+                                                            value="<%= product.accompanimentsMax || '0' %>"
+                                                            placeholder=""
+                                                        />
                                                     </label>
                                                 </fieldset>
                                                 <fieldset class="field">
@@ -218,8 +224,7 @@
                                                     <fieldset class="field">
                                                         <label class="form-control">
                                                             <span data-textarea-grow="">
-                                                                <textarea id="description" placeholder="Descriçao"
-                                                                    rows="4"></textarea>
+                                                                <textarea id="description" placeholder="Descriçao" rows="4"></textarea>
                                                             </span>
                                                         </label>
                                                     </fieldset>

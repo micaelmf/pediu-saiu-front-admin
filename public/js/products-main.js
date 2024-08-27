@@ -23,10 +23,12 @@ $('form#product #free').on('click', function (e) {
 
   if ($(this).is(':checked')) {
     priceElement.addClass('form-control--disabled');
+    priceElement.val('0,00');
     labelElement.addClass('span-disabled');
     fieldsetElement.attr('disabled', true);
   } else {
     priceElement.removeClass('form-control--disabled');
+    priceElement.val(priceElement.prop('defaultValue'));
     labelElement.removeClass('span-disabled');
     fieldsetElement.attr('disabled', false);
   }
