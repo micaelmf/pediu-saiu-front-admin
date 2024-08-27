@@ -50,7 +50,7 @@
             <!-- END: Page Header -->
             <!-- BEGIN: Page Body -->
             <div class="page__body">
-              <div class="flex flex-col gap-5 mb-4">
+              <div class="mb-4 flex flex-col gap-5">
                 <div class="card">
                   <div class="card__header">
                     <div>
@@ -63,10 +63,10 @@
                     </div>
                   </div>
                   <div class="card__body">
-                    <div class="grid grid-cols-1 mb-5">
+                    <div class="mb-5 grid grid-cols-1">
                       <fieldset class="field">
                         <div class="input-group">
-                          <div class="flex-1 form-control scheme-gray">
+                          <div class="form-control flex-1 scheme-gray">
                             <input type="text" placeholder="Texto" />
                           </div>
                           <button type="button" class="button button--icon button--solid button--md scheme-primary">
@@ -82,15 +82,15 @@
                       <div>
                         <h3 class="text-xl">Avançado</h3>
                       </div>
-                      <a href="javascript:;" class="button button--icon button--flat scheme-info rounded-full">
+                      <a href="javascript:;" class="button button--icon button--flat rounded-full scheme-info">
                         <i data-icon="feather__helpCircle"></i>
                       </a>
                     </div>
                     <div class="card__body">
-                      <div class="grid md:grid-cols-2 gap-5 mb5">
+                      <div class="mb5 grid gap-5 md:grid-cols-2">
                         <fieldset class="field">
                           <label for="status" class="field__label">Status</label>
-                          <div class="flex-1 form-control scheme-gray">
+                          <div class="form-control flex-1 scheme-gray">
                             <select id="status">
                               <option value="">Selecione</option>
                               <option value="1">Ativo</option>
@@ -105,7 +105,7 @@
                           </label>
                         </fieldset>
                       </div>
-                      <div class="flex gap-5 justify-end">
+                      <div class="flex justify-end gap-5">
                         <button type="button" class="button button--solid button--md scheme-black">Limpar Filtros</button>
                         <button type="button" class="button button--solid button--md scheme-primary">Buscar</button>
                       </div>
@@ -113,7 +113,7 @@
                   </div>
                 </div>
               </div>
-              <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
+              <table class="card table [&>tbody>tr:hover]:bg-yellow-100">
                 <thead>
                   <tr class="table-row">
                     <th class="table-cell">#</th>

@@ -50,7 +50,7 @@
             <!-- END: Page Header -->
             <!-- BEGIN: Page Body -->
             <div class="page__body">
-              <div class="flex flex-col gap-5 mb-4">
+              <div class="mb-4 flex flex-col gap-5">
                 <div class="card">
                   <div class="card__header">
                     <div>
@@ -58,14 +58,14 @@
                     </div>
                   </div>
                   <div class="card__body">
-                    <div class="grid grid-cols-1 mb-5">
+                    <div class="mb-5 grid grid-cols-1">
                       <form action="/categorias/procurar" method="GET">
                         <fieldset id="filter-categories" class="field">
                           <div class="input-group">
-                            <div id="filter-text" class="flex-1 form-control scheme-gray">
+                            <div id="filter-text" class="form-control flex-1 scheme-gray">
                               <input type="text" name="name" placeholder="Texto" />
                             </div>
-                            <div id="filter-status" class="flex-1 form-control scheme-gray" style="display: none">
+                            <div id="filter-status" class="form-control flex-1 scheme-gray" style="display: none">
                               <select name="status">
                                 <option value="">Selecione</option>
                                 <option value="visible">Visível</option>
@@ -73,7 +73,7 @@
                                 <!-- <option value="deleted">Excluídos</option> -->
                               </select>
                             </div>
-                            <div id="filter-type" class="form-control [.input-group>&]:flex-initial scheme-gray">
+                            <div id="filter-type" class="form-control scheme-gray [.input-group>&]:flex-initial">
                               <select>
                                 <option value="category">Nome</option>
                                 <!-- <option value="description">Descrição</option> -->
@@ -91,7 +91,7 @@
                   </div>
                 </div>
               </div>
-              <table class="table card [&>tbody>tr:hover]:bg-yellow-100">
+              <table class="card table [&>tbody>tr:hover]:bg-yellow-100">
                 <thead>
                   <tr class="table-row">
                     <th class="table-cell">#</th>
@@ -105,9 +105,9 @@
                   <!-- <td class="table-cell" style="order: 2;">Coluna 1</td> -->
                   <!-- <td class="table-cell" style="order: 1;">Coluna 2</td> -->
                   <tr class="table-row" data-id="<%= category.id %>" data-status="<%= category.status %>">
-                    <td class="table-cell id"><%= category.id %></td>
-                    <td class="table-cell name"><%= category.name %></td>
-                    <td class="table-cell status"><%= category.status %></td>
+                    <td class="id table-cell"><%= category.id %></td>
+                    <td class="name table-cell"><%= category.name %></td>
+                    <td class="status table-cell"><%= category.status %></td>
                     <td class="acoes"><%- include('partials/categories-dropdown', {category}) %></td>
                   </tr>
                   <% }); %>
