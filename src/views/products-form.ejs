@@ -163,9 +163,7 @@
                                                     <select data-select data-select-placeholder="Selecione" name="accompaniments" multiple>
                                                         <option value="">Selecione</option>
                                                         <% accompaniments.forEach(function(accompaniment) { %>
-                                                            <option value="<%= accompaniment.id %>" <%= accompaniment.product_id === product.id ? 'selected' : '' %>>
-                                                                <%= product.name %>
-                                                            </option>
+                                                            <option value="<%= accompaniment.id %>"><%= accompaniment.name %></option>
                                                         <% }) %>
                                                     </select>
                                                 </fieldset>
@@ -179,12 +177,10 @@
                                                 </fieldset>
                                                 <fieldset class="field">
                                                     <label for="visible" class="field__label">Adicionais</label>
-                                                    <select data-select data-select-placeholder="Selecione" name="addtionals" multiple>
+                                                    <select data-select data-select-placeholder="Selecione" name="additionals" multiple>
                                                         <option value="">Selecione</option>
-                                                        <% additionals || [].forEach(function(addtional) { %>
-                                                            <option value="<%= addtional.id %>" <%= addtional.product_id === product.id ? 'selected' : '' %>>
-                                                                <%= addtional.name %>
-                                                            </option>
+                                                        <% additionals.forEach(function(additional) { %>
+                                                            <option value="<%= additional.id %>"><%= additional.name %></option>
                                                         <% }) %>
                                                     </select>
                                                 </fieldset>

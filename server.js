@@ -105,23 +105,21 @@ app.get("/produtos/cadastrar", async (req, res) => {
 
     const apiUrl = process.env.API_URL;
 
-    const [responseCategories, responseAccompaniments, responseAddtionals] = await Promise.all([
+    const [responseCategories, responseAccompaniments, responseAdditionals] = await Promise.all([
       axios.get(apiUrl + "/categories", {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       }),
-      axios.get(apiUrl + "/products/search?type=accompaniments", {
+      axios.get(apiUrl + "/products/search?type=accompaniment", {
         headers: {
           'Authorization': `Bearer ${token}`
-        },
-        params: req.query
+        }
       }),
-      axios.get(apiUrl + "/products/search?type=additionals", {
+      axios.get(apiUrl + "/products/search?type=additional", {
         headers: {
           'Authorization': `Bearer ${token}`
-        },
-        params: req.query
+        }
       })
     ]);
 
@@ -132,7 +130,7 @@ app.get("/produtos/cadastrar", async (req, res) => {
       product: {},
       categories: responseCategories.data || [],
       accompaniments: responseAccompaniments.data || [],
-      additionals: responseAddtionals.data || [],
+      additionals: responseAdditionals.data || [],
       params: req.query
     }
 
@@ -196,7 +194,7 @@ app.get("/produtos/editar/:id", async (req, res) => {
 
     const apiUrl = process.env.API_URL;
 
-    const [responseProduct, responseCategories, responseAccompaniments, responseAddtionals] = await Promise.all([
+    const [responseProduct, responseCategories, responseAccompaniments, responseAdditionals] = await Promise.all([
       axios.get(`${apiUrl}/products/${req.params.id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -208,17 +206,15 @@ app.get("/produtos/editar/:id", async (req, res) => {
           'Authorization': `Bearer ${token}`
         }
       }),
-      axios.get(`${apiUrl}/products/search?type=accompaniments`, {
+      axios.get(`${apiUrl}/products/search?type=accompaniment`, {
         headers: {
           'Authorization': `Bearer ${token}`
-        },
-        params: req.query
+        }
       }),
-      axios.get(`${apiUrl}/products/search?type=additionals`, {
+      axios.get(`${apiUrl}/products/search?type=additional`, {
         headers: {
           'Authorization': `Bearer ${token}`
-        },
-        params: req.query
+        }
       })
     ]);
 
@@ -229,7 +225,7 @@ app.get("/produtos/editar/:id", async (req, res) => {
       product: responseProduct.data || [],
       categories: responseCategories.data || [],
       accompaniments: responseAccompaniments.data || [],
-      additionals: responseAddtionals.data || []
+      additionals: responseAdditionals.data || []
     }
 
     res.render("products-form", page)
